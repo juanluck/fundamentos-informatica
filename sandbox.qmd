@@ -116,10 +116,13 @@ flowchart LR
 ## Vídeo
 
 ::: {.video}
-**Representación de la información**  
-Duración orientativa: 8 min.
+**Ejemplo de vídeo incrustado desde YouTube**
 
-[Ver recurso audiovisual](https://example.org/)
+El reproductor queda integrado directamente en la versión HTML del libro. En formatos que no admiten vídeo, Quarto conserva un enlace al recurso original.
+
+{{< video https://www.youtube.com/watch?v=47fnyDA2LB0 >}}
+
+**Actividad breve:** tras visualizarlo, anota dos ideas principales y una duda que te haya surgido.
 :::
 
 ## Recurso externo
