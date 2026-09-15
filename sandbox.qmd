@@ -1,0 +1,148 @@
+---
+title: "Galería de componentes"
+subtitle: "Sandbox de maquetación"
+---
+
+Este capítulo es deliberadamente artificial. Sirve para probar la gramática visual del libro antes de aplicarla a contenido real.
+
+## Texto normal y jerarquía
+
+El cuerpo del libro debe poder leerse cómodamente durante periodos largos. **Negrita**, *cursiva*, `código en línea`, enlaces, listas y referencias deben integrarse sin romper el ritmo de lectura.
+
+### Subsección de ejemplo
+
+1. Primer elemento.
+2. Segundo elemento.
+3. Tercer elemento.
+
+## Bloques didácticos
+
+::: {.concepto-clave}
+Un **bit** es una unidad de información que puede tomar dos valores posibles: 0 o 1.
+:::
+
+::: {.importante}
+Los prefijos binarios y decimales no representan exactamente las mismas cantidades. El contexto determina cuándo conviene distinguirlos.
+:::
+
+::: {.ejemplo}
+Si disponemos de 3 bits, podemos representar $2^3 = 8$ combinaciones distintas.
+:::
+
+::: {.para-saber-mas}
+La normalización de unidades y prefijos evita ambigüedades al expresar capacidades de memoria y almacenamiento.
+:::
+
+## Ejercicios y tareas
+
+::: {.ejercicio titulo="Conversión a binario" numero="2.4" dificultad="2"}
+Convierte el número decimal 74 a representación binaria e indica el número mínimo de bits necesarios.
+
+::: {.solucion}
+$74 = 64 + 8 + 2 = 2^6 + 2^3 + 2^1$.
+
+Por tanto:
+
+$$74_{10}=1001010_2$$
+
+Se necesitan **7 bits**.
+:::
+:::
+
+::: {.tarea titulo="Explora tu ordenador" numero="3.1" dificultad="3"}
+Identifica el procesador, la memoria principal y el almacenamiento de tu equipo. Explica qué función cumple cada elemento y anota las características que consideres relevantes.
+
+::: {.solucion}
+La respuesta depende del equipo utilizado. Debe identificarse correctamente cada componente y relacionarse con su función dentro del sistema.
+:::
+:::
+
+::: {.ejercicio titulo="Número de combinaciones" numero="2.5" dificultad="1"}
+¿Cuántos símbolos diferentes pueden codificarse con 5 bits?
+
+::: {.solucion}
+Con $n$ bits pueden representarse $2^n$ combinaciones. Por tanto, con 5 bits pueden representarse **32 símbolos**.
+:::
+:::
+
+## Autoevaluación
+
+::: {.autoevaluacion}
+1. ¿Qué diferencia existe entre bit y byte?
+2. ¿Cuántas combinaciones permiten 8 bits?
+3. ¿Por qué las potencias de 2 aparecen con tanta frecuencia en informática?
+:::
+
+## Código
+
+```python
+bits = 8
+combinaciones = 2 ** bits
+print(combinaciones)
+```
+
+## Matemáticas
+
+Una relación habitual entre el número de bits de un bus de direcciones y el número de posiciones direccionables es:
+
+$$
+m = 2^n
+$$
+
+y, despejando,
+
+$$
+n = \log_2 m
+$$
+
+## Tabla
+
+| Unidad | Símbolo | Equivalencia ilustrativa |
+|---|---|---:|
+| bit | b | 0 o 1 |
+| byte | B | 8 bits |
+| KiB | KiB | $2^{10}$ bytes |
+
+## Figura / diagrama
+
+```{mermaid}
+flowchart LR
+  A[Datos] --> B[Procesamiento]
+  B --> C[Información]
+```
+
+*Figura de ejemplo para comprobar el tratamiento de diagramas y pies.*
+
+## Vídeo
+
+::: {.video}
+**Representación de la información**  
+Duración orientativa: 8 min.
+
+[Ver recurso audiovisual](https://example.org/)
+:::
+
+## Recurso externo
+
+::: {.recurso}
+**Documentación complementaria**  
+Enlace a una herramienta, artículo, simulador o documentación técnica relacionada con el contenido.
+:::
+
+## Objetivos
+
+::: {.objetivos}
+Al finalizar esta sección, el estudiante debería ser capaz de:
+
+- interpretar un patrón de bits;
+- relacionar número de bits y combinaciones posibles;
+- resolver conversiones sencillas de representación.
+:::
+
+## Resumen
+
+::: {.resumen}
+- Los computadores representan información mediante patrones de bits.
+- $n$ bits permiten $2^n$ combinaciones.
+- La representación elegida determina cómo se interpreta cada patrón.
+:::

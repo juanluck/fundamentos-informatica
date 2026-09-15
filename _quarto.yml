@@ -1,0 +1,47 @@
+project:
+  type: book
+
+book:
+  title: "Fundamentos de Informática"
+  subtitle: "Maqueta editorial — prototipo"
+  author: "Juan Luis Jiménez"
+  chapters:
+    - index.qmd
+    - sandbox.qmd
+  sidebar:
+    style: docked
+    search: true
+  page-navigation: true
+
+format:
+  html:
+    theme:
+      light:
+        - cosmo
+        - styles/book.scss
+    toc: true
+    toc-depth: 3
+    smooth-scroll: true
+    code-copy: true
+    code-overflow: wrap
+    include-after-body:
+      - assets/components.js
+  pdf:
+    documentclass: scrreprt
+    toc: true
+    number-sections: true
+    geometry:
+      - top=25mm
+      - bottom=25mm
+      - left=28mm
+      - right=24mm
+    include-in-header:
+      - includes/pdf-preamble.tex
+
+filters:
+  - filters/components.lua
+
+execute:
+  freeze: auto
+
+lang: es

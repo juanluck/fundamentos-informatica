@@ -1,0 +1,6 @@
+/.quarto/
+/_book/
+*.aux
+*.log
+*.tex
+.DS_Store

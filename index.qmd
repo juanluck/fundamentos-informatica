@@ -1,0 +1,19 @@
+---
+title: "Fundamentos de Informática"
+subtitle: "Prototipo de maquetación"
+---
+
+Este proyecto contiene la **maqueta editorial** del libro. En esta fase no representa todavía la estructura ni la selección definitiva de contenidos de la asignatura.
+
+La prioridad de diseño es la **web**, manteniendo una salida PDF legible y coherente.
+
+## Principios visuales
+
+- Identidad propia, cálida, visual y didáctica.
+- Jerarquía clara y abundante espacio de lectura.
+- Pocos componentes, cada uno con función semántica estable.
+- El contenido de los capítulos no contiene maquetación manual.
+- Las soluciones a ejercicios y tareas se muestran **plegadas por defecto en HTML**.
+- En PDF, las soluciones permanecen visibles para que el documento sea autosuficiente.
+
+Consulta la [galería de componentes](sandbox.qmd) para ver todos los elementos definidos actualmente.
