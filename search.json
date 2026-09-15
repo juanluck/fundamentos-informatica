@@ -114,7 +114,7 @@
     "href": "sandbox.html#vídeo",
     "title": "2  Galería de componentes",
     "section": "2.9 Vídeo",
-    "text": "2.9 Vídeo\n\nVídeo\nRepresentación de la información\nDuración orientativa: 8 min.\nVer recurso audiovisual",
+    "text": "2.9 Vídeo\n\nVídeo\nEjemplo de vídeo incrustado desde YouTube\nEl reproductor queda integrado directamente en la versión HTML del libro. En formatos que no admiten vídeo, Quarto conserva un enlace al recurso original.\n\nActividad breve: tras visualizarlo, anota dos ideas principales y una duda que te haya surgido.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
