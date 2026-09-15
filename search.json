@@ -1,0 +1,152 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentos de Informática",
+    "section": "",
+    "text": "0.1 Principios visuales\nEste proyecto contiene la maqueta editorial del libro. En esta fase no representa todavía la estructura ni la selección definitiva de contenidos de la asignatura.\nLa prioridad de diseño es la web, manteniendo una salida PDF legible y coherente.\nConsulta la galería de componentes para ver todos los elementos definidos actualmente.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Fundamentos de Informática</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#principios-visuales",
+    "href": "index.html#principios-visuales",
+    "title": "Fundamentos de Informática",
+    "section": "",
+    "text": "Identidad propia, cálida, visual y didáctica.\nJerarquía clara y abundante espacio de lectura.\nPocos componentes, cada uno con función semántica estable.\nEl contenido de los capítulos no contiene maquetación manual.\nLas soluciones a ejercicios y tareas se muestran plegadas por defecto en HTML.\nEn PDF, las soluciones permanecen visibles para que el documento sea autosuficiente.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Fundamentos de Informática</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html",
+    "href": "sandbox.html",
+    "title": "2  Galería de componentes",
+    "section": "",
+    "text": "2.1 Texto normal y jerarquía\nEste capítulo es deliberadamente artificial. Sirve para probar la gramática visual del libro antes de aplicarla a contenido real.\nEl cuerpo del libro debe poder leerse cómodamente durante periodos largos. Negrita, cursiva, código en línea, enlaces, listas y referencias deben integrarse sin romper el ritmo de lectura.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#texto-normal-y-jerarquía",
+    "href": "sandbox.html#texto-normal-y-jerarquía",
+    "title": "2  Galería de componentes",
+    "section": "",
+    "text": "2.1.1 Subsección de ejemplo\n\nPrimer elemento.\nSegundo elemento.\nTercer elemento.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#bloques-didácticos",
+    "href": "sandbox.html#bloques-didácticos",
+    "title": "2  Galería de componentes",
+    "section": "2.2 Bloques didácticos",
+    "text": "2.2 Bloques didácticos\n\nConcepto clave\nUn bit es una unidad de información que puede tomar dos valores posibles: 0 o 1.\n\n\nImportante\nLos prefijos binarios y decimales no representan exactamente las mismas cantidades. El contexto determina cuándo conviene distinguirlos.\n\n\nEjemplo\nSi disponemos de 3 bits, podemos representar \\(2^3 = 8\\) combinaciones distintas.\n\n\nPara saber más\nLa normalización de unidades y prefijos evita ambigüedades al expresar capacidades de memoria y almacenamiento.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#ejercicios-y-tareas",
+    "href": "sandbox.html#ejercicios-y-tareas",
+    "title": "2  Galería de componentes",
+    "section": "2.3 Ejercicios y tareas",
+    "text": "2.3 Ejercicios y tareas\n\n\nEjercicio 2.4 ●● Intermedio\n\n\nConversión a binario\n\nConvierte el número decimal 74 a representación binaria e indica el número mínimo de bits necesarios.\n\nSolución\n\\(74 = 64 + 8 + 2 = 2^6 + 2^3 + 2^1\\).\nPor tanto:\n\\[74_{10}=1001010_2\\]\nSe necesitan 7 bits.\n\n\n\n\nTarea 3.1 ●●● Avanzado\n\n\nExplora tu ordenador\n\nIdentifica el procesador, la memoria principal y el almacenamiento de tu equipo. Explica qué función cumple cada elemento y anota las características que consideres relevantes.\n\nSolución\nLa respuesta depende del equipo utilizado. Debe identificarse correctamente cada componente y relacionarse con su función dentro del sistema.\n\n\n\n\nEjercicio 2.5 ● Básico\n\n\nNúmero de combinaciones\n\n¿Cuántos símbolos diferentes pueden codificarse con 5 bits?\n\nSolución\nCon \\(n\\) bits pueden representarse \\(2^n\\) combinaciones. Por tanto, con 5 bits pueden representarse 32 símbolos.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#autoevaluación",
+    "href": "sandbox.html#autoevaluación",
+    "title": "2  Galería de componentes",
+    "section": "2.4 Autoevaluación",
+    "text": "2.4 Autoevaluación\n\nAutoevaluación\n\n¿Qué diferencia existe entre bit y byte?\n¿Cuántas combinaciones permiten 8 bits?\n¿Por qué las potencias de 2 aparecen con tanta frecuencia en informática?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#código",
+    "href": "sandbox.html#código",
+    "title": "2  Galería de componentes",
+    "section": "2.5 Código",
+    "text": "2.5 Código\nbits = 8\ncombinaciones = 2 ** bits\nprint(combinaciones)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#matemáticas",
+    "href": "sandbox.html#matemáticas",
+    "title": "2  Galería de componentes",
+    "section": "2.6 Matemáticas",
+    "text": "2.6 Matemáticas\nUna relación habitual entre el número de bits de un bus de direcciones y el número de posiciones direccionables es:\n\\[\nm = 2^n\n\\]\ny, despejando,\n\\[\nn = \\log_2 m\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#tabla",
+    "href": "sandbox.html#tabla",
+    "title": "2  Galería de componentes",
+    "section": "2.7 Tabla",
+    "text": "2.7 Tabla\n\n\n\nUnidad\nSímbolo\nEquivalencia ilustrativa\n\n\n\n\nbit\nb\n0 o 1\n\n\nbyte\nB\n8 bits\n\n\nKiB\nKiB\n\\(2^{10}\\) bytes",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#figura-diagrama",
+    "href": "sandbox.html#figura-diagrama",
+    "title": "2  Galería de componentes",
+    "section": "2.8 Figura / diagrama",
+    "text": "2.8 Figura / diagrama\n\n\n\n\n\nflowchart LR\n  A[Datos] --&gt; B[Procesamiento]\n  B --&gt; C[Información]\n\n\n\n\n\n\nFigura de ejemplo para comprobar el tratamiento de diagramas y pies.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#vídeo",
+    "href": "sandbox.html#vídeo",
+    "title": "2  Galería de componentes",
+    "section": "2.9 Vídeo",
+    "text": "2.9 Vídeo\n\nVídeo\nRepresentación de la información\nDuración orientativa: 8 min.\nVer recurso audiovisual",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#recurso-externo",
+    "href": "sandbox.html#recurso-externo",
+    "title": "2  Galería de componentes",
+    "section": "2.10 Recurso externo",
+    "text": "2.10 Recurso externo\n\nRecurso externo\nDocumentación complementaria\nEnlace a una herramienta, artículo, simulador o documentación técnica relacionada con el contenido.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#objetivos",
+    "href": "sandbox.html#objetivos",
+    "title": "2  Galería de componentes",
+    "section": "2.11 Objetivos",
+    "text": "2.11 Objetivos\n\nObjetivos\nAl finalizar esta sección, el estudiante debería ser capaz de:\n\ninterpretar un patrón de bits;\nrelacionar número de bits y combinaciones posibles;\nresolver conversiones sencillas de representación.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  },
+  {
+    "objectID": "sandbox.html#resumen",
+    "href": "sandbox.html#resumen",
+    "title": "2  Galería de componentes",
+    "section": "2.12 Resumen",
+    "text": "2.12 Resumen\n\nResumen\n\nLos computadores representan información mediante patrones de bits.\n\\(n\\) bits permiten \\(2^n\\) combinaciones.\nLa representación elegida determina cómo se interpreta cada patrón.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+    ]
+  }
+]
