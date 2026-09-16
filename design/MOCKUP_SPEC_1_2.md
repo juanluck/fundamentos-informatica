@@ -1,26 +1,19 @@
 # Especificación medible del mockup — Lección 1.2
 
-Estado: **Fase 1 / Puerta A**. Esta especificación describe la geometría del mockup aprobado antes de introducir color, ilustración final, interactividad o Quarto.
+Estado: **prototipo completo listo para revisión global (Hito 1)**.
 
-## Referencia
+La referencia visual autoritativa es la página central del mockup aprobado: **«LECCIÓN 1.2 · ¿Cómo representa la información?»**, de aproximadamente **436 × 1199 px**. Los documentos `GATE_*` conservan el historial detallado de cada etapa.
 
-Se toma como referencia exclusivamente la página central del mockup aprobado: **«LECCIÓN 1.2 · ¿Cómo representa la información?»**.
+## Retícula final aprobada
 
-La referencia recortada mide aproximadamente **436 × 1199 px**. Las medidas siguientes se expresan como proporciones del ancho/alto de esa página para que sean trasladables a web.
+- Una única columna editorial, sin sidebar, breadcrumbs ni chrome de Quarto.
+- Escritorio: `width: min(92vw, 720px)`.
+- Tablet/portátil: máximo 720 px con margen exterior reducido.
+- Móvil ≤ 620 px: ancho 100 %, sin sombra exterior.
+- Margen izquierdo visualmente mayor que el derecho, reproduciendo la composición editorial del mockup.
+- No existe una cuadrícula global de cards: los contenedores aparecen únicamente cuando son parte de una figura.
 
-## 1. Retícula
-
-- Página: una única columna editorial, sin sidebar, breadcrumbs ni navegación lateral.
-- Ancho útil de contenido: aproximadamente **88 %** de la página.
-- Margen izquierdo visible: aproximadamente **8 %**.
-- Margen derecho visible: aproximadamente **4–5 %**.
-- Cabecera superior: una línea con dos referencias pequeñas, izquierda y derecha.
-- No existe una cuadrícula de tarjetas general. Los bloques especiales aparecen solo cuando el contenido lo exige.
-- **Ajuste web aprobado tras Puerta A:** el lienzo de escritorio puede ser algo más ancho que la primera traducción literal del mockup. Se fija como referencia de implementación un máximo aproximado de **820 px**, manteniendo las proporciones internas y sin aumentar la densidad de componentes.
-
-## 2. Jerarquía vertical observada
-
-Tomando el alto de referencia como 100 %:
+## Jerarquía vertical de referencia
 
 | Elemento | Inicio aprox. | Fin aprox. |
 |---|---:|---:|
@@ -33,117 +26,85 @@ Tomando el alto de referencia como 100 %:
 | Visual de dos estados | 31 % | 46 % |
 | Sección 2: título + texto | 49 % | 54 % |
 | Visual 1/2/3 bits | 56 % | 64 % |
-| Regla 2^n | 65 % | 68 % |
+| Regla `2^n` | 65 % | 68 % |
 | Sección 3: título + texto | 70 % | 75 % |
 | Explorador | 76 % | 85 % |
 | Sección 4: título + texto | 87 % | 92 % |
 | Fórmula inversa + nota | 93 % | 97 % |
 | Pie | 98 % | 100 % |
 
-## 3. Tipografía — especificación funcional, no selección final
+## Tipografía aprobada
 
-El mockup utiliza un lenguaje serif editorial prácticamente continuo. En esta fase no se selecciona todavía la familia definitiva.
+- **Source Serif 4**: tipografía editorial base para cabecera, título, cuerpo, etiquetas y matemáticas.
+- **Caveat**: reservada exclusivamente para las dos anotaciones manuscritas.
+- No se añaden más familias.
 
-Funciones observadas:
+Jerarquía relativa, tomando el cuerpo como `1`:
 
-1. **Cabecera secundaria**: serif pequeña, regular.
-2. **Kicker**: serif o display serif, mayúsculas, peso medio/alto, tracking ligero.
-3. **Título principal**: serif de alto contraste, muy pesado, dos líneas, interlineado muy compacto.
-4. **Pregunta/deck**: serif regular, sensiblemente menor que el título.
-5. **Títulos de sección**: serif negrita.
-6. **Cuerpo**: serif regular, compacto.
-7. **Etiquetas dentro de gráficos**: pueden ser sans o serif, pero se consideran parte de la figura, no de la tipografía editorial base.
+- cabecera `0.72`;
+- kicker `0.95`;
+- título `2.7–3.0`;
+- deck `1.15`;
+- título de sección `1.25–1.35`;
+- cuerpo `1`;
+- pie `0.68`.
 
-### Regla de control
+## Paleta aprobada
 
-Durante Puerta A se usa **una única serif neutral** para comprobar proporciones. No se incorporará una segunda familia hasta la Fase 4 del protocolo.
+- papel crema: `#FBF7EF`;
+- tinta azul-negruzca: `#132A3A`;
+- terracota principal: `#C45432`;
+- terracota de texto accesible: `#A9452A`;
+- melocotón pálido: `#F4E5D5`;
+- ámbar de estado encendido: `#E3A23E`.
 
-## 4. Escala tipográfica relativa
+La variante oscura del terracota se usa solo en texto pequeño para mejorar contraste; no introduce una función cromática nueva.
 
-Tomando el cuerpo como `1`:
+## Patrones presentes
 
-- Cabecera superior: `0.72`
-- Kicker: `0.95`
-- Título principal: `2.7–3.0`
-- Deck: `1.15`
-- Título de sección: `1.25–1.35`
-- Cuerpo: `1`
-- Pie: `0.68`
+1. Cabecera editorial mínima.
+2. Título + pregunta.
+3. Sección textual corta.
+4. Dos estados + anotación lateral.
+5. Comparación 1/2/3 bits.
+6. Regla/formalización `2^n`.
+7. Explorador en dos masas: control/patrones + total.
+8. Fórmula inversa + anotación manuscrita.
+9. Pie mínimo.
 
-El título debe dominar la página sin convertir la cabecera en un hero web de pantalla completa.
+No se admiten patrones nuevos sin justificación pedagógica o aprobación explícita.
 
-## 5. Patrones de composición visibles
-
-El mockup de 1.2 utiliza solo estos patrones:
-
-1. **Cabecera editorial mínima**.
-2. **Título + pregunta**.
-3. **Sección textual corta**.
-4. **Texto + figura protagonista en una misma banda vertical**.
-5. **Tres comparaciones alineadas** (1, 2, 3 bits).
-6. **Regla/formalización a ancho completo**.
-7. **Interacción en dos columnas**: control/patrones a la izquierda; resultado a la derecha.
-8. **Fórmula final + anotación lateral**.
-9. **Pie de página mínimo**.
-
-No aparecen tarjetas genéricas repetidas, navegación lateral ni grandes contenedores UI.
-
-## 6. Figuras — función y tratamiento en Puerta A
+## Figuras aprobadas
 
 ### Dos estados
-- Función: visualizar que dos estados físicos distinguibles bastan como base de representación.
-- Mockup: dos estados alineados + anotación editorial a la derecha.
-- Puerta A: usar **placeholders geométricos en gris** con la misma ocupación espacial.
+Interruptor y bombilla redibujados en SVG; apagado y encendido deben resultar distinguibles sin depender únicamente del color.
 
 ### 1 / 2 / 3 bits
-- Función: hacer visible el crecimiento `2 → 4 → 8` antes de formalizar `2^n`.
-- Mockup: tres columnas de anchura similar y fondo tenue.
-- Puerta A: conservar exactamente la disposición en tres columnas, sin color.
+Tres comparaciones alineadas que hacen visible `2 → 4 → 8` antes de la regla `2^n`.
 
 ### Explorador
-- Función: probar combinaciones y enfatizar el total.
-- Mockup: panel de control/patrones a la izquierda y total grande a la derecha.
-- Puerta A: **estático**. Sin JavaScript.
+Estado inicial de 3 bits, como en el mockup. Interactividad limitada a 1–4 bits para poder mostrar todas las combinaciones sin romper la composición editorial.
 
 ### Fórmula inversa
-- Función: pasar de «n bits → patrones» a «N elementos → bits necesarios».
-- Mockup: fórmula centrada en una banda y anotación corta a la derecha.
-- Puerta A: mantener composición, sin manuscrita final.
+`n = ⌈log₂ N⌉` en banda melocotón con anotación manuscrita lateral.
 
-## 7. Espaciado
+## Responsive de control
 
-- Separación título → deck: pequeña.
-- Separación deck → regla: media.
-- Regla → primera sección: media.
-- Secciones: separadas por aire, no por contenedores.
-- Visuales: integrados en el flujo, no flotantes ni dentro de cards generales.
-- El ritmo es **denso pero respirable**: no hay grandes zonas vacías de hero web.
+Las anchuras de referencia son:
 
-## 8. Prohibiciones durante Puerta A
+- **1440 px**: lienzo centrado de 720 px;
+- **1024 px**: misma escala editorial;
+- **390 px**: flujo móvil; figuras complejas pasan a una columna y los dos estados permanecen en paralelo.
 
-- Color.
-- Sombras.
-- Gradientes.
-- `border-radius` decorativo.
-- Fuentes externas.
-- JavaScript.
-- Quarto.
-- Sidebar.
-- Breadcrumbs.
-- Iconos decorativos.
-- Ilustraciones finales.
-- Post-its reales o caligrafía manuscrita.
-- Nuevos patrones no presentes en el mockup.
+## Reglas de implementación
 
-## 9. Criterio de la Puerta A
+- El prototipo final es HTML/CSS/JS independiente.
+- El CSS final no importa estilos de gates anteriores.
+- El control interactivo es un `input[type=range]` nativo y operable por teclado.
+- Las actualizaciones dinámicas se anuncian mediante un `output` con `aria-live="polite"`.
+- Se respeta `prefers-reduced-motion`.
+- Quarto permanece fuera hasta la aprobación global de la lección.
 
-La reconstrucción solo avanza si, vista en escala de grises y sin ilustraciones terminadas:
+## Próximo gate humano
 
-- mantiene la misma jerarquía;
-- mantiene una densidad comparable;
-- mantiene el mismo orden y peso relativo de bloques;
-- la relación texto/visual recuerda inmediatamente a la referencia;
-- no parece una landing page ni documentación técnica;
-- no necesita color para que se entienda la composición.
-
-Hasta que esta puerta se apruebe, **no se seleccionan fuentes definitivas, no se colorea, no se dibujan figuras finales y no se introduce interactividad**.
+No se solicitan más validaciones de componentes. La siguiente validación es únicamente **la lección 1.2 completa**. Tras aprobarla se extraerá el **Design System v1** y se aplicará a la lección 1.1 antes de integrar Quarto.
