@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lección 1.5 · ¿Cómo ejecuta un programa? – Fundamentos de Informática</title>
+<title>Prácticas – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,79 +32,45 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<link rel="stylesheet" href="../../styles/book.css">
-<link rel="stylesheet" href="../../styles/tema1.css">
-<link rel="stylesheet" href="../../styles/exercises.css">
-<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../styles/book.css">
+<link rel="stylesheet" href="../styles/tema1.css">
+<link rel="stylesheet" href="../styles/exercises.css">
+<link rel="stylesheet" href="../styles/navigation.css">
 </head>
 
 <body>
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Lección 1.5 · ¿Cómo ejecuta un programa?</span></h1>
+<h1 class="title"><span class="chapter-title">Prácticas</span></h1>
 
 </header>
 
 
-<article class="sheet lesson-1-5" aria-label="Lección 1.5: cómo ejecuta un programa un computador">
-  <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>1.5 Ejecución de programas</span></header>
+<article class="sheet practice-index" aria-label="Portada provisional de prácticas">
+  <header class="running-head"><span>Fundamentos de Informática</span><span>Parte II · Prácticas</span></header>
 
   <section class="opening">
-    <p class="kicker">LECCIÓN 1.5</p>
-    <h1>¿Cómo ejecuta<br>un programa?</h1>
-    <p class="deck">Un programa está almacenado como instrucciones y datos. Ejecutarlo consiste en repetir una secuencia coordinada de lecturas, decisiones y operaciones.</p>
+    <p class="kicker">PARTE II · PRÁCTICAS</p>
+    <h1>Prácticas</h1>
+    <p class="deck">Esta portada es provisional y existe únicamente para validar el sistema de navegación entre teoría y prácticas. Su organización pedagógica se decidirá más adelante.</p>
     <div class="short-rule" aria-hidden="true"></div>
   </section>
 
   <section class="lesson-section">
-    <h2>1. CPU y memoria trabajan en ciclo</h2>
-    <p>Las diapositivas originales muestran el proceso mediante una revelación progresiva de flechas entre memoria, unidad de control, registros y ALU. Lo condensamos en cuatro momentos que se repiten una y otra vez.</p>
-    <div class="execution-cycle" aria-label="Ciclo simplificado de ejecución de una instrucción">
-      <div class="cycle-step"><b>1</b><strong>Leer</strong><span>La CPU solicita a memoria la instrucción o el dato que necesita.</span></div>
-      <div class="cycle-step"><b>2</b><strong>Llevar a la CPU</strong><span>La información llega a un registro para poder trabajar con ella.</span></div>
-      <div class="cycle-step"><b>3</b><strong>Controlar y operar</strong><span>La unidad de control dirige la acción y la ALU realiza la operación cuando corresponde.</span></div>
-      <div class="cycle-step"><b>4</b><strong>Guardar y continuar</strong><span>El resultado se conserva en un registro o memoria y comienza la siguiente operación.</span></div>
-    </div>
-    <div class="cycle-map" aria-hidden="true"><span>Memoria</span><i>→</i><span>Registro</span><i>→</i><span>CU / ALU</span><i>→</i><span>Resultado</span><i>↺</i></div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>2. El reloj marca el ritmo</h2>
-    <p>El procesador se sincroniza mediante un <strong>reloj</strong>. Su frecuencia indica cuántos ciclos se producen por segundo y suele expresarse en MHz o GHz. Una instrucción puede necesitar varios ciclos.</p>
-    <div class="clock-figure soft-panel" aria-label="Señal de reloj con ciclos regulares">
-      <span class="clock-label">reloj</span>
-      <svg viewbox="0 0 410 72" role="img" aria-label="Onda cuadrada que representa ciclos de reloj"><path d="M10 52 H45 V18 H90 V52 H135 V18 H180 V52 H225 V18 H270 V52 H315 V18 H360 V52 H400" fill="none" stroke="#C45432" stroke-width="4" stroke-linejoin="round"></path><path d="M45 62 H90" stroke="#132A3A" stroke-width="1.5"></path><path d="M45 58 V66 M90 58 V66" stroke="#132A3A" stroke-width="1.5"></path><text x="67" y="70" text-anchor="middle">1 ciclo</text></svg>
+    <h2>Estructura visual preparada</h2>
+    <p>El menú puede organizar las prácticas por temas y, dentro de cada tema, por prácticas y secciones internas sin cambiar el lenguaje visual del libro.</p>
+    <div class="practice-structure" aria-label="Estructura provisional de navegación de prácticas">
+      <div><b>Temas</b><span>Primer nivel de agrupación, paralelo a la teoría.</span></div>
+      <div><b>Prácticas</b><span>Segundo nivel dentro de cada tema.</span></div>
+      <div><b>Secciones</b><span>Tercer nivel cuando una práctica necesite pasos o apartados.</span></div>
     </div>
   </section>
 
-  <section class="lesson-section">
-    <h2>3. Del número de instrucciones al tiempo de ejecución</h2>
-    <p>Si un programa ejecuta <strong>NI</strong> instrucciones, cada instrucción necesita por término medio <strong>CPI</strong> ciclos y el reloj funciona a una frecuencia <strong>f</strong>, el tiempo de CPU puede expresarse como:</p>
-    <div class="execution-formula"><span>t<sub>e</sub> =</span><strong>NI × CPI</strong><i>/</i><span>f</span></div>
-    <div class="source-exercise">
-      <strong>Ejemplo del material original</strong>
-      <p>10.000 instrucciones, 4 ciclos por instrucción y una frecuencia de 1 GHz.</p>
-      <div class="calculation">t<sub>e</sub> = (10.000 × 4) / 10<sup>9</sup> s = 40 × 10<sup>−6</sup> s = <strong>40 μs</strong></div>
-    </div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>4. ¿Cómo hablamos de rendimiento?</h2>
-    <p>El material introduce varias medidas relacionadas, pero no equivalentes: la frecuencia de reloj, los <strong>MIPS</strong> (millones de instrucciones máquina por segundo) y los <strong>MFLOPS</strong> (millones de operaciones en coma flotante por segundo).</p>
-    <div class="metric-row">
-      <div><strong>Frecuencia</strong><span>ciclos / segundo</span></div>
-      <div><strong>MIPS</strong><span>instrucciones / segundo</span></div>
-      <div><strong>MFLOPS</strong><span>operaciones en coma flotante / segundo</span></div>
-    </div>
-    <aside class="annotation-note metric-note">Una cifra aislada no describe todo el comportamiento: primero hay que saber <em>qué</em> está contando.</aside>
-    <p class="bridge-question">Hasta ahora hemos hablado de “un computador”. Pero <strong>hay muchas formas de organizar y utilizar estas máquinas</strong>.</p>
-  </section>
-
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>8</span></footer>
+  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Prácticas</span></footer>
 </article>
 
-<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="04-comunicacion.html">← Lección 1.4</a><a href="06-tipos.html">Lección 1.6 →</a></nav>
+<nav class="lesson-nav" aria-label="Navegación del libro"><a href="../index.html">← Portada del libro</a><a href="../teoria/tema1/01-que-es-computador.html">Ir a Teoría →</a></nav>
 
 
 <div class="book-navigation" data-book-navigation="">
@@ -187,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </aside>
 
-  <script src="../../fundamentos-informatica/book/assets/navigation.js"></script>
+  <script src="../fundamentos-informatica/book/assets/navigation.js"></script>
 </div>
 
 

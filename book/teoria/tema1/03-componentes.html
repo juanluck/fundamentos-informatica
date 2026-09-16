@@ -35,6 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles/book.css">
 <link rel="stylesheet" href="../../styles/tema1.css">
 <link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
 </head>
 
 <body>
@@ -109,6 +110,88 @@ ul.task-list li input[type="checkbox"] {
 <nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="02-representacion.html">← Lección 1.2</a><a href="04-comunicacion.html">Lección 1.4 →</a></nav>
 
 
+<div class="book-navigation" data-book-navigation="">
+  <header class="book-toolbar" aria-label="Navegación principal del libro">
+    <button class="book-menu-button" type="button" data-nav-open="" aria-controls="book-drawer" aria-expanded="false">
+      <span class="menu-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Índice</span>
+    </button>
+    <a class="book-brand" data-book-home="" href="#">Fundamentos de Informática</a>
+    <div class="book-location" aria-label="Ubicación actual">
+      <span data-nav-part="">Teoría</span><i aria-hidden="true">›</i><span data-nav-location="">Tema 1</span>
+    </div>
+    <button class="book-part-button" type="button" data-nav-part-button="" aria-controls="book-drawer" aria-expanded="false">
+      <span class="part-roman" data-nav-part-roman="">I</span>
+      <span data-nav-part-button-label="">Teoría</span>
+      <i aria-hidden="true">⌄</i>
+    </button>
+  </header>
+
+  <div class="book-nav-backdrop" data-nav-backdrop="" hidden=""></div>
+
+  <aside class="book-drawer" id="book-drawer" role="dialog" aria-modal="true" aria-label="Índice del libro" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <span class="drawer-kicker">FUNDAMENTOS DE INFORMÁTICA</span>
+        <strong>Índice del libro</strong>
+      </div>
+      <button class="drawer-close" type="button" data-nav-close="" aria-label="Cerrar índice">×</button>
+    </div>
+
+    <div class="drawer-parts" role="tablist" aria-label="Partes del libro">
+      <button type="button" role="tab" class="drawer-part is-active" data-part-tab="theory" aria-selected="true">
+        <span>I</span><strong>Teoría</strong>
+      </button>
+      <button type="button" role="tab" class="drawer-part" data-part-tab="practice" aria-selected="false">
+        <span>II</span><strong>Prácticas</strong>
+      </button>
+    </div>
+
+    <div class="drawer-scroll">
+      <section class="drawer-panel is-active" data-part-panel="theory" aria-label="Teoría">
+        <p class="drawer-part-label">PARTE I · TEORÍA</p>
+
+        <details class="nav-theme" open="" data-theme="tema1">
+          <summary><span><b>Tema 1</b><small>Introducción a los computadores</small></span><i aria-hidden="true"></i></summary>
+          <nav class="nav-sections" aria-label="Secciones del Tema 1">
+            <a data-book-path="teoria/tema1/01-que-es-computador.html"><span>1.1</span><strong>¿Qué es un computador?</strong></a>
+            <a data-book-path="teoria/tema1/02-representacion.html"><span>1.2</span><strong>¿Cómo representa la información?</strong></a>
+            <a data-book-path="teoria/tema1/03-componentes.html"><span>1.3</span><strong>¿Qué hay dentro de un computador?</strong></a>
+            <a data-book-path="teoria/tema1/04-comunicacion.html"><span>1.4</span><strong>¿Cómo se comunican sus componentes?</strong></a>
+            <a data-book-path="teoria/tema1/05-ejecucion.html"><span>1.5</span><strong>¿Cómo ejecuta un programa?</strong></a>
+            <a data-book-path="teoria/tema1/06-tipos.html"><span>1.6</span><strong>¿Todos los computadores son iguales?</strong></a>
+            <a data-book-path="teoria/tema1/07-software.html"><span>1.7</span><strong>¿Qué papel juega el software?</strong></a>
+            <a data-book-path="teoria/tema1/ejercicios.html"><span>•</span><strong>Ejercicios y autoevaluación</strong></a>
+          </nav>
+        </details>
+
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 2</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 3</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 4</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+      </section>
+
+      <section class="drawer-panel" data-part-panel="practice" aria-label="Prácticas" hidden="">
+        <p class="drawer-part-label">PARTE II · PRÁCTICAS</p>
+        <a class="practice-entry" data-book-path="practicas/index.html"><span>II</span><strong>Portada de prácticas</strong><i aria-hidden="true">→</i></a>
+
+        <details class="nav-theme" open="">
+          <summary><span><b>Tema 1</b><small>Área de prácticas</small></span><i aria-hidden="true"></i></summary>
+          <div class="nav-placeholder">Las prácticas concretas se incorporarán aquí cuando abordemos su estructura pedagógica.</div>
+        </details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 2</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 3</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 4</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+      </section>
+    </div>
+
+    <div class="drawer-foot">
+      <a data-book-home="" href="#">Portada del libro</a>
+      <span>El menú organiza; la página sigue siendo el libro.</span>
+    </div>
+  </aside>
+
+  <script src="../../fundamentos-informatica/book/assets/navigation.js"></script>
+</div>
 
 
 
