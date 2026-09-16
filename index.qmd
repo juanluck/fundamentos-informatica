@@ -5,6 +5,7 @@ page-navigation: false
 toc: false
 ---
 
+```{=html}
 <article class="sheet book-index" aria-label="Fundamentos de Informática">
   <header class="running-head"><span>Fundamentos de Informática</span><span>Libro digital</span></header>
 
@@ -29,3 +30,4 @@ toc: false
 
   <footer class="running-foot"><span>Fundamentos de Informática</span><span>Tema 1</span></footer>
 </article>
+```
