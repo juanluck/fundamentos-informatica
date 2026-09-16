@@ -76,9 +76,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -196,50 +193,21 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#qué-es-un-computador" id="toc-qué-es-un-computador" class="nav-link active" data-scroll-target="#qué-es-un-computador"><span class="header-section-number">2.1</span> ¿Qué es un computador?</a>
+  <li><a href="#sec-que-es-computador" id="toc-sec-que-es-computador" class="nav-link active" data-scroll-target="#sec-que-es-computador"><span class="header-section-number">3.1</span> 1.1 ¿Qué es un computador?</a>
   <ul class="collapse">
-  <li><a href="#datos-e-información" id="toc-datos-e-información" class="nav-link" data-scroll-target="#datos-e-información"><span class="header-section-number">2.1.1</span> Datos e información</a></li>
-  <li><a href="#hardware-y-software" id="toc-hardware-y-software" class="nav-link" data-scroll-target="#hardware-y-software"><span class="header-section-number">2.1.2</span> Hardware y software</a></li>
+  <li><a href="#información-y-datos" id="toc-información-y-datos" class="nav-link" data-scroll-target="#información-y-datos"><span class="header-section-number">3.1.2</span> Información y datos</a></li>
+  <li><a href="#hardware-y-software-dos-piezas-de-una-misma-historia" id="toc-hardware-y-software-dos-piezas-de-una-misma-historia" class="nav-link" data-scroll-target="#hardware-y-software-dos-piezas-de-una-misma-historia"><span class="header-section-number">3.1.4</span> Hardware y software: dos piezas de una misma historia</a></li>
   </ul></li>
-  <li><a href="#cómo-representa-la-información" id="toc-cómo-representa-la-información" class="nav-link" data-scroll-target="#cómo-representa-la-información"><span class="header-section-number">2.2</span> ¿Cómo representa la información?</a>
+  <li><a href="#sec-representacion" id="toc-sec-representacion" class="nav-link" data-scroll-target="#sec-representacion"><span class="header-section-number">3.2</span> 1.2 ¿Cómo representa la información?</a>
   <ul class="collapse">
-  <li><a href="#el-bit" id="toc-el-bit" class="nav-link" data-scroll-target="#el-bit"><span class="header-section-number">2.2.1</span> El bit</a></li>
-  <li><a href="#de-combinaciones-a-códigos" id="toc-de-combinaciones-a-códigos" class="nav-link" data-scroll-target="#de-combinaciones-a-códigos"><span class="header-section-number">2.2.2</span> De combinaciones a códigos</a></li>
-  <li><a href="#del-bit-al-byte" id="toc-del-bit-al-byte" class="nav-link" data-scroll-target="#del-bit-al-byte"><span class="header-section-number">2.2.3</span> Del bit al byte</a></li>
+  <li><a href="#letras-imágenes-sonido-con-solo-0-y-1" id="toc-letras-imágenes-sonido-con-solo-0-y-1" class="nav-link" data-scroll-target="#letras-imágenes-sonido-con-solo-0-y-1"><span class="header-section-number">3.2.1</span> Letras, imágenes, sonido… ¿con solo 0 y 1?</a></li>
+  <li><a href="#el-bit-la-pieza-mínima" id="toc-el-bit-la-pieza-mínima" class="nav-link" data-scroll-target="#el-bit-la-pieza-mínima"><span class="header-section-number">3.2.2</span> El bit: la pieza mínima</a></li>
+  <li><a href="#una-historia-para-recordar-las-potencias-de-2" id="toc-una-historia-para-recordar-las-potencias-de-2" class="nav-link" data-scroll-target="#una-historia-para-recordar-las-potencias-de-2"><span class="header-section-number">3.2.3</span> Una historia para recordar las potencias de 2</a></li>
+  <li><a href="#cuántos-bits-necesito" id="toc-cuántos-bits-necesito" class="nav-link" data-scroll-target="#cuántos-bits-necesito"><span class="header-section-number">3.2.4</span> ¿Cuántos bits necesito?</a></li>
+  <li><a href="#del-bit-al-byte" id="toc-del-bit-al-byte" class="nav-link" data-scroll-target="#del-bit-al-byte"><span class="header-section-number">3.2.5</span> Del bit al byte</a></li>
+  <li><a href="#bit-y-byte-una-diferencia-pequeña-en-la-letra-enorme-en-el-cálculo" id="toc-bit-y-byte-una-diferencia-pequeña-en-la-letra-enorme-en-el-cálculo" class="nav-link" data-scroll-target="#bit-y-byte-una-diferencia-pequeña-en-la-letra-enorme-en-el-cálculo"><span class="header-section-number">3.2.6</span> Bit y byte: una diferencia pequeña en la letra, enorme en el cálculo</a></li>
   </ul></li>
-  <li><a href="#qué-hay-dentro-de-un-computador" id="toc-qué-hay-dentro-de-un-computador" class="nav-link" data-scroll-target="#qué-hay-dentro-de-un-computador"><span class="header-section-number">2.3</span> ¿Qué hay dentro de un computador?</a>
-  <ul class="collapse">
-  <li><a href="#el-procesador" id="toc-el-procesador" class="nav-link" data-scroll-target="#el-procesador"><span class="header-section-number">2.3.1</span> El procesador</a></li>
-  <li><a href="#la-memoria" id="toc-la-memoria" class="nav-link" data-scroll-target="#la-memoria"><span class="header-section-number">2.3.2</span> La memoria</a></li>
-  <li><a href="#palabra-y-registros" id="toc-palabra-y-registros" class="nav-link" data-scroll-target="#palabra-y-registros"><span class="header-section-number">2.3.3</span> Palabra y registros</a></li>
-  </ul></li>
-  <li><a href="#cómo-se-comunican-sus-componentes" id="toc-cómo-se-comunican-sus-componentes" class="nav-link" data-scroll-target="#cómo-se-comunican-sus-componentes"><span class="header-section-number">2.4</span> ¿Cómo se comunican sus componentes?</a>
-  <ul class="collapse">
-  <li><a href="#bus-de-direcciones-dónde" id="toc-bus-de-direcciones-dónde" class="nav-link" data-scroll-target="#bus-de-direcciones-dónde"><span class="header-section-number">2.4.1</span> Bus de direcciones: ¿dónde?</a></li>
-  <li><a href="#bus-de-datos-qué-contenido" id="toc-bus-de-datos-qué-contenido" class="nav-link" data-scroll-target="#bus-de-datos-qué-contenido"><span class="header-section-number">2.4.2</span> Bus de datos: ¿qué contenido?</a></li>
-  </ul></li>
-  <li><a href="#cómo-ejecuta-un-programa" id="toc-cómo-ejecuta-un-programa" class="nav-link" data-scroll-target="#cómo-ejecuta-un-programa"><span class="header-section-number">2.5</span> ¿Cómo ejecuta un programa?</a>
-  <ul class="collapse">
-  <li><a href="#el-reloj-y-la-frecuencia" id="toc-el-reloj-y-la-frecuencia" class="nav-link" data-scroll-target="#el-reloj-y-la-frecuencia"><span class="header-section-number">2.5.1</span> El reloj y la frecuencia</a></li>
-  <li><a href="#cpi-y-tiempo-de-cpu" id="toc-cpi-y-tiempo-de-cpu" class="nav-link" data-scroll-target="#cpi-y-tiempo-de-cpu"><span class="header-section-number">2.5.2</span> CPI y tiempo de CPU</a></li>
-  <li><a href="#mips-y-flops" id="toc-mips-y-flops" class="nav-link" data-scroll-target="#mips-y-flops"><span class="header-section-number">2.5.3</span> MIPS y FLOPS</a></li>
-  </ul></li>
-  <li><a href="#todos-los-computadores-son-iguales" id="toc-todos-los-computadores-son-iguales" class="nav-link" data-scroll-target="#todos-los-computadores-son-iguales"><span class="header-section-number">2.6</span> ¿Todos los computadores son iguales?</a>
-  <ul class="collapse">
-  <li><a href="#propósito-general-y-propósito-específico" id="toc-propósito-general-y-propósito-específico" class="nav-link" data-scroll-target="#propósito-general-y-propósito-específico"><span class="header-section-number">2.6.1</span> Propósito general y propósito específico</a></li>
-  <li><a href="#cpu-y-mcu" id="toc-cpu-y-mcu" class="nav-link" data-scroll-target="#cpu-y-mcu"><span class="header-section-number">2.6.2</span> CPU y MCU</a></li>
-  </ul></li>
-  <li><a href="#qué-papel-juega-el-software" id="toc-qué-papel-juega-el-software" class="nav-link" data-scroll-target="#qué-papel-juega-el-software"><span class="header-section-number">2.7</span> ¿Qué papel juega el software?</a>
-  <ul class="collapse">
-  <li><a href="#software-de-sistema" id="toc-software-de-sistema" class="nav-link" data-scroll-target="#software-de-sistema"><span class="header-section-number">2.7.1</span> Software de sistema</a></li>
-  <li><a href="#aplicaciones" id="toc-aplicaciones" class="nav-link" data-scroll-target="#aplicaciones"><span class="header-section-number">2.7.2</span> Aplicaciones</a></li>
-  <li><a href="#lenguajes-y-traducción" id="toc-lenguajes-y-traducción" class="nav-link" data-scroll-target="#lenguajes-y-traducción"><span class="header-section-number">2.7.3</span> Lenguajes y traducción</a></li>
-  <li><a href="#software-como-herramienta-de-ingeniería" id="toc-software-como-herramienta-de-ingeniería" class="nav-link" data-scroll-target="#software-como-herramienta-de-ingeniería"><span class="header-section-number">2.7.4</span> Software como herramienta de ingeniería</a></li>
-  </ul></li>
-  <li><a href="#cierre-del-clic-al-resultado" id="toc-cierre-del-clic-al-resultado" class="nav-link" data-scroll-target="#cierre-del-clic-al-resultado"><span class="header-section-number">3</span> Cierre · Del clic al resultado</a>
-  <ul class="collapse">
-  <li><a href="#problemas-integradores" id="toc-problemas-integradores" class="nav-link" data-scroll-target="#problemas-integradores"><span class="header-section-number">3.1</span> Problemas integradores</a></li>
-  </ul></li>
+  <li><a href="#la-historia-continúa" id="toc-la-historia-continúa" class="nav-link" data-scroll-target="#la-historia-continúa"><span class="header-section-number">3.3</span> La historia continúa</a></li>
   </ul>
 </nav>
     </div>
@@ -249,7 +217,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../teoria/01-introduccion.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../teoria/01-introduccion.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tema 1 · Introducción a los computadores</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tema 1 · Introducción a los computadores</span></h1>
-<p class="subtitle lead">Prototipo pedagógico</p>
+<p class="subtitle lead">Del mundo físico a la información digital</p>
 </div>
 
 
@@ -266,83 +234,169 @@ window.Quarto = {
 </header>
 
 
-<p>¿Qué ocurre realmente desde que pulsamos una tecla, abrimos una aplicación o reproducimos un vídeo hasta que el computador nos devuelve un resultado?</p>
-<p>Este tema construye una primera respuesta. No intentaremos conocer todavía todos los detalles de un computador. Empezaremos por una idea muy sencilla —<strong>procesar información</strong>— e iremos abriendo la caja poco a poco.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A[Información] --&gt; B[Bits y bytes]
-    B --&gt; C[CPU, memoria y E/S]
-    C --&gt; D[Comunicación]
-    D --&gt; E[Ejecución de programas]
-    E --&gt; F[Tipos de computadores]
-    F --&gt; G[Software]
-</pre>
+<div class="chapter-hero">
+<div class="chapter-hero-copy">
+<p><span class="eyebrow">TEMA 1 · PROTOTIPO VISUAL</span></p>
+<section id="qué-hace-realmente-un-computador" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> ¿Qué hace realmente un computador?</h1>
+<p>Escribimos, escuchamos música, enviamos fotografías o ejecutamos programas. Para nosotros son actividades muy distintas. Para el computador, todas terminan convirtiéndose en <strong>información representada mediante patrones que puede almacenar y transformar</strong>.</p>
+<p>Este tema empieza construyendo esa idea desde cero.</p>
+</section>
 </div>
-<p></p></figure><p></p>
-</div>
+<div class="chapter-hero-art">
+<p><img src="../assets/tema1/informacion-computador.svg" class="img-fluid" alt="Texto, imágenes y sonido se codifican como patrones de bits que puede procesar un computador."></p>
 </div>
 </div>
 <div class="objetivos">
 <p><span class="component-kicker">Objetivos</span></p>
-<p>Al finalizar el tema deberías poder:</p>
+<p>En este primer recorrido vamos a construir cuatro ideas que utilizaremos durante todo el curso:</p>
 <ul>
-<li>explicar qué entendemos por computador, dato e información;</li>
-<li>razonar por qué los computadores utilizan representaciones binarias;</li>
-<li>relacionar número de bits y número de combinaciones posibles;</li>
-<li>reconocer las principales unidades funcionales de un computador;</li>
-<li>distinguir el papel del bus de datos y del bus de direcciones;</li>
-<li>describir de forma intuitiva cómo se ejecuta un programa;</li>
-<li>interpretar magnitudes básicas de prestaciones;</li>
-<li>reconocer que distintos computadores responden a necesidades diferentes;</li>
-<li>distinguir las principales capas y categorías de software.</li>
+<li>un computador <strong>recibe, representa, almacena y procesa información</strong>;</li>
+<li>un mismo patrón físico puede adquirir significados distintos según el código utilizado;</li>
+<li>con <span class="math inline">\(n\)</span> bits podemos construir <span class="math inline">\(2^n\)</span> patrones diferentes;</li>
+<li>bits y bytes son la base para expresar información y capacidad.</li>
 </ul>
 </div>
-<section id="qué-es-un-computador" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="qué-es-un-computador"><span class="header-section-number">2.1</span> ¿Qué es un computador?</h2>
-<p>Antes de hablar de procesadores, memoria o programas conviene responder una pregunta más básica: <strong>¿qué hace un computador?</strong></p>
-<p>Podemos observarlo como una caja que recibe datos, realiza algún procesamiento y produce un resultado.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    E[Datos de entrada] --&gt; C[Computador]
-    C --&gt; S[Resultados]
-</pre>
+<div class="visual-roadmap">
+<div class="roadmap-step roadmap-active">
+<span>1.1</span><strong>¿Qué es un computador?</strong>
 </div>
-<p></p></figure><p></p>
+<div class="roadmap-arrow">
+→
+</div>
+<div class="roadmap-step roadmap-active">
+<span>1.2</span><strong>¿Cómo representa información?</strong>
+</div>
+<div class="roadmap-arrow">
+→
+</div>
+<div class="roadmap-step">
+<span>1.3</span><strong>¿Qué hay dentro?</strong>
+</div>
+<div class="roadmap-arrow">
+→
+</div>
+<div class="roadmap-step">
+<span>1.4+</span><strong>¿Cómo funciona todo junto?</strong>
+</div>
+</div>
+<section id="sec-que-es-computador" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-que-es-computador"><span class="header-section-number">3.1</span> 1.1 ¿Qué es un computador?</h2>
+<div class="lesson-opening">
+<div class="lesson-opening-copy">
+<p><span class="eyebrow">UNA PRIMERA IDEA</span></p>
+<section id="antes-de-abrir-la-caja" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="antes-de-abrir-la-caja"><span class="header-section-number">3.1.1</span> Antes de abrir la caja</h3>
+<p>Un portátil, un teléfono, una consola y la centralita de un automóvil tienen aspectos y usos muy distintos. Sin embargo, podemos empezar a entenderlos con una idea común:</p>
+<blockquote class="blockquote">
+<p><strong>reciben información, realizan un procesamiento y producen algún resultado.</strong></p>
+</blockquote>
+<p>Todavía no necesitamos saber qué procesador utilizan ni qué ocurre dentro de la memoria.</p>
+</section>
+</div>
+<div class="lesson-opening-visual">
+<div class="ipo-diagram">
+<div class="ipo-node">
+<span>ENTRADA</span><strong>datos</strong><small>teclas, imagen, medida…</small>
+</div>
+<div class="ipo-arrow">
+→
+</div>
+<div class="ipo-node ipo-main">
+<span>PROCESAMIENTO</span><strong>computador</strong><small>aplica instrucciones</small>
+</div>
+<div class="ipo-arrow">
+→
+</div>
+<div class="ipo-node">
+<span>SALIDA</span><strong>resultado</strong><small>pantalla, sonido, acción…</small>
 </div>
 </div>
 </div>
-<p>Cuando escribes una palabra, el teclado proporciona datos de entrada. Cuando una aplicación calcula una ruta, procesa datos. Cuando la pantalla muestra el mapa, estás viendo el resultado de ese procesamiento.</p>
+</div>
+<section id="información-y-datos" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="información-y-datos"><span class="header-section-number">3.1.2</span> Información y datos</h3>
+<p>Imagina que recibes únicamente este valor:</p>
+<div class="big-data-token">
+23
+</div>
+<p>¿Es una temperatura? ¿Una edad? ¿El número de estudiantes de un grupo? ¿Una dirección de memoria?</p>
+<p>El símbolo por sí solo no nos lo dice. Necesitamos conocer <strong>qué representa</strong> y <strong>cómo debe interpretarse</strong>.</p>
 <div class="concepto-clave">
 <p><span class="component-kicker">Concepto clave</span></p>
-<p>La <strong>informática</strong> estudia el tratamiento automático de la información mediante sistemas capaces de representar, almacenar y procesar datos.</p>
-<p>Un <strong>computador</strong> es una máquina programable que procesa información representada de una forma que puede manipular físicamente.</p>
+<p>Un <strong>dato</strong> es una representación que puede ser almacenada, transmitida o procesada. Hablamos de <strong>información</strong> cuando esa representación se interpreta dentro de un contexto y adquiere significado.</p>
 </div>
-<section id="datos-e-información" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="datos-e-información"><span class="header-section-number">2.1.1</span> Datos e información</h3>
-<p>Los términos <em>dato</em> e <em>información</em> están relacionados, pero no son idénticos.</p>
-<p>Un dato es una representación: un número, un símbolo, una medida o una secuencia de caracteres. Adquiere significado cuando sabemos cómo interpretarlo.</p>
-<div class="ejemplo">
-<p><span class="component-kicker">Ejemplo</span></p>
-<p>El valor <code>23</code> por sí solo es un dato. Puede representar una temperatura, una edad, una dirección de memoria o el número de estudiantes de un grupo. El significado depende del contexto y de las reglas de interpretación.</p>
-</div>
-<p>Esta idea será importante durante todo el curso: <strong>el mismo patrón físico puede significar cosas diferentes dependiendo de cómo decidamos interpretarlo</strong>.</p>
 </section>
-<section id="hardware-y-software" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="hardware-y-software"><span class="header-section-number">2.1.2</span> Hardware y software</h3>
-<p>Para que un computador resulte útil necesitamos dos dimensiones inseparables:</p>
+<div class="split-layout">
+<section id="codificar-es-acordar-una-representación" class="level3 split-copy" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="codificar-es-acordar-una-representación"><span class="header-section-number">3.1.3</span> Codificar es acordar una representación</h3>
+<p>No hace falta empezar con binario para entender qué significa <em>codificar</em>. Un semáforo ya utiliza un código:</p>
 <ul>
-<li><strong>hardware</strong>: los componentes físicos;</li>
-<li><strong>software</strong>: las instrucciones y programas que determinan qué debe hacer el hardware.</li>
+<li>rojo → detenerse;</li>
+<li>verde → avanzar.</li>
 </ul>
-<p>Todavía no necesitamos conocer sus detalles. De momento basta con recordar que el hardware proporciona capacidad de procesamiento y el software la dirige hacia una tarea concreta.</p>
+<p>La señal física y su significado no son la misma cosa. Hay una <strong>regla de interpretación</strong> que los relaciona.</p>
+</section>
+<div class="split-visual">
+<div class="code-pair">
+<div class="code-symbol code-red">
+
+</div>
+<span>→</span><strong>detenerse</strong>
+<div class="code-symbol code-green">
+
+</div>
+<p><span>→</span><strong>avanzar</strong></p>
+</div>
+</div>
+</div>
+<p>Ahora podemos trasladar la misma idea a símbolos:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Patrón</th>
+<th style="text-align: left;">Significado acordado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>00</code></td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>01</code></td>
+<td style="text-align: left;">B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>10</code></td>
+<td style="text-align: left;">C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>11</code></td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+<p>Otro código podría utilizar una correspondencia distinta. Lo esencial es que quien produce y quien interpreta los datos compartan las mismas reglas.</p>
+<div class="importante">
+<p><span class="component-kicker">Importante</span></p>
+<p>El computador no «ve» una letra <strong>A</strong>, una fotografía o una canción como nosotros. Manipula representaciones físicas. El significado aparece al interpretar esas representaciones según un código.</p>
+</div>
+<section id="hardware-y-software-dos-piezas-de-una-misma-historia" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="hardware-y-software-dos-piezas-de-una-misma-historia"><span class="header-section-number">3.1.4</span> Hardware y software: dos piezas de una misma historia</h3>
+<div class="concept-duo">
+<div class="concept-card">
+<p><span class="concept-icon">◫</span></p>
+<p><strong>Hardware</strong></p>
+<p>Los componentes físicos capaces de almacenar, mover y transformar representaciones.</p>
+</div>
+<div class="concept-card">
+<p><span class="concept-icon">⌘</span></p>
+<p><strong>Software</strong></p>
+<p>Las instrucciones y programas que indican qué transformaciones debe realizar el hardware.</p>
+</div>
+</div>
+<p>No profundizaremos todavía en ninguno de los dos. De momento basta una idea: <strong>el hardware hace posible el procesamiento; el software determina qué procesamiento queremos realizar</strong>.</p>
 <div class="ejercicio">
 <div class="exercise-meta">
 <p><span class="exercise-label">Ejercicio 1.1</span> <span class="difficulty-badge">● Básico</span></p>
@@ -350,177 +404,180 @@ window.Quarto = {
 <div class="exercise-title">
 <p>Entrada, procesamiento y salida</p>
 </div>
-<p>Para cada situación, identifica qué podría considerarse entrada, qué procesamiento se realiza y cuál es la salida:</p>
+<p>Identifica una posible <strong>entrada</strong>, el <strong>procesamiento</strong> y la <strong>salida</strong> en cada caso:</p>
 <ol type="1">
 <li>una calculadora suma dos números;</li>
-<li>una cámara de móvil realiza una fotografía;</li>
+<li>una cámara de móvil toma una fotografía;</li>
 <li>una aplicación de navegación calcula una ruta.</li>
 </ol>
 <div class="solucion">
 <p><span class="component-kicker">Solución</span></p>
-<p>No existe una única redacción válida. Lo importante es distinguir las tres funciones.</p>
-<p>En una calculadora, por ejemplo, los números y la operación son la entrada; la suma es el procesamiento; el resultado mostrado es la salida.</p>
+<p>En una calculadora, los números y la operación son la entrada; realizar la suma es el procesamiento; el valor mostrado es la salida.</p>
+<p>En una cámara, la luz captada por el sensor es una entrada; el sistema procesa las medidas del sensor; la imagen almacenada o mostrada es una salida.</p>
+<p>En una aplicación de navegación, origen, destino y datos cartográficos actúan como entradas; el cálculo de la ruta es el procesamiento; la ruta propuesta es la salida.</p>
 </div>
+</div>
+<div class="resumen">
+<p><span class="component-kicker">Resumen</span></p>
+<p><strong>Qué deberías llevarte de 1.1</strong></p>
+<ul>
+<li>Un computador puede entenderse inicialmente como un sistema que transforma datos.</li>
+<li>Los datos necesitan reglas de interpretación para adquirir significado.</li>
+<li>Codificar consiste en establecer una correspondencia entre información y representaciones.</li>
+<li>Hardware y software cooperan para realizar el procesamiento.</li>
+</ul>
 </div>
 </section>
 </section>
-<section id="cómo-representa-la-información" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="cómo-representa-la-información"><span class="header-section-number">2.2</span> ¿Cómo representa la información?</h2>
-<p>Un computador debe representar físicamente números, letras, imágenes, sonido e instrucciones. Para hacerlo resulta muy útil trabajar con sistemas que puedan distinguir de forma fiable <strong>dos estados</strong>.</p>
-<p>Esos estados pueden implementarse de muchas maneras: dos niveles eléctricos, dos orientaciones magnéticas, presencia o ausencia de carga, etc. Los símbolos <code>0</code> y <code>1</code> nos permiten nombrarlos de forma cómoda.</p>
+<section id="sec-representacion" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-representacion"><span class="header-section-number">3.2</span> 1.2 ¿Cómo representa la información?</h2>
+<p>::: {.lesson-opening lesson-opening-rust} ::: {.lesson-opening-copy} <span class="eyebrow">DE MUCHAS COSAS A DOS ESTADOS</span></p>
+<section id="letras-imágenes-sonido-con-solo-0-y-1" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="letras-imágenes-sonido-con-solo-0-y-1"><span class="header-section-number">3.2.1</span> Letras, imágenes, sonido… ¿con solo 0 y 1?</h3>
+<p>Un computador debe manejar tipos de información muy diferentes. La estrategia fundamental consiste en representarlos mediante combinaciones de elementos que puedan distinguirse de forma fiable.</p>
+<p>Dos estados son especialmente cómodos: encendido/apagado, tensión alta/baja, presencia/ausencia de carga…</p>
+<p>Los símbolos <code>0</code> y <code>1</code> nos permiten <strong>nombrar</strong> esos dos estados. :::</p>
+<div class="lesson-opening-visual">
+<p><img src="../assets/tema1/informacion-computador.svg" class="img-fluid" alt="Diferentes formas de información se transforman mediante una codificación en patrones de bits."></p>
+</div>
+<p>:::</p>
 <div class="importante">
 <p><span class="component-kicker">Importante</span></p>
-<p>En este contexto inicial, <code>0</code> y <code>1</code> no deben entenderse únicamente como números. También pueden verse como <strong>dos símbolos que representan dos estados distinguibles</strong>.</p>
+<p>En este punto, <code>0</code> y <code>1</code> no deben entenderse únicamente como números. Son también <strong>símbolos para representar dos estados distinguibles</strong>.</p>
 </div>
-<section id="el-bit" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="el-bit"><span class="header-section-number">2.2.1</span> El bit</h3>
-<p>Llamamos <strong>bit</strong> a una unidad que puede tomar uno de dos valores posibles.</p>
-<p>Con un solo bit tenemos dos combinaciones:</p>
-<pre class="text"><code>0
-1</code></pre>
-<p>Con dos bits aparecen cuatro:</p>
-<pre class="text"><code>00
-01
-10
-11</code></pre>
-<p>Y con tres bits:</p>
-<pre class="text"><code>000  001  010  011
-100  101  110  111</code></pre>
-<p>El patrón es sencillo:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Bits</th>
-<th style="text-align: right;">Combinaciones posibles</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">16</td>
-</tr>
-</tbody>
-</table>
-<p>Después de observar estos casos podemos formalizar la relación:</p>
+</section>
+<section id="el-bit-la-pieza-mínima" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="el-bit-la-pieza-mínima"><span class="header-section-number">3.2.2</span> El bit: la pieza mínima</h3>
+<p>Llamamos <strong>bit</strong> a una unidad que puede encontrarse en uno de dos estados posibles.</p>
+<p>Antes de escribir ninguna fórmula, observemos qué ocurre cuando agrupamos bits.</p>
+<p><img src="../assets/tema1/crecimiento-bits.svg" class="img-fluid" alt="Con uno, dos y tres bits se obtienen respectivamente dos, cuatro y ocho patrones diferentes."></p>
+<p>Cada vez que añadimos un bit, cada patrón anterior puede terminar en <code>0</code> o en <code>1</code>. Por eso el número de combinaciones <strong>se duplica</strong>.</p>
+<div class="bit-explorer" data-bit-explorer="">
+<div class="bit-explorer-head">
+<pre><code>&lt;div&gt;
+  &lt;span class="eyebrow"&gt;PRUÉBALO&lt;/span&gt;
+  &lt;h4&gt;Construye el espacio de combinaciones&lt;/h4&gt;
+&lt;/div&gt;
+&lt;div class="bit-explorer-control"&gt;
+  &lt;label&gt;Número de bits: &lt;strong data-bit-value&gt;3&lt;/strong&gt;&lt;/label&gt;
+  &lt;input type="range" min="1" max="6" value="3" step="1" aria-label="Número de bits"&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div class="bit-explorer-result">
+<strong data-combination-count="">8</strong> patrones posibles
+</div>
+<div class="bit-patterns" data-bit-patterns="">
+
+</div>
+</div>
+<p>Ahora sí tiene sentido formalizar el patrón observado:</p>
 <p><span class="math display">\[
-n\text{ bits} \longrightarrow 2^n\text{ combinaciones}
+n\text{ bits}\quad\longrightarrow\quad 2^n\text{ patrones}
 \]</span></p>
 <div class="concepto-clave">
 <p><span class="component-kicker">Concepto clave</span></p>
-<p>Con <span class="math inline">\(n\)</span> bits pueden construirse <span class="math inline">\(2^n\)</span> patrones distintos. Los patrones no tienen significado por sí solos: somos nosotros quienes establecemos qué representa cada uno.</p>
+<p>Con <span class="math inline">\(n\)</span> bits pueden construirse <strong><span class="math inline">\(2^n\)</span> patrones distintos</strong>. El número de bits determina cuántas posibilidades podemos distinguir; el código determina qué significa cada posibilidad.</p>
 </div>
 </section>
-<section id="de-combinaciones-a-códigos" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="de-combinaciones-a-códigos"><span class="header-section-number">2.2.2</span> De combinaciones a códigos</h3>
-<p>Supongamos que solo queremos representar cuatro letras. Podemos acordar el siguiente código:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Patrón</th>
-<th>Símbolo</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>00</code></td>
-<td>A</td>
-</tr>
-<tr class="even">
-<td><code>01</code></td>
-<td>B</td>
-</tr>
-<tr class="odd">
-<td><code>10</code></td>
-<td>C</td>
-</tr>
-<tr class="even">
-<td><code>11</code></td>
-<td>D</td>
-</tr>
-</tbody>
-</table>
-<p>Nada obliga a utilizar exactamente esa correspondencia. Lo importante es que emisor y receptor compartan el mismo código.</p>
+<section id="una-historia-para-recordar-las-potencias-de-2" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="una-historia-para-recordar-las-potencias-de-2"><span class="header-section-number">3.2.3</span> Una historia para recordar las potencias de 2</h3>
+<p>La leyenda de <strong>Sissa y el tablero de ajedrez</strong> utiliza una regla muy sencilla: colocar un grano en la primera casilla y duplicar la cantidad en cada casilla siguiente.</p>
+<p><img src="../assets/tema1/sissa.svg" class="img-fluid" alt="Un tablero de ajedrez ilustra el crecimiento exponencial al duplicar la cantidad en cada casilla."></p>
+<p>La historia no es importante por el ajedrez. Es útil porque muestra una idea que reaparecerá constantemente en informática: <strong>duplicar muchas veces produce cantidades enormes mucho antes de lo que sugiere nuestra intuición</strong>.</p>
+</section>
+<section id="cuántos-bits-necesito" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="cuántos-bits-necesito"><span class="header-section-number">3.2.4</span> ¿Cuántos bits necesito?</h3>
+<p>Hasta ahora hemos preguntado cuántos patrones obtenemos con un número conocido de bits. Ahora invertimos la pregunta.</p>
 <div class="ejercicio">
 <div class="exercise-meta">
 <p><span class="exercise-label">Ejercicio 1.2</span> <span class="difficulty-badge">● Básico</span></p>
 </div>
 <div class="exercise-title">
-<p>¿Cuántos bits necesito?</p>
+<p>Codificar los diez dígitos</p>
 </div>
-<p>¿Cuántos bits hacen falta como mínimo para disponer de un patrón diferente para cada uno de los diez dígitos decimales (<code>0</code> a <code>9</code>)?</p>
+<p>Queremos asignar un patrón binario diferente a cada dígito decimal (<code>0</code> a <code>9</code>). ¿Cuántos bits necesitamos como mínimo?</p>
 <div class="solucion">
 <p><span class="component-kicker">Solución</span></p>
-<p>Con 3 bits solo disponemos de <span class="math inline">\(2^3=8\)</span> combinaciones, por lo que no es suficiente.</p>
-<p>Con 4 bits disponemos de <span class="math inline">\(2^4=16\)</span> combinaciones. Por tanto, el mínimo es <strong>4 bits</strong>.</p>
+<p>Con 3 bits disponemos de:</p>
+<p><span class="math display">\[
+2^3=8
+\]</span></p>
+<p>patrones, que no son suficientes.</p>
+<p>Con 4 bits disponemos de:</p>
+<p><span class="math display">\[
+2^4=16
+\]</span></p>
+<p>patrones. Por tanto, el mínimo es <strong>4 bits</strong>.</p>
 </div>
 </div>
-<p>La pregunta inversa aparece constantemente en informática. Si necesitamos representar <span class="math inline">\(N\)</span> posibilidades, buscamos el menor <span class="math inline">\(n\)</span> tal que:</p>
+<p>La pregunta general es:</p>
+<blockquote class="blockquote">
+<p>Si necesito distinguir <span class="math inline">\(N\)</span> posibilidades, ¿cuál es el menor número de bits que proporciona al menos <span class="math inline">\(N\)</span> patrones?</p>
+</blockquote>
+<p>Buscamos el menor <span class="math inline">\(n\)</span> que cumpla:</p>
 <p><span class="math display">\[
-2^n \ge N
+2^n\ge N
 \]</span></p>
-<p>que puede expresarse como:</p>
+<p>y podemos expresarlo mediante:</p>
 <p><span class="math display">\[
-n=\lceil\log_2 N\rceil
+n=\lceil \log_2 N\rceil
 \]</span></p>
-<p>El logaritmo en base 2 aparece así como respuesta a una pregunta concreta: <strong>¿cuántos bits necesito?</strong></p>
+<p>El logaritmo aparece así <strong>después</strong> de entender la pregunta que resuelve.</p>
+<p>::: {.split-layout split-layout-highlight} ::: {.split-copy} ### La misma relación, en dos direcciones</p>
+<p>Si conocemos los bits, usamos una potencia:</p>
+<p><span class="math display">\[
+n \longrightarrow 2^n
+\]</span></p>
+<p>Si conocemos cuántos símbolos queremos distinguir, necesitamos invertir la relación:</p>
+<p><span class="math display">\[
+N \longrightarrow \lceil\log_2N\rceil
+\]</span> :::</p>
+::: {.split-visual formula-question} <span>¿cuántos patrones tengo?</span> <strong><span class="math inline">\(2^n\)</span></strong>
+<hr>
+<p><span>¿cuántos bits necesito?</span> <strong><span class="math inline">\(\lceil\log_2N\rceil\)</span></strong> ::: :::</p>
 </section>
-<section id="del-bit-al-byte" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="del-bit-al-byte"><span class="header-section-number">2.2.3</span> Del bit al byte</h3>
-<p>Trabajar bit a bit sería incómodo. Por convenio, agrupamos habitualmente ocho bits en una unidad llamada <strong>byte</strong>.</p>
-<p><span class="math display">\[
-1\ \text{byte}=8\ \text{bits}
-\]</span></p>
-<p>A partir del byte expresamos capacidades mayores. Conviene distinguir entre prefijos decimales y binarios:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Unidad</th>
-<th style="text-align: right;">Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>kB</td>
-<td style="text-align: right;"><span class="math inline">\(10^3\)</span> bytes</td>
-</tr>
-<tr class="even">
-<td>MB</td>
-<td style="text-align: right;"><span class="math inline">\(10^6\)</span> bytes</td>
-</tr>
-<tr class="odd">
-<td>GB</td>
-<td style="text-align: right;"><span class="math inline">\(10^9\)</span> bytes</td>
-</tr>
-<tr class="even">
-<td>KiB</td>
-<td style="text-align: right;"><span class="math inline">\(2^{10}\)</span> bytes</td>
-</tr>
-<tr class="odd">
-<td>MiB</td>
-<td style="text-align: right;"><span class="math inline">\(2^{20}\)</span> bytes</td>
-</tr>
-<tr class="even">
-<td>GiB</td>
-<td style="text-align: right;"><span class="math inline">\(2^{30}\)</span> bytes</td>
-</tr>
-</tbody>
-</table>
-<div class="ejemplo">
-<p><span class="component-kicker">Ejemplo</span></p>
-<p>Una conexión de <strong>100 Mb/s</strong> expresa una velocidad en <em>megabits por segundo</em>. Un archivo de <strong>1 GB</strong> expresa un tamaño en <em>gigabytes</em>. Antes de calcular un tiempo de descarga debemos llevar ambas magnitudes a unidades compatibles.</p>
+<section id="del-bit-al-byte" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="del-bit-al-byte"><span class="header-section-number">3.2.5</span> Del bit al byte</h3>
+<p>Trabajar con bits individuales resulta poco práctico. Por convenio, una agrupación de <strong>ocho bits</strong> forma un <strong>byte</strong>.</p>
+<p><img src="../assets/tema1/byte.svg" class="img-fluid" alt="Ocho celdas binarias forman un byte."></p>
+<p>A partir del byte expresamos tamaños mayores.</p>
+<div class="unit-ladder">
+<div>
+<span>1 kB</span><strong>10³ bytes</strong><small>decimal</small>
 </div>
+<div>
+<span>1 MB</span><strong>10⁶ bytes</strong><small>decimal</small>
+</div>
+<div>
+<span>1 GB</span><strong>10⁹ bytes</strong><small>decimal</small>
+</div>
+<div class="unit-binary">
+<span>1 KiB</span><strong>2¹⁰ bytes</strong><small>binario</small>
+</div>
+<div class="unit-binary">
+<span>1 MiB</span><strong>2²⁰ bytes</strong><small>binario</small>
+</div>
+<div class="unit-binary">
+<span>1 GiB</span><strong>2³⁰ bytes</strong><small>binario</small>
+</div>
+</div>
+</section>
+<section id="bit-y-byte-una-diferencia-pequeña-en-la-letra-enorme-en-el-cálculo" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="bit-y-byte-una-diferencia-pequeña-en-la-letra-enorme-en-el-cálculo"><span class="header-section-number">3.2.6</span> Bit y byte: una diferencia pequeña en la letra, enorme en el cálculo</h3>
+<p>En comunicaciones es habitual expresar velocidades en <strong>bits por segundo</strong>. En almacenamiento es habitual expresar tamaños en <strong>bytes</strong>.</p>
+<p>Por eso:</p>
+<div class="comparison-strip">
+<div>
+<strong>100 Mb/s</strong><span>100 megabits cada segundo</span>
+</div>
+<div class="comparison-vs">
+≠
+</div>
+<div>
+<strong>100 MB/s</strong><span>100 megabytes cada segundo</span>
+</div>
+</div>
+<p>Como <span class="math inline">\(1\ \text{byte}=8\ \text{bits}\)</span>, la diferencia es un factor 8.</p>
 <div class="ejercicio">
 <div class="exercise-meta">
 <p><span class="exercise-label">Ejercicio 1.3</span> <span class="difficulty-badge">●● Intermedio</span></p>
@@ -528,496 +585,56 @@ n=\lceil\log_2 N\rceil
 <div class="exercise-title">
 <p>Tiempo de descarga</p>
 </div>
-<p>Ignorando pérdidas y sobrecargas, ¿cuánto tardaría en descargarse un archivo de 1 GB a través de una conexión de 100 Mb/s? Utiliza unidades decimales en ambas magnitudes.</p>
+<p>Ignorando pérdidas y sobrecargas, ¿cuánto tardaría en descargarse un archivo de <strong>1 GB</strong> mediante una conexión de <strong>100 Mb/s</strong>? Utiliza unidades decimales.</p>
 <div class="solucion">
 <p><span class="component-kicker">Solución</span></p>
-<p><span class="math inline">\(1\ \text{GB}=8\ \text{Gb}=8000\ \text{Mb}\)</span>.</p>
-<p>Entonces:</p>
+<p>Primero expresamos el archivo en bits:</p>
+<p><span class="math display">\[
+1\ \text{GB}=8\ \text{Gb}=8000\ \text{Mb}
+\]</span></p>
+<p>Después usamos:</p>
+<p><span class="math display">\[
+t=\frac{\text{cantidad de información}}{\text{velocidad}}
+\]</span></p>
+<p>por lo que:</p>
 <p><span class="math display">\[
 t=\frac{8000\ \text{Mb}}{100\ \text{Mb/s}}=80\ \text{s}
 \]</span></p>
-<p>En condiciones ideales, tardaría aproximadamente <strong>80 segundos</strong>.</p>
+<p>En condiciones ideales, la descarga tardaría aproximadamente <strong>80 segundos</strong>.</p>
 </div>
 </div>
-<div class="para-saber-mas">
-<p><span class="component-kicker">Para saber más</span></p>
-<p>La conocida historia del tablero de ajedrez y los granos de trigo es una forma intuitiva de visualizar cómo crecen las potencias de 2. En una versión posterior de este capítulo puede convertirse en una visualización interactiva.</p>
-</div>
-</section>
-</section>
-<section id="qué-hay-dentro-de-un-computador" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="qué-hay-dentro-de-un-computador"><span class="header-section-number">2.3</span> ¿Qué hay dentro de un computador?</h2>
-<p>Ya sabemos que un computador recibe datos, los representa y los procesa. Ahora podemos abrir la caja.</p>
-<p>En un primer modelo bastan tres grandes grupos:</p>
-<ul>
-<li><strong>procesador (CPU)</strong>: ejecuta operaciones e instrucciones;</li>
-<li><strong>memoria</strong>: conserva temporalmente datos e instrucciones que están siendo utilizados;</li>
-<li><strong>entrada/salida (E/S)</strong>: comunica el computador con otros dispositivos y con el exterior.</li>
-</ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    IN[Entrada] &lt;--&gt; CPU[Procesador]
-    CPU &lt;--&gt; MEM[Memoria]
-    CPU &lt;--&gt; OUT[Salida]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Este esquema es deliberadamente simple. Más adelante estudiaremos arquitecturas y jerarquías de memoria con mayor precisión.</p>
-<section id="el-procesador" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="el-procesador"><span class="header-section-number">2.3.1</span> El procesador</h3>
-<p>Dentro de la CPU podemos distinguir, de forma conceptual:</p>
-<ul>
-<li>una <strong>unidad de control</strong>, que coordina la ejecución de instrucciones;</li>
-<li>una <strong>unidad aritmético-lógica (ALU)</strong>, que realiza operaciones aritméticas y lógicas;</li>
-<li><strong>registros</strong>, pequeñas unidades de almacenamiento muy cercanas a las unidades de ejecución.</li>
-</ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB
-    subgraph CPU[CPU]
-      UC[Unidad de control]
-      ALU[ALU]
-      R[Registros]
-      UC &lt;--&gt; R
-      R &lt;--&gt; ALU
-    end
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="la-memoria" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="la-memoria"><span class="header-section-number">2.3.2</span> La memoria</h3>
-<p>La memoria principal puede imaginarse inicialmente como una secuencia de posiciones. Cada posición almacena un patrón de bits y tiene una forma de ser identificada.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Posición</th>
-<th>Contenido</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td><code>10110101</code></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td><code>01101011</code></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td><code>11100010</code></td>
-</tr>
-<tr class="even">
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-<div class="concepto-clave">
-<p><span class="component-kicker">Concepto clave</span></p>
-<p>En la memoria se almacenan <strong>datos e instrucciones</strong>. Para el hardware, ambos son patrones de bits; su interpretación depende de cómo se utilicen.</p>
-</div>
-</section>
-<section id="palabra-y-registros" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="palabra-y-registros"><span class="header-section-number">2.3.3</span> Palabra y registros</h3>
-<p>Los computadores suelen manipular grupos de bits de un tamaño determinado. El concepto de <strong>palabra</strong> permite hablar de esa unidad natural de procesamiento. Encontraremos arquitecturas de 8, 16, 32 o 64 bits, aunque el significado exacto de esas etiquetas requiere más contexto del que necesitamos ahora.</p>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.4</span> <span class="difficulty-badge">● Básico</span></p>
-</div>
-<div class="exercise-title">
-<p>Reconocer funciones</p>
-</div>
-<p>Relaciona cada elemento con su función principal: CPU, memoria, dispositivo de entrada/salida.</p>
-<ol type="1">
-<li>conservar temporalmente datos e instrucciones;</li>
-<li>ejecutar instrucciones;</li>
-<li>comunicar el sistema con el exterior.</li>
-</ol>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<ol type="1">
-<li>memoria;</li>
-<li>CPU;</li>
-<li>entrada/salida.</li>
-</ol>
-</div>
-</div>
-</section>
-</section>
-<section id="cómo-se-comunican-sus-componentes" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="cómo-se-comunican-sus-componentes"><span class="header-section-number">2.4</span> ¿Cómo se comunican sus componentes?</h2>
-<p>Tenemos procesador y memoria. Ahora surge una necesidad concreta: <strong>¿cómo intercambian información?</strong></p>
-<p>Supongamos que la CPU quiere leer la posición 2 de la memoria. Hay dos problemas diferentes:</p>
-<ol type="1">
-<li>indicar <strong>qué posición</strong> desea;</li>
-<li>transferir <strong>el contenido</strong> de esa posición.</li>
-</ol>
-<p>Esta distinción conduce a dos mecanismos diferentes.</p>
-<section id="bus-de-direcciones-dónde" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="bus-de-direcciones-dónde"><span class="header-section-number">2.4.1</span> Bus de direcciones: ¿dónde?</h3>
-<p>El procesador necesita expresar una dirección. Si dispone de <span class="math inline">\(n\)</span> bits para hacerlo, puede generar hasta <span class="math inline">\(2^n\)</span> patrones diferentes y, por tanto, distinguir hasta <span class="math inline">\(2^n\)</span> direcciones.</p>
-<p>Aquí reaparece exactamente la misma idea matemática que usamos para contar códigos.</p>
-<div class="ejemplo">
-<p><span class="component-kicker">Ejemplo</span></p>
-<p>Con un bus de direcciones de 4 bits pueden generarse <span class="math inline">\(2^4=16\)</span> patrones distintos, desde <code>0000</code> hasta <code>1111</code>.</p>
-</div>
-</section>
-<section id="bus-de-datos-qué-contenido" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="bus-de-datos-qué-contenido"><span class="header-section-number">2.4.2</span> Bus de datos: ¿qué contenido?</h3>
-<p>Una vez seleccionada la posición, necesitamos transportar el contenido. El <strong>bus de datos</strong> proporciona el camino por el que circulan esos bits entre los componentes.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    CPU[CPU] -- "dirección" --&gt; MEM[Memoria]
-    MEM -- "datos" --&gt; CPU
-    CPU -. "datos" .-&gt; MEM
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<div class="concepto-clave">
-<p><span class="component-kicker">Concepto clave</span></p>
-<p>El <strong>bus de direcciones</strong> identifica una posición o destino. El <strong>bus de datos</strong> transporta la información que se intercambia.</p>
-</div>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.5</span> <span class="difficulty-badge">● Básico</span></p>
-</div>
-<div class="exercise-title">
-<p>Direcciones posibles</p>
-</div>
-<p>Una memoria utiliza un bus de direcciones de 10 bits. ¿Cuántas direcciones distintas pueden generarse?</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p><span class="math display">\[2^{10}=1024\]</span></p>
-<p>Pueden generarse <strong>1024 direcciones diferentes</strong>.</p>
-</div>
-</div>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.6</span> <span class="difficulty-badge">●●● Avanzado</span></p>
-</div>
-<div class="exercise-title">
-<p>Dimensionar buses</p>
-</div>
-<p>Considera un computador organizado en palabras de 32 bits y con una memoria de 32 MiB, direccionada por palabras.</p>
-<ol type="1">
-<li>¿Cuántos bits debería transportar como mínimo el bus de datos para mover una palabra completa?</li>
-<li>¿Cuántas palabras contiene la memoria?</li>
-<li>¿Cuántos bits necesita el bus de direcciones?</li>
-</ol>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p>Una palabra contiene 32 bits, por lo que un bus capaz de transportar una palabra completa en una transferencia tendrá <strong>32 bits</strong>.</p>
-<p><span class="math inline">\(32\ \text{MiB}=2^{25}\)</span> bytes. Cada palabra ocupa 4 bytes, de modo que:</p>
-<p><span class="math display">\[
-\frac{2^{25}}{2^2}=2^{23}\ \text{palabras}
-\]</span></p>
-<p>Para identificar <span class="math inline">\(2^{23}\)</span> palabras hacen falta <strong>23 bits de dirección</strong>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="cómo-ejecuta-un-programa" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="cómo-ejecuta-un-programa"><span class="header-section-number">2.5</span> ¿Cómo ejecuta un programa?</h2>
-<p>Hasta ahora sabemos dónde pueden estar los datos y quién los procesa. Falta unir hardware y software.</p>
-<p>Un programa puede verse, en primera aproximación, como una secuencia de instrucciones. Para ejecutarlo, sus instrucciones y los datos necesarios deben estar accesibles para el procesador.</p>
-<p>Podemos describir intuitivamente el proceso mediante un ciclo:</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A[Buscar instrucción] --&gt; B[Interpretarla]
-    B --&gt; C[Ejecutarla]
-    C --&gt; D[Continuar]
-    D --&gt; A
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Más adelante estudiaremos este ciclo con detalle. Por ahora nos interesa que proporciona una explicación sencilla de por qué conceptos como reloj, instrucciones o CPI afectan al tiempo de ejecución.</p>
-<section id="el-reloj-y-la-frecuencia" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="el-reloj-y-la-frecuencia"><span class="header-section-number">2.5.1</span> El reloj y la frecuencia</h3>
-<p>Muchos procesadores coordinan su actividad mediante una señal periódica de reloj. La <strong>frecuencia</strong> indica cuántos ciclos de reloj se producen por segundo.</p>
-<p><span class="math display">\[
-1\ \text{GHz}=10^9\ \text{ciclos/s}
-\]</span></p>
-<p>Pero frecuencia no significa directamente «instrucciones por segundo»: una instrucción puede requerir, en promedio, más de un ciclo.</p>
-</section>
-<section id="cpi-y-tiempo-de-cpu" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="cpi-y-tiempo-de-cpu"><span class="header-section-number">2.5.2</span> CPI y tiempo de CPU</h3>
-<p>El <strong>CPI</strong> (<em>cycles per instruction</em>) expresa el número medio de ciclos de reloj utilizados por instrucción en un determinado contexto.</p>
-<p>Una relación básica es:</p>
-<p><span class="math display">\[
-T_{CPU}=N_{instr}\times CPI\times T_{ciclo}
-\]</span></p>
-<p>Como <span class="math inline">\(T_{ciclo}=1/f\)</span>, también podemos escribir:</p>
-<p><span class="math display">\[
-T_{CPU}=\frac{N_{instr}\times CPI}{f}
-\]</span></p>
-<div class="importante">
-<p><span class="component-kicker">Importante</span></p>
-<p>Una frecuencia de reloj mayor no garantiza por sí sola que un computador ejecute un programa más rápido. El tiempo depende también del número de instrucciones, del CPI y de muchos otros factores que estudiaremos más adelante.</p>
-</div>
-</section>
-<section id="mips-y-flops" class="level3" data-number="2.5.3">
-<h3 data-number="2.5.3" class="anchored" data-anchor-id="mips-y-flops"><span class="header-section-number">2.5.3</span> MIPS y FLOPS</h3>
-<p>Dos métricas que aparecen con frecuencia son:</p>
-<ul>
-<li><strong>MIPS</strong>: millones de instrucciones por segundo;</li>
-<li><strong>FLOPS</strong>: operaciones de coma flotante por segundo.</li>
-</ul>
-<p>Miden aspectos diferentes y su utilidad depende del tipo de carga de trabajo.</p>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.7</span> <span class="difficulty-badge">●● Intermedio</span></p>
-</div>
-<div class="exercise-title">
-<p>Tiempo de ejecución</p>
-</div>
-<p>Un programa ejecuta <span class="math inline">\(5\times10^8\)</span> instrucciones en un procesador de 2 GHz con un CPI medio de 2. ¿Cuál sería su tiempo de CPU según este modelo simplificado?</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p><span class="math display">\[
-T_{CPU}=\frac{5\times10^8\times2}{2\times10^9}=0.5\ \text{s}
-\]</span></p>
-<p>El tiempo resultante es <strong>0,5 segundos</strong>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="todos-los-computadores-son-iguales" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="todos-los-computadores-son-iguales"><span class="header-section-number">2.6</span> ¿Todos los computadores son iguales?</h2>
-<p>Un portátil, un teléfono, la centralita de un automóvil, un servidor y un supercomputador comparten ideas fundamentales, pero están diseñados bajo restricciones muy diferentes.</p>
-<p>No existe una única clasificación perfecta. Resulta más útil observar <strong>qué problema debe resolver cada sistema</strong>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Sistema</th>
-<th>Prioridades habituales</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>sistema empotrado</td>
-<td>consumo, coste, tamaño, respuesta específica</td>
-</tr>
-<tr class="even">
-<td>dispositivo móvil</td>
-<td>consumo, integración, prestaciones, autonomía</td>
-</tr>
-<tr class="odd">
-<td>computador personal</td>
-<td>flexibilidad y propósito general</td>
-</tr>
-<tr class="even">
-<td>servidor</td>
-<td>capacidad, disponibilidad, concurrencia</td>
-</tr>
-<tr class="odd">
-<td>supercomputador</td>
-<td>rendimiento masivo y paralelismo</td>
-</tr>
-</tbody>
-</table>
-<section id="propósito-general-y-propósito-específico" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="propósito-general-y-propósito-específico"><span class="header-section-number">2.6.1</span> Propósito general y propósito específico</h3>
-<p>Un computador personal debe poder ejecutar una gran diversidad de aplicaciones. En cambio, un controlador integrado en un electrodoméstico puede estar diseñado para una tarea muy concreta.</p>
-</section>
-<section id="cpu-y-mcu" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="cpu-y-mcu"><span class="header-section-number">2.6.2</span> CPU y MCU</h3>
-<p>En sistemas empotrados es frecuente utilizar un <strong>microcontrolador (MCU)</strong>, que integra en un mismo dispositivo procesador, memoria y periféricos destinados al control de sistemas específicos.</p>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.8</span> <span class="difficulty-badge">●● Intermedio</span></p>
-</div>
-<div class="exercise-title">
-<p>Comparar necesidades</p>
-</div>
-<p>Compara un reloj inteligente y un servidor de un centro de datos. Propón al menos tres prioridades de diseño que sean diferentes entre ambos.</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p>Una respuesta razonable podría destacar autonomía, tamaño y consumo como prioridades críticas del reloj, mientras que en el servidor pesan especialmente capacidad de procesamiento, memoria, almacenamiento, disponibilidad y servicio concurrente a muchos usuarios.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="qué-papel-juega-el-software" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="qué-papel-juega-el-software"><span class="header-section-number">2.7</span> ¿Qué papel juega el software?</h2>
-<p>El hardware proporciona recursos. El software organiza esos recursos y los utiliza para resolver problemas.</p>
-<p>Una representación simplificada por capas es:</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB
-    A[Aplicaciones]
-    B[Bibliotecas y herramientas]
-    C[Sistema operativo y controladores]
-    D[Hardware]
-    A --&gt; B --&gt; C --&gt; D
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<section id="software-de-sistema" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="software-de-sistema"><span class="header-section-number">2.7.1</span> Software de sistema</h3>
-<p>El <strong>sistema operativo</strong> administra recursos del computador y proporciona servicios sobre los que se apoyan las aplicaciones. Los <strong>controladores</strong> permiten gestionar dispositivos concretos y el <strong>firmware</strong> contiene software estrechamente ligado al hardware.</p>
-</section>
-<section id="aplicaciones" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="aplicaciones"><span class="header-section-number">2.7.2</span> Aplicaciones</h3>
-<p>Las aplicaciones utilizan las capacidades del sistema para realizar tareas útiles: comunicación, edición, cálculo, diseño, navegación, reproducción multimedia, etc.</p>
-</section>
-<section id="lenguajes-y-traducción" class="level3" data-number="2.7.3">
-<h3 data-number="2.7.3" class="anchored" data-anchor-id="lenguajes-y-traducción"><span class="header-section-number">2.7.3</span> Lenguajes y traducción</h3>
-<p>Los programadores suelen expresar soluciones mediante lenguajes comprensibles para las personas. Esas descripciones deben transformarse o interpretarse para que el computador pueda ejecutar las instrucciones correspondientes.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    H[Programa escrito por una persona] --&gt; T[Traducción / interpretación]
-    T --&gt; M[Instrucciones ejecutables]
-    M --&gt; CPU[CPU]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="software-como-herramienta-de-ingeniería" class="level3" data-number="2.7.4">
-<h3 data-number="2.7.4" class="anchored" data-anchor-id="software-como-herramienta-de-ingeniería"><span class="header-section-number">2.7.4</span> Software como herramienta de ingeniería</h3>
-<p>Para un ingeniero, el computador no es solo un objeto de estudio. Es también una herramienta de trabajo. Podemos organizar el software por la función que cumple:</p>
-<ul>
-<li>cálculo numérico y científico;</li>
-<li>simulación y modelado;</li>
-<li>diseño;</li>
-<li>programación y automatización;</li>
-<li>tratamiento y visualización de datos;</li>
-<li>documentación técnica;</li>
-<li>colaboración y control de versiones.</li>
-</ul>
-<p>Los productos concretos cambiarán con el tiempo; estas funciones son más estables.</p>
-<div class="tarea">
-<div class="exercise-meta">
-<p><span class="exercise-label">Tarea 1.9</span> <span class="difficulty-badge">●● Intermedio</span></p>
-</div>
-<div class="exercise-title">
-<p>Tu mapa de herramientas</p>
-</div>
-<p>Elige tres herramientas software que hayas utilizado o que conozcas. Para cada una, indica qué problema resuelve, qué tipo de usuario la emplea y en cuál de las categorías anteriores la situarías.</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p>La respuesta es abierta. Debe justificarse la función de cada herramienta, no limitarse a enumerar nombres de programas.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="cierre-del-clic-al-resultado" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Cierre · Del clic al resultado</h1>
-<p>Volvamos a la pregunta inicial. Haces clic sobre el icono de una aplicación. ¿Qué ocurre?</p>
-<p>Aún no conocemos todos los detalles, pero ya podemos construir una historia coherente:</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A[Clic] --&gt; B[Entrada]
-    B --&gt; C[Software del sistema]
-    C --&gt; D[Programa]
-    D --&gt; E[Memoria]
-    E &lt;--&gt; F[CPU]
-    F --&gt; G[Procesamiento]
-    G --&gt; H[Salida]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>El clic llega como entrada. El software participa en la gestión de la acción. El programa y sus datos se encuentran en memoria o deben hacerse accesibles al procesador. La CPU ejecuta instrucciones, intercambia datos con memoria y dispositivos y, finalmente, obtenemos una salida.</p>
-<p>Los próximos temas irán abriendo cada una de estas cajas.</p>
 <div class="resumen">
 <p><span class="component-kicker">Resumen</span></p>
+<p><strong>Qué deberías llevarte de 1.2</strong></p>
 <ul>
-<li>Un computador procesa información representada mediante datos.</li>
-<li>Los bits permiten construir patrones binarios; con <span class="math inline">\(n\)</span> bits existen <span class="math inline">\(2^n\)</span> combinaciones.</li>
-<li>CPU, memoria y entrada/salida forman un primer modelo funcional del computador.</li>
-<li>Direcciones y datos responden a problemas diferentes y se comunican mediante mecanismos distintos.</li>
-<li>Un programa puede entenderse inicialmente como una secuencia de instrucciones ejecutadas por la CPU.</li>
-<li>Frecuencia, CPI, instrucciones y tiempo de ejecución están relacionados, pero ninguna métrica aislada explica todo el rendimiento.</li>
-<li>Los computadores adoptan formas distintas porque responden a requisitos diferentes.</li>
-<li>El software convierte los recursos físicos en herramientas capaces de resolver tareas.</li>
+<li>Un bit permite distinguir dos estados.</li>
+<li>Cada bit adicional duplica el número de patrones disponibles.</li>
+<li><span class="math inline">\(n\)</span> bits producen <span class="math inline">\(2^n\)</span> patrones.</li>
+<li><span class="math inline">\(\lceil\log_2N\rceil\)</span> responde a la pregunta «¿cuántos bits necesito para distinguir <span class="math inline">\(N\)</span> posibilidades?».</li>
+<li>Ocho bits forman un byte.</li>
+<li><code>b</code> y <code>B</code> no son intercambiables: bit y byte representan cantidades distintas.</li>
 </ul>
 </div>
-<section id="problemas-integradores" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="problemas-integradores"><span class="header-section-number">3.1</span> Problemas integradores</h2>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.10</span> <span class="difficulty-badge">●●● Avanzado</span></p>
-</div>
-<div class="exercise-title">
-<p>Del código a la memoria</p>
-</div>
-<p>Un sistema necesita representar 200 símbolos distintos y almacenar 1024 palabras diferentes de memoria.</p>
-<ol type="1">
-<li>¿Cuántos bits hacen falta como mínimo para codificar cada símbolo?</li>
-<li>¿Cuántos bits hacen falta para seleccionar una de las 1024 palabras?</li>
-<li>Explica por qué ambos cálculos utilizan la misma idea matemática aunque resuelvan problemas diferentes.</li>
-</ol>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p>Para 200 símbolos necesitamos el menor <span class="math inline">\(n\)</span> tal que <span class="math inline">\(2^n\ge200\)</span>. Como <span class="math inline">\(2^7=128\)</span> y <span class="math inline">\(2^8=256\)</span>, hacen falta <strong>8 bits</strong>.</p>
-<p>Para 1024 palabras, <span class="math inline">\(1024=2^{10}\)</span>, por lo que hacen falta <strong>10 bits</strong> de dirección.</p>
-<p>En ambos casos contamos cuántos patrones diferentes pueden construirse con <span class="math inline">\(n\)</span> bits. Lo que cambia es la interpretación: en el primer caso cada patrón representa un símbolo; en el segundo, una posición de memoria.</p>
-</div>
-</div>
-<div class="autoevaluacion">
-<p><span class="component-kicker">Autoevaluación</span></p>
-<ol type="1">
-<li>¿Cuál es la diferencia entre dato e información?</li>
-<li>¿Por qué resulta útil una representación basada en dos estados?</li>
-<li>¿Qué significa que con <span class="math inline">\(n\)</span> bits podamos construir <span class="math inline">\(2^n\)</span> combinaciones?</li>
-<li>¿Qué diferencia conceptual existe entre bus de datos y bus de direcciones?</li>
-<li>¿Por qué un procesador de mayor frecuencia no es necesariamente más rápido para cualquier programa?</li>
-<li>¿Qué diferencia general existe entre un sistema de propósito general y uno de propósito específico?</li>
-<li>¿Qué papel cumple el sistema operativo entre aplicaciones y hardware?</li>
-<li>Explica con tus palabras qué ocurre desde una entrada hasta una salida utilizando al menos cuatro conceptos de este tema.</li>
-</ol>
-</div>
-
-
 </section>
+</section>
+<section id="la-historia-continúa" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="la-historia-continúa"><span class="header-section-number">3.3</span> La historia continúa</h2>
+<p>Hasta aquí hemos respondido dos preguntas:</p>
+<div class="closing-questions">
+<div>
+<span>✓</span><strong>¿Qué es un computador?</strong><small>Un sistema capaz de representar y transformar datos siguiendo instrucciones.</small>
+</div>
+<div>
+<span>✓</span><strong>¿Cómo representa información?</strong><small>Mediante códigos construidos sobre patrones de bits.</small>
+</div>
+</div>
+<p>La siguiente pregunta surge de forma natural:</p>
+<blockquote class="blockquote">
+<p><strong>Si ya tenemos datos representados como bits, ¿dónde se guardan y quién los procesa?</strong></p>
+</blockquote>
+<p>Ahí abriremos por primera vez la caja: <strong>CPU, memoria y entrada/salida</strong>.</p>
+
+
 </section>
 
 </main> <!-- /main -->
