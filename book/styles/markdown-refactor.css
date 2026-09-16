@@ -57,12 +57,13 @@
 }
 .program-steps li{
   counter-increment:program-step;
-  display:grid;
-  grid-template-columns:30px 1fr;
-  gap:10px;
-  align-items:start;
-  padding-bottom:8px;
+  position:relative;
+  display:block;
+  min-height:30px;
+  padding:0 0 8px 40px;
   border-bottom:1px solid var(--line);
+  font-size:15px;
+  line-height:1.2;
 }
 .program-steps li:last-child{
   border-bottom:0;
@@ -70,6 +71,10 @@
 }
 .program-steps li::before{
   content:counter(program-step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:30px;
   font-size:25px;
   line-height:.95;
   font-weight:600;
@@ -77,8 +82,6 @@
 }
 .program-steps li > p{
   margin:0;
-  font-size:15px;
-  line-height:1.2;
 }
 .program-steps li strong{
   font-weight:700;
