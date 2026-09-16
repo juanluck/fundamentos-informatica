@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tema 1 · Ejercicios y autoevaluación – Fundamentos de Informática</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+
+
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title"><span class="chapter-title">Tema 1 · Ejercicios y autoevaluación</span></h1>
+
+</header>
+
+
+<article class="sheet exercise-sheet" aria-label="Ejercicios y autoevaluación del Tema 1">
+  <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>Ejercicios y autoevaluación</span></header>
+
+  <section class="opening">
+    <p class="kicker">PONTE A PRUEBA</p>
+    <h1>Ejercicios<br>del Tema 1</h1>
+    <p class="deck">Los ejercicios originales se conservan como una segunda vuelta al tema: primero intenta resolverlos; después abre la solución y compara el razonamiento.</p>
+    <div class="short-rule" aria-hidden="true"></div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>Representación de la información</h2>
+    <p>Estos ejercicios proceden del bloque original L1.1 y consolidan potencias de 2, codificación y unidades de información.</p>
+    <div class="exercise-list">
+      <details class="exercise-item"><summary><span><b>1.</b> Potencias de 2 y logaritmos</span><em>●</em></summary><div class="exercise-body"><p>¿Cuáles son las potencias de 2? ¿Por qué son importantes en Informática? ¿Qué interpretación tienen los logaritmos en base 2?</p><div class="solution"><strong>Idea de solución</strong><p>Las potencias 2<sup>n</sup> cuentan cuántas combinaciones podemos formar con <em>n</em> bits. El logaritmo en base 2 responde a la pregunta inversa: cuántos bits necesitamos para alcanzar un número de posibilidades.</p></div></div></details>
+
+      <details class="exercise-item"><summary><span><b>2.</b> ¿Cuántos bits para los 10 dígitos?</span><em>●</em></summary><div class="exercise-body"><p>¿Cuántos bits necesitas para codificar los 10 dígitos numéricos?</p><div class="solution"><strong>Solución</strong><p>Con 3 bits solo hay 2<sup>3</sup> = 8 combinaciones. Con 4 bits hay 2<sup>4</sup> = 16. Por tanto, necesitamos <strong>4 bits</strong>.</p></div></div></details>
+
+      <details class="exercise-item"><summary><span><b>3.</b> Símbolos con 3 bits</span><em>●</em></summary><div class="exercise-body"><p>¿Cuántos símbolos diferentes puedes codificar con 3 bits?</p><div class="solution"><strong>Solución</strong><p>2<sup>3</sup> = <strong>8 símbolos</strong>. Una asignación posible es 000→A, 001→B, 010→C, 011→D, 100→E, 101→F, 110→G y 111→H.</p></div></div></details>
+
+      <details class="exercise-item"><summary><span><b>4.</b> Codifica “Happy”</span><em>●●</em></summary><div class="exercise-body"><p>¿De qué forma podrías codificar el mensaje “Happy” si solo necesitas distinguir H, A, P e Y?</p><div class="solution"><strong>Una codificación posible, como en el material</strong><p>H→00, A→01, P→10, Y→11. Entonces HAPPY se representa como <strong>00 01 10 10 11</strong>.</p></div></div></details>
+
+      <details class="exercise-item"><summary><span><b>5.</b> “Fibra de 100 Megas” y un fichero de 1 GByte</span><em>●●</em></summary><div class="exercise-body"><p>¿Qué quiere decir que tengo fibra de 100 Megas? ¿Cuánto tardaría en descargar un fichero de 1 GByte a 100 Mbit/s?</p><div class="solution"><strong>Solución del material</strong><p>La velocidad es 100 Mbit/s. Un GByte contiene 8 Gbits. Aplicando tiempo = espacio / velocidad:</p><div class="solution-formula">t = 8 Gbits / 100 Mbit/s = <strong>80 s</strong></div></div></div></details>
+    </div>
+    <p class="resource-line">Para saber más: la fuente original propone la leyenda de Sissa y el tablero de ajedrez como introducción a las potencias de 2: <a href="https://matematicascercanas.com/2014/03/10/la-leyenda-del-tablero-de-ajedrez-y-los-granos-de-trigo/">leer el recurso</a>.</p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>CPU, buses y memoria</h2>
+    <p>Ahora combinamos longitud de palabra, capacidad de memoria y ancho de bus.</p>
+    <details class="exercise-item"><summary><span><b>6.</b> Medidas de los buses de comunicación</span><em>●●●</em></summary><div class="exercise-body"><p>Un computador tiene una capacidad máxima de memoria de 32 Mbytes y está organizado en palabras de 32 bits.</p><ol><li>¿Cuántos bits tiene la memoria en total?</li><li>¿Cuál es el ancho de los buses de datos y de direcciones?</li><li>Si el ancho de banda de la memoria es 200 MBytes/s, ¿qué velocidad de transferencia debe admitir cada hilo del bus de datos?</li></ol><div class="solution"><strong>Solución</strong><p><b>a)</b> 32 Mbytes × 8 bits/byte = <strong>256 Mbits</strong>.</p><p><b>b)</b> El bus de datos tiene <strong>32 bits</strong>. Cada palabra ocupa 4 bytes; 32 Mbytes = 2<sup>25</sup> bytes y por tanto hay 2<sup>23</sup> palabras, de modo que el bus de direcciones necesita <strong>23 bits</strong>.</p><p><b>c)</b> 200 MBytes/s × 8 bits/byte repartidos entre 32 hilos = <strong>50 Mbit/s por hilo</strong>.</p></div></div></details>
+  </section>
+
+  <section class="lesson-section">
+    <h2>Ejecución y prestaciones</h2>
+    <p>Estos problemas reutilizan las relaciones entre instrucciones, ciclos, frecuencia y tiempo que aparecen en la lección 1.5.</p>
+    <div class="exercise-list">
+      <details class="exercise-item"><summary><span><b>7.</b> Tiempo de ejecución de un programa</span><em>●●</em></summary><div class="exercise-body"><p>Un procesador tarda 4 ciclos por término medio en ejecutar cada instrucción y funciona a 1 GHz. ¿Cuánto tarda en ejecutar 10.000 instrucciones?</p><div class="solution"><strong>Solución</strong><div class="solution-formula">t = (10.000 × 4) / 10<sup>9</sup> s = <strong>40 μs</strong></div></div></div></details>
+
+      <details class="exercise-item"><summary><span><b>8.</b> Prestaciones de un procesador</span><em>●●</em></summary><div class="exercise-body"><p>Un programa de prueba se ejecuta a 100 MIPS y tarda 35 segundos. Si cada instrucción consume por término medio 6 ciclos de reloj:</p><ol><li>Obtén la frecuencia de reloj.</li><li>Obtén el número de instrucciones ejecutadas.</li></ol><div class="solution"><strong>Solución del material</strong><p><b>a)</b> f = MIPS × CPI × 10<sup>6</sup> = 100 × 6 × 10<sup>6</sup> = <strong>600 MHz</strong>.</p><p><b>b)</b> 100 millones de instrucciones/s × 35 s = <strong>3.500 millones de instrucciones</strong>.</p></div></div></details>
+
+      <details class="exercise-item"><summary><span><b>9.</b> Preguntas de comprensión</span><em>●●</em></summary><div class="exercise-body"><p>Explica con tus propias palabras: ¿qué es un MFLOP?, ¿qué diferencia hay entre MFLOPS y MIPS?, ¿qué es una operación en coma flotante?, ¿qué significa la longitud de palabra de una memoria?</p><div class="solution"><strong>Qué deberías comprobar en tu respuesta</strong><p>Que distingues qué mide cada magnitud y que relacionas la longitud de palabra con el número de bits tratados o transferidos como unidad.</p></div></div></details>
+    </div>
+  </section>
+
+  <section class="lesson-section selfcheck-section">
+    <h2>Autoevaluación final</h2>
+    <p>Si puedes responder estas cinco preguntas sin consultar las páginas anteriores, tienes el hilo conceptual principal del tema.</p>
+    <div class="selfcheck-grid"><span>¿Por qué usamos bits?</span><span>¿Qué hacen CU, ALU y memoria?</span><span>¿En qué se diferencian bus de datos y de direcciones?</span><span>¿De qué depende el tiempo de ejecución?</span><span>¿Cómo llega un programa de alto nivel a ejecutarse?</span></div>
+  </section>
+
+  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Ejercicios</span></footer>
+</article>
+
+<nav class="lesson-nav" aria-label="Navegación del Tema 1"><a href="07-software.html">← Lección 1.7</a><a href="../../index.html">Índice del tema →</a></nav>
+
+
+
+
+
+
+</body></html>

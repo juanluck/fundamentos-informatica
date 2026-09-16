@@ -1,0 +1,18 @@
+/* Tema 1 · ejercicios y autoevaluación */
+.exercise-sheet{min-height:0}
+.exercise-list{display:grid;gap:9px;margin-top:17px}
+.exercise-item{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(244,229,213,.32)}
+.exercise-item+ .exercise-item{margin-top:-1px}
+.exercise-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:12px 10px;font-size:15px;line-height:1.15;font-weight:600}
+.exercise-item summary::-webkit-details-marker{display:none}
+.exercise-item summary::before{content:"+";color:var(--accent-text);font-size:20px;line-height:1;font-weight:400;margin-right:2px}
+.exercise-item[open] summary::before{content:"−"}
+.exercise-item summary span{flex:1}.exercise-item summary span b{color:var(--accent-text);margin-right:4px}.exercise-item summary em{font-style:normal;font-size:11px;letter-spacing:.12em;color:var(--accent-text);white-space:nowrap}
+.exercise-item summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+.exercise-body{padding:0 14px 14px 40px}.exercise-body>p,.exercise-body li{font-size:14.5px;line-height:1.25}.exercise-body>p{margin:1px 0 10px}.exercise-body ol{margin:7px 0 12px;padding-left:21px}.exercise-body li{margin:4px 0}
+.solution{margin-top:11px;padding:11px 13px;background:var(--paper);border-left:3px solid var(--accent)}.solution>strong{font-size:13px;color:var(--accent-text);text-transform:uppercase;letter-spacing:.04em}.solution p{font-size:14px;line-height:1.24;margin:6px 0 0}.solution-formula{text-align:center;font-size:16px;margin-top:8px;padding:7px 5px;background:var(--soft)}
+.resource-line{margin-top:16px!important;padding-top:10px;border-top:1px solid var(--line);font-size:13px!important}.resource-line a{color:var(--accent-text);text-decoration-thickness:1px;text-underline-offset:2px}
+.selfcheck-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.selfcheck-grid span{padding:11px 12px;border-top:2px solid var(--accent);background:linear-gradient(to bottom,var(--soft),rgba(244,229,213,.15));font-size:13.5px;line-height:1.17}
+.book-index .exercise-link{margin-top:12px;background:rgba(244,229,213,.42);padding-left:8px;padding-right:8px}
+.book-index .exercise-link .lesson-number{font-family:var(--hand);font-size:19px}
+@media (max-width:620px){.exercise-body{padding-left:14px}.selfcheck-grid{grid-template-columns:1fr}.exercise-item summary{padding-left:8px;padding-right:8px}.exercise-item summary em{font-size:10px}}
