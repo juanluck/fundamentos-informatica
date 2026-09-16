@@ -6,6 +6,10 @@ on:
     branches:
       - quarto-integration-v1
 
+concurrency:
+  group: publish-quarto-book
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
