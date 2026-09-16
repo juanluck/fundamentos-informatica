@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puerta A · Lección 1.2</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="sheet" aria-label="Reconstrucción estructural en blanco y negro de la lección 1.2">
+  <header class="running-head">
+    <span>Tema 1 · Introducción a los computadores</span>
+    <span>1.2 Representación de la información</span>
+  </header>
+
+  <section class="opening">
+    <p class="kicker">LECCIÓN 1.2</p>
+    <h1>¿Cómo representa<br>la información?</h1>
+    <p class="deck">¿Cómo puede un computador representar una letra, una fotografía o una canción utilizando únicamente dos estados?</p>
+    <div class="short-rule" aria-hidden="true"></div>
+  </section>
+
+  <section class="lesson-section states-section">
+    <h2>1. Dos estados, muchas posibilidades</h2>
+    <p>Un circuito digital solo puede encontrarse en dos estados distintos, que representamos como 0 y 1. A partir de estos dos estados podemos construir toda la información.</p>
+
+    <div class="states-layout" aria-label="Posición reservada para la figura de los dos estados">
+      <div class="state-placeholder">
+        <strong>Estado 0</strong>
+        <div class="switch-placeholder"><span></span></div>
+        <div class="bulb-placeholder"></div>
+        <small>Sin corriente<br>(Apagado)</small>
+      </div>
+      <div class="state-placeholder">
+        <strong>Estado 1</strong>
+        <div class="switch-placeholder on"><span></span></div>
+        <div class="bulb-placeholder on"></div>
+        <small>Con corriente<br>(Encendido)</small>
+      </div>
+      <aside class="annotation-placeholder">Anotación editorial de apoyo</aside>
+    </div>
+  </section>
+
+  <section class="lesson-section bits-section">
+    <h2>2. El bit y las combinaciones</h2>
+    <p>Un bit (binary digit) es la unidad mínima de información y puede tomar dos valores: 0 o 1. Si combinamos varios bits, podemos representar muchas más posibilidades.</p>
+
+    <div class="bit-grid" aria-label="Comparación de combinaciones con uno, dos y tres bits">
+      <div class="bit-panel">
+        <strong>1 bit</strong>
+        <span>2 combinaciones</span>
+        <div class="tokens"><b>0</b><b>1</b></div>
+      </div>
+      <div class="bit-panel">
+        <strong>2 bits</strong>
+        <span>4 combinaciones</span>
+        <div class="tokens"><b>00</b><b>01</b><b>10</b><b>11</b></div>
+      </div>
+      <div class="bit-panel">
+        <strong>3 bits</strong>
+        <span>8 combinaciones</span>
+        <div class="tokens small"><b>000</b><b>001</b><b>010</b><b>011</b><b>100</b><b>101</b><b>110</b><b>111</b></div>
+      </div>
+    </div>
+
+    <div class="rule-band">Con <strong>n bits</strong> podemos representar <strong>2<sup>n</sup></strong> combinaciones.</div>
+  </section>
+
+  <section class="lesson-section explorer-section">
+    <h2>3. Explorador interactivo</h2>
+    <p>Mueve el deslizador y observa todas las combinaciones posibles de <em>n</em> bits.</p>
+
+    <div class="explorer-layout" aria-label="Versión estática de la composición del explorador">
+      <div class="explorer-placeholder">
+        <div class="slider-row"><strong>Número de bits:</strong><span>3</span><i></i></div>
+        <div class="pattern-grid">
+          <b>000</b><b>001</b><b>010</b><b>011</b>
+          <b>100</b><b>101</b><b>110</b><b>111</b>
+        </div>
+      </div>
+      <div class="total-placeholder">
+        <small>Total de combinaciones:</small>
+        <strong>8</strong>
+        <span>(2<sup>3</sup>)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section inverse-section">
+    <h2>4. ¿Cuántos bits necesito?</h2>
+    <p>Si quiero representar <em>N</em> elementos distintos, necesito el menor número <em>n</em> de bits tal que 2<sup>n</sup> ≥ N. Matemáticamente:</p>
+    <div class="inverse-layout">
+      <div class="formula-placeholder">n = ⌈log<sub>2</sub> N⌉</div>
+      <aside class="annotation-line">Anotación breve</aside>
+    </div>
+  </section>
+
+  <footer class="running-foot">
+    <span>Fundamentos de Informática</span>
+    <span>5</span>
+  </footer>
+</main>
+</body>
+</html>
