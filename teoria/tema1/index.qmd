@@ -5,34 +5,34 @@ body-classes: editorial-page theme-cover
 ---
 
 <div class="chapter-cover">
-  <div class="chapter-cover-copy">
-    <span class="kicker">TEMA 1</span>
-    <h1>Introducción<br>a los computadores</h1>
-    <p class="chapter-subtitle">Del mundo físico a la información digital</p>
-    <div class="short-rule"></div>
-    <p class="opening-question">¿Qué ocurre realmente cuando pulsamos una tecla, ejecutamos un programa o reproducimos una canción?</p>
-    <p>Detrás de acciones cotidianas hay unas pocas ideas sorprendentemente sencillas: representar información, almacenarla, transformarla y comunicarla. En este tema construiremos ese modelo poco a poco.</p>
-  </div>
-  <div class="chapter-cover-art">
-    <img src="../../assets/tema1/hero-editorial.svg" alt="Escena editorial con un portátil, libros sobre hardware, software e información, y una taza con la idea bits." />
-  </div>
+<div class="chapter-cover-copy">
+<span class="kicker">TEMA 1</span>
+<h1>Introducción<br>a los computadores</h1>
+<p class="chapter-subtitle">Del mundo físico a la información digital</p>
+<div class="short-rule"></div>
+<p class="opening-question">¿Qué ocurre realmente cuando pulsamos una tecla, ejecutamos un programa o reproducimos una canción?</p>
+<p>Detrás de acciones cotidianas hay unas pocas ideas sorprendentemente sencillas: representar información, almacenarla, transformarla y comunicarla. En este tema construiremos ese modelo poco a poco.</p>
+</div>
+<div class="chapter-cover-art">
+<img src="../../assets/tema1/hero-editorial.svg" alt="Escena editorial con un portátil, libros sobre hardware, software e información, y una taza con la idea bits." />
+</div>
 </div>
 
 <div class="learning-panel">
-  <h2>En este tema aprenderás…</h2>
-  <ol class="learning-list">
-    <li><a href="01-que-es-computador.html">Qué es un computador y qué puede hacer</a></li>
-    <li><a href="02-representacion.html">Cómo representa la información</a></li>
-    <li><span>Qué hay dentro de un computador</span></li>
-    <li><a href="04-comunicacion.html">Cómo se comunican sus componentes</a></li>
-    <li><span>Cómo ejecuta un programa</span></li>
-    <li><span>Qué tipos de computadores existen</span></li>
-    <li><span>Qué papel juega el software</span></li>
-  </ol>
-  <div class="margin-note">Una misma idea irá reapareciendo en contextos nuevos.</div>
+<h2>En este tema aprenderás…</h2>
+<ol class="learning-list">
+<li><a href="01-que-es-computador.html">Qué es un computador y qué puede hacer</a></li>
+<li><a href="02-representacion.html">Cómo representa la información</a></li>
+<li><span>Qué hay dentro de un computador</span></li>
+<li><a href="04-comunicacion.html">Cómo se comunican sus componentes</a></li>
+<li><span>Cómo ejecuta un programa</span></li>
+<li><span>Qué tipos de computadores existen</span></li>
+<li><span>Qué papel juega el software</span></li>
+</ol>
+<div class="margin-note">Una misma idea irá reapareciendo en contextos nuevos.</div>
 </div>
 
 <div class="cover-footer-note">
-  <strong>Pregunta guía del tema</strong>
-  <p>¿Qué es realmente un computador y cómo consigue ejecutar un programa?</p>
+<strong>Pregunta guía del tema</strong>
+<p>¿Qué es realmente un computador y cómo consigue ejecutar un programa?</p>
 </div>
