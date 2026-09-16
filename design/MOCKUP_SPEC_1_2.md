@@ -10,12 +10,13 @@ La referencia recortada mide aproximadamente **436 × 1199 px**. Las medidas sig
 
 ## 1. Retícula
 
-- Página: una única columna editorial estrecha, sin sidebar, breadcrumbs ni navegación lateral.
+- Página: una única columna editorial, sin sidebar, breadcrumbs ni navegación lateral.
 - Ancho útil de contenido: aproximadamente **88 %** de la página.
 - Margen izquierdo visible: aproximadamente **8 %**.
 - Margen derecho visible: aproximadamente **4–5 %**.
 - Cabecera superior: una línea con dos referencias pequeñas, izquierda y derecha.
 - No existe una cuadrícula de tarjetas general. Los bloques especiales aparecen solo cuando el contenido lo exige.
+- **Ajuste web aprobado tras Puerta A:** el lienzo de escritorio puede ser algo más ancho que la primera traducción literal del mockup. Se fija como referencia de implementación un máximo aproximado de **820 px**, manteniendo las proporciones internas y sin aumentar la densidad de componentes.
 
 ## 2. Jerarquía vertical observada
 
