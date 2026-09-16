@@ -1,0 +1,17 @@
+@import url("../mockup-gate-d3/styles.css?v=gate-d3-20260916-1");
+
+.inverse-layout{grid-template-columns:1.45fr 1fr;gap:26px;align-items:center;margin-top:13px}
+.inverse-formula{background:var(--soft);border:1px solid #F0DDC8;border-radius:6px;min-height:54px;padding:10px 20px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:25px;font-weight:400;line-height:1}
+.inverse-formula .math-n{font-style:italic;margin-right:.28em}
+.inverse-formula .equals{margin-right:.28em}
+.inverse-formula .ceil{font-size:1.18em;line-height:.7;position:relative;top:-.02em}
+.inverse-formula .log{margin:0 .02em}
+.inverse-formula sub{font-size:.54em;line-height:0;position:relative;bottom:-.08em}
+.inverse-formula .math-N{font-style:italic;margin:0 .04em}
+.annotation-line{font-family:var(--hand);font-size:22px;font-weight:600;line-height:1.05;font-style:normal;transform:rotate(-4deg);color:var(--accent)}
+
+@media (max-width:620px){
+  .inverse-layout{grid-template-columns:1fr}
+  .inverse-formula{font-size:24px}
+  .annotation-line{transform:none;font-size:21px}
+}
