@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-cb0bc420278434f743d5a57752e59b78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-46dfa6da0dab91ac6044353f8d28e0cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,7 +108,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked editorial-page lesson-page fullcontent quarto-light">
+<body class="nav-sidebar floating editorial-site lesson-page fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -129,7 +129,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Fundamentos de Informática</a> 
@@ -206,8 +206,16 @@ window.Quarto = {
 </header>
 
 
-<div class="lesson-head">
-<span class="kicker">LECCIÓN 1.4</span>
+<div class="book-masthead">
+<a class="brand" href="../../index.html">Fundamentos de Informática</a>
+<nav>
+<a href="index.html">Tema 1</a><span>Lección 1.4</span>
+</nav>
+</div>
+<div class="lesson-intro">
+<p class="kicker">
+LECCIÓN 1.4
+</p>
 <h1>
 ¿Cómo se comunican<br>sus componentes?
 </h1>
@@ -215,136 +223,88 @@ window.Quarto = {
 Un computador está formado por elementos que necesitan intercambiar información. ¿Cómo sabe la CPU dónde leer, qué dato mover y qué operación realizar?
 </p>
 </div>
-<div class="editorial-rule">
-
+<section id="una-primera-necesidad" class="level2 section-heading">
+<h2 class="section-heading anchored" data-anchor-id="una-primera-necesidad">1. Una primera necesidad</h2>
+<p>Imaginemos un computador muy simple con una CPU y una memoria. La CPU necesita leer y escribir información almacenada en la memoria. Antes de nombrar ningún bus, aparecen tres preguntas:</p>
+<div class="question-row">
+<div>
+<span>¿dónde?</span><small>qué posición</small>
 </div>
-<section id="una-primera-idea" class="level2 editorial-section">
-<h2 class="editorial-section anchored" data-anchor-id="una-primera-idea">1. Una primera idea</h2>
-<p>Imaginemos un computador muy simple con una CPU y una memoria. La CPU necesita leer y escribir información almacenada en la memoria.</p>
-<div class="need-connection">
-<div class="block cpu">
-CPU
+<div>
+<span>¿qué?</span><small>qué información</small>
 </div>
-<div class="question-path">
-<span>?</span><small>necesitamos un sistema de comunicación</small>
-</div>
-<div class="block memory">
-Memoria
+<div>
+<span>¿qué operación?</span><small>leer o escribir</small>
 </div>
 </div>
 </section>
-<section id="tres-preguntas-diferentes" class="level2 editorial-section">
-<h2 class="editorial-section anchored" data-anchor-id="tres-preguntas-diferentes">2. Tres preguntas diferentes</h2>
-<p>La comunicación no resuelve una sola pregunta, sino tres:</p>
-<div class="three-questions">
-<div>
-<span>1</span><strong>¿Dónde?</strong><small>qué posición o dispositivo</small>
-</div>
-<div>
-<span>2</span><strong>¿Qué datos?</strong><small>qué información se transfiere</small>
-</div>
-<div>
-<span>3</span><strong>¿Qué operación?</strong><small>leer, escribir, sincronizar…</small>
-</div>
-</div>
-<p><img class="wide-figure clean-figure" src="../../assets/tema1/buses-editorial.svg" alt="CPU y memoria conectadas mediante bus de direcciones, bus de datos y señales de control."></p>
+<section id="tres-funciones-tres-tipos-de-señales" class="level2 section-heading">
+<h2 class="section-heading anchored" data-anchor-id="tres-funciones-tres-tipos-de-señales">2. Tres funciones, tres tipos de señales</h2>
+<figure class="editorial-figure wide figure">
+<img src="../../assets/tema1/buses-approved.webp" alt="CPU y memoria comunicadas mediante un bus de direcciones, un bus de datos y un bus de control." class="figure-img">
+<figcaption>
+El bus de direcciones responde a «¿dónde?», el de datos a «¿qué información?» y las señales de control a «¿qué operación?».
+</figcaption>
+</figure>
 <div class="concepto-clave">
 <p><span class="component-kicker">Concepto clave</span></p>
-<p>El <strong>bus de direcciones</strong> identifica el destino; el <strong>bus de datos</strong> transporta la información; las <strong>señales de control</strong> indican qué operación debe realizarse.</p>
+<p>El <strong>bus de direcciones</strong> identifica el destino; el <strong>bus de datos</strong> transporta la información; las <strong>señales de control</strong> indican la operación que debe realizarse.</p>
 </div>
 </section>
-<section id="un-ejemplo-paso-a-paso" class="level2 editorial-section">
-<h2 class="editorial-section anchored" data-anchor-id="un-ejemplo-paso-a-paso">3. Un ejemplo paso a paso</h2>
-<p>La CPU quiere leer el contenido de la posición 5 de memoria:</p>
-<ol class="step-list">
-<li>
-<span>1</span>
-<p>
-Coloca la dirección <strong>5</strong> en el bus de direcciones.
-</p>
-</li>
-<li>
-<span>2</span>
-<p>
-Activa una señal de <strong>lectura</strong>.
-</p>
-</li>
-<li>
-<span>3</span>
-<p>
-La memoria coloca el contenido de la posición 5 en el <strong>bus de datos</strong>.
-</p>
-</li>
-<li>
-<span>4</span>
-<p>
-La CPU recibe ese dato.
-</p>
-</li>
+<section id="una-lectura-de-memoria-paso-a-paso" class="level2 section-heading">
+<h2 class="section-heading anchored" data-anchor-id="una-lectura-de-memoria-paso-a-paso">3. Una lectura de memoria, paso a paso</h2>
+<p>La CPU quiere leer el contenido de la posición 5:</p>
+<ol type="1">
+<li>coloca la dirección <strong>5</strong> en el bus de direcciones;</li>
+<li>activa una señal de <strong>lectura</strong>;</li>
+<li>la memoria coloca el contenido de esa posición en el <strong>bus de datos</strong>;</li>
+<li>la CPU recibe el dato.</li>
 </ol>
+<p>La secuencia importa: dirección, operación y transferencia son funciones distintas aunque ocurran coordinadamente.</p>
 </section>
-<section id="direcciones-y-capacidad-de-memoria" class="level2 editorial-section">
-<h2 class="editorial-section anchored" data-anchor-id="direcciones-y-capacidad-de-memoria">4. Direcciones y capacidad de memoria</h2>
-<p>Aquí reaparece una idea que ya conocemos. Si una dirección se expresa con <strong>n bits</strong>, podemos formar <span class="math inline">\(2^n\)</span> patrones distintos y, por tanto, distinguir <span class="math inline">\(2^n\)</span> posiciones.</p>
-<table class="editorial-table">
+<section id="direcciones-y-capacidad" class="level2 section-heading">
+<h2 class="section-heading anchored" data-anchor-id="direcciones-y-capacidad">4. Direcciones y capacidad</h2>
+<p>Aquí reaparece una idea de la lección anterior. Si una dirección utiliza <strong>n bits</strong>, podemos formar <span class="math inline">\(2^n\)</span> patrones y distinguir <span class="math inline">\(2^n\)</span> posiciones.</p>
+<table class="caption-top table">
 <thead>
-<tr>
-<th>
-Bits de dirección
-</th>
-<th>
-Posiciones distinguibles
-</th>
+<tr class="header">
+<th style="text-align: right;">Bits de dirección</th>
+<th style="text-align: right;">Posiciones distinguibles</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-8
-</td>
-<td>
-256
-</td>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">256</td>
 </tr>
-<tr>
-<td>
-16
-</td>
-<td>
-65 536
-</td>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">65 536</td>
 </tr>
-<tr>
-<td>
-32
-</td>
-<td>
-4 294 967 296
-</td>
+<tr class="odd">
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">4 294 967 296</td>
 </tr>
 </tbody>
 </table>
-<div class="annotation-line blue-note">
-Más bits de dirección → más posiciones identificables.
-</div>
 <div class="ejercicio">
 <div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.6</span> <span class="difficulty-badge">●● Intermedio</span></p>
+<p><span class="exercise-label">Ejercicio 1.4</span> <span class="difficulty-badge">●● Intermedio</span></p>
 </div>
 <div class="exercise-title">
-<p>Dimensionar una memoria</p>
+<p>Capacidad direccionable</p>
 </div>
-<p>Un computador tiene un bus de direcciones de 20 bits. Si cada dirección identifica un byte, ¿cuántos bytes puede direccionar directamente?</p>
+<p>Un computador utiliza direcciones de 32 bits y cada dirección identifica una palabra de 32 bits. ¿Cuál es la capacidad máxima de memoria direccionable?</p>
 <div class="solucion">
 <p><span class="component-kicker">Solución</span></p>
-<p>Con 20 bits podemos formar <span class="math inline">\(2^{20}\)</span> direcciones. Si cada dirección identifica un byte:</p>
-<p><span class="math display">\[2^{20}\ \text{bytes}=1\ \text{MiB}\]</span></p>
+<p>Hay <span class="math inline">\(2^{32}\)</span> direcciones y cada palabra ocupa 4 bytes. Por tanto:</p>
+<p><span class="math display">\[2^{32}\times4\;\text{bytes}=2^{34}\;\text{bytes}=16\;\text{GiB}\]</span></p>
 </div>
 </div>
-<div class="lesson-takeaway">
-<span>IDEA ESENCIAL</span>
+<div class="takeaway">
+<span>CONEXIÓN</span>
 <p>
-Dirección, dato y control responden a preguntas diferentes. Distinguirlas evita la mayoría de confusiones iniciales sobre los buses.
+La misma idea matemática que contaba patrones binarios ahora cuenta posiciones de memoria.
 </p>
 </div>
 

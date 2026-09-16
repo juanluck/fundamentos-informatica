@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-cb0bc420278434f743d5a57752e59b78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-46dfa6da0dab91ac6044353f8d28e0cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked editorial-page lesson-page fullcontent quarto-light">
+<body class="nav-sidebar floating editorial-site lesson-page fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Fundamentos de Informática</a> 
@@ -178,32 +178,37 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="lesson-head">
-<span class="kicker">LECCIÓN 1.1</span>
+<div class="book-masthead">
+<a class="brand" href="../../index.html">Fundamentos de Informática</a>
+<nav>
+<a href="index.html">Tema 1</a><span>Lección 1.1</span>
+</nav>
+</div>
+<div class="lesson-intro">
+<p class="kicker">
+LECCIÓN 1.1
+</p>
 <h1>
 ¿Qué es un computador?
 </h1>
 <p class="deck">
-Antes de hablar de CPU, memoria o programas, necesitamos una idea sencilla que nos permita reconocer qué tienen en común dispositivos muy diferentes.
+Antes de hablar de CPU, memoria o programas, necesitamos una idea sencilla que nos permita reconocer qué tienen en común dispositivos muy distintos.
 </p>
 </div>
-<div class="editorial-rule">
-
-</div>
-<section id="una-máquina-que-transforma-información" class="level2 editorial-section">
-<h2 class="editorial-section anchored" data-anchor-id="una-máquina-que-transforma-información">1. Una máquina que transforma información</h2>
-<p>Un portátil, un teléfono, una consola o la centralita de un automóvil tienen aspectos y usos distintos. Sin embargo, todos pueden entenderse inicialmente con un mismo esquema:</p>
-<div class="process-line" aria-label="Entrada, procesamiento y salida">
+<section id="una-máquina-que-transforma-información" class="level2 section-heading">
+<h2 class="section-heading anchored" data-anchor-id="una-máquina-que-transforma-información">1. Una máquina que transforma información</h2>
+<p>Un portátil, un teléfono, una consola o la centralita de un automóvil tienen aspectos y usos diferentes. Sin embargo, todos pueden entenderse inicialmente mediante la misma historia: <strong>reciben algo, realizan un procesamiento y producen un resultado</strong>.</p>
+<div class="process-sequence">
 <div>
-<span>Entrada</span><strong>datos</strong><small>teclas, imagen, medida…</small>
+<span>Entrada</span><strong>datos</strong><small>teclas · imagen · medida</small>
 </div>
 <b>→</b>
-<div class="process-core">
+<div>
 <span>Procesamiento</span><strong>computador</strong><small>aplica instrucciones</small>
 </div>
 <b>→</b>
 <div>
-<span>Salida</span><strong>resultado</strong><small>pantalla, sonido, acción…</small>
+<span>Salida</span><strong>resultado</strong><small>pantalla · sonido · acción</small>
 </div>
 </div>
 <div class="concepto-clave">
@@ -211,11 +216,13 @@ Antes de hablar de CPU, memoria o programas, necesitamos una idea sencilla que n
 <p>Un <strong>computador</strong> es una máquina programable capaz de recibir, almacenar y procesar datos para obtener resultados.</p>
 </div>
 </section>
-<section id="dato-no-significa-todavía-información" class="level2 editorial-section">
-<h2 class="editorial-section anchored" data-anchor-id="dato-no-significa-todavía-información">2. Dato no significa todavía información</h2>
-<div class="data-question">
-<div class="big-number">
+<section id="un-dato-necesita-contexto" class="level2 section-heading">
+<h2 class="section-heading anchored" data-anchor-id="un-dato-necesita-contexto">2. Un dato necesita contexto</h2>
+<div class="editorial-split">
+<div>
+<p class="display-number">
 23
+</p>
 </div>
 <div>
 <p>
@@ -226,47 +233,51 @@ Podría ser una temperatura, una edad, el número de estudiantes de un grupo o u
 </p>
 </div>
 </div>
-<p>Un <strong>dato</strong> es una representación. Se convierte en información cuando sabemos cómo interpretarlo dentro de un contexto.</p>
-<div class="annotation-line">
-La representación y el significado no son la misma cosa.
-</div>
+<p>Un <strong>dato</strong> es una representación. Hablamos de <strong>información</strong> cuando sabemos cómo interpretar esa representación dentro de un contexto.</p>
+<blockquote class="blockquote">
+<p>La representación y el significado no son la misma cosa.</p>
+</blockquote>
 </section>
-<section id="codificar-es-acordar-una-representación" class="level2 editorial-section">
-<h2 class="editorial-section anchored" data-anchor-id="codificar-es-acordar-una-representación">3. Codificar es acordar una representación</h2>
-<p>No hace falta empezar por el binario. Un semáforo ya utiliza un código.</p>
-<div class="signal-code">
+<section id="codificar-es-acordar-una-representación" class="level2 section-heading">
+<h2 class="section-heading anchored" data-anchor-id="codificar-es-acordar-una-representación">3. Codificar es acordar una representación</h2>
+<p>No hace falta empezar por el binario. Un semáforo ya utiliza un código: el color es la señal física y una regla compartida determina qué significa.</p>
+<div class="signal-line">
 <div>
-<span class="signal red"></span><strong>Rojo</strong><small>detenerse</small>
+<i class="red-dot"></i><strong>rojo</strong><span>detenerse</span>
 </div>
 <div>
-<span class="signal green"></span><strong>Verde</strong><small>avanzar</small>
+<i class="green-dot"></i><strong>verde</strong><span>avanzar</span>
 </div>
 </div>
-<p>La señal física y su significado están relacionados mediante una <strong>regla de interpretación</strong>. En informática ocurre lo mismo: un patrón de bits puede significar una letra, un número o una instrucción dependiendo del código utilizado.</p>
+<p>En informática ocurre lo mismo: un patrón puede significar una letra, un número, una imagen o una instrucción dependiendo del código utilizado.</p>
 <div class="importante">
 <p><span class="component-kicker">Importante</span></p>
-<p>El computador manipula representaciones físicas. El significado aparece cuando interpretamos esas representaciones según unas reglas compartidas.</p>
+<p>El computador manipula representaciones físicas. El significado aparece cuando esas representaciones se interpretan según unas reglas compartidas.</p>
 </div>
 </section>
-<section id="hardware-y-software" class="level2 editorial-section">
-<h2 class="editorial-section anchored" data-anchor-id="hardware-y-software">4. Hardware y software</h2>
-<div class="two-concepts">
+<section id="hardware-y-software" class="level2 section-heading">
+<h2 class="section-heading anchored" data-anchor-id="hardware-y-software">4. Hardware y software</h2>
+<div class="editorial-split concepts">
 <div>
-<span class="concept-label">HARDWARE</span>
+<p class="kicker">
+HARDWARE
+</p>
 <h3 class="anchored">
-Lo que puede hacer físicamente
+La máquina física
 </h3>
 <p>
 Procesador, memoria, almacenamiento, sensores, pantalla y demás componentes materiales.
 </p>
 </div>
 <div>
-<span class="concept-label blue">SOFTWARE</span>
+<p class="kicker teal">
+SOFTWARE
+</p>
 <h3 class="anchored">
-Lo que le pedimos que haga
+Las instrucciones
 </h3>
 <p>
-Programas e instrucciones que utilizan los recursos del hardware para realizar una tarea.
+Programas que utilizan los recursos del hardware para realizar una tarea.
 </p>
 </div>
 </div>
@@ -290,10 +301,10 @@ Programas e instrucciones que utilizan los recursos del hardware para realizar u
 <p>En una aplicación de navegación, origen, destino y datos cartográficos son entradas; el cálculo de la ruta es el procesamiento; la ruta propuesta es la salida.</p>
 </div>
 </div>
-<div class="lesson-takeaway">
+<div class="takeaway">
 <span>IDEA ESENCIAL</span>
 <p>
-Un computador no es “una máquina que entiende”. Es una máquina capaz de transformar representaciones siguiendo instrucciones.
+Un computador no necesita «entender» el mundo como nosotros: transforma representaciones siguiendo instrucciones.
 </p>
 </div>
 
