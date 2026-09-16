@@ -69,6 +69,6 @@ toc: false
   <footer class="running-foot"><span>Fundamentos de Informática</span><span>5</span></footer>
 </article>
 
-<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="01-que-es-computador.html">← Lección 1.1</a><a href="../../index.html">Índice →</a></nav>
+<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="01-que-es-computador.html">← Lección 1.1</a><a href="03-componentes.html">Lección 1.3 →</a></nav>
 <script src="../../assets/book.js"></script>
 ```
