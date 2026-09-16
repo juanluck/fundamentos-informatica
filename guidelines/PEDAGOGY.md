@@ -1,4 +1,4 @@
-# Guía pedagógica — v0.2
+# Guía pedagógica — v0.3
 
 Este documento define los principios pedagógicos que deben guiar la transformación del material docente en el libro **Fundamentos de Informática**. No prescribe una estructura rígida para todos los capítulos; funciona como contrato de diseño del aprendizaje.
 
@@ -94,7 +94,20 @@ Toda idea esencial debe quedar desarrollada sin depender de la exposición oral.
 
 Cada capítulo debe volver a la pregunta inicial mediante una historia, proceso, mapa conceptual, resumen, problemas integradores o autoevaluación.
 
-## 18. Lista de comprobación
+## 18. La publicación visual tiene una puerta de calidad
+
+Que Quarto renderice sin errores **no significa que una página esté terminada**. Antes de extender un patrón a nuevas lecciones debe revisarse la salida publicada en navegador y compararse con la referencia editorial aprobada.
+
+Una página no pasa esta puerta si ocurre alguno de estos casos:
+
+- la interfaz de Quarto domina sobre el contenido;
+- hay títulos o numeraciones duplicados;
+- la composición se basa principalmente en tarjetas o cajas decorativas;
+- las figuras son meras versiones gráficas de texto ya escrito;
+- el resultado se aleja claramente de la familia visual aprobada;
+- el diseño funciona en el código pero no en la salida HTML real.
+
+## 19. Lista de comprobación
 
 - [ ] ¿Se revisó el material visual fuente, no solo el texto?
 - [ ] ¿Existe una pregunta o propósito comprensible?
@@ -107,3 +120,4 @@ Cada capítulo debe volver a la pregunta inicial mediante una historia, proceso,
 - [ ] ¿Las soluciones pueden ocultarse en web?
 - [ ] ¿El texto puede estudiarse sin explicación oral?
 - [ ] ¿La web aporta algo que el PDF no puede aportar?
+- [ ] ¿La salida publicada se ha revisado visualmente y respeta la referencia aprobada?
