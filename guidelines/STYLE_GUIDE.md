@@ -1,47 +1,46 @@
-# Guía visual — v0.2
+# Guía visual — v0.4
 
 ## Dirección aprobada
 
-La referencia visual actual es una **maquetación editorial cálida**, próxima a un manual universitario ilustrado y alejada de la estética de dashboard o documentación técnica.
+La referencia visual del proyecto es el mockup editorial aprobado el 16/09/2026: fondo cálido, jerarquía tipográfica fuerte, ilustración con función pedagógica, color terracota como acento y diagramas integrados en la lectura.
 
-### Principios
+La implementación debe parecer **un manual universitario ilustrado adaptado a web**, no documentación Quarto tematizada ni un dashboard educativo.
 
-1. **Quarto es el motor, no la estética.** Su numeración, TOC, títulos automáticos y componentes visibles deben reducirse cuando interfieran con la composición editorial.
-2. **Una página debe tener ritmo.** Alternar texto, figura, proceso, ejemplo y práctica; evitar secuencias de cajas visualmente equivalentes.
-3. **Menos tarjetas.** Los componentes pedagógicos no deben convertirse automáticamente en rectángulos redondeados con fondo.
-4. **La imagen explica.** Diagramas e ilustraciones deben comunicar una relación, una secuencia o una intuición que el texto por sí solo no comunica igual de bien.
-5. **Tipografía editorial.** Serif para lectura y titulares; sans serif para navegación, etiquetas y metadatos.
-6. **Color funcional y escaso.** Terracota como acento principal; azul/verde apagados como secundarios. El fondo general es papel cálido.
-7. **Una lección por página web.** Evitar capítulos interminables cuando el contenido puede presentarse como una secuencia de lecciones navegables.
-8. **Mucho aire y pocas fronteras.** Las líneas, fondos y cajas se usan para estructurar, no para envolver cada idea.
+## Principios operativos
 
-## Familias visuales
+1. **Quarto es el motor, no la interfaz.** En la web editorial se ocultan sidebar, breadcrumbs, TOC y título automático cuando compitan con la composición.
+2. **Pocas composiciones maestras.** Portada, apertura de lección, texto + figura, figura protagonista, ejercicio y cierre. No crear una clase CSS nueva para cada idea.
+3. **Las ilustraciones importantes se diseñan como ilustraciones.** HTML/CSS se reserva para texto, navegación, ejercicios e interacciones pequeñas.
+4. **Los diagramas técnicos deben explicar relaciones.** Evitar cajas decorativas cuyo contenido podría ser simplemente texto.
+5. **El color tiene función.** Terracota = énfasis/recorrido principal; azul verdoso = contraste técnico; gris cálido = estructura secundaria.
+6. **Aire editorial.** Bordes, fondos y radios se usan con mucha moderación. La separación primaria procede de espacio, tipografía y reglas finas.
+7. **Una sola jerarquía.** No duplicar el título de Quarto y el título editorial.
+8. **Primero escritorio, después móvil, ambos obligatorios.** El diseño debe reordenarse en móvil sin convertirse en una lista de tarjetas.
 
-- **Ilustración editorial:** aperturas y metáforas visuales.
-- **Diagrama técnico:** componentes, relaciones y procesos.
-- **Visualización interactiva:** solo cuando manipular un parámetro ayude a formar intuición.
+## Tipografía web
 
-## Composiciones maestras
+- Texto y títulos: `Source Serif 4`.
+- Navegación, etiquetas y metadatos: `Inter`.
+- Código: monoespaciada del sistema.
 
-- Portada de tema.
-- Apertura de lección.
-- Texto + figura.
-- Figura panorámica.
-- Secuencia paso a paso.
-- Comparación paralela.
-- Ejercicio integrado.
-- Cierre con idea esencial.
+Se cargan como fuentes web; el PDF tendrá su propia decisión tipográfica.
 
 ## Paleta
 
-- Papel: `#FFFAF1`
-- Tinta: `#203444`
-- Texto: `#3D403D`
-- Terracota: `#B9502F`
-- Azul verdoso: `#3D6E73`
-- Verde: `#526D55`
-- Línea cálida: `#D9C9B7`
+- Papel: `#FFFAF2`
+- Tinta: `#182F3F`
+- Cuerpo: `#363A37`
+- Terracota: `#B75332`
+- Azul verdoso: `#3D7073`
+- Línea: `#D8C9B8`
 
-## Regla de control
+## Criterio de aceptación
 
-Si una página parece una colección de tarjetas de una aplicación SaaS, el diseño ha fallado.
+Una página no se considera terminada porque Quarto renderice. Debe comprobarse el HTML publicado y responder sí a estas preguntas:
+
+- ¿Se reconoce la familia del mockup aprobado?
+- ¿Quarto resulta visualmente secundario?
+- ¿La figura principal aporta comprensión real?
+- ¿Hay una jerarquía clara sin proliferación de cajas?
+- ¿El texto puede estudiarse cómodamente?
+- ¿La página sigue funcionando en móvil?

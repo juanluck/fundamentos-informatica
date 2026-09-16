@@ -12,10 +12,6 @@ book:
         - teoria/tema1/01-que-es-computador.qmd
         - teoria/tema1/02-representacion.qmd
         - teoria/tema1/04-comunicacion.qmd
-  sidebar:
-    style: docked
-    search: true
-    collapse-level: 2
   page-navigation: true
 
 format:
