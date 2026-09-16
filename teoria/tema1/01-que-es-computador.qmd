@@ -1,0 +1,87 @@
+---
+title: "1.1 · ¿Qué es un computador?"
+body-classes: editorial-site lesson-page
+---
+
+<div class="book-masthead">
+<a class="brand" href="../../index.html">Fundamentos de Informática</a>
+<nav><a href="index.html">Tema 1</a><span>Lección 1.1</span></nav>
+</div>
+
+<div class="lesson-intro">
+<p class="kicker">LECCIÓN 1.1</p>
+<h1>¿Qué es un computador?</h1>
+<p class="deck">Antes de hablar de CPU, memoria o programas, necesitamos una idea sencilla que nos permita reconocer qué tienen en común dispositivos muy distintos.</p>
+</div>
+
+## 1. Una máquina que transforma información {.section-heading}
+
+Un portátil, un teléfono, una consola o la centralita de un automóvil tienen aspectos y usos diferentes. Sin embargo, todos pueden entenderse inicialmente mediante la misma historia: **reciben algo, realizan un procesamiento y producen un resultado**.
+
+<div class="process-sequence">
+<div><span>Entrada</span><strong>datos</strong><small>teclas · imagen · medida</small></div>
+<b>→</b>
+<div><span>Procesamiento</span><strong>computador</strong><small>aplica instrucciones</small></div>
+<b>→</b>
+<div><span>Salida</span><strong>resultado</strong><small>pantalla · sonido · acción</small></div>
+</div>
+
+::: {.concepto-clave}
+Un **computador** es una máquina programable capaz de recibir, almacenar y procesar datos para obtener resultados.
+:::
+
+## 2. Un dato necesita contexto {.section-heading}
+
+<div class="editorial-split">
+<div>
+<p class="display-number">23</p>
+</div>
+<div>
+<p><strong>¿Qué significa?</strong></p>
+<p>Podría ser una temperatura, una edad, el número de estudiantes de un grupo o una dirección de memoria. El símbolo por sí solo no basta.</p>
+</div>
+</div>
+
+Un **dato** es una representación. Hablamos de **información** cuando sabemos cómo interpretar esa representación dentro de un contexto.
+
+> La representación y el significado no son la misma cosa.
+
+## 3. Codificar es acordar una representación {.section-heading}
+
+No hace falta empezar por el binario. Un semáforo ya utiliza un código: el color es la señal física y una regla compartida determina qué significa.
+
+<div class="signal-line">
+<div><i class="red-dot"></i><strong>rojo</strong><span>detenerse</span></div>
+<div><i class="green-dot"></i><strong>verde</strong><span>avanzar</span></div>
+</div>
+
+En informática ocurre lo mismo: un patrón puede significar una letra, un número, una imagen o una instrucción dependiendo del código utilizado.
+
+::: {.importante}
+El computador manipula representaciones físicas. El significado aparece cuando esas representaciones se interpretan según unas reglas compartidas.
+:::
+
+## 4. Hardware y software {.section-heading}
+
+<div class="editorial-split concepts">
+<div><p class="kicker">HARDWARE</p><h3>La máquina física</h3><p>Procesador, memoria, almacenamiento, sensores, pantalla y demás componentes materiales.</p></div>
+<div><p class="kicker teal">SOFTWARE</p><h3>Las instrucciones</h3><p>Programas que utilizan los recursos del hardware para realizar una tarea.</p></div>
+</div>
+
+::: {.ejercicio titulo="Entrada, procesamiento y salida" numero="1.1" dificultad="1"}
+Para cada situación, identifica una posible **entrada**, el **procesamiento** y la **salida**:
+
+1. una calculadora suma dos números;
+2. una cámara de móvil toma una fotografía;
+3. una aplicación de navegación calcula una ruta.
+
+::: {.solucion}
+En una calculadora, los números y la operación son la entrada; realizar la suma es el procesamiento; el valor mostrado es la salida.
+
+En una cámara, la luz captada por el sensor es una entrada; el sistema procesa las medidas del sensor; la imagen almacenada o mostrada es una salida.
+
+En una aplicación de navegación, origen, destino y datos cartográficos son entradas; el cálculo de la ruta es el procesamiento; la ruta propuesta es la salida.
+:::
+:::
+
+<div class="takeaway"><span>IDEA ESENCIAL</span><p>Un computador no necesita «entender» el mundo como nosotros: transforma representaciones siguiendo instrucciones.</p></div>

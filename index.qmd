@@ -1,0 +1,20 @@
+---
+title: "Fundamentos de Informática"
+body-classes: editorial-site
+---
+
+<div class="book-masthead">
+<a class="brand" href="./index.html">Fundamentos de Informática</a>
+<nav><a href="teoria/tema1/index.html">Tema 1</a><span>Libro en construcción</span></nav>
+</div>
+
+<div class="home-hero">
+<p class="kicker">LIBRO DOCENTE · FUNDAMENTOS DE INFORMÁTICA</p>
+<h1>Comprender la informática construyendo modelos mentales.</h1>
+<p class="deck">Explicaciones progresivas, ilustraciones, ejercicios y pequeñas interacciones para entender qué ocurre realmente dentro de un computador.</p>
+<p><a class="text-link" href="teoria/tema1/index.html">Comenzar por el Tema 1 →</a></p>
+</div>
+
+<div class="home-note">
+<p><strong>Estado actual.</strong> El Tema 1 es el banco de pruebas editorial y pedagógico del libro. La prioridad actual es fijar una experiencia web clara antes de extender el sistema al resto de contenidos.</p>
+</div>
