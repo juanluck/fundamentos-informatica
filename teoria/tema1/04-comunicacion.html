@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Juan Luis Jiménez">
 
-<title>Fundamentos de Informática</title>
+<title>1.4 · ¿Cómo se comunican sus componentes? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,24 +29,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./teoria/tema1/index.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cb0bc420278434f743d5a57752e59b78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../teoria/tema1/02-representacion.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-cb0bc420278434f743d5a57752e59b78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,10 +76,39 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked editorial-page fullcontent quarto-light">
+<body class="nav-sidebar docked editorial-page lesson-page fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Fundamentos de Informática</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../../teoria/tema1/04-comunicacion.html"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -104,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Fundamentos de Informática</a> 
+      <a href="../../">Fundamentos de Informática</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -116,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Fundamentos de Informática</span></a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos de Informática</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -130,22 +158,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/tema1/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></a>
+  <a href="../../teoria/tema1/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/tema1/01-que-es-computador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></a>
+  <a href="../../teoria/tema1/01-que-es-computador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/tema1/02-representacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a>
+  <a href="../../teoria/tema1/02-representacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/tema1/04-comunicacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></a>
+  <a href="../../teoria/tema1/04-comunicacion.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></a>
   </div>
 </li>
       </ul>
@@ -159,22 +187,15 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../../teoria/tema1/04-comunicacion.html"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Fundamentos de Informática</h1>
-<p class="subtitle lead">Libro en construcción</p>
+<h1 class="title"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor/a</div>
-    <div class="quarto-title-meta-contents">
-             <p>Juan Luis Jiménez </p>
-          </div>
-  </div>
     
   
     
@@ -185,16 +206,150 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="site-intro">
+<div class="lesson-head">
+<span class="kicker">LECCIÓN 1.4</span>
+<h1>
+¿Cómo se comunican<br>sus componentes?
+</h1>
+<p class="deck">
+Un computador está formado por elementos que necesitan intercambiar información. ¿Cómo sabe la CPU dónde leer, qué dato mover y qué operación realizar?
+</p>
+</div>
+<div class="editorial-rule">
+
+</div>
+<section id="una-primera-idea" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="una-primera-idea">1. Una primera idea</h2>
+<p>Imaginemos un computador muy simple con una CPU y una memoria. La CPU necesita leer y escribir información almacenada en la memoria.</p>
+<div class="need-connection">
+<div class="block cpu">
+CPU
+</div>
+<div class="question-path">
+<span>?</span><small>necesitamos un sistema de comunicación</small>
+</div>
+<div class="block memory">
+Memoria
+</div>
+</div>
+</section>
+<section id="tres-preguntas-diferentes" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="tres-preguntas-diferentes">2. Tres preguntas diferentes</h2>
+<p>La comunicación no resuelve una sola pregunta, sino tres:</p>
+<div class="three-questions">
 <div>
-<pre><code>&lt;span class="kicker"&gt;FUNDAMENTOS DE INFORMÁTICA&lt;/span&gt;
-&lt;h1&gt;Aprender informática construyendo modelos mentales.&lt;/h1&gt;
-&lt;p class="lead-copy"&gt;Este libro acompaña la asignatura con explicaciones progresivas, visualizaciones, ejercicios y recursos interactivos. La web es el formato principal; el PDF se genera a partir del mismo contenido.&lt;/p&gt;
-&lt;p&gt;&lt;a class="editorial-link" href="teoria/tema1/index.html"&gt;Comenzar por el Tema 1 →&lt;/a&gt;&lt;/p&gt;</code></pre>
+<span>1</span><strong>¿Dónde?</strong><small>qué posición o dispositivo</small>
 </div>
+<div>
+<span>2</span><strong>¿Qué datos?</strong><small>qué información se transfiere</small>
+</div>
+<div>
+<span>3</span><strong>¿Qué operación?</strong><small>leer, escribir, sincronizar…</small>
+</div>
+</div>
+<p><img class="wide-figure clean-figure" src="../../assets/tema1/buses-editorial.svg" alt="CPU y memoria conectadas mediante bus de direcciones, bus de datos y señales de control."></p>
+<div class="concepto-clave">
+<p><span class="component-kicker">Concepto clave</span></p>
+<p>El <strong>bus de direcciones</strong> identifica el destino; el <strong>bus de datos</strong> transporta la información; las <strong>señales de control</strong> indican qué operación debe realizarse.</p>
+</div>
+</section>
+<section id="un-ejemplo-paso-a-paso" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="un-ejemplo-paso-a-paso">3. Un ejemplo paso a paso</h2>
+<p>La CPU quiere leer el contenido de la posición 5 de memoria:</p>
+<ol class="step-list">
+<li>
+<span>1</span>
+<p>
+Coloca la dirección <strong>5</strong> en el bus de direcciones.
+</p>
+</li>
+<li>
+<span>2</span>
+<p>
+Activa una señal de <strong>lectura</strong>.
+</p>
+</li>
+<li>
+<span>3</span>
+<p>
+La memoria coloca el contenido de la posición 5 en el <strong>bus de datos</strong>.
+</p>
+</li>
+<li>
+<span>4</span>
+<p>
+La CPU recibe ese dato.
+</p>
+</li>
+</ol>
+</section>
+<section id="direcciones-y-capacidad-de-memoria" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="direcciones-y-capacidad-de-memoria">4. Direcciones y capacidad de memoria</h2>
+<p>Aquí reaparece una idea que ya conocemos. Si una dirección se expresa con <strong>n bits</strong>, podemos formar <span class="math inline">\(2^n\)</span> patrones distintos y, por tanto, distinguir <span class="math inline">\(2^n\)</span> posiciones.</p>
+<table class="editorial-table">
+<thead>
+<tr>
+<th>
+Bits de dirección
+</th>
+<th>
+Posiciones distinguibles
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+8
+</td>
+<td>
+256
+</td>
+</tr>
+<tr>
+<td>
+16
+</td>
+<td>
+65 536
+</td>
+</tr>
+<tr>
+<td>
+32
+</td>
+<td>
+4 294 967 296
+</td>
+</tr>
+</tbody>
+</table>
+<div class="annotation-line blue-note">
+Más bits de dirección → más posiciones identificables.
+</div>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.6</span> <span class="difficulty-badge">●● Intermedio</span></p>
+</div>
+<div class="exercise-title">
+<p>Dimensionar una memoria</p>
+</div>
+<p>Un computador tiene un bus de direcciones de 20 bits. Si cada dirección identifica un byte, ¿cuántos bytes puede direccionar directamente?</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p>Con 20 bits podemos formar <span class="math inline">\(2^{20}\)</span> direcciones. Si cada dirección identifica un byte:</p>
+<p><span class="math display">\[2^{20}\ \text{bytes}=1\ \text{MiB}\]</span></p>
+</div>
+</div>
+<div class="lesson-takeaway">
+<span>IDEA ESENCIAL</span>
+<p>
+Dirección, dato y control responden a preguntas diferentes. Distinguirlas evita la mayoría de confusiones iniciales sobre los buses.
+</p>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -659,11 +814,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../teoria/tema1/02-representacion.html" class="pagination-link" aria-label="1.2 · ¿Cómo representa la información?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./teoria/tema1/index.html" class="pagination-link" aria-label="Tema 1 · Introducción a los computadores">
-        <span class="nav-page-text"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -671,5 +826,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

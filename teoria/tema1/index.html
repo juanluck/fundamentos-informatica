@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Galería de componentes – Fundamentos de Informática</title>
+<title>Tema 1 · Introducción a los computadores – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,62 +26,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./teoria/01-introduccion.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a0e2fe9ba19305ad4cbe302bd27039cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../teoria/tema1/01-que-es-computador.html" rel="next">
+<link href="../../index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-cb0bc420278434f743d5a57752e59b78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,43 +76,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked editorial-page theme-cover fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -155,7 +89,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sandbox.html">Diseño y pruebas</a></li><li class="breadcrumb-item"><a href="./sandbox.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Galería de componentes</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -170,7 +104,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Fundamentos de Informática</a> 
+      <a href="../../">Fundamentos de Informática</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -182,8 +116,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de Informática</span></span></a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos de Informática</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -197,25 +130,22 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/01-introduccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tema 1 · Introducción a los computadores</span></span></a>
+  <a href="../../teoria/tema1/index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Diseño y pruebas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sandbox.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Galería de componentes</span></span></a>
+  <a href="../../teoria/tema1/01-que-es-computador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teoria/tema1/02-representacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teoria/tema1/04-comunicacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></a>
   </div>
 </li>
       </ul>
@@ -225,36 +155,14 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Tabla de contenidos</h2>
-   
-  <ul>
-  <li><a href="#texto-normal-y-jerarquía" id="toc-texto-normal-y-jerarquía" class="nav-link active" data-scroll-target="#texto-normal-y-jerarquía"><span class="header-section-number">3.1</span> Texto normal y jerarquía</a>
-  <ul class="collapse">
-  <li><a href="#subsección-de-ejemplo" id="toc-subsección-de-ejemplo" class="nav-link" data-scroll-target="#subsección-de-ejemplo"><span class="header-section-number">3.1.1</span> Subsección de ejemplo</a></li>
-  </ul></li>
-  <li><a href="#bloques-didácticos" id="toc-bloques-didácticos" class="nav-link" data-scroll-target="#bloques-didácticos"><span class="header-section-number">3.2</span> Bloques didácticos</a></li>
-  <li><a href="#ejercicios-y-tareas" id="toc-ejercicios-y-tareas" class="nav-link" data-scroll-target="#ejercicios-y-tareas"><span class="header-section-number">3.3</span> Ejercicios y tareas</a></li>
-  <li><a href="#autoevaluación" id="toc-autoevaluación" class="nav-link" data-scroll-target="#autoevaluación"><span class="header-section-number">3.4</span> Autoevaluación</a></li>
-  <li><a href="#código" id="toc-código" class="nav-link" data-scroll-target="#código"><span class="header-section-number">3.5</span> Código</a></li>
-  <li><a href="#matemáticas" id="toc-matemáticas" class="nav-link" data-scroll-target="#matemáticas"><span class="header-section-number">3.6</span> Matemáticas</a></li>
-  <li><a href="#tabla" id="toc-tabla" class="nav-link" data-scroll-target="#tabla"><span class="header-section-number">3.7</span> Tabla</a></li>
-  <li><a href="#figura-diagrama" id="toc-figura-diagrama" class="nav-link" data-scroll-target="#figura-diagrama"><span class="header-section-number">3.8</span> Figura / diagrama</a></li>
-  <li><a href="#vídeo" id="toc-vídeo" class="nav-link" data-scroll-target="#vídeo"><span class="header-section-number">3.9</span> Vídeo</a></li>
-  <li><a href="#recurso-externo" id="toc-recurso-externo" class="nav-link" data-scroll-target="#recurso-externo"><span class="header-section-number">3.10</span> Recurso externo</a></li>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos"><span class="header-section-number">3.11</span> Objetivos</a></li>
-  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">3.12</span> Resumen</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sandbox.html">Diseño y pruebas</a></li><li class="breadcrumb-item"><a href="./sandbox.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Galería de componentes</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Galería de componentes</span></h1>
-<p class="subtitle lead">Sandbox de maquetación</p>
+<h1 class="title"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></h1>
+<p class="subtitle lead">Del mundo físico a la información digital</p>
 </div>
 
 
@@ -271,201 +179,58 @@ window.Quarto = {
 </header>
 
 
-<p>Este capítulo es deliberadamente artificial. Sirve para probar la gramática visual del libro antes de aplicarla a contenido real.</p>
-<section id="texto-normal-y-jerarquía" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="texto-normal-y-jerarquía"><span class="header-section-number">3.1</span> Texto normal y jerarquía</h2>
-<p>El cuerpo del libro debe poder leerse cómodamente durante periodos largos. <strong>Negrita</strong>, <em>cursiva</em>, <code>código en línea</code>, enlaces, listas y referencias deben integrarse sin romper el ritmo de lectura.</p>
-<section id="subsección-de-ejemplo" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="subsección-de-ejemplo"><span class="header-section-number">3.1.1</span> Subsección de ejemplo</h3>
-<ol type="1">
-<li>Primer elemento.</li>
-<li>Segundo elemento.</li>
-<li>Tercer elemento.</li>
+<div class="chapter-cover">
+<div class="chapter-cover-copy">
+<pre><code>&lt;span class="kicker"&gt;TEMA 1&lt;/span&gt;
+&lt;h1&gt;Introducción&lt;br&gt;a los computadores&lt;/h1&gt;
+&lt;p class="chapter-subtitle"&gt;Del mundo físico a la información digital&lt;/p&gt;
+&lt;div class="short-rule"&gt;&lt;/div&gt;
+&lt;p class="opening-question"&gt;¿Qué ocurre realmente cuando pulsamos una tecla, ejecutamos un programa o reproducimos una canción?&lt;/p&gt;
+&lt;p&gt;Detrás de acciones cotidianas hay unas pocas ideas sorprendentemente sencillas: representar información, almacenarla, transformarla y comunicarla. En este tema construiremos ese modelo poco a poco.&lt;/p&gt;</code></pre>
+</div>
+<div class="chapter-cover-art">
+<pre><code>&lt;img src="../../assets/tema1/hero-editorial.svg" alt="Escena editorial con un portátil, libros sobre hardware, software e información, y una taza con la idea bits." /&gt;</code></pre>
+</div>
+</div>
+<div class="learning-panel">
+<h2 class="anchored">
+En este tema aprenderás…
+</h2>
+<ol class="learning-list">
+<li>
+<a href="01-que-es-computador.html">Qué es un computador y qué puede hacer</a>
+</li>
+<li>
+<a href="02-representacion.html">Cómo representa la información</a>
+</li>
+<li>
+<span>Qué hay dentro de un computador</span>
+</li>
+<li>
+<a href="04-comunicacion.html">Cómo se comunican sus componentes</a>
+</li>
+<li>
+<span>Cómo ejecuta un programa</span>
+</li>
+<li>
+<span>Qué tipos de computadores existen</span>
+</li>
+<li>
+<span>Qué papel juega el software</span>
+</li>
 </ol>
-</section>
-</section>
-<section id="bloques-didácticos" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="bloques-didácticos"><span class="header-section-number">3.2</span> Bloques didácticos</h2>
-<div class="concepto-clave">
-<p><span class="component-kicker">Concepto clave</span></p>
-<p>Un <strong>bit</strong> es una unidad de información que puede tomar dos valores posibles: 0 o 1.</p>
-</div>
-<div class="importante">
-<p><span class="component-kicker">Importante</span></p>
-<p>Los prefijos binarios y decimales no representan exactamente las mismas cantidades. El contexto determina cuándo conviene distinguirlos.</p>
-</div>
-<div class="ejemplo">
-<p><span class="component-kicker">Ejemplo</span></p>
-<p>Si disponemos de 3 bits, podemos representar <span class="math inline">\(2^3 = 8\)</span> combinaciones distintas.</p>
-</div>
-<div class="para-saber-mas">
-<p><span class="component-kicker">Para saber más</span></p>
-<p>La normalización de unidades y prefijos evita ambigüedades al expresar capacidades de memoria y almacenamiento.</p>
-</div>
-</section>
-<section id="ejercicios-y-tareas" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="ejercicios-y-tareas"><span class="header-section-number">3.3</span> Ejercicios y tareas</h2>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 2.4</span> <span class="difficulty-badge">●● Intermedio</span></p>
-</div>
-<div class="exercise-title">
-<p>Conversión a binario</p>
-</div>
-<p>Convierte el número decimal 74 a representación binaria e indica el número mínimo de bits necesarios.</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p><span class="math inline">\(74 = 64 + 8 + 2 = 2^6 + 2^3 + 2^1\)</span>.</p>
-<p>Por tanto:</p>
-<p><span class="math display">\[74_{10}=1001010_2\]</span></p>
-<p>Se necesitan <strong>7 bits</strong>.</p>
+<div class="margin-note">
+Una misma idea irá reapareciendo en contextos nuevos.
 </div>
 </div>
-<div class="tarea">
-<div class="exercise-meta">
-<p><span class="exercise-label">Tarea 3.1</span> <span class="difficulty-badge">●●● Avanzado</span></p>
-</div>
-<div class="exercise-title">
-<p>Explora tu ordenador</p>
-</div>
-<p>Identifica el procesador, la memoria principal y el almacenamiento de tu equipo. Explica qué función cumple cada elemento y anota las características que consideres relevantes.</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p>La respuesta depende del equipo utilizado. Debe identificarse correctamente cada componente y relacionarse con su función dentro del sistema.</p>
-</div>
-</div>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 2.5</span> <span class="difficulty-badge">● Básico</span></p>
-</div>
-<div class="exercise-title">
-<p>Número de combinaciones</p>
-</div>
-<p>¿Cuántos símbolos diferentes pueden codificarse con 5 bits?</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p>Con <span class="math inline">\(n\)</span> bits pueden representarse <span class="math inline">\(2^n\)</span> combinaciones. Por tanto, con 5 bits pueden representarse <strong>32 símbolos</strong>.</p>
-</div>
-</div>
-</section>
-<section id="autoevaluación" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="autoevaluación"><span class="header-section-number">3.4</span> Autoevaluación</h2>
-<div class="autoevaluacion">
-<p><span class="component-kicker">Autoevaluación</span></p>
-<ol type="1">
-<li>¿Qué diferencia existe entre bit y byte?</li>
-<li>¿Cuántas combinaciones permiten 8 bits?</li>
-<li>¿Por qué las potencias de 2 aparecen con tanta frecuencia en informática?</li>
-</ol>
-</div>
-</section>
-<section id="código" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="código"><span class="header-section-number">3.5</span> Código</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bits <span class="op">=</span> <span class="dv">8</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>combinaciones <span class="op">=</span> <span class="dv">2</span> <span class="op">**</span> bits</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(combinaciones)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="matemáticas" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="matemáticas"><span class="header-section-number">3.6</span> Matemáticas</h2>
-<p>Una relación habitual entre el número de bits de un bus de direcciones y el número de posiciones direccionables es:</p>
-<p><span class="math display">\[
-m = 2^n
-\]</span></p>
-<p>y, despejando,</p>
-<p><span class="math display">\[
-n = \log_2 m
-\]</span></p>
-</section>
-<section id="tabla" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="tabla"><span class="header-section-number">3.7</span> Tabla</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Unidad</th>
-<th>Símbolo</th>
-<th style="text-align: right;">Equivalencia ilustrativa</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>bit</td>
-<td>b</td>
-<td style="text-align: right;">0 o 1</td>
-</tr>
-<tr class="even">
-<td>byte</td>
-<td>B</td>
-<td style="text-align: right;">8 bits</td>
-</tr>
-<tr class="odd">
-<td>KiB</td>
-<td>KiB</td>
-<td style="text-align: right;"><span class="math inline">\(2^{10}\)</span> bytes</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="figura-diagrama" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="figura-diagrama"><span class="header-section-number">3.8</span> Figura / diagrama</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A[Datos] --&gt; B[Procesamiento]
-  B --&gt; C[Información]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p><em>Figura de ejemplo para comprobar el tratamiento de diagramas y pies.</em></p>
-</section>
-<section id="vídeo" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="vídeo"><span class="header-section-number">3.9</span> Vídeo</h2>
-<div class="video">
-<p><span class="component-kicker">Vídeo</span></p>
-<p><strong>Ejemplo de vídeo incrustado desde YouTube</strong></p>
-<p>El reproductor queda integrado directamente en la versión HTML del libro. En formatos que no admiten vídeo, Quarto conserva un enlace al recurso original.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/47fnyDA2LB0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p><strong>Actividad breve:</strong> tras visualizarlo, anota dos ideas principales y una duda que te haya surgido.</p>
-</div>
-</section>
-<section id="recurso-externo" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="recurso-externo"><span class="header-section-number">3.10</span> Recurso externo</h2>
-<div class="recurso">
-<p><span class="component-kicker">Recurso externo</span></p>
-<p><strong>Documentación complementaria</strong><br>
-Enlace a una herramienta, artículo, simulador o documentación técnica relacionada con el contenido.</p>
-</div>
-</section>
-<section id="objetivos" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">3.11</span> Objetivos</h2>
-<div class="objetivos">
-<p><span class="component-kicker">Objetivos</span></p>
-<p>Al finalizar esta sección, el estudiante debería ser capaz de:</p>
-<ul>
-<li>interpretar un patrón de bits;</li>
-<li>relacionar número de bits y combinaciones posibles;</li>
-<li>resolver conversiones sencillas de representación.</li>
-</ul>
-</div>
-</section>
-<section id="resumen" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="resumen"><span class="header-section-number">3.12</span> Resumen</h2>
-<div class="resumen">
-<p><span class="component-kicker">Resumen</span></p>
-<ul>
-<li>Los computadores representan información mediante patrones de bits.</li>
-<li><span class="math inline">\(n\)</span> bits permiten <span class="math inline">\(2^n\)</span> combinaciones.</li>
-<li>La representación elegida determina cómo se interpreta cada patrón.</li>
-</ul>
+<div class="cover-footer-note">
+<strong>Pregunta guía del tema</strong>
+<p>
+¿Qué es realmente un computador y cómo consigue ejecutar un programa?
+</p>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script>
@@ -930,11 +695,14 @@ Enlace a una herramienta, artículo, simulador o documentación técnica relacio
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./teoria/01-introduccion.html" class="pagination-link" aria-label="Tema 1 · Introducción a los computadores">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tema 1 · Introducción a los computadores</span></span>
+      <a href="../../index.html" class="pagination-link" aria-label="Fundamentos de Informática">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Fundamentos de Informática</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../teoria/tema1/01-que-es-computador.html" class="pagination-link" aria-label="1.1 · ¿Qué es un computador?">
+        <span class="nav-page-text"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -942,5 +710,5 @@ Enlace a una herramienta, artículo, simulador o documentación técnica relacio
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

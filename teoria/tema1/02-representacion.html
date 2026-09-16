@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Juan Luis Jiménez">
 
-<title>Fundamentos de Informática</title>
+<title>1.2 · ¿Cómo representa la información? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,24 +29,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./teoria/tema1/index.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cb0bc420278434f743d5a57752e59b78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../teoria/tema1/04-comunicacion.html" rel="next">
+<link href="../../teoria/tema1/01-que-es-computador.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-cb0bc420278434f743d5a57752e59b78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,10 +77,39 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked editorial-page fullcontent quarto-light">
+<body class="nav-sidebar docked editorial-page lesson-page fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Fundamentos de Informática</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../../teoria/tema1/02-representacion.html"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -104,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Fundamentos de Informática</a> 
+      <a href="../../">Fundamentos de Informática</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -116,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Fundamentos de Informática</span></a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos de Informática</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -130,22 +159,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/tema1/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></a>
+  <a href="../../teoria/tema1/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/tema1/01-que-es-computador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></a>
+  <a href="../../teoria/tema1/01-que-es-computador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/tema1/02-representacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a>
+  <a href="../../teoria/tema1/02-representacion.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teoria/tema1/04-comunicacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></a>
+  <a href="../../teoria/tema1/04-comunicacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></a>
   </div>
 </li>
       </ul>
@@ -159,22 +188,15 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../../teoria/tema1/02-representacion.html"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Fundamentos de Informática</h1>
-<p class="subtitle lead">Libro en construcción</p>
+<h1 class="title"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor/a</div>
-    <div class="quarto-title-meta-contents">
-             <p>Juan Luis Jiménez </p>
-          </div>
-  </div>
     
   
     
@@ -185,16 +207,143 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="site-intro">
+<div class="lesson-head">
+<span class="kicker">LECCIÓN 1.2</span>
+<h1>
+¿Cómo representa<br>la información?
+</h1>
+<p class="deck">
+¿Cómo puede un computador representar una letra, una fotografía o una canción utilizando únicamente dos estados?
+</p>
+</div>
+<div class="editorial-rule">
+
+</div>
+<section id="dos-estados-muchas-posibilidades" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="dos-estados-muchas-posibilidades">1. Dos estados, muchas posibilidades</h2>
+<p>Un circuito digital puede distinguir con gran fiabilidad dos estados. Dependiendo de la tecnología, pueden corresponder a tensión alta/baja, presencia/ausencia de carga o muchas otras realizaciones físicas.</p>
+<div class="state-spread">
+<div class="state-card off">
+<pre><code>&lt;div class="switch"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="bulb"&gt;○&lt;/div&gt;
+&lt;strong&gt;Estado 0&lt;/strong&gt;
+&lt;small&gt;sin corriente · apagado&lt;/small&gt;</code></pre>
+</div>
+<div class="state-card on">
+<pre><code>&lt;div class="switch"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="bulb"&gt;●&lt;/div&gt;
+&lt;strong&gt;Estado 1&lt;/strong&gt;
+&lt;small&gt;con corriente · encendido&lt;/small&gt;</code></pre>
+</div>
+<div class="note-paper">
+Con solo dos estados podemos construir representaciones mucho más ricas.
+</div>
+</div>
+<div class="importante">
+<p><span class="component-kicker">Importante</span></p>
+<p>Aquí <code>0</code> y <code>1</code> no son únicamente números: son <strong>símbolos que utilizamos para nombrar dos estados distinguibles</strong>.</p>
+</div>
+</section>
+<section id="el-bit-y-las-combinaciones" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="el-bit-y-las-combinaciones">2. El bit y las combinaciones</h2>
+<p>Un <strong>bit</strong> (<em>binary digit</em>) es una unidad que puede tomar dos valores. Al combinar varios bits aparecen más posibilidades.</p>
+<p><img class="wide-figure clean-figure" src="../../assets/tema1/bits-branching.svg" alt="Diagrama ramificado: un bit da dos patrones, dos bits dan cuatro y tres bits dan ocho."></p>
+<p>Cada nuevo bit duplica el número de patrones que podemos construir. Tras observar el patrón, ya tiene sentido escribirlo de forma general:</p>
+<div class="formula-band">
+Con <strong>n</strong> bits podemos representar <strong>2<sup>n</sup></strong> patrones diferentes.
+</div>
+<div class="bit-lab" data-bit-explorer="">
+<div class="bit-lab-head">
+<pre><code>&lt;div&gt;
+  &lt;span class="kicker"&gt;PRUÉBALO&lt;/span&gt;
+  &lt;h3&gt;Explora las combinaciones&lt;/h3&gt;
+&lt;/div&gt;
+&lt;label&gt;Número de bits: &lt;strong data-bit-value&gt;3&lt;/strong&gt;&lt;input type="range" min="1" max="6" value="3" step="1" aria-label="Número de bits"&gt;&lt;/label&gt;</code></pre>
+</div>
+<div class="bit-lab-summary">
+<strong data-combination-count="">8</strong><span>combinaciones</span>
+</div>
+<div class="bit-patterns" data-bit-patterns="">
+
+</div>
+</div>
+</section>
+<section id="cuántos-bits-necesito" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="cuántos-bits-necesito">3. ¿Cuántos bits necesito?</h2>
+<p>Ahora invertimos la pregunta. Si queremos representar <strong>N</strong> símbolos diferentes, buscamos el menor número de bits capaz de producir al menos <strong>N</strong> patrones:</p>
+<div class="inverse-question">
 <div>
-<pre><code>&lt;span class="kicker"&gt;FUNDAMENTOS DE INFORMÁTICA&lt;/span&gt;
-&lt;h1&gt;Aprender informática construyendo modelos mentales.&lt;/h1&gt;
-&lt;p class="lead-copy"&gt;Este libro acompaña la asignatura con explicaciones progresivas, visualizaciones, ejercicios y recursos interactivos. La web es el formato principal; el PDF se genera a partir del mismo contenido.&lt;/p&gt;
-&lt;p&gt;&lt;a class="editorial-link" href="teoria/tema1/index.html"&gt;Comenzar por el Tema 1 →&lt;/a&gt;&lt;/p&gt;</code></pre>
+<span>Bits conocidos</span><strong>n</strong><small>¿cuántos patrones?</small><b>2<sup>n</sup></b>
 </div>
+<div class="inverse-arrow">
+↔︎
+</div>
+<div>
+<span>Símbolos conocidos</span><strong>N</strong><small>¿cuántos bits?</small><b>⌈log<sub>2</sub>N⌉</b>
+</div>
+</div>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.2</span> <span class="difficulty-badge">● Básico</span></p>
+</div>
+<div class="exercise-title">
+<p>Codificar los diez dígitos</p>
+</div>
+<p>¿Cuántos bits hacen falta como mínimo para disponer de un patrón diferente para cada uno de los diez dígitos decimales (<code>0</code> a <code>9</code>)?</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p>Con 3 bits solo disponemos de <span class="math inline">\(2^3=8\)</span> patrones, así que no basta. Con 4 bits tenemos <span class="math inline">\(2^4=16\)</span> patrones. El mínimo es <strong>4 bits</strong>.</p>
+</div>
+</div>
+</section>
+<section id="del-bit-al-byte" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="del-bit-al-byte">4. Del bit al byte</h2>
+<p>Ocho bits agrupados forman un <strong>byte</strong>.</p>
+<p><img class="wide-figure clean-figure compact" src="../../assets/tema1/byte-strip.svg" alt="Ocho bits alineados forman un byte."></p>
+<div class="unit-columns">
+<div>
+<span>Decimal</span><strong>kB · MB · GB</strong><small>potencias de 10</small>
+</div>
+<div>
+<span>Binario</span><strong>KiB · MiB · GiB</strong><small>potencias de 2</small>
+</div>
+</div>
+</section>
+<section id="bit-y-byte-no-son-lo-mismo" class="level2 editorial-section">
+<h2 class="editorial-section anchored" data-anchor-id="bit-y-byte-no-son-lo-mismo">5. bit y byte no son lo mismo</h2>
+<div class="bit-byte-contrast">
+<div>
+<strong>100 Mb/s</strong><span>megabits por segundo</span><small>velocidad de transmisión</small>
+</div>
+<b>≠</b>
+<div>
+<strong>1 GB</strong><span>gigabyte</span><small>tamaño de un archivo</small>
+</div>
+</div>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.3</span> <span class="difficulty-badge">●● Intermedio</span></p>
+</div>
+<div class="exercise-title">
+<p>Tiempo de descarga</p>
+</div>
+<p>Ignorando pérdidas y sobrecargas, ¿cuánto tardaría en descargarse un archivo de 1 GB a través de una conexión de 100 Mb/s? Utiliza unidades decimales.</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p><span class="math inline">\(1\,\text{GB}=8\,\text{Gb}=8000\,\text{Mb}\)</span>.</p>
+<p><span class="math display">\[t=\frac{8000\,\text{Mb}}{100\,\text{Mb/s}}=80\,\text{s}\]</span></p>
+<p>En condiciones ideales, aproximadamente <strong>80 segundos</strong>.</p>
+</div>
+</div>
+<div class="lesson-takeaway">
+<span>IDEA ESENCIAL</span>
+<p>
+Los bits no tienen significado por sí solos. Nos proporcionan patrones; los códigos determinan qué representa cada patrón.
+</p>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -659,10 +808,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../teoria/tema1/01-que-es-computador.html" class="pagination-link" aria-label="1.1 · ¿Qué es un computador?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./teoria/tema1/index.html" class="pagination-link" aria-label="Tema 1 · Introducción a los computadores">
-        <span class="nav-page-text"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../teoria/tema1/04-comunicacion.html" class="pagination-link" aria-label="1.4 · ¿Cómo se comunican sus componentes?">
+        <span class="nav-page-text"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -671,5 +823,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
