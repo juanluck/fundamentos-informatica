@@ -1,576 +1,383 @@
 ---
 title: "Tema 1 · Introducción a los computadores"
-subtitle: "Prototipo pedagógico"
+subtitle: "Del mundo físico a la información digital"
 ---
 
-¿Qué ocurre realmente desde que pulsamos una tecla, abrimos una aplicación o reproducimos un vídeo hasta que el computador nos devuelve un resultado?
+::: {.chapter-hero}
+::: {.chapter-hero-copy}
+<span class="eyebrow">TEMA 1 · PROTOTIPO VISUAL</span>
 
-Este tema construye una primera respuesta. No intentaremos conocer todavía todos los detalles de un computador. Empezaremos por una idea muy sencilla —**procesar información**— e iremos abriendo la caja poco a poco.
+# ¿Qué hace realmente un computador?
 
-```{mermaid}
-flowchart LR
-    A[Información] --> B[Bits y bytes]
-    B --> C[CPU, memoria y E/S]
-    C --> D[Comunicación]
-    D --> E[Ejecución de programas]
-    E --> F[Tipos de computadores]
-    F --> G[Software]
-```
+Escribimos, escuchamos música, enviamos fotografías o ejecutamos programas. Para nosotros son actividades muy distintas. Para el computador, todas terminan convirtiéndose en **información representada mediante patrones que puede almacenar y transformar**.
+
+Este tema empieza construyendo esa idea desde cero.
+:::
+
+::: {.chapter-hero-art}
+![](../assets/tema1/informacion-computador.svg){fig-alt="Texto, imágenes y sonido se codifican como patrones de bits que puede procesar un computador."}
+:::
+:::
 
 ::: {.objetivos}
-Al finalizar el tema deberías poder:
+En este primer recorrido vamos a construir cuatro ideas que utilizaremos durante todo el curso:
 
-- explicar qué entendemos por computador, dato e información;
-- razonar por qué los computadores utilizan representaciones binarias;
-- relacionar número de bits y número de combinaciones posibles;
-- reconocer las principales unidades funcionales de un computador;
-- distinguir el papel del bus de datos y del bus de direcciones;
-- describir de forma intuitiva cómo se ejecuta un programa;
-- interpretar magnitudes básicas de prestaciones;
-- reconocer que distintos computadores responden a necesidades diferentes;
-- distinguir las principales capas y categorías de software.
+- un computador **recibe, representa, almacena y procesa información**;
+- un mismo patrón físico puede adquirir significados distintos según el código utilizado;
+- con $n$ bits podemos construir $2^n$ patrones diferentes;
+- bits y bytes son la base para expresar información y capacidad.
 :::
 
-## ¿Qué es un computador?
+::: {.visual-roadmap}
+<div class="roadmap-step roadmap-active"><span>1.1</span><strong>¿Qué es un computador?</strong></div>
+<div class="roadmap-arrow">→</div>
+<div class="roadmap-step roadmap-active"><span>1.2</span><strong>¿Cómo representa información?</strong></div>
+<div class="roadmap-arrow">→</div>
+<div class="roadmap-step"><span>1.3</span><strong>¿Qué hay dentro?</strong></div>
+<div class="roadmap-arrow">→</div>
+<div class="roadmap-step"><span>1.4+</span><strong>¿Cómo funciona todo junto?</strong></div>
+:::
 
-Antes de hablar de procesadores, memoria o programas conviene responder una pregunta más básica: **¿qué hace un computador?**
+## 1.1 ¿Qué es un computador? {#sec-que-es-computador}
 
-Podemos observarlo como una caja que recibe datos, realiza algún procesamiento y produce un resultado.
+::: {.lesson-opening}
+::: {.lesson-opening-copy}
+<span class="eyebrow">UNA PRIMERA IDEA</span>
 
-```{mermaid}
-flowchart LR
-    E[Datos de entrada] --> C[Computador]
-    C --> S[Resultados]
-```
+### Antes de abrir la caja
 
-Cuando escribes una palabra, el teclado proporciona datos de entrada. Cuando una aplicación calcula una ruta, procesa datos. Cuando la pantalla muestra el mapa, estás viendo el resultado de ese procesamiento.
+Un portátil, un teléfono, una consola y la centralita de un automóvil tienen aspectos y usos muy distintos. Sin embargo, podemos empezar a entenderlos con una idea común:
+
+> **reciben información, realizan un procesamiento y producen algún resultado.**
+
+Todavía no necesitamos saber qué procesador utilizan ni qué ocurre dentro de la memoria.
+:::
+
+::: {.lesson-opening-visual}
+<div class="ipo-diagram">
+  <div class="ipo-node"><span>ENTRADA</span><strong>datos</strong><small>teclas, imagen, medida…</small></div>
+  <div class="ipo-arrow">→</div>
+  <div class="ipo-node ipo-main"><span>PROCESAMIENTO</span><strong>computador</strong><small>aplica instrucciones</small></div>
+  <div class="ipo-arrow">→</div>
+  <div class="ipo-node"><span>SALIDA</span><strong>resultado</strong><small>pantalla, sonido, acción…</small></div>
+</div>
+:::
+:::
+
+### Información y datos
+
+Imagina que recibes únicamente este valor:
+
+<div class="big-data-token">23</div>
+
+¿Es una temperatura? ¿Una edad? ¿El número de estudiantes de un grupo? ¿Una dirección de memoria?
+
+El símbolo por sí solo no nos lo dice. Necesitamos conocer **qué representa** y **cómo debe interpretarse**.
 
 ::: {.concepto-clave}
-La **informática** estudia el tratamiento automático de la información mediante sistemas capaces de representar, almacenar y procesar datos.
-
-Un **computador** es una máquina programable que procesa información representada de una forma que puede manipular físicamente.
+Un **dato** es una representación que puede ser almacenada, transmitida o procesada. Hablamos de **información** cuando esa representación se interpreta dentro de un contexto y adquiere significado.
 :::
 
-### Datos e información
+::: {.split-layout}
+::: {.split-copy}
+### Codificar es acordar una representación
 
-Los términos *dato* e *información* están relacionados, pero no son idénticos.
+No hace falta empezar con binario para entender qué significa *codificar*. Un semáforo ya utiliza un código:
 
-Un dato es una representación: un número, un símbolo, una medida o una secuencia de caracteres. Adquiere significado cuando sabemos cómo interpretarlo.
+- rojo → detenerse;
+- verde → avanzar.
 
-::: {.ejemplo}
-El valor `23` por sí solo es un dato. Puede representar una temperatura, una edad, una dirección de memoria o el número de estudiantes de un grupo. El significado depende del contexto y de las reglas de interpretación.
+La señal física y su significado no son la misma cosa. Hay una **regla de interpretación** que los relaciona.
 :::
 
-Esta idea será importante durante todo el curso: **el mismo patrón físico puede significar cosas diferentes dependiendo de cómo decidamos interpretarlo**.
-
-### Hardware y software
-
-Para que un computador resulte útil necesitamos dos dimensiones inseparables:
-
-- **hardware**: los componentes físicos;
-- **software**: las instrucciones y programas que determinan qué debe hacer el hardware.
-
-Todavía no necesitamos conocer sus detalles. De momento basta con recordar que el hardware proporciona capacidad de procesamiento y el software la dirige hacia una tarea concreta.
-
-::: {.ejercicio titulo="Entrada, procesamiento y salida" numero="1.1" dificultad="1"}
-Para cada situación, identifica qué podría considerarse entrada, qué procesamiento se realiza y cuál es la salida:
-
-1. una calculadora suma dos números;
-2. una cámara de móvil realiza una fotografía;
-3. una aplicación de navegación calcula una ruta.
-
-::: {.solucion}
-No existe una única redacción válida. Lo importante es distinguir las tres funciones.
-
-En una calculadora, por ejemplo, los números y la operación son la entrada; la suma es el procesamiento; el resultado mostrado es la salida.
+::: {.split-visual}
+<div class="code-pair">
+  <div class="code-symbol code-red"></div><span>→</span><strong>detenerse</strong>
+  <div class="code-symbol code-green"></div><span>→</span><strong>avanzar</strong>
+</div>
 :::
 :::
 
-## ¿Cómo representa la información?
+Ahora podemos trasladar la misma idea a símbolos:
 
-Un computador debe representar físicamente números, letras, imágenes, sonido e instrucciones. Para hacerlo resulta muy útil trabajar con sistemas que puedan distinguir de forma fiable **dos estados**.
-
-Esos estados pueden implementarse de muchas maneras: dos niveles eléctricos, dos orientaciones magnéticas, presencia o ausencia de carga, etc. Los símbolos `0` y `1` nos permiten nombrarlos de forma cómoda.
-
-::: {.importante}
-En este contexto inicial, `0` y `1` no deben entenderse únicamente como números. También pueden verse como **dos símbolos que representan dos estados distinguibles**.
-:::
-
-### El bit
-
-Llamamos **bit** a una unidad que puede tomar uno de dos valores posibles.
-
-Con un solo bit tenemos dos combinaciones:
-
-```text
-0
-1
-```
-
-Con dos bits aparecen cuatro:
-
-```text
-00
-01
-10
-11
-```
-
-Y con tres bits:
-
-```text
-000  001  010  011
-100  101  110  111
-```
-
-El patrón es sencillo:
-
-| Bits | Combinaciones posibles |
-|---:|---:|
-| 1 | 2 |
-| 2 | 4 |
-| 3 | 8 |
-| 4 | 16 |
-
-Después de observar estos casos podemos formalizar la relación:
-
-$$
-n\text{ bits} \longrightarrow 2^n\text{ combinaciones}
-$$
-
-::: {.concepto-clave}
-Con $n$ bits pueden construirse $2^n$ patrones distintos. Los patrones no tienen significado por sí solos: somos nosotros quienes establecemos qué representa cada uno.
-:::
-
-### De combinaciones a códigos
-
-Supongamos que solo queremos representar cuatro letras. Podemos acordar el siguiente código:
-
-| Patrón | Símbolo |
-|---|---|
+| Patrón | Significado acordado |
+|:---:|:---|
 | `00` | A |
 | `01` | B |
 | `10` | C |
 | `11` | D |
 
-Nada obliga a utilizar exactamente esa correspondencia. Lo importante es que emisor y receptor compartan el mismo código.
+Otro código podría utilizar una correspondencia distinta. Lo esencial es que quien produce y quien interpreta los datos compartan las mismas reglas.
 
-::: {.ejercicio titulo="¿Cuántos bits necesito?" numero="1.2" dificultad="1"}
-¿Cuántos bits hacen falta como mínimo para disponer de un patrón diferente para cada uno de los diez dígitos decimales (`0` a `9`)?
+::: {.importante}
+El computador no «ve» una letra **A**, una fotografía o una canción como nosotros. Manipula representaciones físicas. El significado aparece al interpretar esas representaciones según un código.
+:::
+
+### Hardware y software: dos piezas de una misma historia
+
+::: {.concept-duo}
+::: {.concept-card}
+<span class="concept-icon">◫</span>
+
+**Hardware**
+
+Los componentes físicos capaces de almacenar, mover y transformar representaciones.
+:::
+
+::: {.concept-card}
+<span class="concept-icon">⌘</span>
+
+**Software**
+
+Las instrucciones y programas que indican qué transformaciones debe realizar el hardware.
+:::
+:::
+
+No profundizaremos todavía en ninguno de los dos. De momento basta una idea: **el hardware hace posible el procesamiento; el software determina qué procesamiento queremos realizar**.
+
+::: {.ejercicio titulo="Entrada, procesamiento y salida" numero="1.1" dificultad="1"}
+Identifica una posible **entrada**, el **procesamiento** y la **salida** en cada caso:
+
+1. una calculadora suma dos números;
+2. una cámara de móvil toma una fotografía;
+3. una aplicación de navegación calcula una ruta.
 
 ::: {.solucion}
-Con 3 bits solo disponemos de $2^3=8$ combinaciones, por lo que no es suficiente.
+En una calculadora, los números y la operación son la entrada; realizar la suma es el procesamiento; el valor mostrado es la salida.
 
-Con 4 bits disponemos de $2^4=16$ combinaciones. Por tanto, el mínimo es **4 bits**.
+En una cámara, la luz captada por el sensor es una entrada; el sistema procesa las medidas del sensor; la imagen almacenada o mostrada es una salida.
+
+En una aplicación de navegación, origen, destino y datos cartográficos actúan como entradas; el cálculo de la ruta es el procesamiento; la ruta propuesta es la salida.
 :::
 :::
 
-La pregunta inversa aparece constantemente en informática. Si necesitamos representar $N$ posibilidades, buscamos el menor $n$ tal que:
+::: {.resumen}
+**Qué deberías llevarte de 1.1**
+
+- Un computador puede entenderse inicialmente como un sistema que transforma datos.
+- Los datos necesitan reglas de interpretación para adquirir significado.
+- Codificar consiste en establecer una correspondencia entre información y representaciones.
+- Hardware y software cooperan para realizar el procesamiento.
+:::
+
+## 1.2 ¿Cómo representa la información? {#sec-representacion}
+
+::: {.lesson-opening lesson-opening-rust}
+::: {.lesson-opening-copy}
+<span class="eyebrow">DE MUCHAS COSAS A DOS ESTADOS</span>
+
+### Letras, imágenes, sonido… ¿con solo 0 y 1?
+
+Un computador debe manejar tipos de información muy diferentes. La estrategia fundamental consiste en representarlos mediante combinaciones de elementos que puedan distinguirse de forma fiable.
+
+Dos estados son especialmente cómodos: encendido/apagado, tensión alta/baja, presencia/ausencia de carga…
+
+Los símbolos `0` y `1` nos permiten **nombrar** esos dos estados.
+:::
+
+::: {.lesson-opening-visual}
+![](../assets/tema1/informacion-computador.svg){fig-alt="Diferentes formas de información se transforman mediante una codificación en patrones de bits."}
+:::
+:::
+
+::: {.importante}
+En este punto, `0` y `1` no deben entenderse únicamente como números. Son también **símbolos para representar dos estados distinguibles**.
+:::
+
+### El bit: la pieza mínima
+
+Llamamos **bit** a una unidad que puede encontrarse en uno de dos estados posibles.
+
+Antes de escribir ninguna fórmula, observemos qué ocurre cuando agrupamos bits.
+
+![](../assets/tema1/crecimiento-bits.svg){fig-alt="Con uno, dos y tres bits se obtienen respectivamente dos, cuatro y ocho patrones diferentes."}
+
+Cada vez que añadimos un bit, cada patrón anterior puede terminar en `0` o en `1`. Por eso el número de combinaciones **se duplica**.
+
+::: {.content-visible when-format="html"}
+<div class="bit-explorer" data-bit-explorer>
+  <div class="bit-explorer-head">
+    <div>
+      <span class="eyebrow">PRUÉBALO</span>
+      <h4>Construye el espacio de combinaciones</h4>
+    </div>
+    <div class="bit-explorer-control">
+      <label>Número de bits: <strong data-bit-value>3</strong></label>
+      <input type="range" min="1" max="6" value="3" step="1" aria-label="Número de bits">
+    </div>
+  </div>
+  <div class="bit-explorer-result"><strong data-combination-count>8</strong> patrones posibles</div>
+  <div class="bit-patterns" data-bit-patterns></div>
+</div>
+:::
+
+Ahora sí tiene sentido formalizar el patrón observado:
 
 $$
-2^n \ge N
+n\text{ bits}\quad\longrightarrow\quad 2^n\text{ patrones}
 $$
 
-que puede expresarse como:
+::: {.concepto-clave}
+Con $n$ bits pueden construirse **$2^n$ patrones distintos**. El número de bits determina cuántas posibilidades podemos distinguir; el código determina qué significa cada posibilidad.
+:::
+
+### Una historia para recordar las potencias de 2
+
+La leyenda de **Sissa y el tablero de ajedrez** utiliza una regla muy sencilla: colocar un grano en la primera casilla y duplicar la cantidad en cada casilla siguiente.
+
+![](../assets/tema1/sissa.svg){fig-alt="Un tablero de ajedrez ilustra el crecimiento exponencial al duplicar la cantidad en cada casilla."}
+
+La historia no es importante por el ajedrez. Es útil porque muestra una idea que reaparecerá constantemente en informática: **duplicar muchas veces produce cantidades enormes mucho antes de lo que sugiere nuestra intuición**.
+
+### ¿Cuántos bits necesito?
+
+Hasta ahora hemos preguntado cuántos patrones obtenemos con un número conocido de bits. Ahora invertimos la pregunta.
+
+::: {.ejercicio titulo="Codificar los diez dígitos" numero="1.2" dificultad="1"}
+Queremos asignar un patrón binario diferente a cada dígito decimal (`0` a `9`). ¿Cuántos bits necesitamos como mínimo?
+
+::: {.solucion}
+Con 3 bits disponemos de:
 
 $$
-n=\lceil\log_2 N\rceil
+2^3=8
 $$
 
-El logaritmo en base 2 aparece así como respuesta a una pregunta concreta: **¿cuántos bits necesito?**
+patrones, que no son suficientes.
+
+Con 4 bits disponemos de:
+
+$$
+2^4=16
+$$
+
+patrones. Por tanto, el mínimo es **4 bits**.
+:::
+:::
+
+La pregunta general es:
+
+> Si necesito distinguir $N$ posibilidades, ¿cuál es el menor número de bits que proporciona al menos $N$ patrones?
+
+Buscamos el menor $n$ que cumpla:
+
+$$
+2^n\ge N
+$$
+
+y podemos expresarlo mediante:
+
+$$
+n=\lceil \log_2 N\rceil
+$$
+
+El logaritmo aparece así **después** de entender la pregunta que resuelve.
+
+::: {.split-layout split-layout-highlight}
+::: {.split-copy}
+### La misma relación, en dos direcciones
+
+Si conocemos los bits, usamos una potencia:
+
+$$
+n \longrightarrow 2^n
+$$
+
+Si conocemos cuántos símbolos queremos distinguir, necesitamos invertir la relación:
+
+$$
+N \longrightarrow \lceil\log_2N\rceil
+$$
+:::
+
+::: {.split-visual formula-question}
+<span>¿cuántos patrones tengo?</span>
+<strong>$2^n$</strong>
+<hr>
+<span>¿cuántos bits necesito?</span>
+<strong>$\lceil\log_2N\rceil$</strong>
+:::
+:::
 
 ### Del bit al byte
 
-Trabajar bit a bit sería incómodo. Por convenio, agrupamos habitualmente ocho bits en una unidad llamada **byte**.
+Trabajar con bits individuales resulta poco práctico. Por convenio, una agrupación de **ocho bits** forma un **byte**.
 
-$$
-1\ \text{byte}=8\ \text{bits}
-$$
+![](../assets/tema1/byte.svg){fig-alt="Ocho celdas binarias forman un byte."}
 
-A partir del byte expresamos capacidades mayores. Conviene distinguir entre prefijos decimales y binarios:
+A partir del byte expresamos tamaños mayores.
 
-| Unidad | Valor |
-|---|---:|
-| kB | $10^3$ bytes |
-| MB | $10^6$ bytes |
-| GB | $10^9$ bytes |
-| KiB | $2^{10}$ bytes |
-| MiB | $2^{20}$ bytes |
-| GiB | $2^{30}$ bytes |
-
-::: {.ejemplo}
-Una conexión de **100 Mb/s** expresa una velocidad en *megabits por segundo*. Un archivo de **1 GB** expresa un tamaño en *gigabytes*. Antes de calcular un tiempo de descarga debemos llevar ambas magnitudes a unidades compatibles.
+::: {.unit-ladder}
+<div><span>1 kB</span><strong>10³ bytes</strong><small>decimal</small></div>
+<div><span>1 MB</span><strong>10⁶ bytes</strong><small>decimal</small></div>
+<div><span>1 GB</span><strong>10⁹ bytes</strong><small>decimal</small></div>
+<div class="unit-binary"><span>1 KiB</span><strong>2¹⁰ bytes</strong><small>binario</small></div>
+<div class="unit-binary"><span>1 MiB</span><strong>2²⁰ bytes</strong><small>binario</small></div>
+<div class="unit-binary"><span>1 GiB</span><strong>2³⁰ bytes</strong><small>binario</small></div>
 :::
 
+### Bit y byte: una diferencia pequeña en la letra, enorme en el cálculo
+
+En comunicaciones es habitual expresar velocidades en **bits por segundo**. En almacenamiento es habitual expresar tamaños en **bytes**.
+
+Por eso:
+
+<div class="comparison-strip">
+  <div><strong>100 Mb/s</strong><span>100 megabits cada segundo</span></div>
+  <div class="comparison-vs">≠</div>
+  <div><strong>100 MB/s</strong><span>100 megabytes cada segundo</span></div>
+</div>
+
+Como $1\ \text{byte}=8\ \text{bits}$, la diferencia es un factor 8.
+
 ::: {.ejercicio titulo="Tiempo de descarga" numero="1.3" dificultad="2"}
-Ignorando pérdidas y sobrecargas, ¿cuánto tardaría en descargarse un archivo de 1 GB a través de una conexión de 100 Mb/s? Utiliza unidades decimales en ambas magnitudes.
+Ignorando pérdidas y sobrecargas, ¿cuánto tardaría en descargarse un archivo de **1 GB** mediante una conexión de **100 Mb/s**? Utiliza unidades decimales.
 
 ::: {.solucion}
-$1\ \text{GB}=8\ \text{Gb}=8000\ \text{Mb}$.
+Primero expresamos el archivo en bits:
 
-Entonces:
+$$
+1\ \text{GB}=8\ \text{Gb}=8000\ \text{Mb}
+$$
+
+Después usamos:
+
+$$
+t=\frac{\text{cantidad de información}}{\text{velocidad}}
+$$
+
+por lo que:
 
 $$
 t=\frac{8000\ \text{Mb}}{100\ \text{Mb/s}}=80\ \text{s}
 $$
 
-En condiciones ideales, tardaría aproximadamente **80 segundos**.
+En condiciones ideales, la descarga tardaría aproximadamente **80 segundos**.
 :::
 :::
-
-::: {.para-saber-mas}
-La conocida historia del tablero de ajedrez y los granos de trigo es una forma intuitiva de visualizar cómo crecen las potencias de 2. En una versión posterior de este capítulo puede convertirse en una visualización interactiva.
-:::
-
-## ¿Qué hay dentro de un computador?
-
-Ya sabemos que un computador recibe datos, los representa y los procesa. Ahora podemos abrir la caja.
-
-En un primer modelo bastan tres grandes grupos:
-
-- **procesador (CPU)**: ejecuta operaciones e instrucciones;
-- **memoria**: conserva temporalmente datos e instrucciones que están siendo utilizados;
-- **entrada/salida (E/S)**: comunica el computador con otros dispositivos y con el exterior.
-
-```{mermaid}
-flowchart LR
-    IN[Entrada] <--> CPU[Procesador]
-    CPU <--> MEM[Memoria]
-    CPU <--> OUT[Salida]
-```
-
-Este esquema es deliberadamente simple. Más adelante estudiaremos arquitecturas y jerarquías de memoria con mayor precisión.
-
-### El procesador
-
-Dentro de la CPU podemos distinguir, de forma conceptual:
-
-- una **unidad de control**, que coordina la ejecución de instrucciones;
-- una **unidad aritmético-lógica (ALU)**, que realiza operaciones aritméticas y lógicas;
-- **registros**, pequeñas unidades de almacenamiento muy cercanas a las unidades de ejecución.
-
-```{mermaid}
-flowchart TB
-    subgraph CPU[CPU]
-      UC[Unidad de control]
-      ALU[ALU]
-      R[Registros]
-      UC <--> R
-      R <--> ALU
-    end
-```
-
-### La memoria
-
-La memoria principal puede imaginarse inicialmente como una secuencia de posiciones. Cada posición almacena un patrón de bits y tiene una forma de ser identificada.
-
-| Posición | Contenido |
-|---|---|
-| 0 | `10110101` |
-| 1 | `01101011` |
-| 2 | `11100010` |
-| ... | ... |
-
-::: {.concepto-clave}
-En la memoria se almacenan **datos e instrucciones**. Para el hardware, ambos son patrones de bits; su interpretación depende de cómo se utilicen.
-:::
-
-### Palabra y registros
-
-Los computadores suelen manipular grupos de bits de un tamaño determinado. El concepto de **palabra** permite hablar de esa unidad natural de procesamiento. Encontraremos arquitecturas de 8, 16, 32 o 64 bits, aunque el significado exacto de esas etiquetas requiere más contexto del que necesitamos ahora.
-
-::: {.ejercicio titulo="Reconocer funciones" numero="1.4" dificultad="1"}
-Relaciona cada elemento con su función principal: CPU, memoria, dispositivo de entrada/salida.
-
-1. conservar temporalmente datos e instrucciones;
-2. ejecutar instrucciones;
-3. comunicar el sistema con el exterior.
-
-::: {.solucion}
-1. memoria;
-2. CPU;
-3. entrada/salida.
-:::
-:::
-
-## ¿Cómo se comunican sus componentes?
-
-Tenemos procesador y memoria. Ahora surge una necesidad concreta: **¿cómo intercambian información?**
-
-Supongamos que la CPU quiere leer la posición 2 de la memoria. Hay dos problemas diferentes:
-
-1. indicar **qué posición** desea;
-2. transferir **el contenido** de esa posición.
-
-Esta distinción conduce a dos mecanismos diferentes.
-
-### Bus de direcciones: ¿dónde?
-
-El procesador necesita expresar una dirección. Si dispone de $n$ bits para hacerlo, puede generar hasta $2^n$ patrones diferentes y, por tanto, distinguir hasta $2^n$ direcciones.
-
-Aquí reaparece exactamente la misma idea matemática que usamos para contar códigos.
-
-::: {.ejemplo}
-Con un bus de direcciones de 4 bits pueden generarse $2^4=16$ patrones distintos, desde `0000` hasta `1111`.
-:::
-
-### Bus de datos: ¿qué contenido?
-
-Una vez seleccionada la posición, necesitamos transportar el contenido. El **bus de datos** proporciona el camino por el que circulan esos bits entre los componentes.
-
-```{mermaid}
-flowchart LR
-    CPU[CPU] -- "dirección" --> MEM[Memoria]
-    MEM -- "datos" --> CPU
-    CPU -. "datos" .-> MEM
-```
-
-::: {.concepto-clave}
-El **bus de direcciones** identifica una posición o destino. El **bus de datos** transporta la información que se intercambia.
-:::
-
-::: {.ejercicio titulo="Direcciones posibles" numero="1.5" dificultad="1"}
-Una memoria utiliza un bus de direcciones de 10 bits. ¿Cuántas direcciones distintas pueden generarse?
-
-::: {.solucion}
-$$2^{10}=1024$$
-
-Pueden generarse **1024 direcciones diferentes**.
-:::
-:::
-
-::: {.ejercicio titulo="Dimensionar buses" numero="1.6" dificultad="3"}
-Considera un computador organizado en palabras de 32 bits y con una memoria de 32 MiB, direccionada por palabras.
-
-1. ¿Cuántos bits debería transportar como mínimo el bus de datos para mover una palabra completa?
-2. ¿Cuántas palabras contiene la memoria?
-3. ¿Cuántos bits necesita el bus de direcciones?
-
-::: {.solucion}
-Una palabra contiene 32 bits, por lo que un bus capaz de transportar una palabra completa en una transferencia tendrá **32 bits**.
-
-$32\ \text{MiB}=2^{25}$ bytes. Cada palabra ocupa 4 bytes, de modo que:
-
-$$
-\frac{2^{25}}{2^2}=2^{23}\ \text{palabras}
-$$
-
-Para identificar $2^{23}$ palabras hacen falta **23 bits de dirección**.
-:::
-:::
-
-## ¿Cómo ejecuta un programa?
-
-Hasta ahora sabemos dónde pueden estar los datos y quién los procesa. Falta unir hardware y software.
-
-Un programa puede verse, en primera aproximación, como una secuencia de instrucciones. Para ejecutarlo, sus instrucciones y los datos necesarios deben estar accesibles para el procesador.
-
-Podemos describir intuitivamente el proceso mediante un ciclo:
-
-```{mermaid}
-flowchart LR
-    A[Buscar instrucción] --> B[Interpretarla]
-    B --> C[Ejecutarla]
-    C --> D[Continuar]
-    D --> A
-```
-
-Más adelante estudiaremos este ciclo con detalle. Por ahora nos interesa que proporciona una explicación sencilla de por qué conceptos como reloj, instrucciones o CPI afectan al tiempo de ejecución.
-
-### El reloj y la frecuencia
-
-Muchos procesadores coordinan su actividad mediante una señal periódica de reloj. La **frecuencia** indica cuántos ciclos de reloj se producen por segundo.
-
-$$
-1\ \text{GHz}=10^9\ \text{ciclos/s}
-$$
-
-Pero frecuencia no significa directamente «instrucciones por segundo»: una instrucción puede requerir, en promedio, más de un ciclo.
-
-### CPI y tiempo de CPU
-
-El **CPI** (*cycles per instruction*) expresa el número medio de ciclos de reloj utilizados por instrucción en un determinado contexto.
-
-Una relación básica es:
-
-$$
-T_{CPU}=N_{instr}\times CPI\times T_{ciclo}
-$$
-
-Como $T_{ciclo}=1/f$, también podemos escribir:
-
-$$
-T_{CPU}=\frac{N_{instr}\times CPI}{f}
-$$
-
-::: {.importante}
-Una frecuencia de reloj mayor no garantiza por sí sola que un computador ejecute un programa más rápido. El tiempo depende también del número de instrucciones, del CPI y de muchos otros factores que estudiaremos más adelante.
-:::
-
-### MIPS y FLOPS
-
-Dos métricas que aparecen con frecuencia son:
-
-- **MIPS**: millones de instrucciones por segundo;
-- **FLOPS**: operaciones de coma flotante por segundo.
-
-Miden aspectos diferentes y su utilidad depende del tipo de carga de trabajo.
-
-::: {.ejercicio titulo="Tiempo de ejecución" numero="1.7" dificultad="2"}
-Un programa ejecuta $5\times10^8$ instrucciones en un procesador de 2 GHz con un CPI medio de 2. ¿Cuál sería su tiempo de CPU según este modelo simplificado?
-
-::: {.solucion}
-$$
-T_{CPU}=\frac{5\times10^8\times2}{2\times10^9}=0.5\ \text{s}
-$$
-
-El tiempo resultante es **0,5 segundos**.
-:::
-:::
-
-## ¿Todos los computadores son iguales?
-
-Un portátil, un teléfono, la centralita de un automóvil, un servidor y un supercomputador comparten ideas fundamentales, pero están diseñados bajo restricciones muy diferentes.
-
-No existe una única clasificación perfecta. Resulta más útil observar **qué problema debe resolver cada sistema**.
-
-| Sistema | Prioridades habituales |
-|---|---|
-| sistema empotrado | consumo, coste, tamaño, respuesta específica |
-| dispositivo móvil | consumo, integración, prestaciones, autonomía |
-| computador personal | flexibilidad y propósito general |
-| servidor | capacidad, disponibilidad, concurrencia |
-| supercomputador | rendimiento masivo y paralelismo |
-
-### Propósito general y propósito específico
-
-Un computador personal debe poder ejecutar una gran diversidad de aplicaciones. En cambio, un controlador integrado en un electrodoméstico puede estar diseñado para una tarea muy concreta.
-
-### CPU y MCU
-
-En sistemas empotrados es frecuente utilizar un **microcontrolador (MCU)**, que integra en un mismo dispositivo procesador, memoria y periféricos destinados al control de sistemas específicos.
-
-::: {.ejercicio titulo="Comparar necesidades" numero="1.8" dificultad="2"}
-Compara un reloj inteligente y un servidor de un centro de datos. Propón al menos tres prioridades de diseño que sean diferentes entre ambos.
-
-::: {.solucion}
-Una respuesta razonable podría destacar autonomía, tamaño y consumo como prioridades críticas del reloj, mientras que en el servidor pesan especialmente capacidad de procesamiento, memoria, almacenamiento, disponibilidad y servicio concurrente a muchos usuarios.
-:::
-:::
-
-## ¿Qué papel juega el software?
-
-El hardware proporciona recursos. El software organiza esos recursos y los utiliza para resolver problemas.
-
-Una representación simplificada por capas es:
-
-```{mermaid}
-flowchart TB
-    A[Aplicaciones]
-    B[Bibliotecas y herramientas]
-    C[Sistema operativo y controladores]
-    D[Hardware]
-    A --> B --> C --> D
-```
-
-### Software de sistema
-
-El **sistema operativo** administra recursos del computador y proporciona servicios sobre los que se apoyan las aplicaciones. Los **controladores** permiten gestionar dispositivos concretos y el **firmware** contiene software estrechamente ligado al hardware.
-
-### Aplicaciones
-
-Las aplicaciones utilizan las capacidades del sistema para realizar tareas útiles: comunicación, edición, cálculo, diseño, navegación, reproducción multimedia, etc.
-
-### Lenguajes y traducción
-
-Los programadores suelen expresar soluciones mediante lenguajes comprensibles para las personas. Esas descripciones deben transformarse o interpretarse para que el computador pueda ejecutar las instrucciones correspondientes.
-
-```{mermaid}
-flowchart LR
-    H[Programa escrito por una persona] --> T[Traducción / interpretación]
-    T --> M[Instrucciones ejecutables]
-    M --> CPU[CPU]
-```
-
-### Software como herramienta de ingeniería
-
-Para un ingeniero, el computador no es solo un objeto de estudio. Es también una herramienta de trabajo. Podemos organizar el software por la función que cumple:
-
-- cálculo numérico y científico;
-- simulación y modelado;
-- diseño;
-- programación y automatización;
-- tratamiento y visualización de datos;
-- documentación técnica;
-- colaboración y control de versiones.
-
-Los productos concretos cambiarán con el tiempo; estas funciones son más estables.
-
-::: {.tarea titulo="Tu mapa de herramientas" numero="1.9" dificultad="2"}
-Elige tres herramientas software que hayas utilizado o que conozcas. Para cada una, indica qué problema resuelve, qué tipo de usuario la emplea y en cuál de las categorías anteriores la situarías.
-
-::: {.solucion}
-La respuesta es abierta. Debe justificarse la función de cada herramienta, no limitarse a enumerar nombres de programas.
-:::
-:::
-
-# Cierre · Del clic al resultado
-
-Volvamos a la pregunta inicial. Haces clic sobre el icono de una aplicación. ¿Qué ocurre?
-
-Aún no conocemos todos los detalles, pero ya podemos construir una historia coherente:
-
-```{mermaid}
-flowchart LR
-    A[Clic] --> B[Entrada]
-    B --> C[Software del sistema]
-    C --> D[Programa]
-    D --> E[Memoria]
-    E <--> F[CPU]
-    F --> G[Procesamiento]
-    G --> H[Salida]
-```
-
-El clic llega como entrada. El software participa en la gestión de la acción. El programa y sus datos se encuentran en memoria o deben hacerse accesibles al procesador. La CPU ejecuta instrucciones, intercambia datos con memoria y dispositivos y, finalmente, obtenemos una salida.
-
-Los próximos temas irán abriendo cada una de estas cajas.
 
 ::: {.resumen}
-- Un computador procesa información representada mediante datos.
-- Los bits permiten construir patrones binarios; con $n$ bits existen $2^n$ combinaciones.
-- CPU, memoria y entrada/salida forman un primer modelo funcional del computador.
-- Direcciones y datos responden a problemas diferentes y se comunican mediante mecanismos distintos.
-- Un programa puede entenderse inicialmente como una secuencia de instrucciones ejecutadas por la CPU.
-- Frecuencia, CPI, instrucciones y tiempo de ejecución están relacionados, pero ninguna métrica aislada explica todo el rendimiento.
-- Los computadores adoptan formas distintas porque responden a requisitos diferentes.
-- El software convierte los recursos físicos en herramientas capaces de resolver tareas.
+**Qué deberías llevarte de 1.2**
+
+- Un bit permite distinguir dos estados.
+- Cada bit adicional duplica el número de patrones disponibles.
+- $n$ bits producen $2^n$ patrones.
+- $\lceil\log_2N\rceil$ responde a la pregunta «¿cuántos bits necesito para distinguir $N$ posibilidades?».
+- Ocho bits forman un byte.
+- `b` y `B` no son intercambiables: bit y byte representan cantidades distintas.
 :::
 
-## Problemas integradores
+## La historia continúa
 
-::: {.ejercicio titulo="Del código a la memoria" numero="1.10" dificultad="3"}
-Un sistema necesita representar 200 símbolos distintos y almacenar 1024 palabras diferentes de memoria.
+Hasta aquí hemos respondido dos preguntas:
 
-1. ¿Cuántos bits hacen falta como mínimo para codificar cada símbolo?
-2. ¿Cuántos bits hacen falta para seleccionar una de las 1024 palabras?
-3. Explica por qué ambos cálculos utilizan la misma idea matemática aunque resuelvan problemas diferentes.
+<div class="closing-questions">
+  <div><span>✓</span><strong>¿Qué es un computador?</strong><small>Un sistema capaz de representar y transformar datos siguiendo instrucciones.</small></div>
+  <div><span>✓</span><strong>¿Cómo representa información?</strong><small>Mediante códigos construidos sobre patrones de bits.</small></div>
+</div>
 
-::: {.solucion}
-Para 200 símbolos necesitamos el menor $n$ tal que $2^n\ge200$. Como $2^7=128$ y $2^8=256$, hacen falta **8 bits**.
+La siguiente pregunta surge de forma natural:
 
-Para 1024 palabras, $1024=2^{10}$, por lo que hacen falta **10 bits** de dirección.
+> **Si ya tenemos datos representados como bits, ¿dónde se guardan y quién los procesa?**
 
-En ambos casos contamos cuántos patrones diferentes pueden construirse con $n$ bits. Lo que cambia es la interpretación: en el primer caso cada patrón representa un símbolo; en el segundo, una posición de memoria.
-:::
-:::
-
-::: {.autoevaluacion}
-1. ¿Cuál es la diferencia entre dato e información?
-2. ¿Por qué resulta útil una representación basada en dos estados?
-3. ¿Qué significa que con $n$ bits podamos construir $2^n$ combinaciones?
-4. ¿Qué diferencia conceptual existe entre bus de datos y bus de direcciones?
-5. ¿Por qué un procesador de mayor frecuencia no es necesariamente más rápido para cualquier programa?
-6. ¿Qué diferencia general existe entre un sistema de propósito general y uno de propósito específico?
-7. ¿Qué papel cumple el sistema operativo entre aplicaciones y hardware?
-8. Explica con tus palabras qué ocurre desde una entrada hasta una salida utilizando al menos cuatro conceptos de este tema.
-:::
+Ahí abriremos por primera vez la caja: **CPU, memoria y entrada/salida**.
