@@ -91,7 +91,7 @@
     "href": "teoria/tema1/02-representacion.html#dos-estados-muchas-posibilidades",
     "title": "1.2 · ¿Cómo representa la información?",
     "section": "",
-    "text": "&lt;div class=\"switch\"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;\n&lt;div class=\"bulb\"&gt;○&lt;/div&gt;\n&lt;strong&gt;Estado 0&lt;/strong&gt;\n&lt;small&gt;sin corriente · apagado&lt;/small&gt;\n\n\n&lt;div class=\"switch\"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;\n&lt;div class=\"bulb\"&gt;●&lt;/div&gt;\n&lt;strong&gt;Estado 1&lt;/strong&gt;\n&lt;small&gt;con corriente · encendido&lt;/small&gt;\n\n\nCon solo dos estados podemos construir representaciones mucho más ricas.\n\n\n\nImportante\nAquí 0 y 1 no son únicamente números: son símbolos que utilizamos para nombrar dos estados distinguibles.",
+    "text": "○\n\nEstado 0 sin corriente · apagado\n\n\n\n\n\n\n●\n\nEstado 1 con corriente · encendido\n\n\nCon solo dos estados podemos construir representaciones mucho más ricas.\n\n\n\nImportante\nAquí 0 y 1 no son únicamente números: son símbolos que utilizamos para nombrar dos estados distinguibles.",
     "crumbs": [
       "Parte I — Teoría",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.2 · ¿Cómo representa la información?</span>"
@@ -102,7 +102,7 @@
     "href": "teoria/tema1/02-representacion.html#el-bit-y-las-combinaciones",
     "title": "1.2 · ¿Cómo representa la información?",
     "section": "2. El bit y las combinaciones",
-    "text": "2. El bit y las combinaciones\nUn bit (binary digit) es una unidad que puede tomar dos valores. Al combinar varios bits aparecen más posibilidades.\n\nCada nuevo bit duplica el número de patrones que podemos construir. Tras observar el patrón, ya tiene sentido escribirlo de forma general:\n\nCon n bits podemos representar 2n patrones diferentes.\n\n\n\n&lt;div&gt;\n  &lt;span class=\"kicker\"&gt;PRUÉBALO&lt;/span&gt;\n  &lt;h3&gt;Explora las combinaciones&lt;/h3&gt;\n&lt;/div&gt;\n&lt;label&gt;Número de bits: &lt;strong data-bit-value&gt;3&lt;/strong&gt;&lt;input type=\"range\" min=\"1\" max=\"6\" value=\"3\" step=\"1\" aria-label=\"Número de bits\"&gt;&lt;/label&gt;\n\n\n8combinaciones",
+    "text": "2. El bit y las combinaciones\nUn bit (binary digit) es una unidad que puede tomar dos valores. Al combinar varios bits aparecen más posibilidades.\n\nCada nuevo bit duplica el número de patrones que podemos construir. Tras observar el patrón, ya tiene sentido escribirlo de forma general:\n\nCon n bits podemos representar 2n patrones diferentes.\n\n\n\n\nPRUÉBALO\n\nExplora las combinaciones\n\n\nNúmero de bits: 3\n\n\n8combinaciones",
     "crumbs": [
       "Parte I — Teoría",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.2 · ¿Cómo representa la información?</span>"
