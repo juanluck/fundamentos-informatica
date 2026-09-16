@@ -20,133 +20,245 @@
     ]
   },
   {
+    "objectID": "teoria/01-introduccion.html",
+    "href": "teoria/01-introduccion.html",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "",
+    "text": "2.1 ¿Qué es un computador?\n¿Qué ocurre realmente desde que pulsamos una tecla, abrimos una aplicación o reproducimos un vídeo hasta que el computador nos devuelve un resultado?\nEste tema construye una primera respuesta. No intentaremos conocer todavía todos los detalles de un computador. Empezaremos por una idea muy sencilla —procesar información— e iremos abriendo la caja poco a poco.\nAntes de hablar de procesadores, memoria o programas conviene responder una pregunta más básica: ¿qué hace un computador?\nPodemos observarlo como una caja que recibe datos, realiza algún procesamiento y produce un resultado.\nflowchart LR\n    E[Datos de entrada] --&gt; C[Computador]\n    C --&gt; S[Resultados]\nCuando escribes una palabra, el teclado proporciona datos de entrada. Cuando una aplicación calcula una ruta, procesa datos. Cuando la pantalla muestra el mapa, estás viendo el resultado de ese procesamiento.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
+    "objectID": "teoria/01-introduccion.html#qué-es-un-computador",
+    "href": "teoria/01-introduccion.html#qué-es-un-computador",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "",
+    "text": "Concepto clave\nLa informática estudia el tratamiento automático de la información mediante sistemas capaces de representar, almacenar y procesar datos.\nUn computador es una máquina programable que procesa información representada de una forma que puede manipular físicamente.\n\n\n2.1.1 Datos e información\nLos términos dato e información están relacionados, pero no son idénticos.\nUn dato es una representación: un número, un símbolo, una medida o una secuencia de caracteres. Adquiere significado cuando sabemos cómo interpretarlo.\n\nEjemplo\nEl valor 23 por sí solo es un dato. Puede representar una temperatura, una edad, una dirección de memoria o el número de estudiantes de un grupo. El significado depende del contexto y de las reglas de interpretación.\n\nEsta idea será importante durante todo el curso: el mismo patrón físico puede significar cosas diferentes dependiendo de cómo decidamos interpretarlo.\n\n\n2.1.2 Hardware y software\nPara que un computador resulte útil necesitamos dos dimensiones inseparables:\n\nhardware: los componentes físicos;\nsoftware: las instrucciones y programas que determinan qué debe hacer el hardware.\n\nTodavía no necesitamos conocer sus detalles. De momento basta con recordar que el hardware proporciona capacidad de procesamiento y el software la dirige hacia una tarea concreta.\n\n\nEjercicio 1.1 ● Básico\n\n\nEntrada, procesamiento y salida\n\nPara cada situación, identifica qué podría considerarse entrada, qué procesamiento se realiza y cuál es la salida:\n\nuna calculadora suma dos números;\nuna cámara de móvil realiza una fotografía;\nuna aplicación de navegación calcula una ruta.\n\n\nSolución\nNo existe una única redacción válida. Lo importante es distinguir las tres funciones.\nEn una calculadora, por ejemplo, los números y la operación son la entrada; la suma es el procesamiento; el resultado mostrado es la salida.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
+    "objectID": "teoria/01-introduccion.html#cómo-representa-la-información",
+    "href": "teoria/01-introduccion.html#cómo-representa-la-información",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "2.2 ¿Cómo representa la información?",
+    "text": "2.2 ¿Cómo representa la información?\nUn computador debe representar físicamente números, letras, imágenes, sonido e instrucciones. Para hacerlo resulta muy útil trabajar con sistemas que puedan distinguir de forma fiable dos estados.\nEsos estados pueden implementarse de muchas maneras: dos niveles eléctricos, dos orientaciones magnéticas, presencia o ausencia de carga, etc. Los símbolos 0 y 1 nos permiten nombrarlos de forma cómoda.\n\nImportante\nEn este contexto inicial, 0 y 1 no deben entenderse únicamente como números. También pueden verse como dos símbolos que representan dos estados distinguibles.\n\n\n2.2.1 El bit\nLlamamos bit a una unidad que puede tomar uno de dos valores posibles.\nCon un solo bit tenemos dos combinaciones:\n0\n1\nCon dos bits aparecen cuatro:\n00\n01\n10\n11\nY con tres bits:\n000  001  010  011\n100  101  110  111\nEl patrón es sencillo:\n\n\n\nBits\nCombinaciones posibles\n\n\n\n\n1\n2\n\n\n2\n4\n\n\n3\n8\n\n\n4\n16\n\n\n\nDespués de observar estos casos podemos formalizar la relación:\n\\[\nn\\text{ bits} \\longrightarrow 2^n\\text{ combinaciones}\n\\]\n\nConcepto clave\nCon \\(n\\) bits pueden construirse \\(2^n\\) patrones distintos. Los patrones no tienen significado por sí solos: somos nosotros quienes establecemos qué representa cada uno.\n\n\n\n2.2.2 De combinaciones a códigos\nSupongamos que solo queremos representar cuatro letras. Podemos acordar el siguiente código:\n\n\n\nPatrón\nSímbolo\n\n\n\n\n00\nA\n\n\n01\nB\n\n\n10\nC\n\n\n11\nD\n\n\n\nNada obliga a utilizar exactamente esa correspondencia. Lo importante es que emisor y receptor compartan el mismo código.\n\n\nEjercicio 1.2 ● Básico\n\n\n¿Cuántos bits necesito?\n\n¿Cuántos bits hacen falta como mínimo para disponer de un patrón diferente para cada uno de los diez dígitos decimales (0 a 9)?\n\nSolución\nCon 3 bits solo disponemos de \\(2^3=8\\) combinaciones, por lo que no es suficiente.\nCon 4 bits disponemos de \\(2^4=16\\) combinaciones. Por tanto, el mínimo es 4 bits.\n\n\nLa pregunta inversa aparece constantemente en informática. Si necesitamos representar \\(N\\) posibilidades, buscamos el menor \\(n\\) tal que:\n\\[\n2^n \\ge N\n\\]\nque puede expresarse como:\n\\[\nn=\\lceil\\log_2 N\\rceil\n\\]\nEl logaritmo en base 2 aparece así como respuesta a una pregunta concreta: ¿cuántos bits necesito?\n\n\n2.2.3 Del bit al byte\nTrabajar bit a bit sería incómodo. Por convenio, agrupamos habitualmente ocho bits en una unidad llamada byte.\n\\[\n1\\ \\text{byte}=8\\ \\text{bits}\n\\]\nA partir del byte expresamos capacidades mayores. Conviene distinguir entre prefijos decimales y binarios:\n\n\n\nUnidad\nValor\n\n\n\n\nkB\n\\(10^3\\) bytes\n\n\nMB\n\\(10^6\\) bytes\n\n\nGB\n\\(10^9\\) bytes\n\n\nKiB\n\\(2^{10}\\) bytes\n\n\nMiB\n\\(2^{20}\\) bytes\n\n\nGiB\n\\(2^{30}\\) bytes\n\n\n\n\nEjemplo\nUna conexión de 100 Mb/s expresa una velocidad en megabits por segundo. Un archivo de 1 GB expresa un tamaño en gigabytes. Antes de calcular un tiempo de descarga debemos llevar ambas magnitudes a unidades compatibles.\n\n\n\nEjercicio 1.3 ●● Intermedio\n\n\nTiempo de descarga\n\nIgnorando pérdidas y sobrecargas, ¿cuánto tardaría en descargarse un archivo de 1 GB a través de una conexión de 100 Mb/s? Utiliza unidades decimales en ambas magnitudes.\n\nSolución\n\\(1\\ \\text{GB}=8\\ \\text{Gb}=8000\\ \\text{Mb}\\).\nEntonces:\n\\[\nt=\\frac{8000\\ \\text{Mb}}{100\\ \\text{Mb/s}}=80\\ \\text{s}\n\\]\nEn condiciones ideales, tardaría aproximadamente 80 segundos.\n\n\n\nPara saber más\nLa conocida historia del tablero de ajedrez y los granos de trigo es una forma intuitiva de visualizar cómo crecen las potencias de 2. En una versión posterior de este capítulo puede convertirse en una visualización interactiva.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
+    "objectID": "teoria/01-introduccion.html#qué-hay-dentro-de-un-computador",
+    "href": "teoria/01-introduccion.html#qué-hay-dentro-de-un-computador",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "2.3 ¿Qué hay dentro de un computador?",
+    "text": "2.3 ¿Qué hay dentro de un computador?\nYa sabemos que un computador recibe datos, los representa y los procesa. Ahora podemos abrir la caja.\nEn un primer modelo bastan tres grandes grupos:\n\nprocesador (CPU): ejecuta operaciones e instrucciones;\nmemoria: conserva temporalmente datos e instrucciones que están siendo utilizados;\nentrada/salida (E/S): comunica el computador con otros dispositivos y con el exterior.\n\n\n\n\n\n\nflowchart LR\n    IN[Entrada] &lt;--&gt; CPU[Procesador]\n    CPU &lt;--&gt; MEM[Memoria]\n    CPU &lt;--&gt; OUT[Salida]\n\n\n\n\n\n\nEste esquema es deliberadamente simple. Más adelante estudiaremos arquitecturas y jerarquías de memoria con mayor precisión.\n\n2.3.1 El procesador\nDentro de la CPU podemos distinguir, de forma conceptual:\n\nuna unidad de control, que coordina la ejecución de instrucciones;\nuna unidad aritmético-lógica (ALU), que realiza operaciones aritméticas y lógicas;\nregistros, pequeñas unidades de almacenamiento muy cercanas a las unidades de ejecución.\n\n\n\n\n\n\nflowchart TB\n    subgraph CPU[CPU]\n      UC[Unidad de control]\n      ALU[ALU]\n      R[Registros]\n      UC &lt;--&gt; R\n      R &lt;--&gt; ALU\n    end\n\n\n\n\n\n\n\n\n2.3.2 La memoria\nLa memoria principal puede imaginarse inicialmente como una secuencia de posiciones. Cada posición almacena un patrón de bits y tiene una forma de ser identificada.\n\n\n\nPosición\nContenido\n\n\n\n\n0\n10110101\n\n\n1\n01101011\n\n\n2\n11100010\n\n\n…\n…\n\n\n\n\nConcepto clave\nEn la memoria se almacenan datos e instrucciones. Para el hardware, ambos son patrones de bits; su interpretación depende de cómo se utilicen.\n\n\n\n2.3.3 Palabra y registros\nLos computadores suelen manipular grupos de bits de un tamaño determinado. El concepto de palabra permite hablar de esa unidad natural de procesamiento. Encontraremos arquitecturas de 8, 16, 32 o 64 bits, aunque el significado exacto de esas etiquetas requiere más contexto del que necesitamos ahora.\n\n\nEjercicio 1.4 ● Básico\n\n\nReconocer funciones\n\nRelaciona cada elemento con su función principal: CPU, memoria, dispositivo de entrada/salida.\n\nconservar temporalmente datos e instrucciones;\nejecutar instrucciones;\ncomunicar el sistema con el exterior.\n\n\nSolución\n\nmemoria;\nCPU;\nentrada/salida.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
+    "objectID": "teoria/01-introduccion.html#cómo-se-comunican-sus-componentes",
+    "href": "teoria/01-introduccion.html#cómo-se-comunican-sus-componentes",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "2.4 ¿Cómo se comunican sus componentes?",
+    "text": "2.4 ¿Cómo se comunican sus componentes?\nTenemos procesador y memoria. Ahora surge una necesidad concreta: ¿cómo intercambian información?\nSupongamos que la CPU quiere leer la posición 2 de la memoria. Hay dos problemas diferentes:\n\nindicar qué posición desea;\ntransferir el contenido de esa posición.\n\nEsta distinción conduce a dos mecanismos diferentes.\n\n2.4.1 Bus de direcciones: ¿dónde?\nEl procesador necesita expresar una dirección. Si dispone de \\(n\\) bits para hacerlo, puede generar hasta \\(2^n\\) patrones diferentes y, por tanto, distinguir hasta \\(2^n\\) direcciones.\nAquí reaparece exactamente la misma idea matemática que usamos para contar códigos.\n\nEjemplo\nCon un bus de direcciones de 4 bits pueden generarse \\(2^4=16\\) patrones distintos, desde 0000 hasta 1111.\n\n\n\n2.4.2 Bus de datos: ¿qué contenido?\nUna vez seleccionada la posición, necesitamos transportar el contenido. El bus de datos proporciona el camino por el que circulan esos bits entre los componentes.\n\n\n\n\n\nflowchart LR\n    CPU[CPU] -- \"dirección\" --&gt; MEM[Memoria]\n    MEM -- \"datos\" --&gt; CPU\n    CPU -. \"datos\" .-&gt; MEM\n\n\n\n\n\n\n\nConcepto clave\nEl bus de direcciones identifica una posición o destino. El bus de datos transporta la información que se intercambia.\n\n\n\nEjercicio 1.5 ● Básico\n\n\nDirecciones posibles\n\nUna memoria utiliza un bus de direcciones de 10 bits. ¿Cuántas direcciones distintas pueden generarse?\n\nSolución\n\\[2^{10}=1024\\]\nPueden generarse 1024 direcciones diferentes.\n\n\n\n\nEjercicio 1.6 ●●● Avanzado\n\n\nDimensionar buses\n\nConsidera un computador organizado en palabras de 32 bits y con una memoria de 32 MiB, direccionada por palabras.\n\n¿Cuántos bits debería transportar como mínimo el bus de datos para mover una palabra completa?\n¿Cuántas palabras contiene la memoria?\n¿Cuántos bits necesita el bus de direcciones?\n\n\nSolución\nUna palabra contiene 32 bits, por lo que un bus capaz de transportar una palabra completa en una transferencia tendrá 32 bits.\n\\(32\\ \\text{MiB}=2^{25}\\) bytes. Cada palabra ocupa 4 bytes, de modo que:\n\\[\n\\frac{2^{25}}{2^2}=2^{23}\\ \\text{palabras}\n\\]\nPara identificar \\(2^{23}\\) palabras hacen falta 23 bits de dirección.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
+    "objectID": "teoria/01-introduccion.html#cómo-ejecuta-un-programa",
+    "href": "teoria/01-introduccion.html#cómo-ejecuta-un-programa",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "2.5 ¿Cómo ejecuta un programa?",
+    "text": "2.5 ¿Cómo ejecuta un programa?\nHasta ahora sabemos dónde pueden estar los datos y quién los procesa. Falta unir hardware y software.\nUn programa puede verse, en primera aproximación, como una secuencia de instrucciones. Para ejecutarlo, sus instrucciones y los datos necesarios deben estar accesibles para el procesador.\nPodemos describir intuitivamente el proceso mediante un ciclo:\n\n\n\n\n\nflowchart LR\n    A[Buscar instrucción] --&gt; B[Interpretarla]\n    B --&gt; C[Ejecutarla]\n    C --&gt; D[Continuar]\n    D --&gt; A\n\n\n\n\n\n\nMás adelante estudiaremos este ciclo con detalle. Por ahora nos interesa que proporciona una explicación sencilla de por qué conceptos como reloj, instrucciones o CPI afectan al tiempo de ejecución.\n\n2.5.1 El reloj y la frecuencia\nMuchos procesadores coordinan su actividad mediante una señal periódica de reloj. La frecuencia indica cuántos ciclos de reloj se producen por segundo.\n\\[\n1\\ \\text{GHz}=10^9\\ \\text{ciclos/s}\n\\]\nPero frecuencia no significa directamente «instrucciones por segundo»: una instrucción puede requerir, en promedio, más de un ciclo.\n\n\n2.5.2 CPI y tiempo de CPU\nEl CPI (cycles per instruction) expresa el número medio de ciclos de reloj utilizados por instrucción en un determinado contexto.\nUna relación básica es:\n\\[\nT_{CPU}=N_{instr}\\times CPI\\times T_{ciclo}\n\\]\nComo \\(T_{ciclo}=1/f\\), también podemos escribir:\n\\[\nT_{CPU}=\\frac{N_{instr}\\times CPI}{f}\n\\]\n\nImportante\nUna frecuencia de reloj mayor no garantiza por sí sola que un computador ejecute un programa más rápido. El tiempo depende también del número de instrucciones, del CPI y de muchos otros factores que estudiaremos más adelante.\n\n\n\n2.5.3 MIPS y FLOPS\nDos métricas que aparecen con frecuencia son:\n\nMIPS: millones de instrucciones por segundo;\nFLOPS: operaciones de coma flotante por segundo.\n\nMiden aspectos diferentes y su utilidad depende del tipo de carga de trabajo.\n\n\nEjercicio 1.7 ●● Intermedio\n\n\nTiempo de ejecución\n\nUn programa ejecuta \\(5\\times10^8\\) instrucciones en un procesador de 2 GHz con un CPI medio de 2. ¿Cuál sería su tiempo de CPU según este modelo simplificado?\n\nSolución\n\\[\nT_{CPU}=\\frac{5\\times10^8\\times2}{2\\times10^9}=0.5\\ \\text{s}\n\\]\nEl tiempo resultante es 0,5 segundos.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
+    "objectID": "teoria/01-introduccion.html#todos-los-computadores-son-iguales",
+    "href": "teoria/01-introduccion.html#todos-los-computadores-son-iguales",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "2.6 ¿Todos los computadores son iguales?",
+    "text": "2.6 ¿Todos los computadores son iguales?\nUn portátil, un teléfono, la centralita de un automóvil, un servidor y un supercomputador comparten ideas fundamentales, pero están diseñados bajo restricciones muy diferentes.\nNo existe una única clasificación perfecta. Resulta más útil observar qué problema debe resolver cada sistema.\n\n\n\nSistema\nPrioridades habituales\n\n\n\n\nsistema empotrado\nconsumo, coste, tamaño, respuesta específica\n\n\ndispositivo móvil\nconsumo, integración, prestaciones, autonomía\n\n\ncomputador personal\nflexibilidad y propósito general\n\n\nservidor\ncapacidad, disponibilidad, concurrencia\n\n\nsupercomputador\nrendimiento masivo y paralelismo\n\n\n\n\n2.6.1 Propósito general y propósito específico\nUn computador personal debe poder ejecutar una gran diversidad de aplicaciones. En cambio, un controlador integrado en un electrodoméstico puede estar diseñado para una tarea muy concreta.\n\n\n2.6.2 CPU y MCU\nEn sistemas empotrados es frecuente utilizar un microcontrolador (MCU), que integra en un mismo dispositivo procesador, memoria y periféricos destinados al control de sistemas específicos.\n\n\nEjercicio 1.8 ●● Intermedio\n\n\nComparar necesidades\n\nCompara un reloj inteligente y un servidor de un centro de datos. Propón al menos tres prioridades de diseño que sean diferentes entre ambos.\n\nSolución\nUna respuesta razonable podría destacar autonomía, tamaño y consumo como prioridades críticas del reloj, mientras que en el servidor pesan especialmente capacidad de procesamiento, memoria, almacenamiento, disponibilidad y servicio concurrente a muchos usuarios.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
+    "objectID": "teoria/01-introduccion.html#qué-papel-juega-el-software",
+    "href": "teoria/01-introduccion.html#qué-papel-juega-el-software",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "2.7 ¿Qué papel juega el software?",
+    "text": "2.7 ¿Qué papel juega el software?\nEl hardware proporciona recursos. El software organiza esos recursos y los utiliza para resolver problemas.\nUna representación simplificada por capas es:\n\n\n\n\n\nflowchart TB\n    A[Aplicaciones]\n    B[Bibliotecas y herramientas]\n    C[Sistema operativo y controladores]\n    D[Hardware]\n    A --&gt; B --&gt; C --&gt; D\n\n\n\n\n\n\n\n2.7.1 Software de sistema\nEl sistema operativo administra recursos del computador y proporciona servicios sobre los que se apoyan las aplicaciones. Los controladores permiten gestionar dispositivos concretos y el firmware contiene software estrechamente ligado al hardware.\n\n\n2.7.2 Aplicaciones\nLas aplicaciones utilizan las capacidades del sistema para realizar tareas útiles: comunicación, edición, cálculo, diseño, navegación, reproducción multimedia, etc.\n\n\n2.7.3 Lenguajes y traducción\nLos programadores suelen expresar soluciones mediante lenguajes comprensibles para las personas. Esas descripciones deben transformarse o interpretarse para que el computador pueda ejecutar las instrucciones correspondientes.\n\n\n\n\n\nflowchart LR\n    H[Programa escrito por una persona] --&gt; T[Traducción / interpretación]\n    T --&gt; M[Instrucciones ejecutables]\n    M --&gt; CPU[CPU]\n\n\n\n\n\n\n\n\n2.7.4 Software como herramienta de ingeniería\nPara un ingeniero, el computador no es solo un objeto de estudio. Es también una herramienta de trabajo. Podemos organizar el software por la función que cumple:\n\ncálculo numérico y científico;\nsimulación y modelado;\ndiseño;\nprogramación y automatización;\ntratamiento y visualización de datos;\ndocumentación técnica;\ncolaboración y control de versiones.\n\nLos productos concretos cambiarán con el tiempo; estas funciones son más estables.\n\n\nTarea 1.9 ●● Intermedio\n\n\nTu mapa de herramientas\n\nElige tres herramientas software que hayas utilizado o que conozcas. Para cada una, indica qué problema resuelve, qué tipo de usuario la emplea y en cuál de las categorías anteriores la situarías.\n\nSolución\nLa respuesta es abierta. Debe justificarse la función de cada herramienta, no limitarse a enumerar nombres de programas.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
+    "objectID": "teoria/01-introduccion.html#problemas-integradores",
+    "href": "teoria/01-introduccion.html#problemas-integradores",
+    "title": "2  Tema 1 · Introducción a los computadores",
+    "section": "3.1 Problemas integradores",
+    "text": "3.1 Problemas integradores\n\n\nEjercicio 1.10 ●●● Avanzado\n\n\nDel código a la memoria\n\nUn sistema necesita representar 200 símbolos distintos y almacenar 1024 palabras diferentes de memoria.\n\n¿Cuántos bits hacen falta como mínimo para codificar cada símbolo?\n¿Cuántos bits hacen falta para seleccionar una de las 1024 palabras?\nExplica por qué ambos cálculos utilizan la misma idea matemática aunque resuelvan problemas diferentes.\n\n\nSolución\nPara 200 símbolos necesitamos el menor \\(n\\) tal que \\(2^n\\ge200\\). Como \\(2^7=128\\) y \\(2^8=256\\), hacen falta 8 bits.\nPara 1024 palabras, \\(1024=2^{10}\\), por lo que hacen falta 10 bits de dirección.\nEn ambos casos contamos cuántos patrones diferentes pueden construirse con \\(n\\) bits. Lo que cambia es la interpretación: en el primer caso cada patrón representa un símbolo; en el segundo, una posición de memoria.\n\n\n\nAutoevaluación\n\n¿Cuál es la diferencia entre dato e información?\n¿Por qué resulta útil una representación basada en dos estados?\n¿Qué significa que con \\(n\\) bits podamos construir \\(2^n\\) combinaciones?\n¿Qué diferencia conceptual existe entre bus de datos y bus de direcciones?\n¿Por qué un procesador de mayor frecuencia no es necesariamente más rápido para cualquier programa?\n¿Qué diferencia general existe entre un sistema de propósito general y uno de propósito específico?\n¿Qué papel cumple el sistema operativo entre aplicaciones y hardware?\nExplica con tus palabras qué ocurre desde una entrada hasta una salida utilizando al menos cuatro conceptos de este tema.",
+    "crumbs": [
+      "Parte I — Teoría",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tema 1 · Introducción a los computadores</span>"
+    ]
+  },
+  {
     "objectID": "sandbox.html",
     "href": "sandbox.html",
-    "title": "2  Galería de componentes",
+    "title": "3  Galería de componentes",
     "section": "",
-    "text": "2.1 Texto normal y jerarquía\nEste capítulo es deliberadamente artificial. Sirve para probar la gramática visual del libro antes de aplicarla a contenido real.\nEl cuerpo del libro debe poder leerse cómodamente durante periodos largos. Negrita, cursiva, código en línea, enlaces, listas y referencias deben integrarse sin romper el ritmo de lectura.",
+    "text": "3.1 Texto normal y jerarquía\nEste capítulo es deliberadamente artificial. Sirve para probar la gramática visual del libro antes de aplicarla a contenido real.\nEl cuerpo del libro debe poder leerse cómodamente durante periodos largos. Negrita, cursiva, código en línea, enlaces, listas y referencias deben integrarse sin romper el ritmo de lectura.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#texto-normal-y-jerarquía",
     "href": "sandbox.html#texto-normal-y-jerarquía",
-    "title": "2  Galería de componentes",
+    "title": "3  Galería de componentes",
     "section": "",
-    "text": "2.1.1 Subsección de ejemplo\n\nPrimer elemento.\nSegundo elemento.\nTercer elemento.",
+    "text": "3.1.1 Subsección de ejemplo\n\nPrimer elemento.\nSegundo elemento.\nTercer elemento.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#bloques-didácticos",
     "href": "sandbox.html#bloques-didácticos",
-    "title": "2  Galería de componentes",
-    "section": "2.2 Bloques didácticos",
-    "text": "2.2 Bloques didácticos\n\nConcepto clave\nUn bit es una unidad de información que puede tomar dos valores posibles: 0 o 1.\n\n\nImportante\nLos prefijos binarios y decimales no representan exactamente las mismas cantidades. El contexto determina cuándo conviene distinguirlos.\n\n\nEjemplo\nSi disponemos de 3 bits, podemos representar \\(2^3 = 8\\) combinaciones distintas.\n\n\nPara saber más\nLa normalización de unidades y prefijos evita ambigüedades al expresar capacidades de memoria y almacenamiento.",
+    "title": "3  Galería de componentes",
+    "section": "3.2 Bloques didácticos",
+    "text": "3.2 Bloques didácticos\n\nConcepto clave\nUn bit es una unidad de información que puede tomar dos valores posibles: 0 o 1.\n\n\nImportante\nLos prefijos binarios y decimales no representan exactamente las mismas cantidades. El contexto determina cuándo conviene distinguirlos.\n\n\nEjemplo\nSi disponemos de 3 bits, podemos representar \\(2^3 = 8\\) combinaciones distintas.\n\n\nPara saber más\nLa normalización de unidades y prefijos evita ambigüedades al expresar capacidades de memoria y almacenamiento.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#ejercicios-y-tareas",
     "href": "sandbox.html#ejercicios-y-tareas",
-    "title": "2  Galería de componentes",
-    "section": "2.3 Ejercicios y tareas",
-    "text": "2.3 Ejercicios y tareas\n\n\nEjercicio 2.4 ●● Intermedio\n\n\nConversión a binario\n\nConvierte el número decimal 74 a representación binaria e indica el número mínimo de bits necesarios.\n\nSolución\n\\(74 = 64 + 8 + 2 = 2^6 + 2^3 + 2^1\\).\nPor tanto:\n\\[74_{10}=1001010_2\\]\nSe necesitan 7 bits.\n\n\n\n\nTarea 3.1 ●●● Avanzado\n\n\nExplora tu ordenador\n\nIdentifica el procesador, la memoria principal y el almacenamiento de tu equipo. Explica qué función cumple cada elemento y anota las características que consideres relevantes.\n\nSolución\nLa respuesta depende del equipo utilizado. Debe identificarse correctamente cada componente y relacionarse con su función dentro del sistema.\n\n\n\n\nEjercicio 2.5 ● Básico\n\n\nNúmero de combinaciones\n\n¿Cuántos símbolos diferentes pueden codificarse con 5 bits?\n\nSolución\nCon \\(n\\) bits pueden representarse \\(2^n\\) combinaciones. Por tanto, con 5 bits pueden representarse 32 símbolos.",
+    "title": "3  Galería de componentes",
+    "section": "3.3 Ejercicios y tareas",
+    "text": "3.3 Ejercicios y tareas\n\n\nEjercicio 2.4 ●● Intermedio\n\n\nConversión a binario\n\nConvierte el número decimal 74 a representación binaria e indica el número mínimo de bits necesarios.\n\nSolución\n\\(74 = 64 + 8 + 2 = 2^6 + 2^3 + 2^1\\).\nPor tanto:\n\\[74_{10}=1001010_2\\]\nSe necesitan 7 bits.\n\n\n\n\nTarea 3.1 ●●● Avanzado\n\n\nExplora tu ordenador\n\nIdentifica el procesador, la memoria principal y el almacenamiento de tu equipo. Explica qué función cumple cada elemento y anota las características que consideres relevantes.\n\nSolución\nLa respuesta depende del equipo utilizado. Debe identificarse correctamente cada componente y relacionarse con su función dentro del sistema.\n\n\n\n\nEjercicio 2.5 ● Básico\n\n\nNúmero de combinaciones\n\n¿Cuántos símbolos diferentes pueden codificarse con 5 bits?\n\nSolución\nCon \\(n\\) bits pueden representarse \\(2^n\\) combinaciones. Por tanto, con 5 bits pueden representarse 32 símbolos.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#autoevaluación",
     "href": "sandbox.html#autoevaluación",
-    "title": "2  Galería de componentes",
-    "section": "2.4 Autoevaluación",
-    "text": "2.4 Autoevaluación\n\nAutoevaluación\n\n¿Qué diferencia existe entre bit y byte?\n¿Cuántas combinaciones permiten 8 bits?\n¿Por qué las potencias de 2 aparecen con tanta frecuencia en informática?",
+    "title": "3  Galería de componentes",
+    "section": "3.4 Autoevaluación",
+    "text": "3.4 Autoevaluación\n\nAutoevaluación\n\n¿Qué diferencia existe entre bit y byte?\n¿Cuántas combinaciones permiten 8 bits?\n¿Por qué las potencias de 2 aparecen con tanta frecuencia en informática?",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#código",
     "href": "sandbox.html#código",
-    "title": "2  Galería de componentes",
-    "section": "2.5 Código",
-    "text": "2.5 Código\nbits = 8\ncombinaciones = 2 ** bits\nprint(combinaciones)",
+    "title": "3  Galería de componentes",
+    "section": "3.5 Código",
+    "text": "3.5 Código\nbits = 8\ncombinaciones = 2 ** bits\nprint(combinaciones)",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#matemáticas",
     "href": "sandbox.html#matemáticas",
-    "title": "2  Galería de componentes",
-    "section": "2.6 Matemáticas",
-    "text": "2.6 Matemáticas\nUna relación habitual entre el número de bits de un bus de direcciones y el número de posiciones direccionables es:\n\\[\nm = 2^n\n\\]\ny, despejando,\n\\[\nn = \\log_2 m\n\\]",
+    "title": "3  Galería de componentes",
+    "section": "3.6 Matemáticas",
+    "text": "3.6 Matemáticas\nUna relación habitual entre el número de bits de un bus de direcciones y el número de posiciones direccionables es:\n\\[\nm = 2^n\n\\]\ny, despejando,\n\\[\nn = \\log_2 m\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#tabla",
     "href": "sandbox.html#tabla",
-    "title": "2  Galería de componentes",
-    "section": "2.7 Tabla",
-    "text": "2.7 Tabla\n\n\n\nUnidad\nSímbolo\nEquivalencia ilustrativa\n\n\n\n\nbit\nb\n0 o 1\n\n\nbyte\nB\n8 bits\n\n\nKiB\nKiB\n\\(2^{10}\\) bytes",
+    "title": "3  Galería de componentes",
+    "section": "3.7 Tabla",
+    "text": "3.7 Tabla\n\n\n\nUnidad\nSímbolo\nEquivalencia ilustrativa\n\n\n\n\nbit\nb\n0 o 1\n\n\nbyte\nB\n8 bits\n\n\nKiB\nKiB\n\\(2^{10}\\) bytes",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#figura-diagrama",
     "href": "sandbox.html#figura-diagrama",
-    "title": "2  Galería de componentes",
-    "section": "2.8 Figura / diagrama",
-    "text": "2.8 Figura / diagrama\n\n\n\n\n\nflowchart LR\n  A[Datos] --&gt; B[Procesamiento]\n  B --&gt; C[Información]\n\n\n\n\n\n\nFigura de ejemplo para comprobar el tratamiento de diagramas y pies.",
+    "title": "3  Galería de componentes",
+    "section": "3.8 Figura / diagrama",
+    "text": "3.8 Figura / diagrama\n\n\n\n\n\nflowchart LR\n  A[Datos] --&gt; B[Procesamiento]\n  B --&gt; C[Información]\n\n\n\n\n\n\nFigura de ejemplo para comprobar el tratamiento de diagramas y pies.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#vídeo",
     "href": "sandbox.html#vídeo",
-    "title": "2  Galería de componentes",
-    "section": "2.9 Vídeo",
-    "text": "2.9 Vídeo\n\nVídeo\nEjemplo de vídeo incrustado desde YouTube\nEl reproductor queda integrado directamente en la versión HTML del libro. En formatos que no admiten vídeo, Quarto conserva un enlace al recurso original.\n\nActividad breve: tras visualizarlo, anota dos ideas principales y una duda que te haya surgido.",
+    "title": "3  Galería de componentes",
+    "section": "3.9 Vídeo",
+    "text": "3.9 Vídeo\n\nVídeo\nEjemplo de vídeo incrustado desde YouTube\nEl reproductor queda integrado directamente en la versión HTML del libro. En formatos que no admiten vídeo, Quarto conserva un enlace al recurso original.\n\nActividad breve: tras visualizarlo, anota dos ideas principales y una duda que te haya surgido.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#recurso-externo",
     "href": "sandbox.html#recurso-externo",
-    "title": "2  Galería de componentes",
-    "section": "2.10 Recurso externo",
-    "text": "2.10 Recurso externo\n\nRecurso externo\nDocumentación complementaria\nEnlace a una herramienta, artículo, simulador o documentación técnica relacionada con el contenido.",
+    "title": "3  Galería de componentes",
+    "section": "3.10 Recurso externo",
+    "text": "3.10 Recurso externo\n\nRecurso externo\nDocumentación complementaria\nEnlace a una herramienta, artículo, simulador o documentación técnica relacionada con el contenido.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#objetivos",
     "href": "sandbox.html#objetivos",
-    "title": "2  Galería de componentes",
-    "section": "2.11 Objetivos",
-    "text": "2.11 Objetivos\n\nObjetivos\nAl finalizar esta sección, el estudiante debería ser capaz de:\n\ninterpretar un patrón de bits;\nrelacionar número de bits y combinaciones posibles;\nresolver conversiones sencillas de representación.",
+    "title": "3  Galería de componentes",
+    "section": "3.11 Objetivos",
+    "text": "3.11 Objetivos\n\nObjetivos\nAl finalizar esta sección, el estudiante debería ser capaz de:\n\ninterpretar un patrón de bits;\nrelacionar número de bits y combinaciones posibles;\nresolver conversiones sencillas de representación.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   },
   {
     "objectID": "sandbox.html#resumen",
     "href": "sandbox.html#resumen",
-    "title": "2  Galería de componentes",
-    "section": "2.12 Resumen",
-    "text": "2.12 Resumen\n\nResumen\n\nLos computadores representan información mediante patrones de bits.\n\\(n\\) bits permiten \\(2^n\\) combinaciones.\nLa representación elegida determina cómo se interpreta cada patrón.",
+    "title": "3  Galería de componentes",
+    "section": "3.12 Resumen",
+    "text": "3.12 Resumen\n\nResumen\n\nLos computadores representan información mediante patrones de bits.\n\\(n\\) bits permiten \\(2^n\\) combinaciones.\nLa representación elegida determina cómo se interpreta cada patrón.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Galería de componentes</span>"
+      "Diseño y pruebas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Galería de componentes</span>"
     ]
   }
 ]

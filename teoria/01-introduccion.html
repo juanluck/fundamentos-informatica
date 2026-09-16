@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Tema 1 · Introducción a los computadores – Fundamentos de Informática</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../sandbox.html" rel="next">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b1ba4bab3787b08d91b7d03c10f1ce10.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../teoria/01-introduccion.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../teoria/01-introduccion.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tema 1 · Introducción a los computadores</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Fundamentos de Informática</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de Informática</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Parte I — Teoría</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../teoria/01-introduccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tema 1 · Introducción a los computadores</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Diseño y pruebas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sandbox.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Galería de componentes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#qué-es-un-computador" id="toc-qué-es-un-computador" class="nav-link active" data-scroll-target="#qué-es-un-computador"><span class="header-section-number">2.1</span> ¿Qué es un computador?</a>
+  <ul class="collapse">
+  <li><a href="#datos-e-información" id="toc-datos-e-información" class="nav-link" data-scroll-target="#datos-e-información"><span class="header-section-number">2.1.1</span> Datos e información</a></li>
+  <li><a href="#hardware-y-software" id="toc-hardware-y-software" class="nav-link" data-scroll-target="#hardware-y-software"><span class="header-section-number">2.1.2</span> Hardware y software</a></li>
+  </ul></li>
+  <li><a href="#cómo-representa-la-información" id="toc-cómo-representa-la-información" class="nav-link" data-scroll-target="#cómo-representa-la-información"><span class="header-section-number">2.2</span> ¿Cómo representa la información?</a>
+  <ul class="collapse">
+  <li><a href="#el-bit" id="toc-el-bit" class="nav-link" data-scroll-target="#el-bit"><span class="header-section-number">2.2.1</span> El bit</a></li>
+  <li><a href="#de-combinaciones-a-códigos" id="toc-de-combinaciones-a-códigos" class="nav-link" data-scroll-target="#de-combinaciones-a-códigos"><span class="header-section-number">2.2.2</span> De combinaciones a códigos</a></li>
+  <li><a href="#del-bit-al-byte" id="toc-del-bit-al-byte" class="nav-link" data-scroll-target="#del-bit-al-byte"><span class="header-section-number">2.2.3</span> Del bit al byte</a></li>
+  </ul></li>
+  <li><a href="#qué-hay-dentro-de-un-computador" id="toc-qué-hay-dentro-de-un-computador" class="nav-link" data-scroll-target="#qué-hay-dentro-de-un-computador"><span class="header-section-number">2.3</span> ¿Qué hay dentro de un computador?</a>
+  <ul class="collapse">
+  <li><a href="#el-procesador" id="toc-el-procesador" class="nav-link" data-scroll-target="#el-procesador"><span class="header-section-number">2.3.1</span> El procesador</a></li>
+  <li><a href="#la-memoria" id="toc-la-memoria" class="nav-link" data-scroll-target="#la-memoria"><span class="header-section-number">2.3.2</span> La memoria</a></li>
+  <li><a href="#palabra-y-registros" id="toc-palabra-y-registros" class="nav-link" data-scroll-target="#palabra-y-registros"><span class="header-section-number">2.3.3</span> Palabra y registros</a></li>
+  </ul></li>
+  <li><a href="#cómo-se-comunican-sus-componentes" id="toc-cómo-se-comunican-sus-componentes" class="nav-link" data-scroll-target="#cómo-se-comunican-sus-componentes"><span class="header-section-number">2.4</span> ¿Cómo se comunican sus componentes?</a>
+  <ul class="collapse">
+  <li><a href="#bus-de-direcciones-dónde" id="toc-bus-de-direcciones-dónde" class="nav-link" data-scroll-target="#bus-de-direcciones-dónde"><span class="header-section-number">2.4.1</span> Bus de direcciones: ¿dónde?</a></li>
+  <li><a href="#bus-de-datos-qué-contenido" id="toc-bus-de-datos-qué-contenido" class="nav-link" data-scroll-target="#bus-de-datos-qué-contenido"><span class="header-section-number">2.4.2</span> Bus de datos: ¿qué contenido?</a></li>
+  </ul></li>
+  <li><a href="#cómo-ejecuta-un-programa" id="toc-cómo-ejecuta-un-programa" class="nav-link" data-scroll-target="#cómo-ejecuta-un-programa"><span class="header-section-number">2.5</span> ¿Cómo ejecuta un programa?</a>
+  <ul class="collapse">
+  <li><a href="#el-reloj-y-la-frecuencia" id="toc-el-reloj-y-la-frecuencia" class="nav-link" data-scroll-target="#el-reloj-y-la-frecuencia"><span class="header-section-number">2.5.1</span> El reloj y la frecuencia</a></li>
+  <li><a href="#cpi-y-tiempo-de-cpu" id="toc-cpi-y-tiempo-de-cpu" class="nav-link" data-scroll-target="#cpi-y-tiempo-de-cpu"><span class="header-section-number">2.5.2</span> CPI y tiempo de CPU</a></li>
+  <li><a href="#mips-y-flops" id="toc-mips-y-flops" class="nav-link" data-scroll-target="#mips-y-flops"><span class="header-section-number">2.5.3</span> MIPS y FLOPS</a></li>
+  </ul></li>
+  <li><a href="#todos-los-computadores-son-iguales" id="toc-todos-los-computadores-son-iguales" class="nav-link" data-scroll-target="#todos-los-computadores-son-iguales"><span class="header-section-number">2.6</span> ¿Todos los computadores son iguales?</a>
+  <ul class="collapse">
+  <li><a href="#propósito-general-y-propósito-específico" id="toc-propósito-general-y-propósito-específico" class="nav-link" data-scroll-target="#propósito-general-y-propósito-específico"><span class="header-section-number">2.6.1</span> Propósito general y propósito específico</a></li>
+  <li><a href="#cpu-y-mcu" id="toc-cpu-y-mcu" class="nav-link" data-scroll-target="#cpu-y-mcu"><span class="header-section-number">2.6.2</span> CPU y MCU</a></li>
+  </ul></li>
+  <li><a href="#qué-papel-juega-el-software" id="toc-qué-papel-juega-el-software" class="nav-link" data-scroll-target="#qué-papel-juega-el-software"><span class="header-section-number">2.7</span> ¿Qué papel juega el software?</a>
+  <ul class="collapse">
+  <li><a href="#software-de-sistema" id="toc-software-de-sistema" class="nav-link" data-scroll-target="#software-de-sistema"><span class="header-section-number">2.7.1</span> Software de sistema</a></li>
+  <li><a href="#aplicaciones" id="toc-aplicaciones" class="nav-link" data-scroll-target="#aplicaciones"><span class="header-section-number">2.7.2</span> Aplicaciones</a></li>
+  <li><a href="#lenguajes-y-traducción" id="toc-lenguajes-y-traducción" class="nav-link" data-scroll-target="#lenguajes-y-traducción"><span class="header-section-number">2.7.3</span> Lenguajes y traducción</a></li>
+  <li><a href="#software-como-herramienta-de-ingeniería" id="toc-software-como-herramienta-de-ingeniería" class="nav-link" data-scroll-target="#software-como-herramienta-de-ingeniería"><span class="header-section-number">2.7.4</span> Software como herramienta de ingeniería</a></li>
+  </ul></li>
+  <li><a href="#cierre-del-clic-al-resultado" id="toc-cierre-del-clic-al-resultado" class="nav-link" data-scroll-target="#cierre-del-clic-al-resultado"><span class="header-section-number">3</span> Cierre · Del clic al resultado</a>
+  <ul class="collapse">
+  <li><a href="#problemas-integradores" id="toc-problemas-integradores" class="nav-link" data-scroll-target="#problemas-integradores"><span class="header-section-number">3.1</span> Problemas integradores</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../teoria/01-introduccion.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../teoria/01-introduccion.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tema 1 · Introducción a los computadores</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tema 1 · Introducción a los computadores</span></h1>
+<p class="subtitle lead">Prototipo pedagógico</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>¿Qué ocurre realmente desde que pulsamos una tecla, abrimos una aplicación o reproducimos un vídeo hasta que el computador nos devuelve un resultado?</p>
+<p>Este tema construye una primera respuesta. No intentaremos conocer todavía todos los detalles de un computador. Empezaremos por una idea muy sencilla —<strong>procesar información</strong>— e iremos abriendo la caja poco a poco.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Información] --&gt; B[Bits y bytes]
+    B --&gt; C[CPU, memoria y E/S]
+    C --&gt; D[Comunicación]
+    D --&gt; E[Ejecución de programas]
+    E --&gt; F[Tipos de computadores]
+    F --&gt; G[Software]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="objetivos">
+<p><span class="component-kicker">Objetivos</span></p>
+<p>Al finalizar el tema deberías poder:</p>
+<ul>
+<li>explicar qué entendemos por computador, dato e información;</li>
+<li>razonar por qué los computadores utilizan representaciones binarias;</li>
+<li>relacionar número de bits y número de combinaciones posibles;</li>
+<li>reconocer las principales unidades funcionales de un computador;</li>
+<li>distinguir el papel del bus de datos y del bus de direcciones;</li>
+<li>describir de forma intuitiva cómo se ejecuta un programa;</li>
+<li>interpretar magnitudes básicas de prestaciones;</li>
+<li>reconocer que distintos computadores responden a necesidades diferentes;</li>
+<li>distinguir las principales capas y categorías de software.</li>
+</ul>
+</div>
+<section id="qué-es-un-computador" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="qué-es-un-computador"><span class="header-section-number">2.1</span> ¿Qué es un computador?</h2>
+<p>Antes de hablar de procesadores, memoria o programas conviene responder una pregunta más básica: <strong>¿qué hace un computador?</strong></p>
+<p>Podemos observarlo como una caja que recibe datos, realiza algún procesamiento y produce un resultado.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    E[Datos de entrada] --&gt; C[Computador]
+    C --&gt; S[Resultados]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Cuando escribes una palabra, el teclado proporciona datos de entrada. Cuando una aplicación calcula una ruta, procesa datos. Cuando la pantalla muestra el mapa, estás viendo el resultado de ese procesamiento.</p>
+<div class="concepto-clave">
+<p><span class="component-kicker">Concepto clave</span></p>
+<p>La <strong>informática</strong> estudia el tratamiento automático de la información mediante sistemas capaces de representar, almacenar y procesar datos.</p>
+<p>Un <strong>computador</strong> es una máquina programable que procesa información representada de una forma que puede manipular físicamente.</p>
+</div>
+<section id="datos-e-información" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="datos-e-información"><span class="header-section-number">2.1.1</span> Datos e información</h3>
+<p>Los términos <em>dato</em> e <em>información</em> están relacionados, pero no son idénticos.</p>
+<p>Un dato es una representación: un número, un símbolo, una medida o una secuencia de caracteres. Adquiere significado cuando sabemos cómo interpretarlo.</p>
+<div class="ejemplo">
+<p><span class="component-kicker">Ejemplo</span></p>
+<p>El valor <code>23</code> por sí solo es un dato. Puede representar una temperatura, una edad, una dirección de memoria o el número de estudiantes de un grupo. El significado depende del contexto y de las reglas de interpretación.</p>
+</div>
+<p>Esta idea será importante durante todo el curso: <strong>el mismo patrón físico puede significar cosas diferentes dependiendo de cómo decidamos interpretarlo</strong>.</p>
+</section>
+<section id="hardware-y-software" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="hardware-y-software"><span class="header-section-number">2.1.2</span> Hardware y software</h3>
+<p>Para que un computador resulte útil necesitamos dos dimensiones inseparables:</p>
+<ul>
+<li><strong>hardware</strong>: los componentes físicos;</li>
+<li><strong>software</strong>: las instrucciones y programas que determinan qué debe hacer el hardware.</li>
+</ul>
+<p>Todavía no necesitamos conocer sus detalles. De momento basta con recordar que el hardware proporciona capacidad de procesamiento y el software la dirige hacia una tarea concreta.</p>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.1</span> <span class="difficulty-badge">● Básico</span></p>
+</div>
+<div class="exercise-title">
+<p>Entrada, procesamiento y salida</p>
+</div>
+<p>Para cada situación, identifica qué podría considerarse entrada, qué procesamiento se realiza y cuál es la salida:</p>
+<ol type="1">
+<li>una calculadora suma dos números;</li>
+<li>una cámara de móvil realiza una fotografía;</li>
+<li>una aplicación de navegación calcula una ruta.</li>
+</ol>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p>No existe una única redacción válida. Lo importante es distinguir las tres funciones.</p>
+<p>En una calculadora, por ejemplo, los números y la operación son la entrada; la suma es el procesamiento; el resultado mostrado es la salida.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="cómo-representa-la-información" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="cómo-representa-la-información"><span class="header-section-number">2.2</span> ¿Cómo representa la información?</h2>
+<p>Un computador debe representar físicamente números, letras, imágenes, sonido e instrucciones. Para hacerlo resulta muy útil trabajar con sistemas que puedan distinguir de forma fiable <strong>dos estados</strong>.</p>
+<p>Esos estados pueden implementarse de muchas maneras: dos niveles eléctricos, dos orientaciones magnéticas, presencia o ausencia de carga, etc. Los símbolos <code>0</code> y <code>1</code> nos permiten nombrarlos de forma cómoda.</p>
+<div class="importante">
+<p><span class="component-kicker">Importante</span></p>
+<p>En este contexto inicial, <code>0</code> y <code>1</code> no deben entenderse únicamente como números. También pueden verse como <strong>dos símbolos que representan dos estados distinguibles</strong>.</p>
+</div>
+<section id="el-bit" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="el-bit"><span class="header-section-number">2.2.1</span> El bit</h3>
+<p>Llamamos <strong>bit</strong> a una unidad que puede tomar uno de dos valores posibles.</p>
+<p>Con un solo bit tenemos dos combinaciones:</p>
+<pre class="text"><code>0
+1</code></pre>
+<p>Con dos bits aparecen cuatro:</p>
+<pre class="text"><code>00
+01
+10
+11</code></pre>
+<p>Y con tres bits:</p>
+<pre class="text"><code>000  001  010  011
+100  101  110  111</code></pre>
+<p>El patrón es sencillo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Bits</th>
+<th style="text-align: right;">Combinaciones posibles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">16</td>
+</tr>
+</tbody>
+</table>
+<p>Después de observar estos casos podemos formalizar la relación:</p>
+<p><span class="math display">\[
+n\text{ bits} \longrightarrow 2^n\text{ combinaciones}
+\]</span></p>
+<div class="concepto-clave">
+<p><span class="component-kicker">Concepto clave</span></p>
+<p>Con <span class="math inline">\(n\)</span> bits pueden construirse <span class="math inline">\(2^n\)</span> patrones distintos. Los patrones no tienen significado por sí solos: somos nosotros quienes establecemos qué representa cada uno.</p>
+</div>
+</section>
+<section id="de-combinaciones-a-códigos" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="de-combinaciones-a-códigos"><span class="header-section-number">2.2.2</span> De combinaciones a códigos</h3>
+<p>Supongamos que solo queremos representar cuatro letras. Podemos acordar el siguiente código:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Patrón</th>
+<th>Símbolo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>00</code></td>
+<td>A</td>
+</tr>
+<tr class="even">
+<td><code>01</code></td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td><code>10</code></td>
+<td>C</td>
+</tr>
+<tr class="even">
+<td><code>11</code></td>
+<td>D</td>
+</tr>
+</tbody>
+</table>
+<p>Nada obliga a utilizar exactamente esa correspondencia. Lo importante es que emisor y receptor compartan el mismo código.</p>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.2</span> <span class="difficulty-badge">● Básico</span></p>
+</div>
+<div class="exercise-title">
+<p>¿Cuántos bits necesito?</p>
+</div>
+<p>¿Cuántos bits hacen falta como mínimo para disponer de un patrón diferente para cada uno de los diez dígitos decimales (<code>0</code> a <code>9</code>)?</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p>Con 3 bits solo disponemos de <span class="math inline">\(2^3=8\)</span> combinaciones, por lo que no es suficiente.</p>
+<p>Con 4 bits disponemos de <span class="math inline">\(2^4=16\)</span> combinaciones. Por tanto, el mínimo es <strong>4 bits</strong>.</p>
+</div>
+</div>
+<p>La pregunta inversa aparece constantemente en informática. Si necesitamos representar <span class="math inline">\(N\)</span> posibilidades, buscamos el menor <span class="math inline">\(n\)</span> tal que:</p>
+<p><span class="math display">\[
+2^n \ge N
+\]</span></p>
+<p>que puede expresarse como:</p>
+<p><span class="math display">\[
+n=\lceil\log_2 N\rceil
+\]</span></p>
+<p>El logaritmo en base 2 aparece así como respuesta a una pregunta concreta: <strong>¿cuántos bits necesito?</strong></p>
+</section>
+<section id="del-bit-al-byte" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="del-bit-al-byte"><span class="header-section-number">2.2.3</span> Del bit al byte</h3>
+<p>Trabajar bit a bit sería incómodo. Por convenio, agrupamos habitualmente ocho bits en una unidad llamada <strong>byte</strong>.</p>
+<p><span class="math display">\[
+1\ \text{byte}=8\ \text{bits}
+\]</span></p>
+<p>A partir del byte expresamos capacidades mayores. Conviene distinguir entre prefijos decimales y binarios:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Unidad</th>
+<th style="text-align: right;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>kB</td>
+<td style="text-align: right;"><span class="math inline">\(10^3\)</span> bytes</td>
+</tr>
+<tr class="even">
+<td>MB</td>
+<td style="text-align: right;"><span class="math inline">\(10^6\)</span> bytes</td>
+</tr>
+<tr class="odd">
+<td>GB</td>
+<td style="text-align: right;"><span class="math inline">\(10^9\)</span> bytes</td>
+</tr>
+<tr class="even">
+<td>KiB</td>
+<td style="text-align: right;"><span class="math inline">\(2^{10}\)</span> bytes</td>
+</tr>
+<tr class="odd">
+<td>MiB</td>
+<td style="text-align: right;"><span class="math inline">\(2^{20}\)</span> bytes</td>
+</tr>
+<tr class="even">
+<td>GiB</td>
+<td style="text-align: right;"><span class="math inline">\(2^{30}\)</span> bytes</td>
+</tr>
+</tbody>
+</table>
+<div class="ejemplo">
+<p><span class="component-kicker">Ejemplo</span></p>
+<p>Una conexión de <strong>100 Mb/s</strong> expresa una velocidad en <em>megabits por segundo</em>. Un archivo de <strong>1 GB</strong> expresa un tamaño en <em>gigabytes</em>. Antes de calcular un tiempo de descarga debemos llevar ambas magnitudes a unidades compatibles.</p>
+</div>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.3</span> <span class="difficulty-badge">●● Intermedio</span></p>
+</div>
+<div class="exercise-title">
+<p>Tiempo de descarga</p>
+</div>
+<p>Ignorando pérdidas y sobrecargas, ¿cuánto tardaría en descargarse un archivo de 1 GB a través de una conexión de 100 Mb/s? Utiliza unidades decimales en ambas magnitudes.</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p><span class="math inline">\(1\ \text{GB}=8\ \text{Gb}=8000\ \text{Mb}\)</span>.</p>
+<p>Entonces:</p>
+<p><span class="math display">\[
+t=\frac{8000\ \text{Mb}}{100\ \text{Mb/s}}=80\ \text{s}
+\]</span></p>
+<p>En condiciones ideales, tardaría aproximadamente <strong>80 segundos</strong>.</p>
+</div>
+</div>
+<div class="para-saber-mas">
+<p><span class="component-kicker">Para saber más</span></p>
+<p>La conocida historia del tablero de ajedrez y los granos de trigo es una forma intuitiva de visualizar cómo crecen las potencias de 2. En una versión posterior de este capítulo puede convertirse en una visualización interactiva.</p>
+</div>
+</section>
+</section>
+<section id="qué-hay-dentro-de-un-computador" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="qué-hay-dentro-de-un-computador"><span class="header-section-number">2.3</span> ¿Qué hay dentro de un computador?</h2>
+<p>Ya sabemos que un computador recibe datos, los representa y los procesa. Ahora podemos abrir la caja.</p>
+<p>En un primer modelo bastan tres grandes grupos:</p>
+<ul>
+<li><strong>procesador (CPU)</strong>: ejecuta operaciones e instrucciones;</li>
+<li><strong>memoria</strong>: conserva temporalmente datos e instrucciones que están siendo utilizados;</li>
+<li><strong>entrada/salida (E/S)</strong>: comunica el computador con otros dispositivos y con el exterior.</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    IN[Entrada] &lt;--&gt; CPU[Procesador]
+    CPU &lt;--&gt; MEM[Memoria]
+    CPU &lt;--&gt; OUT[Salida]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Este esquema es deliberadamente simple. Más adelante estudiaremos arquitecturas y jerarquías de memoria con mayor precisión.</p>
+<section id="el-procesador" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="el-procesador"><span class="header-section-number">2.3.1</span> El procesador</h3>
+<p>Dentro de la CPU podemos distinguir, de forma conceptual:</p>
+<ul>
+<li>una <strong>unidad de control</strong>, que coordina la ejecución de instrucciones;</li>
+<li>una <strong>unidad aritmético-lógica (ALU)</strong>, que realiza operaciones aritméticas y lógicas;</li>
+<li><strong>registros</strong>, pequeñas unidades de almacenamiento muy cercanas a las unidades de ejecución.</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    subgraph CPU[CPU]
+      UC[Unidad de control]
+      ALU[ALU]
+      R[Registros]
+      UC &lt;--&gt; R
+      R &lt;--&gt; ALU
+    end
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="la-memoria" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="la-memoria"><span class="header-section-number">2.3.2</span> La memoria</h3>
+<p>La memoria principal puede imaginarse inicialmente como una secuencia de posiciones. Cada posición almacena un patrón de bits y tiene una forma de ser identificada.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Posición</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td><code>10110101</code></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><code>01101011</code></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td><code>11100010</code></td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<div class="concepto-clave">
+<p><span class="component-kicker">Concepto clave</span></p>
+<p>En la memoria se almacenan <strong>datos e instrucciones</strong>. Para el hardware, ambos son patrones de bits; su interpretación depende de cómo se utilicen.</p>
+</div>
+</section>
+<section id="palabra-y-registros" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="palabra-y-registros"><span class="header-section-number">2.3.3</span> Palabra y registros</h3>
+<p>Los computadores suelen manipular grupos de bits de un tamaño determinado. El concepto de <strong>palabra</strong> permite hablar de esa unidad natural de procesamiento. Encontraremos arquitecturas de 8, 16, 32 o 64 bits, aunque el significado exacto de esas etiquetas requiere más contexto del que necesitamos ahora.</p>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.4</span> <span class="difficulty-badge">● Básico</span></p>
+</div>
+<div class="exercise-title">
+<p>Reconocer funciones</p>
+</div>
+<p>Relaciona cada elemento con su función principal: CPU, memoria, dispositivo de entrada/salida.</p>
+<ol type="1">
+<li>conservar temporalmente datos e instrucciones;</li>
+<li>ejecutar instrucciones;</li>
+<li>comunicar el sistema con el exterior.</li>
+</ol>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<ol type="1">
+<li>memoria;</li>
+<li>CPU;</li>
+<li>entrada/salida.</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="cómo-se-comunican-sus-componentes" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="cómo-se-comunican-sus-componentes"><span class="header-section-number">2.4</span> ¿Cómo se comunican sus componentes?</h2>
+<p>Tenemos procesador y memoria. Ahora surge una necesidad concreta: <strong>¿cómo intercambian información?</strong></p>
+<p>Supongamos que la CPU quiere leer la posición 2 de la memoria. Hay dos problemas diferentes:</p>
+<ol type="1">
+<li>indicar <strong>qué posición</strong> desea;</li>
+<li>transferir <strong>el contenido</strong> de esa posición.</li>
+</ol>
+<p>Esta distinción conduce a dos mecanismos diferentes.</p>
+<section id="bus-de-direcciones-dónde" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="bus-de-direcciones-dónde"><span class="header-section-number">2.4.1</span> Bus de direcciones: ¿dónde?</h3>
+<p>El procesador necesita expresar una dirección. Si dispone de <span class="math inline">\(n\)</span> bits para hacerlo, puede generar hasta <span class="math inline">\(2^n\)</span> patrones diferentes y, por tanto, distinguir hasta <span class="math inline">\(2^n\)</span> direcciones.</p>
+<p>Aquí reaparece exactamente la misma idea matemática que usamos para contar códigos.</p>
+<div class="ejemplo">
+<p><span class="component-kicker">Ejemplo</span></p>
+<p>Con un bus de direcciones de 4 bits pueden generarse <span class="math inline">\(2^4=16\)</span> patrones distintos, desde <code>0000</code> hasta <code>1111</code>.</p>
+</div>
+</section>
+<section id="bus-de-datos-qué-contenido" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="bus-de-datos-qué-contenido"><span class="header-section-number">2.4.2</span> Bus de datos: ¿qué contenido?</h3>
+<p>Una vez seleccionada la posición, necesitamos transportar el contenido. El <strong>bus de datos</strong> proporciona el camino por el que circulan esos bits entre los componentes.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    CPU[CPU] -- "dirección" --&gt; MEM[Memoria]
+    MEM -- "datos" --&gt; CPU
+    CPU -. "datos" .-&gt; MEM
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="concepto-clave">
+<p><span class="component-kicker">Concepto clave</span></p>
+<p>El <strong>bus de direcciones</strong> identifica una posición o destino. El <strong>bus de datos</strong> transporta la información que se intercambia.</p>
+</div>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.5</span> <span class="difficulty-badge">● Básico</span></p>
+</div>
+<div class="exercise-title">
+<p>Direcciones posibles</p>
+</div>
+<p>Una memoria utiliza un bus de direcciones de 10 bits. ¿Cuántas direcciones distintas pueden generarse?</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p><span class="math display">\[2^{10}=1024\]</span></p>
+<p>Pueden generarse <strong>1024 direcciones diferentes</strong>.</p>
+</div>
+</div>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.6</span> <span class="difficulty-badge">●●● Avanzado</span></p>
+</div>
+<div class="exercise-title">
+<p>Dimensionar buses</p>
+</div>
+<p>Considera un computador organizado en palabras de 32 bits y con una memoria de 32 MiB, direccionada por palabras.</p>
+<ol type="1">
+<li>¿Cuántos bits debería transportar como mínimo el bus de datos para mover una palabra completa?</li>
+<li>¿Cuántas palabras contiene la memoria?</li>
+<li>¿Cuántos bits necesita el bus de direcciones?</li>
+</ol>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p>Una palabra contiene 32 bits, por lo que un bus capaz de transportar una palabra completa en una transferencia tendrá <strong>32 bits</strong>.</p>
+<p><span class="math inline">\(32\ \text{MiB}=2^{25}\)</span> bytes. Cada palabra ocupa 4 bytes, de modo que:</p>
+<p><span class="math display">\[
+\frac{2^{25}}{2^2}=2^{23}\ \text{palabras}
+\]</span></p>
+<p>Para identificar <span class="math inline">\(2^{23}\)</span> palabras hacen falta <strong>23 bits de dirección</strong>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="cómo-ejecuta-un-programa" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="cómo-ejecuta-un-programa"><span class="header-section-number">2.5</span> ¿Cómo ejecuta un programa?</h2>
+<p>Hasta ahora sabemos dónde pueden estar los datos y quién los procesa. Falta unir hardware y software.</p>
+<p>Un programa puede verse, en primera aproximación, como una secuencia de instrucciones. Para ejecutarlo, sus instrucciones y los datos necesarios deben estar accesibles para el procesador.</p>
+<p>Podemos describir intuitivamente el proceso mediante un ciclo:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Buscar instrucción] --&gt; B[Interpretarla]
+    B --&gt; C[Ejecutarla]
+    C --&gt; D[Continuar]
+    D --&gt; A
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Más adelante estudiaremos este ciclo con detalle. Por ahora nos interesa que proporciona una explicación sencilla de por qué conceptos como reloj, instrucciones o CPI afectan al tiempo de ejecución.</p>
+<section id="el-reloj-y-la-frecuencia" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="el-reloj-y-la-frecuencia"><span class="header-section-number">2.5.1</span> El reloj y la frecuencia</h3>
+<p>Muchos procesadores coordinan su actividad mediante una señal periódica de reloj. La <strong>frecuencia</strong> indica cuántos ciclos de reloj se producen por segundo.</p>
+<p><span class="math display">\[
+1\ \text{GHz}=10^9\ \text{ciclos/s}
+\]</span></p>
+<p>Pero frecuencia no significa directamente «instrucciones por segundo»: una instrucción puede requerir, en promedio, más de un ciclo.</p>
+</section>
+<section id="cpi-y-tiempo-de-cpu" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="cpi-y-tiempo-de-cpu"><span class="header-section-number">2.5.2</span> CPI y tiempo de CPU</h3>
+<p>El <strong>CPI</strong> (<em>cycles per instruction</em>) expresa el número medio de ciclos de reloj utilizados por instrucción en un determinado contexto.</p>
+<p>Una relación básica es:</p>
+<p><span class="math display">\[
+T_{CPU}=N_{instr}\times CPI\times T_{ciclo}
+\]</span></p>
+<p>Como <span class="math inline">\(T_{ciclo}=1/f\)</span>, también podemos escribir:</p>
+<p><span class="math display">\[
+T_{CPU}=\frac{N_{instr}\times CPI}{f}
+\]</span></p>
+<div class="importante">
+<p><span class="component-kicker">Importante</span></p>
+<p>Una frecuencia de reloj mayor no garantiza por sí sola que un computador ejecute un programa más rápido. El tiempo depende también del número de instrucciones, del CPI y de muchos otros factores que estudiaremos más adelante.</p>
+</div>
+</section>
+<section id="mips-y-flops" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="mips-y-flops"><span class="header-section-number">2.5.3</span> MIPS y FLOPS</h3>
+<p>Dos métricas que aparecen con frecuencia son:</p>
+<ul>
+<li><strong>MIPS</strong>: millones de instrucciones por segundo;</li>
+<li><strong>FLOPS</strong>: operaciones de coma flotante por segundo.</li>
+</ul>
+<p>Miden aspectos diferentes y su utilidad depende del tipo de carga de trabajo.</p>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.7</span> <span class="difficulty-badge">●● Intermedio</span></p>
+</div>
+<div class="exercise-title">
+<p>Tiempo de ejecución</p>
+</div>
+<p>Un programa ejecuta <span class="math inline">\(5\times10^8\)</span> instrucciones en un procesador de 2 GHz con un CPI medio de 2. ¿Cuál sería su tiempo de CPU según este modelo simplificado?</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p><span class="math display">\[
+T_{CPU}=\frac{5\times10^8\times2}{2\times10^9}=0.5\ \text{s}
+\]</span></p>
+<p>El tiempo resultante es <strong>0,5 segundos</strong>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="todos-los-computadores-son-iguales" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="todos-los-computadores-son-iguales"><span class="header-section-number">2.6</span> ¿Todos los computadores son iguales?</h2>
+<p>Un portátil, un teléfono, la centralita de un automóvil, un servidor y un supercomputador comparten ideas fundamentales, pero están diseñados bajo restricciones muy diferentes.</p>
+<p>No existe una única clasificación perfecta. Resulta más útil observar <strong>qué problema debe resolver cada sistema</strong>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sistema</th>
+<th>Prioridades habituales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sistema empotrado</td>
+<td>consumo, coste, tamaño, respuesta específica</td>
+</tr>
+<tr class="even">
+<td>dispositivo móvil</td>
+<td>consumo, integración, prestaciones, autonomía</td>
+</tr>
+<tr class="odd">
+<td>computador personal</td>
+<td>flexibilidad y propósito general</td>
+</tr>
+<tr class="even">
+<td>servidor</td>
+<td>capacidad, disponibilidad, concurrencia</td>
+</tr>
+<tr class="odd">
+<td>supercomputador</td>
+<td>rendimiento masivo y paralelismo</td>
+</tr>
+</tbody>
+</table>
+<section id="propósito-general-y-propósito-específico" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="propósito-general-y-propósito-específico"><span class="header-section-number">2.6.1</span> Propósito general y propósito específico</h3>
+<p>Un computador personal debe poder ejecutar una gran diversidad de aplicaciones. En cambio, un controlador integrado en un electrodoméstico puede estar diseñado para una tarea muy concreta.</p>
+</section>
+<section id="cpu-y-mcu" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="cpu-y-mcu"><span class="header-section-number">2.6.2</span> CPU y MCU</h3>
+<p>En sistemas empotrados es frecuente utilizar un <strong>microcontrolador (MCU)</strong>, que integra en un mismo dispositivo procesador, memoria y periféricos destinados al control de sistemas específicos.</p>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.8</span> <span class="difficulty-badge">●● Intermedio</span></p>
+</div>
+<div class="exercise-title">
+<p>Comparar necesidades</p>
+</div>
+<p>Compara un reloj inteligente y un servidor de un centro de datos. Propón al menos tres prioridades de diseño que sean diferentes entre ambos.</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p>Una respuesta razonable podría destacar autonomía, tamaño y consumo como prioridades críticas del reloj, mientras que en el servidor pesan especialmente capacidad de procesamiento, memoria, almacenamiento, disponibilidad y servicio concurrente a muchos usuarios.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="qué-papel-juega-el-software" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="qué-papel-juega-el-software"><span class="header-section-number">2.7</span> ¿Qué papel juega el software?</h2>
+<p>El hardware proporciona recursos. El software organiza esos recursos y los utiliza para resolver problemas.</p>
+<p>Una representación simplificada por capas es:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    A[Aplicaciones]
+    B[Bibliotecas y herramientas]
+    C[Sistema operativo y controladores]
+    D[Hardware]
+    A --&gt; B --&gt; C --&gt; D
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="software-de-sistema" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="software-de-sistema"><span class="header-section-number">2.7.1</span> Software de sistema</h3>
+<p>El <strong>sistema operativo</strong> administra recursos del computador y proporciona servicios sobre los que se apoyan las aplicaciones. Los <strong>controladores</strong> permiten gestionar dispositivos concretos y el <strong>firmware</strong> contiene software estrechamente ligado al hardware.</p>
+</section>
+<section id="aplicaciones" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="aplicaciones"><span class="header-section-number">2.7.2</span> Aplicaciones</h3>
+<p>Las aplicaciones utilizan las capacidades del sistema para realizar tareas útiles: comunicación, edición, cálculo, diseño, navegación, reproducción multimedia, etc.</p>
+</section>
+<section id="lenguajes-y-traducción" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="lenguajes-y-traducción"><span class="header-section-number">2.7.3</span> Lenguajes y traducción</h3>
+<p>Los programadores suelen expresar soluciones mediante lenguajes comprensibles para las personas. Esas descripciones deben transformarse o interpretarse para que el computador pueda ejecutar las instrucciones correspondientes.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    H[Programa escrito por una persona] --&gt; T[Traducción / interpretación]
+    T --&gt; M[Instrucciones ejecutables]
+    M --&gt; CPU[CPU]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="software-como-herramienta-de-ingeniería" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="software-como-herramienta-de-ingeniería"><span class="header-section-number">2.7.4</span> Software como herramienta de ingeniería</h3>
+<p>Para un ingeniero, el computador no es solo un objeto de estudio. Es también una herramienta de trabajo. Podemos organizar el software por la función que cumple:</p>
+<ul>
+<li>cálculo numérico y científico;</li>
+<li>simulación y modelado;</li>
+<li>diseño;</li>
+<li>programación y automatización;</li>
+<li>tratamiento y visualización de datos;</li>
+<li>documentación técnica;</li>
+<li>colaboración y control de versiones.</li>
+</ul>
+<p>Los productos concretos cambiarán con el tiempo; estas funciones son más estables.</p>
+<div class="tarea">
+<div class="exercise-meta">
+<p><span class="exercise-label">Tarea 1.9</span> <span class="difficulty-badge">●● Intermedio</span></p>
+</div>
+<div class="exercise-title">
+<p>Tu mapa de herramientas</p>
+</div>
+<p>Elige tres herramientas software que hayas utilizado o que conozcas. Para cada una, indica qué problema resuelve, qué tipo de usuario la emplea y en cuál de las categorías anteriores la situarías.</p>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p>La respuesta es abierta. Debe justificarse la función de cada herramienta, no limitarse a enumerar nombres de programas.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="cierre-del-clic-al-resultado" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Cierre · Del clic al resultado</h1>
+<p>Volvamos a la pregunta inicial. Haces clic sobre el icono de una aplicación. ¿Qué ocurre?</p>
+<p>Aún no conocemos todos los detalles, pero ya podemos construir una historia coherente:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Clic] --&gt; B[Entrada]
+    B --&gt; C[Software del sistema]
+    C --&gt; D[Programa]
+    D --&gt; E[Memoria]
+    E &lt;--&gt; F[CPU]
+    F --&gt; G[Procesamiento]
+    G --&gt; H[Salida]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>El clic llega como entrada. El software participa en la gestión de la acción. El programa y sus datos se encuentran en memoria o deben hacerse accesibles al procesador. La CPU ejecuta instrucciones, intercambia datos con memoria y dispositivos y, finalmente, obtenemos una salida.</p>
+<p>Los próximos temas irán abriendo cada una de estas cajas.</p>
+<div class="resumen">
+<p><span class="component-kicker">Resumen</span></p>
+<ul>
+<li>Un computador procesa información representada mediante datos.</li>
+<li>Los bits permiten construir patrones binarios; con <span class="math inline">\(n\)</span> bits existen <span class="math inline">\(2^n\)</span> combinaciones.</li>
+<li>CPU, memoria y entrada/salida forman un primer modelo funcional del computador.</li>
+<li>Direcciones y datos responden a problemas diferentes y se comunican mediante mecanismos distintos.</li>
+<li>Un programa puede entenderse inicialmente como una secuencia de instrucciones ejecutadas por la CPU.</li>
+<li>Frecuencia, CPI, instrucciones y tiempo de ejecución están relacionados, pero ninguna métrica aislada explica todo el rendimiento.</li>
+<li>Los computadores adoptan formas distintas porque responden a requisitos diferentes.</li>
+<li>El software convierte los recursos físicos en herramientas capaces de resolver tareas.</li>
+</ul>
+</div>
+<section id="problemas-integradores" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="problemas-integradores"><span class="header-section-number">3.1</span> Problemas integradores</h2>
+<div class="ejercicio">
+<div class="exercise-meta">
+<p><span class="exercise-label">Ejercicio 1.10</span> <span class="difficulty-badge">●●● Avanzado</span></p>
+</div>
+<div class="exercise-title">
+<p>Del código a la memoria</p>
+</div>
+<p>Un sistema necesita representar 200 símbolos distintos y almacenar 1024 palabras diferentes de memoria.</p>
+<ol type="1">
+<li>¿Cuántos bits hacen falta como mínimo para codificar cada símbolo?</li>
+<li>¿Cuántos bits hacen falta para seleccionar una de las 1024 palabras?</li>
+<li>Explica por qué ambos cálculos utilizan la misma idea matemática aunque resuelvan problemas diferentes.</li>
+</ol>
+<div class="solucion">
+<p><span class="component-kicker">Solución</span></p>
+<p>Para 200 símbolos necesitamos el menor <span class="math inline">\(n\)</span> tal que <span class="math inline">\(2^n\ge200\)</span>. Como <span class="math inline">\(2^7=128\)</span> y <span class="math inline">\(2^8=256\)</span>, hacen falta <strong>8 bits</strong>.</p>
+<p>Para 1024 palabras, <span class="math inline">\(1024=2^{10}\)</span>, por lo que hacen falta <strong>10 bits</strong> de dirección.</p>
+<p>En ambos casos contamos cuántos patrones diferentes pueden construirse con <span class="math inline">\(n\)</span> bits. Lo que cambia es la interpretación: en el primer caso cada patrón representa un símbolo; en el segundo, una posición de memoria.</p>
+</div>
+</div>
+<div class="autoevaluacion">
+<p><span class="component-kicker">Autoevaluación</span></p>
+<ol type="1">
+<li>¿Cuál es la diferencia entre dato e información?</li>
+<li>¿Por qué resulta útil una representación basada en dos estados?</li>
+<li>¿Qué significa que con <span class="math inline">\(n\)</span> bits podamos construir <span class="math inline">\(2^n\)</span> combinaciones?</li>
+<li>¿Qué diferencia conceptual existe entre bus de datos y bus de direcciones?</li>
+<li>¿Por qué un procesador de mayor frecuencia no es necesariamente más rápido para cualquier programa?</li>
+<li>¿Qué diferencia general existe entre un sistema de propósito general y uno de propósito específico?</li>
+<li>¿Qué papel cumple el sistema operativo entre aplicaciones y hardware?</li>
+<li>Explica con tus palabras qué ocurre desde una entrada hasta una salida utilizando al menos cuatro conceptos de este tema.</li>
+</ol>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script>
+(() => {
+  const init = () => {
+    document.querySelectorAll('.ejercicio, .tarea').forEach((container) => {
+      const solution = container.querySelector(':scope > .solucion');
+      if (!solution || solution.dataset.enhanced === 'true') return;
+
+      solution.dataset.enhanced = 'true';
+      solution.dataset.collapsed = 'true';
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'solution-toggle';
+      button.textContent = 'Mostrar solución';
+      button.setAttribute('aria-expanded', 'false');
+
+      const id = solution.id || `solution-${Math.random().toString(36).slice(2, 10)}`;
+      solution.id = id;
+      button.setAttribute('aria-controls', id);
+
+      button.addEventListener('click', () => {
+        const collapsed = solution.dataset.collapsed === 'true';
+        solution.dataset.collapsed = collapsed ? 'false' : 'true';
+        button.setAttribute('aria-expanded', String(collapsed));
+        button.textContent = collapsed ? 'Ocultar solución' : 'Mostrar solución';
+      });
+
+      container.insertBefore(button, solution);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Fundamentos de Informática">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de Informática</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../sandbox.html" class="pagination-link" aria-label="Galería de componentes">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Galería de componentes</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
