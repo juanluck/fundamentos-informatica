@@ -5,6 +5,7 @@ page-navigation: false
 toc: false
 ---
 
+```{=html}
 <article class="sheet lesson-1-2" aria-label="Lección 1.2: cómo representa la información un computador">
   <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>1.2 Representación de la información</span></header>
 
@@ -70,3 +71,4 @@ toc: false
 
 <nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="01-que-es-computador.html">← Lección 1.1</a><a href="../../index.html">Índice →</a></nav>
 <script src="../../assets/book.js"></script>
+```
