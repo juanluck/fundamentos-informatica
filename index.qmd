@@ -28,6 +28,7 @@ toc: false
       <a class="lesson-link" href="teoria/tema1/05-ejecucion.html"><span class="lesson-number">1.5</span><span class="lesson-title">¿Cómo ejecuta un programa?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
       <a class="lesson-link" href="teoria/tema1/06-tipos.html"><span class="lesson-number">1.6</span><span class="lesson-title">¿Todos los computadores son iguales?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
       <a class="lesson-link" href="teoria/tema1/07-software.html"><span class="lesson-number">1.7</span><span class="lesson-title">¿Qué papel juega el software?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link exercise-link" href="teoria/tema1/ejercicios.html"><span class="lesson-number">E</span><span class="lesson-title">Ejercicios y autoevaluación</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
     </div>
 
     <p class="book-note">Información → bits → componentes → comunicación → ejecución → tipos → software.</p>
