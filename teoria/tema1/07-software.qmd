@@ -1,0 +1,75 @@
+---
+title: "Lección 1.7 · ¿Qué papel juega el software?"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+```{=html}
+<article class="sheet lesson-1-7" aria-label="Lección 1.7: el papel del software">
+  <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>1.7 Software</span></header>
+
+  <section class="opening">
+    <p class="kicker">LECCIÓN 1.7</p>
+    <h1>¿Qué papel juega<br>el software?</h1>
+    <p class="deck">El hardware puede realizar operaciones, pero necesita instrucciones que indiquen qué hacer, en qué orden y con qué datos.</p>
+    <div class="short-rule" aria-hidden="true"></div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>1. De una instrucción a un programa</h2>
+    <p>En el material docente, una <strong>instrucción</strong> es un conjunto de símbolos que representa una orden de operación o tratamiento para el computador. Un <strong>programa</strong> es un conjunto ordenado de instrucciones que se proporcionan a la máquina para indicarle las operaciones o tareas que se desea que realice.</p>
+    <div class="instruction-program">
+      <div><strong>Instrucción</strong><span>una orden</span></div>
+      <i>+</i><div><strong>Instrucción</strong><span>otra orden</span></div>
+      <i>+</i><div><strong>…</strong><span>en un orden</span></div>
+      <i>→</i><div class="program-result"><strong>Programa</strong><span>secuencia de trabajo</span></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>2. Traducción: del lenguaje de alto nivel al lenguaje máquina</h2>
+    <p>El esquema original separa dos momentos. Primero, un <strong>programa traductor</strong> transforma el programa escrito por el usuario en lenguaje de alto nivel en un programa en <strong>lenguaje máquina</strong> que el computador pueda ejecutar.</p>
+    <div class="software-flow translation-flow" aria-label="Traducción de un programa de alto nivel a lenguaje máquina">
+      <div><strong>Programa del usuario</strong><span>lenguaje de alto nivel</span></div>
+      <div class="flow-tool"><small>programa traductor</small><b>→</b></div>
+      <div class="software-computer">Computador</div>
+      <b class="flow-arrow-text">→</b>
+      <div><strong>Programa del usuario</strong><span>lenguaje máquina</span></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>3. Ejecución: programa + datos → resultados</h2>
+    <p>Una vez traducido, el programa en lenguaje máquina y los datos del usuario se entregan al computador. Su ejecución produce los resultados del programa.</p>
+    <div class="software-flow execution-flow" aria-label="Ejecución de un programa con datos para producir resultados">
+      <div class="software-inputs"><span><strong>Programa</strong><small>lenguaje máquina</small></span><span><strong>Datos</strong><small>del usuario</small></span></div>
+      <b class="flow-arrow-text">→</b>
+      <div class="software-computer">Computador</div>
+      <b class="flow-arrow-text">→</b>
+      <div><strong>Resultados</strong><span>del programa</span></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>4. El software como herramienta de ingeniería</h2>
+    <p>El material distingue entre aplicaciones generales —ofimática, procesamiento sencillo de datos, hojas electrónicas— y aplicaciones específicas de ingeniería para facilitar el diseño, la fabricación, las pruebas, el control y la monitorización.</p>
+    <div class="engineering-software">
+      <div class="software-family"><strong>Diseño, fabricación y test</strong><span>CAD · CAM · CADMAT</span><small>AutoCAD · SPICE · LogicWorks · ORCAD · CADENCE</small></div>
+      <div class="software-family"><strong>Control y monitorización</strong><span>Informática industrial</span><small>SCADA</small></div>
+      <div class="software-family"><strong>Simulación</strong><span>modelos y sistemas</span><small>Matlab</small></div>
+    </div>
+  </section>
+
+  <section class="lesson-section closing-section">
+    <h2>5. Del clic al resultado</h2>
+    <p>Ya podemos recorrer el hilo completo del tema: una tarea se expresa mediante software; el programa y sus datos se representan con bits; CPU y memoria los almacenan y procesan; los buses permiten intercambiarlos; y la ejecución repite operaciones sincronizadas hasta producir un resultado.</p>
+    <div class="theme-chain" aria-label="Cadena conceptual completa del Tema 1"><span>información</span><i>→</i><span>bits</span><i>→</i><span>componentes</span><i>→</i><span>buses</span><i>→</i><span>ejecución</span><i>→</i><span>resultado</span></div>
+    <aside class="annotation-note closing-note">Ya no estamos viendo piezas aisladas: tenemos un modelo mental completo del computador.</aside>
+  </section>
+
+  <footer class="running-foot"><span>Fundamentos de Informática</span><span>10</span></footer>
+</article>
+
+<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="06-tipos.html">← Lección 1.6</a><a href="../../index.html">Índice del tema →</a></nav>
+```

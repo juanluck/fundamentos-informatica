@@ -20,12 +20,17 @@ toc: false
     <h2>Tema 1 · Introducción a los computadores</h2>
     <p>La construcción del tema sigue una pregunta guía: <strong>¿qué es realmente un computador y cómo consigue ejecutar un programa?</strong></p>
 
-    <div class="lesson-list" aria-label="Lecciones disponibles del Tema 1">
+    <div class="lesson-list" aria-label="Lecciones del Tema 1">
       <a class="lesson-link" href="teoria/tema1/01-que-es-computador.html"><span class="lesson-number">1.1</span><span class="lesson-title">¿Qué es un computador?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
       <a class="lesson-link" href="teoria/tema1/02-representacion.html"><span class="lesson-number">1.2</span><span class="lesson-title">¿Cómo representa la información?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema1/03-componentes.html"><span class="lesson-number">1.3</span><span class="lesson-title">¿Qué hay dentro de un computador?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema1/04-comunicacion.html"><span class="lesson-number">1.4</span><span class="lesson-title">¿Cómo se comunican sus componentes?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema1/05-ejecucion.html"><span class="lesson-number">1.5</span><span class="lesson-title">¿Cómo ejecuta un programa?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema1/06-tipos.html"><span class="lesson-number">1.6</span><span class="lesson-title">¿Todos los computadores son iguales?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema1/07-software.html"><span class="lesson-number">1.7</span><span class="lesson-title">¿Qué papel juega el software?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
     </div>
 
-    <p class="book-note">Estas dos lecciones fijan el sistema editorial. El resto del Tema 1 se incorporará sobre esta misma base.</p>
+    <p class="book-note">Información → bits → componentes → comunicación → ejecución → tipos → software.</p>
   </section>
 
   <footer class="running-foot"><span>Fundamentos de Informática</span><span>Tema 1</span></footer>

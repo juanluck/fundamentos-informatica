@@ -13,6 +13,11 @@ book:
       chapters:
         - teoria/tema1/01-que-es-computador.qmd
         - teoria/tema1/02-representacion.qmd
+        - teoria/tema1/03-componentes.qmd
+        - teoria/tema1/04-comunicacion.qmd
+        - teoria/tema1/05-ejecucion.qmd
+        - teoria/tema1/06-tipos.qmd
+        - teoria/tema1/07-software.qmd
   page-navigation: false
   search: false
 
@@ -20,7 +25,9 @@ format:
   html:
     theme: none
     minimal: true
-    css: styles/book.css
+    css:
+      - styles/book.css
+      - styles/tema1.css
     toc: false
     number-sections: false
     anchor-sections: false
