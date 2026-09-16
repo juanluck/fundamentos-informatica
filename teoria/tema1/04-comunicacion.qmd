@@ -1,0 +1,79 @@
+---
+title: "1.4 · ¿Cómo se comunican sus componentes?"
+body-classes: editorial-page lesson-page
+---
+
+<div class="lesson-head">
+  <span class="kicker">LECCIÓN 1.4</span>
+  <h1>¿Cómo se comunican<br>sus componentes?</h1>
+  <p class="deck">Un computador está formado por elementos que necesitan intercambiar información. ¿Cómo sabe la CPU dónde leer, qué dato mover y qué operación realizar?</p>
+</div>
+
+<div class="editorial-rule"></div>
+
+## 1. Una primera idea {.editorial-section}
+
+Imaginemos un computador muy simple con una CPU y una memoria. La CPU necesita leer y escribir información almacenada en la memoria.
+
+<div class="need-connection">
+  <div class="block cpu">CPU</div>
+  <div class="question-path"><span>?</span><small>necesitamos un sistema de comunicación</small></div>
+  <div class="block memory">Memoria</div>
+</div>
+
+## 2. Tres preguntas diferentes {.editorial-section}
+
+La comunicación no resuelve una sola pregunta, sino tres:
+
+<div class="three-questions">
+  <div><span>1</span><strong>¿Dónde?</strong><small>qué posición o dispositivo</small></div>
+  <div><span>2</span><strong>¿Qué datos?</strong><small>qué información se transfiere</small></div>
+  <div><span>3</span><strong>¿Qué operación?</strong><small>leer, escribir, sincronizar…</small></div>
+</div>
+
+<img class="wide-figure clean-figure" src="../../assets/tema1/buses-editorial.svg" alt="CPU y memoria conectadas mediante bus de direcciones, bus de datos y señales de control." />
+
+::: {.concepto-clave}
+El **bus de direcciones** identifica el destino; el **bus de datos** transporta la información; las **señales de control** indican qué operación debe realizarse.
+:::
+
+## 3. Un ejemplo paso a paso {.editorial-section}
+
+La CPU quiere leer el contenido de la posición 5 de memoria:
+
+<ol class="step-list">
+  <li><span>1</span><p>Coloca la dirección <strong>5</strong> en el bus de direcciones.</p></li>
+  <li><span>2</span><p>Activa una señal de <strong>lectura</strong>.</p></li>
+  <li><span>3</span><p>La memoria coloca el contenido de la posición 5 en el <strong>bus de datos</strong>.</p></li>
+  <li><span>4</span><p>La CPU recibe ese dato.</p></li>
+</ol>
+
+## 4. Direcciones y capacidad de memoria {.editorial-section}
+
+Aquí reaparece una idea que ya conocemos. Si una dirección se expresa con **n bits**, podemos formar $2^n$ patrones distintos y, por tanto, distinguir $2^n$ posiciones.
+
+<table class="editorial-table">
+<thead><tr><th>Bits de dirección</th><th>Posiciones distinguibles</th></tr></thead>
+<tbody>
+<tr><td>8</td><td>256</td></tr>
+<tr><td>16</td><td>65 536</td></tr>
+<tr><td>32</td><td>4 294 967 296</td></tr>
+</tbody>
+</table>
+
+<div class="annotation-line blue-note">Más bits de dirección → más posiciones identificables.</div>
+
+::: {.ejercicio titulo="Dimensionar una memoria" numero="1.6" dificultad="2"}
+Un computador tiene un bus de direcciones de 20 bits. Si cada dirección identifica un byte, ¿cuántos bytes puede direccionar directamente?
+
+::: {.solucion}
+Con 20 bits podemos formar $2^{20}$ direcciones. Si cada dirección identifica un byte:
+
+$$2^{20}\ \text{bytes}=1\ \text{MiB}$$
+:::
+:::
+
+<div class="lesson-takeaway">
+  <span>IDEA ESENCIAL</span>
+  <p>Dirección, dato y control responden a preguntas diferentes. Distinguirlas evita la mayoría de confusiones iniciales sobre los buses.</p>
+</div>

@@ -1,49 +1,47 @@
 # Guía visual — v0.2
 
-## Dirección visual
+## Dirección aprobada
 
-Identidad propia, cálida, visual y didáctica. Referencia: propuesta D del prototipo inicial.
+La referencia visual actual es una **maquetación editorial cálida**, próxima a un manual universitario ilustrado y alejada de la estética de dashboard o documentación técnica.
 
-La página debe parecer un **manual técnico ilustrado**, no una presentación incrustada ni una sucesión de callouts.
+### Principios
+
+1. **Quarto es el motor, no la estética.** Su numeración, TOC, títulos automáticos y componentes visibles deben reducirse cuando interfieran con la composición editorial.
+2. **Una página debe tener ritmo.** Alternar texto, figura, proceso, ejemplo y práctica; evitar secuencias de cajas visualmente equivalentes.
+3. **Menos tarjetas.** Los componentes pedagógicos no deben convertirse automáticamente en rectángulos redondeados con fondo.
+4. **La imagen explica.** Diagramas e ilustraciones deben comunicar una relación, una secuencia o una intuición que el texto por sí solo no comunica igual de bien.
+5. **Tipografía editorial.** Serif para lectura y titulares; sans serif para navegación, etiquetas y metadatos.
+6. **Color funcional y escaso.** Terracota como acento principal; azul/verde apagados como secundarios. El fondo general es papel cálido.
+7. **Una lección por página web.** Evitar capítulos interminables cuando el contenido puede presentarse como una secuencia de lecciones navegables.
+8. **Mucho aire y pocas fronteras.** Las líneas, fondos y cajas se usan para estructurar, no para envolver cada idea.
+
+## Familias visuales
+
+- **Ilustración editorial:** aperturas y metáforas visuales.
+- **Diagrama técnico:** componentes, relaciones y procesos.
+- **Visualización interactiva:** solo cuando manipular un parámetro ayude a formar intuición.
+
+## Composiciones maestras
+
+- Portada de tema.
+- Apertura de lección.
+- Texto + figura.
+- Figura panorámica.
+- Secuencia paso a paso.
+- Comparación paralela.
+- Ejercicio integrado.
+- Cierre con idea esencial.
 
 ## Paleta
 
-- Tinta: `#3C271F`
-- Terracota: `#B55230`
-- Terracota secundaria: `#D98A62`
-- Fondo cálido: `#FFFAF4`
-- Fondo secundario: `#FFF3E6`
-- Verde: `#4F715D`
-- Azul: `#496B83`
-- Líneas: `#EAD8CC`
+- Papel: `#FFFAF1`
+- Tinta: `#203444`
+- Texto: `#3D403D`
+- Terracota: `#B9502F`
+- Azul verdoso: `#3D6E73`
+- Verde: `#526D55`
+- Línea cálida: `#D9C9B7`
 
-## Tipografía
+## Regla de control
 
-- Texto y encabezados: serif editorial.
-- Navegación, metadatos y controles: sans serif.
-- Código: monoespaciada.
-
-## Escala de composición
-
-Los componentes semánticos no definen por sí solos la página. Se combinan con layouts editoriales:
-
-1. **Chapter hero**: pregunta principal + ilustración panorámica.
-2. **Lesson opening**: intuición/pregunta + visual dominante.
-3. **Split layout**: explicación y figura complementaria.
-4. **Full-width visual**: diagrama que transporta una idea principal.
-5. **Comparison strip/cards**: conceptos que deben contrastarse.
-6. **Interactive micro-widget**: una variable manipulable cuando mejora intuición.
-7. **Exercise block**: práctica activa sin romper el ritmo.
-8. **Closing synthesis**: preguntas resueltas y puente al siguiente concepto.
-
-## Diagramas
-
-- Preferir SVG propio para diagramas conceptuales.
-- Evitar capturas de PowerPoint salvo que el aspecto de la fuente sea objeto de estudio.
-- Mantener trazos, tipografía, paleta y radios coherentes.
-- Diseñar para ancho web y verificar reducción móvil.
-- El texto esencial debe seguir siendo legible al reducirlo.
-
-## Ritmo
-
-Evitar varias pantallas consecutivas de texto puro en contenidos introductorios. Las imágenes aparecen donde cambia la representación mental, no a intervalos decorativos regulares.
+Si una página parece una colección de tarjetas de una aplicación SaaS, el diseño ha fallado.

@@ -1,0 +1,93 @@
+---
+title: "1.1 · ¿Qué es un computador?"
+body-classes: editorial-page lesson-page
+---
+
+<div class="lesson-head">
+  <span class="kicker">LECCIÓN 1.1</span>
+  <h1>¿Qué es un computador?</h1>
+  <p class="deck">Antes de hablar de CPU, memoria o programas, necesitamos una idea sencilla que nos permita reconocer qué tienen en común dispositivos muy diferentes.</p>
+</div>
+
+<div class="editorial-rule"></div>
+
+## 1. Una máquina que transforma información {.editorial-section}
+
+Un portátil, un teléfono, una consola o la centralita de un automóvil tienen aspectos y usos distintos. Sin embargo, todos pueden entenderse inicialmente con un mismo esquema:
+
+<div class="process-line" aria-label="Entrada, procesamiento y salida">
+  <div><span>Entrada</span><strong>datos</strong><small>teclas, imagen, medida…</small></div>
+  <b>→</b>
+  <div class="process-core"><span>Procesamiento</span><strong>computador</strong><small>aplica instrucciones</small></div>
+  <b>→</b>
+  <div><span>Salida</span><strong>resultado</strong><small>pantalla, sonido, acción…</small></div>
+</div>
+
+::: {.concepto-clave}
+Un **computador** es una máquina programable capaz de recibir, almacenar y procesar datos para obtener resultados.
+:::
+
+## 2. Dato no significa todavía información {.editorial-section}
+
+<div class="data-question">
+  <div class="big-number">23</div>
+  <div>
+    <p><strong>¿Qué significa?</strong></p>
+    <p>Podría ser una temperatura, una edad, el número de estudiantes de un grupo o una dirección de memoria. El símbolo por sí solo no basta.</p>
+  </div>
+</div>
+
+Un **dato** es una representación. Se convierte en información cuando sabemos cómo interpretarlo dentro de un contexto.
+
+<div class="annotation-line">La representación y el significado no son la misma cosa.</div>
+
+## 3. Codificar es acordar una representación {.editorial-section}
+
+No hace falta empezar por el binario. Un semáforo ya utiliza un código.
+
+<div class="signal-code">
+  <div><span class="signal red"></span><strong>Rojo</strong><small>detenerse</small></div>
+  <div><span class="signal green"></span><strong>Verde</strong><small>avanzar</small></div>
+</div>
+
+La señal física y su significado están relacionados mediante una **regla de interpretación**. En informática ocurre lo mismo: un patrón de bits puede significar una letra, un número o una instrucción dependiendo del código utilizado.
+
+::: {.importante}
+El computador manipula representaciones físicas. El significado aparece cuando interpretamos esas representaciones según unas reglas compartidas.
+:::
+
+## 4. Hardware y software {.editorial-section}
+
+<div class="two-concepts">
+  <div>
+    <span class="concept-label">HARDWARE</span>
+    <h3>Lo que puede hacer físicamente</h3>
+    <p>Procesador, memoria, almacenamiento, sensores, pantalla y demás componentes materiales.</p>
+  </div>
+  <div>
+    <span class="concept-label blue">SOFTWARE</span>
+    <h3>Lo que le pedimos que haga</h3>
+    <p>Programas e instrucciones que utilizan los recursos del hardware para realizar una tarea.</p>
+  </div>
+</div>
+
+::: {.ejercicio titulo="Entrada, procesamiento y salida" numero="1.1" dificultad="1"}
+Para cada situación, identifica una posible **entrada**, el **procesamiento** y la **salida**:
+
+1. una calculadora suma dos números;
+2. una cámara de móvil toma una fotografía;
+3. una aplicación de navegación calcula una ruta.
+
+::: {.solucion}
+En una calculadora, los números y la operación son la entrada; realizar la suma es el procesamiento; el valor mostrado es la salida.
+
+En una cámara, la luz captada por el sensor es una entrada; el sistema procesa las medidas del sensor; la imagen almacenada o mostrada es una salida.
+
+En una aplicación de navegación, origen, destino y datos cartográficos son entradas; el cálculo de la ruta es el procesamiento; la ruta propuesta es la salida.
+:::
+:::
+
+<div class="lesson-takeaway">
+  <span>IDEA ESENCIAL</span>
+  <p>Un computador no es “una máquina que entiende”. Es una máquina capaz de transformar representaciones siguiendo instrucciones.</p>
+</div>

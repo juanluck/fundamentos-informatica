@@ -3,19 +3,19 @@ project:
 
 book:
   title: "Fundamentos de Informática"
-  subtitle: "Maqueta editorial — prototipo"
   author: "Juan Luis Jiménez"
   chapters:
     - index.qmd
     - part: "Parte I — Teoría"
       chapters:
-        - teoria/01-introduccion.qmd
-    - part: "Diseño y pruebas"
-      chapters:
-        - sandbox.qmd
+        - teoria/tema1/index.qmd
+        - teoria/tema1/01-que-es-computador.qmd
+        - teoria/tema1/02-representacion.qmd
+        - teoria/tema1/04-comunicacion.qmd
   sidebar:
     style: docked
     search: true
+    collapse-level: 2
   page-navigation: true
 
 format:
@@ -24,17 +24,16 @@ format:
       light:
         - cosmo
         - styles/book.scss
-    toc: true
-    toc-depth: 3
+    toc: false
+    number-sections: false
     smooth-scroll: true
     code-copy: true
-    code-overflow: wrap
     include-after-body:
       - assets/components.js
   pdf:
     documentclass: scrreprt
     toc: true
-    number-sections: true
+    number-sections: false
     geometry:
       - top=25mm
       - bottom=25mm
