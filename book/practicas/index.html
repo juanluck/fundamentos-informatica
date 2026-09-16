@@ -154,6 +154,17 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </aside>
 
+  <nav class="page-turn-nav" aria-label="Navegación secuencial del libro">
+    <a class="page-turn-link page-turn-prev" data-page-prev="" href="#" hidden="">
+      <span class="page-turn-arrow" aria-hidden="true">←</span>
+      <span class="page-turn-copy"><small>Anterior</small><strong data-page-prev-title=""></strong></span>
+    </a>
+    <a class="page-turn-link page-turn-next" data-page-next="" href="#" hidden="">
+      <span class="page-turn-copy"><small>Siguiente</small><strong data-page-next-title=""></strong></span>
+      <span class="page-turn-arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+
   <script>
   (() => {
     const root = document.querySelector('[data-book-navigation]');
@@ -168,19 +179,32 @@ ul.task-list li input[type="checkbox"] {
     const urlFor = (rel = '') => `${bookRoot}${rel}`;
 
     const pages = {
-      'index.html': { part: 'Inicio', roman: '•', location: 'Portada' },
-      'teoria/tema1/01-que-es-computador.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.1', panel: 'theory' },
-      'teoria/tema1/02-representacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.2', panel: 'theory' },
-      'teoria/tema1/03-componentes.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.3', panel: 'theory' },
-      'teoria/tema1/04-comunicacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.4', panel: 'theory' },
-      'teoria/tema1/05-ejecucion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.5', panel: 'theory' },
-      'teoria/tema1/06-tipos.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.6', panel: 'theory' },
-      'teoria/tema1/07-software.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.7', panel: 'theory' },
-      'teoria/tema1/ejercicios.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Ejercicios', panel: 'theory' },
-      'practicas/index.html': { part: 'Prácticas', roman: 'II', location: 'Portada de prácticas', panel: 'practice' }
+      'index.html': { part: 'Inicio', roman: '•', location: 'Portada', title: 'Portada del libro' },
+      'teoria/tema1/01-que-es-computador.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.1', panel: 'theory', title: '1.1 · ¿Qué es un computador?' },
+      'teoria/tema1/02-representacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.2', panel: 'theory', title: '1.2 · ¿Cómo representa la información?' },
+      'teoria/tema1/03-componentes.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.3', panel: 'theory', title: '1.3 · ¿Qué hay dentro de un computador?' },
+      'teoria/tema1/04-comunicacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.4', panel: 'theory', title: '1.4 · ¿Cómo se comunican sus componentes?' },
+      'teoria/tema1/05-ejecucion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.5', panel: 'theory', title: '1.5 · ¿Cómo ejecuta un programa?' },
+      'teoria/tema1/06-tipos.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.6', panel: 'theory', title: '1.6 · ¿Todos los computadores son iguales?' },
+      'teoria/tema1/07-software.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.7', panel: 'theory', title: '1.7 · ¿Qué papel juega el software?' },
+      'teoria/tema1/ejercicios.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Ejercicios', panel: 'theory', title: 'Ejercicios y autoevaluación' },
+      'practicas/index.html': { part: 'Prácticas', roman: 'II', location: 'Portada de prácticas', panel: 'practice', title: 'Parte II · Prácticas' }
     };
 
-    const current = pages[relativePath] || { part: 'Libro', roman: '•', location: 'Fundamentos de Informática', panel: 'theory' };
+    const readingOrder = [
+      'index.html',
+      'teoria/tema1/01-que-es-computador.html',
+      'teoria/tema1/02-representacion.html',
+      'teoria/tema1/03-componentes.html',
+      'teoria/tema1/04-comunicacion.html',
+      'teoria/tema1/05-ejecucion.html',
+      'teoria/tema1/06-tipos.html',
+      'teoria/tema1/07-software.html',
+      'teoria/tema1/ejercicios.html',
+      'practicas/index.html'
+    ];
+
+    const current = pages[relativePath] || { part: 'Libro', roman: '•', location: 'Fundamentos de Informática', panel: 'theory', title: 'Fundamentos de Informática' };
     const drawer = root.querySelector('#book-drawer');
     const backdrop = root.querySelector('[data-nav-backdrop]');
     const openButtons = root.querySelectorAll('[data-nav-open], [data-nav-part-button]');
@@ -189,6 +213,8 @@ ul.task-list li input[type="checkbox"] {
     const closeButton = root.querySelector('[data-nav-close]');
     const tabs = [...root.querySelectorAll('[data-part-tab]')];
     const panels = [...root.querySelectorAll('[data-part-panel]')];
+    const prevLink = root.querySelector('[data-page-prev]');
+    const nextLink = root.querySelector('[data-page-next]');
     let lastFocus = null;
 
     if (!drawer || !backdrop || !menuButton || !partButton || !closeButton) return;
@@ -204,6 +230,26 @@ ul.task-list li input[type="checkbox"] {
         if (theme) theme.open = true;
       }
     });
+
+    const currentIndex = readingOrder.indexOf(relativePath);
+    const wireTurnLink = (link, targetPath, label, titleTarget) => {
+      if (!link || !targetPath || !pages[targetPath]) {
+        if (link) link.hidden = true;
+        return;
+      }
+      const target = pages[targetPath];
+      link.href = urlFor(targetPath);
+      link.hidden = false;
+      link.setAttribute('aria-label', `${label}: ${target.title}`);
+      link.title = `${label}: ${target.title}`;
+      const titleNode = link.querySelector(titleTarget);
+      if (titleNode) titleNode.textContent = target.title;
+    };
+
+    if (currentIndex >= 0) {
+      wireTurnLink(prevLink, readingOrder[currentIndex - 1], 'Página anterior', '[data-page-prev-title]');
+      wireTurnLink(nextLink, readingOrder[currentIndex + 1], 'Página siguiente', '[data-page-next-title]');
+    }
 
     const partText = root.querySelector('[data-nav-part]');
     const locationText = root.querySelector('[data-nav-location]');
