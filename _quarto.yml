@@ -35,6 +35,7 @@ format:
       - styles/tema1.css
       - styles/exercises.css
       - styles/navigation.css
+      - styles/markdown-refactor.css
     include-after-body:
       - assets/navigation.html
     toc: false

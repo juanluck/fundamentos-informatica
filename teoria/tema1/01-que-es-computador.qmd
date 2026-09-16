@@ -5,69 +5,96 @@ page-navigation: false
 toc: false
 ---
 
-```{=html}
-<article class="sheet lesson-1-1" aria-label="Lección 1.1: qué es un computador">
-  <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>1.1 ¿Qué es un computador?</span></header>
+::::::: {.sheet .lesson-1-1}
 
-  <section class="opening">
-    <p class="kicker">LECCIÓN 1.1</p>
-    <h1>¿Qué es realmente<br>un computador?</h1>
-    <p class="deck">¿Qué ocurre entre los datos que introducimos y el resultado que recibimos, y qué hace que ese proceso pueda realizarse automáticamente?</p>
-    <div class="short-rule" aria-hidden="true"></div>
-  </section>
+:::::: {.running-head}
+Tema 1 · Introducción a los computadores
 
-  <section class="lesson-section discipline-section">
-    <h2>1. Informática: tratar información automáticamente</h2>
-    <p>La Informática reúne los conocimientos científicos y las técnicas que hacen posible el <strong>tratamiento automático de la información</strong> mediante computadores electrónicos.</p>
-    <div class="discipline-layout">
-      <div class="discipline-flow soft-panel" aria-label="La información se somete a un tratamiento automático para producir nueva información">
-        <strong>Información</strong><span aria-hidden="true">→</span><em>tratamiento automático</em><span aria-hidden="true">→</span><strong>Información</strong>
-      </div>
-      <aside class="annotation-note distinction-note">La Informática es la disciplina.<br>El computador es la máquina.</aside>
-    </div>
-  </section>
+1.1 ¿Qué es un computador?
+::::::
 
-  <section class="lesson-section machine-section">
-    <h2>2. Un computador recibe, transforma y devuelve</h2>
-    <p>Un computador es una máquina capaz de aceptar datos de entrada, efectuar con ellos operaciones lógicas y aritméticas y proporcionar la información resultante a través de una salida.</p>
+:::::: {.opening}
+::::: {.kicker}
+LECCIÓN 1.1
+:::::
 
-    <figure class="computer-figure" aria-labelledby="computer-figure-caption">
-      <svg viewBox="0 0 620 225" role="img" aria-labelledby="computer-svg-title computer-svg-desc">
-        <title id="computer-svg-title">Modelo básico de un computador</title>
-        <desc id="computer-svg-desc">Datos e instrucciones entran en el computador, este realiza operaciones controladas por un programa y produce datos de salida.</desc>
-        <defs><marker id="arrowTerracotta" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#C45432"/></marker></defs>
-        <g class="io-block input-block"><rect x="20" y="58" width="142" height="106" rx="8"/><text x="91" y="84" class="svg-kicker" text-anchor="middle">ENTRADA</text><text x="91" y="113" class="svg-main" text-anchor="middle">Datos</text><text x="91" y="139" class="svg-main" text-anchor="middle">Instrucciones</text></g>
-        <path class="flow-arrow" d="M174 111 H237" marker-end="url(#arrowTerracotta)"/>
-        <g class="computer-block"><rect x="250" y="36" width="128" height="150" rx="18"/><text x="314" y="84" class="computer-label" text-anchor="middle">Computador</text><line x1="271" y1="103" x2="357" y2="103"/><text x="314" y="128" class="svg-small" text-anchor="middle">operaciones</text><text x="314" y="148" class="svg-small" text-anchor="middle">lógicas y aritméticas</text><text x="314" y="174" class="svg-program" text-anchor="middle">programa</text></g>
-        <path class="flow-arrow" d="M391 111 H454" marker-end="url(#arrowTerracotta)"/>
-        <g class="io-block output-block"><rect x="468" y="58" width="132" height="106" rx="8"/><text x="534" y="84" class="svg-kicker" text-anchor="middle">SALIDA</text><text x="534" y="120" class="svg-main" text-anchor="middle">Datos</text><text x="534" y="146" class="svg-main" text-anchor="middle">de salida</text></g>
-      </svg>
-      <figcaption id="computer-figure-caption">El esquema conserva la idea de la figura docente original: <strong>entrada → computador → salida</strong>.</figcaption>
-    </figure>
-  </section>
+# ¿Qué es realmente<br>un computador?
 
-  <section class="lesson-section program-section">
-    <h2>3. El programa dirige el proceso</h2>
-    <p>El tratamiento se realiza sin la intervención continua de un operador humano y bajo el control de un <strong>programa de instrucciones previamente almacenado</strong> en el propio computador.</p>
-    <div class="program-layout">
-      <div class="program-steps">
-        <div><b>1</b><span><strong>Entrada.</strong> Llegan los datos sobre los que se va a trabajar.</span></div>
-        <div><b>2</b><span><strong>Proceso.</strong> El programa determina qué operaciones debe efectuar la máquina.</span></div>
-        <div><b>3</b><span><strong>Salida.</strong> El computador devuelve la información resultante.</span></div>
-      </div>
-      <aside class="annotation-note program-note">Automático no significa “sin instrucciones”: significa que la máquina sigue el programa sin que una persona dirija cada operación.</aside>
-    </div>
-  </section>
+::::: {.deck}
+¿Qué ocurre entre los datos que introducimos y el resultado que recibimos, y qué hace que ese proceso pueda realizarse automáticamente?
+:::::
 
-  <section class="lesson-section model-section">
-    <h2>4. El modelo que usaremos a partir de ahora</h2>
-    <p>Para entender un computador iremos abriendo poco a poco esta caja: primero veremos cómo representa la información, después qué componentes contiene y finalmente cómo cooperan para ejecutar un programa.</p>
-    <div class="rule-band model-rule"><strong>datos + instrucciones</strong><span aria-hidden="true">→</span><strong>computador</strong><span aria-hidden="true">→</span><strong>resultado</strong></div>
-    <p class="bridge-question">La siguiente pregunta es inevitable: <strong>¿cómo representa internamente todos esos datos e instrucciones?</strong></p>
-  </section>
+::::: {.short-rule}
+:::::
+::::::
 
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>4</span></footer>
-</article>
+:::::: {.lesson-section .discipline-section}
+## 1. Informática: tratar información automáticamente
 
-<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="../../index.html">← Índice</a><a href="02-representacion.html">Lección 1.2 →</a></nav>
-```
+La Informática reúne los conocimientos científicos y las técnicas que hacen posible el **tratamiento automático de la información** mediante computadores electrónicos.
+
+::::: {.discipline-layout}
+:::: {.discipline-flow .soft-panel}
+[**Información**]{.flow-term} [→]{.flow-arrow} [*tratamiento automático*]{.flow-process} [→]{.flow-arrow} [**Información**]{.flow-term}
+::::
+
+:::: {.annotation-note .distinction-note}
+La Informática es la disciplina.  
+El computador es la máquina.
+::::
+:::::
+::::::
+
+:::::: {.lesson-section .machine-section}
+## 2. Un computador recibe, transforma y devuelve
+
+Un computador es una máquina capaz de aceptar datos de entrada, efectuar con ellos operaciones lógicas y aritméticas y proporcionar la información resultante a través de una salida.
+
+{{< include ../../components/tema1/_computer-figure.qmd >}}
+::::::
+
+:::::: {.lesson-section .program-section}
+## 3. El programa dirige el proceso
+
+El tratamiento se realiza sin la intervención continua de un operador humano y bajo el control de un **programa de instrucciones previamente almacenado** en el propio computador.
+
+::::: {.program-layout}
+:::: {.program-steps}
+1. **Entrada.** Llegan los datos sobre los que se va a trabajar.
+2. **Proceso.** El programa determina qué operaciones debe efectuar la máquina.
+3. **Salida.** El computador devuelve la información resultante.
+::::
+
+:::: {.annotation-note .program-note}
+Automático no significa “sin instrucciones”: significa que la máquina sigue el programa sin que una persona dirija cada operación.
+::::
+:::::
+::::::
+
+:::::: {.lesson-section .model-section}
+## 4. El modelo que usaremos a partir de ahora
+
+Para entender un computador iremos abriendo poco a poco esta caja: primero veremos cómo representa la información, después qué componentes contiene y finalmente cómo cooperan para ejecutar un programa.
+
+::::: {.rule-band .model-rule}
+[**datos + instrucciones**]{.rule-term} [→]{.rule-arrow} [**computador**]{.rule-term} [→]{.rule-arrow} [**resultado**]{.rule-term}
+:::::
+
+::::: {.bridge-question}
+La siguiente pregunta es inevitable: **¿cómo representa internamente todos esos datos e instrucciones?**
+:::::
+::::::
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+4
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Índice](../../index.html)
+
+[Lección 1.2 →](02-representacion.html)
+:::
