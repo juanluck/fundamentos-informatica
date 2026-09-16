@@ -9,7 +9,7 @@ book:
   author: "Juan Luis Jiménez"
   chapters:
     - index.qmd
-    - part: "Tema 1 · Introducción a los computadores"
+    - part: "PARTE I · TEORÍA"
       chapters:
         - teoria/tema1/01-que-es-computador.qmd
         - teoria/tema1/02-representacion.qmd
@@ -19,6 +19,9 @@ book:
         - teoria/tema1/06-tipos.qmd
         - teoria/tema1/07-software.qmd
         - teoria/tema1/ejercicios.qmd
+    - part: "PARTE II · PRÁCTICAS"
+      chapters:
+        - practicas/index.qmd
   page-navigation: false
   search: false
 
@@ -30,6 +33,9 @@ format:
       - styles/book.css
       - styles/tema1.css
       - styles/exercises.css
+      - styles/navigation.css
+    include-after-body:
+      - assets/navigation.html
     toc: false
     number-sections: false
     anchor-sections: false
