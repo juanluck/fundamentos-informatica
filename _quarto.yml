@@ -1,0 +1,33 @@
+project:
+  type: book
+  output-dir: _site
+  resources:
+    - assets/**
+
+book:
+  title: "Fundamentos de Informática"
+  author: "Juan Luis Jiménez"
+  chapters:
+    - index.qmd
+    - part: "Tema 1 · Introducción a los computadores"
+      chapters:
+        - teoria/tema1/01-que-es-computador.qmd
+        - teoria/tema1/02-representacion.qmd
+  page-navigation: false
+  search: false
+
+format:
+  html:
+    theme: none
+    minimal: true
+    css: styles/book.css
+    toc: false
+    number-sections: false
+    anchor-sections: false
+    page-layout: full
+    title-block-style: none
+
+execute:
+  freeze: auto
+
+lang: es
