@@ -7,7 +7,12 @@ book:
   author: "Juan Luis Jiménez"
   chapters:
     - index.qmd
-    - sandbox.qmd
+    - part: "Parte I — Teoría"
+      chapters:
+        - teoria/01-introduccion.qmd
+    - part: "Diseño y pruebas"
+      chapters:
+        - sandbox.qmd
   sidebar:
     style: docked
     search: true
