@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lección 1.6 · ¿Todos los computadores son iguales? – Fundamentos de Informática</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+
+
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title"><span class="chapter-title">Lección 1.6 · ¿Todos los computadores son iguales?</span></h1>
+
+</header>
+
+
+<article class="sheet lesson-1-6" aria-label="Lección 1.6: tipos de computadores">
+  <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>1.6 Tipos de computadores</span></header>
+
+  <section class="opening">
+    <p class="kicker">LECCIÓN 1.6</p>
+    <h1>¿Todos los computadores<br>son iguales?</h1>
+    <p class="deck">Un teléfono, un sistema empotrado, un PC o un supercomputador pueden compartir principios básicos y, sin embargo, organizarse de formas muy diferentes.</p>
+    <div class="short-rule" aria-hidden="true"></div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>1. Podemos clasificarlos con distintos criterios</h2>
+    <p>El material original propone tres ejes de clasificación. No son alternativas excluyentes: un mismo computador puede describirse a la vez por su <strong>paralelismo</strong>, por la <strong>generalidad de su uso</strong> y por su <strong>potencia de procesamiento</strong>.</p>
+    <div class="classification-axes">
+      <div><b>01</b><strong>Paralelismo</strong><span>cuántas instrucciones y datos pueden tratarse a la vez</span></div>
+      <div><b>02</b><strong>Uso</strong><span>general o especializado</span></div>
+      <div><b>03</b><strong>Potencia</strong><span>escala de capacidad de procesamiento</span></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>2. Según el paralelismo</h2>
+    <p>La clasificación presentada en las diapositivas distingue tres modelos: <strong>SISD</strong>, <strong>SIMD</strong> y <strong>MIMD</strong>.</p>
+    <div class="parallel-grid">
+      <div class="parallel-card"><strong>SISD</strong><span>Single Instruction, Single Data</span><p>Una instrucción actúa sobre un dato. El material lo asocia al computador monoprocesador de von Neumann.</p></div>
+      <div class="parallel-card"><strong>SIMD</strong><span>Single Instruction, Multiple Data</span><p>Una misma instrucción opera sobre múltiples datos; el material cita computadores matriciales y vectoriales.</p></div>
+      <div class="parallel-card"><strong>MIMD</strong><span>Multiple Instruction, Multiple Data</span><p>Múltiples instrucciones trabajan con múltiples datos.</p></div>
+    </div>
+    <div class="mimd-split">
+      <div><strong>Multiprocesadores</strong><span>Varios procesadores o cores comparten la misma memoria.</span></div>
+      <div><strong>Multicomputadores</strong><span>Varios computadores completos intercambian datos.</span></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>3. Según la generalidad de uso</h2>
+    <p>Un computador de <strong>uso general</strong> puede ejecutar aplicaciones muy diferentes. Un computador de <strong>uso especializado</strong> se diseña para una función concreta y con frecuencia aparece embebido o empotrado dentro de otro sistema.</p>
+    <div class="use-comparison">
+      <div class="use-general"><strong>Uso general</strong><span>muchos programas y tareas diferentes</span></div>
+      <div class="use-special"><strong>Uso especializado</strong><span>una función o conjunto reducido de funciones</span><small>Ejemplos del material: lavadora, horno microondas, teléfonos inteligentes…</small></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>4. Según la potencia de procesamiento</h2>
+    <p>La diapositiva original ordena distintos tipos de máquina por escala de potencia. Conservamos esa progresión sin convertirla en una frontera rígida entre categorías.</p>
+    <div class="power-ladder" aria-label="Escala de tipos de computadores según potencia">
+      <div><span>Computadores móviles</span><i></i></div>
+      <div><span>Computador personal</span><i></i><i></i></div>
+      <div><span>Servidor básico</span><i></i><i></i><i></i></div>
+      <div><span>Servidor de gama media / alta</span><i></i><i></i><i></i><i></i></div>
+      <div><span>Supercomputador</span><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <p class="bridge-question">Sea cual sea el tipo de computador, para realizar una tarea necesita instrucciones. Eso nos lleva al último bloque: <strong>el software</strong>.</p>
+  </section>
+
+  <footer class="running-foot"><span>Fundamentos de Informática</span><span>9</span></footer>
+</article>
+
+<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="05-ejecucion.html">← Lección 1.5</a><a href="07-software.html">Lección 1.7 →</a></nav>
+
+
+
+
+
+
+</body></html>
