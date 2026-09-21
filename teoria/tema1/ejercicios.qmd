@@ -45,7 +45,7 @@ Los cinco primeros ejercicios proceden del bloque original **L1.1 Definiciones b
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <p>Las potencias de 2 aparecen al contar combinaciones binarias: con <em>n</em> bits hay 2<sup>n</sup> combinaciones. El logaritmo en base 2 plantea la pregunta inversa: cuántos bits hacen falta para disponer de un cierto número de combinaciones.</p>
 <p>El material enlaza esta idea con unidades como <strong>bit</strong>, <strong>byte</strong> y los múltiplos binarios: 1 byte = 8 bits y 1 KiB = 2<sup>10</sup> bytes.</p>
 </div>
@@ -62,7 +62,7 @@ Los cinco primeros ejercicios proceden del bloque original **L1.1 Definiciones b
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <p>Con 3 bits solo hay 2<sup>3</sup> = 8 combinaciones, que no bastan. Con 4 bits hay 2<sup>4</sup> = 16. Por tanto, necesitamos <strong>4 bits</strong>.</p>
 </div>
 </details>
@@ -78,7 +78,7 @@ Los cinco primeros ejercicios proceden del bloque original **L1.1 Definiciones b
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <p>2<sup>3</sup> = <strong>8 símbolos</strong>. La asignación mostrada en el material es 000→A, 001→B, 010→C, 011→D, 100→E, 101→F, 110→G y 111→H.</p>
 </div>
 </details>
@@ -94,7 +94,7 @@ Los cinco primeros ejercicios proceden del bloque original **L1.1 Definiciones b
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <p>Una codificación posible, como en las diapositivas, es H→00, A→01, P→10 e Y→11. Entonces HAPPY se representa como <strong>00 01 10 10 11</strong>.</p>
 </div>
 </details>
@@ -110,7 +110,7 @@ Los cinco primeros ejercicios proceden del bloque original **L1.1 Definiciones b
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <p>En este contexto, 100 “Megas” significa 100 Mbit/s. Usando los prefijos decimales del SI, 1 GByte = 8 Gbit. Por tanto:</p>
 <div class="solution-formula">t = 8 Gbit / 100 Mbit/s = <strong>80 s</strong></div>
 </div>
@@ -141,7 +141,7 @@ Las diapositivas continúan con preguntas de comprensión y tres problemas sobre
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <p>Como guía de comprobación: MIPS cuenta millones de instrucciones máquina por segundo; MFLOPS cuenta millones de operaciones en coma flotante por segundo. La longitud de palabra expresa cuántos bits forman una palabra de trabajo o transferencia en el modelo utilizado en el tema.</p>
 </div>
 </details>
@@ -157,7 +157,7 @@ Las diapositivas continúan con preguntas de comprensión y tres problemas sobre
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <div class="solution-formula">t = (10.000 × 4) / 10<sup>9</sup> s = <strong>40 μs</strong></div>
 </div>
 </details>
@@ -177,7 +177,7 @@ Las diapositivas continúan con preguntas de comprensión y tres problemas sobre
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <p><strong>a)</strong> 32 Mbytes × 8 bits/byte = <strong>256 Mbits</strong>.</p>
 <p><strong>b)</strong> El bus de datos tiene <strong>32 bits</strong>. Cada palabra ocupa 4 bytes; 32 Mbytes = 2<sup>25</sup> bytes y, por tanto, hay 2<sup>23</sup> palabras. El bus de direcciones necesita <strong>23 bits</strong>.</p>
 <p><strong>c)</strong> 200 MBytes/s × 8 bits/byte repartidos entre 32 hilos = <strong>50 Mbit/s por hilo</strong>.</p>
@@ -198,7 +198,7 @@ Las diapositivas continúan con preguntas de comprensión y tres problemas sobre
 
 <details class="exercise-solution">
 <summary>Resolución</summary>
-<div class="solution">
+<div class="resolution-body">
 <p><strong>a)</strong> f = MIPS × CPI × 10<sup>6</sup> = 100 × 6 × 10<sup>6</sup> = <strong>600 MHz</strong>.</p>
 <p><strong>b)</strong> 100 millones de instrucciones/s × 35 s = <strong>3.500 millones de instrucciones</strong>.</p>
 </div>
