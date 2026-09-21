@@ -54,12 +54,12 @@ toc: false
     <h2>4. El mapa funcional completo</h2>
     <p>Al ampliar el modelo de la lección 1.1 aparecen las unidades funcionales que utilizaremos durante el tema: entrada, memoria, procesador, salida y almacenamiento.</p>
     <div class="functional-map" aria-label="Mapa funcional de un computador">
-      <div class="fm-node">Entrada</div>
+      <div class="fm-node">Entrada (E)</div>
       <span>→</span>
-      <div class="fm-core"><div>Memoria principal</div><div class="fm-cpu"><b>CPU</b><small>CU + ALU</small></div></div>
+      <div class="fm-core"><div>Memoria principal (M)<small>datos e instrucciones</small></div><div class="fm-cpu"><b>Procesador (CPU)</b><small>Unidad de control (CU) + unidad de tratamiento (ALU)</small></div></div>
       <span>→</span>
-      <div class="fm-node">Salida</div>
-      <div class="fm-storage">Memoria masiva / almacenamiento</div>
+      <div class="fm-node">Salida (S)</div>
+      <div class="fm-storage">Memoria masiva (MM)</div>
     </div>
     <p class="bridge-question">Ya tenemos las piezas. La siguiente pregunta es: <strong>¿cómo intercambian información entre ellas?</strong></p>
   </section>

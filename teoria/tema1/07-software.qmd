@@ -61,13 +61,6 @@ toc: false
     </div>
   </section>
 
-  <section class="lesson-section closing-section">
-    <h2>5. Del clic al resultado</h2>
-    <p>Ya podemos recorrer el hilo completo del tema: una tarea se expresa mediante software; el programa y sus datos se representan con bits; CPU y memoria los almacenan y procesan; los buses permiten intercambiarlos; y la ejecución repite operaciones sincronizadas hasta producir un resultado.</p>
-    <div class="theme-chain" aria-label="Cadena conceptual completa del Tema 1"><span>información</span><i>→</i><span>bits</span><i>→</i><span>componentes</span><i>→</i><span>buses</span><i>→</i><span>ejecución</span><i>→</i><span>resultado</span></div>
-    <aside class="annotation-note closing-note">Ya no estamos viendo piezas aisladas: tenemos un modelo mental completo del computador.</aside>
-  </section>
-
   <footer class="running-foot"><span>Fundamentos de Informática</span><span>10</span></footer>
 </article>
 

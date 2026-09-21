@@ -49,7 +49,7 @@
             <a data-book-path="teoria/tema1/05-ejecucion.html"><span>1.5</span><strong>¿Cómo ejecuta un programa?</strong></a>
             <a data-book-path="teoria/tema1/06-tipos.html"><span>1.6</span><strong>¿Todos los computadores son iguales?</strong></a>
             <a data-book-path="teoria/tema1/07-software.html"><span>1.7</span><strong>¿Qué papel juega el software?</strong></a>
-            <a data-book-path="teoria/tema1/ejercicios.html"><span>•</span><strong>Ejercicios y autoevaluación</strong></a>
+            <a data-book-path="teoria/tema1/ejercicios.html"><span>•</span><strong>Ejercicios</strong></a>
           </nav>
         </details>
 
@@ -95,11 +95,13 @@
     if (!root || root.dataset.navigationReady === 'true') return;
     root.dataset.navigationReady = 'true';
 
-    const marker = '/book/';
+    const repoMarker = '/fundamentos-informatica/';
     const path = window.location.pathname;
-    const markerIndex = path.indexOf(marker);
-    const bookRoot = markerIndex >= 0 ? path.slice(0, markerIndex + marker.length) : '/fundamentos-informatica/book/';
-    const relativePath = markerIndex >= 0 ? path.slice(markerIndex + marker.length) || 'index.html' : 'index.html';
+    const markerIndex = path.indexOf(repoMarker);
+    const bookRoot = markerIndex >= 0 ? path.slice(0, markerIndex + repoMarker.length) : '/';
+    const relativePath = markerIndex >= 0
+      ? (path.slice(markerIndex + repoMarker.length) || 'index.html')
+      : (path.replace(/^\/+/, '') || 'index.html');
     const urlFor = (rel = '') => `${bookRoot}${rel}`;
 
     const pages = {
@@ -111,7 +113,7 @@
       'teoria/tema1/05-ejecucion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.5', panel: 'theory', title: '1.5 · ¿Cómo ejecuta un programa?' },
       'teoria/tema1/06-tipos.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.6', panel: 'theory', title: '1.6 · ¿Todos los computadores son iguales?' },
       'teoria/tema1/07-software.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.7', panel: 'theory', title: '1.7 · ¿Qué papel juega el software?' },
-      'teoria/tema1/ejercicios.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Ejercicios', panel: 'theory', title: 'Ejercicios y autoevaluación' },
+      'teoria/tema1/ejercicios.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Ejercicios', panel: 'theory', title: 'Ejercicios' },
       'practicas/index.html': { part: 'Prácticas', roman: 'II', location: 'Portada de prácticas', panel: 'practice', title: 'Parte II · Prácticas' }
     };
 
