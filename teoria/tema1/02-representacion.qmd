@@ -95,8 +95,38 @@ Con **n bits** podemos representar **2^n^ combinaciones**.
 :::::
 ::::::
 
+:::::: {.lesson-section .units-section}
+## 3. Del bit al byte y a las unidades
+
+Un grupo de **8 bits** forma un **byte**. A partir del byte se expresan capacidades mayores.
+
+::::: {.rule-band}
+**1 byte = 8 bits**
+:::::
+
+Las diapositivas distinguen dos familias de prefijos. Los múltiplos **decimales** están propuestos por el **Sistema Internacional (SI)**; los múltiplos **binarios**, por la **IEC**.
+
+::::: {.unit-comparison}
+:::: {.unit-system .soft-panel}
+### Decimal · SI
+
+**1 kB = 10^3^ bytes**  
+**1 MB = 10^6^ bytes**  
+**1 GB = 10^9^ bytes**
+::::
+
+:::: {.unit-system .soft-panel}
+### Binario · IEC
+
+**1 KiB = 2^10^ bytes**  
+**1 MiB = 2^20^ bytes**  
+**1 GiB = 2^30^ bytes**
+::::
+:::::
+::::::
+
 :::::: {.lesson-section .explorer-section}
-## 3. Explorador interactivo
+## 4. Explorador interactivo
 
 Mueve el deslizador y observa todas las combinaciones posibles de *n* bits.
 
@@ -104,7 +134,7 @@ Mueve el deslizador y observa todas las combinaciones posibles de *n* bits.
 ::::::
 
 :::::: {.lesson-section .inverse-section}
-## 4. ¿Cuántos bits necesito?
+## 5. ¿Cuántos bits necesito?
 
 Si quiero representar *N* elementos distintos, necesito el menor número *n* de bits tal que 2^n^ ≥ N. Matemáticamente:
 

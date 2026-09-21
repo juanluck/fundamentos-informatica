@@ -42,9 +42,12 @@ toc: false
     <p>Si un programa ejecuta <strong>NI</strong> instrucciones, cada instrucción necesita por término medio <strong>CPI</strong> ciclos y el reloj funciona a una frecuencia <strong>f</strong>, el tiempo de CPU puede expresarse como:</p>
     <div class="execution-formula"><span>t<sub>e</sub> =</span><strong>NI × CPI</strong><i>/</i><span>f</span></div>
     <div class="source-exercise">
-      <strong>Ejemplo del material original</strong>
-      <p>10.000 instrucciones, 4 ciclos por instrucción y una frecuencia de 1 GHz.</p>
-      <div class="calculation">t<sub>e</sub> = (10.000 × 4) / 10<sup>9</sup> s = 40 × 10<sup>−6</sup> s = <strong>40 μs</strong></div>
+      <strong>Ejercicio del material original</strong>
+      <p><strong>Enunciado.</strong> Un programa ejecuta 10.000 instrucciones; cada instrucción necesita por término medio 4 ciclos y el procesador funciona a 1 GHz. ¿Cuál es el tiempo de ejecución?</p>
+      <details class="inline-solution">
+        <summary>Resolución</summary>
+        <div class="calculation">t<sub>e</sub> = (10.000 × 4) / 10<sup>9</sup> s = 40 × 10<sup>−6</sup> s = <strong>40 μs</strong></div>
+      </details>
     </div>
   </section>
 
