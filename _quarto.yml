@@ -20,6 +20,8 @@ book:
         - teoria/tema1/06-tipos.qmd
         - teoria/tema1/07-software.qmd
         - teoria/tema1/ejercicios.qmd
+        - teoria/tema1/tarjetas.qmd
+        - teoria/tema1/recursos.qmd
     - part: "PARTE II · PRÁCTICAS"
       chapters:
         - practicas/index.qmd
@@ -36,6 +38,7 @@ format:
       - styles/exercises.css
       - styles/navigation.css
       - styles/markdown-refactor.css
+      - styles/resources.css
     include-after-body:
       - assets/navigation.html
     toc: false

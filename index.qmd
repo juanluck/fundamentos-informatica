@@ -30,6 +30,12 @@ toc: false
       <a class="lesson-link" href="teoria/tema1/07-software.html"><span class="lesson-number">1.7</span><span class="lesson-title">¿Qué papel juega el software?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
       <a class="lesson-link exercise-link" href="teoria/tema1/ejercicios.html"><span class="lesson-number">E</span><span class="lesson-title">Ejercicios</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
     </div>
+
+    <div class="theme-resources" aria-label="Recursos complementarios del Tema 1">
+      <span class="theme-resources-label">RECURSOS DEL TEMA</span>
+      <a href="teoria/tema1/tarjetas.html"><b>Tarjetas de repaso</b><small>78 preguntas y respuestas</small></a>
+      <a href="teoria/tema1/recursos.html"><b>Material complementario</b><small>vídeo · diapositivas con notas</small></a>
+    </div>
   </section>
 
   <footer class="running-foot"><span>Fundamentos de Informática</span><span>Tema 1</span></footer>
