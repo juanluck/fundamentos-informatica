@@ -165,3 +165,32 @@
     flex-wrap:wrap;
   }
 }
+
+
+/* 1.2 · source units restored from the original slides. */
+.unit-comparison{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:14px;
+}
+.unit-system{
+  padding:12px 14px;
+}
+.unit-system h3{
+  margin:0 0 8px;
+  font-size:15px;
+  line-height:1.1;
+  color:var(--accent-text);
+}
+.unit-system p{
+  margin:0;
+  font-size:13.5px;
+  line-height:1.45;
+}
+.source-term-note{
+  margin-top:14px;
+}
+@media (max-width:620px){
+  .unit-comparison{grid-template-columns:1fr}
+}

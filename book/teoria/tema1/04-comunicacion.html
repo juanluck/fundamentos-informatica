@@ -88,15 +88,18 @@ ul.task-list li input[type="checkbox"] {
   </section>
 
   <section class="lesson-section">
-    <h2>4. Ejemplo: 32 Mbytes y palabras de 32 bits</h2>
-    <p>Reproducimos el razonamiento del ejercicio original: una memoria máxima de 32 Mbytes está organizada en palabras de 32 bits.</p>
-    <div class="worked-example">
-      <div><b>1</b><span>32 Mbytes = 32 × 2<sup>20</sup> bytes = 2<sup>25</sup> bytes.</span></div>
-      <div><b>2</b><span>Una palabra de 32 bits ocupa 4 bytes.</span></div>
-      <div><b>3</b><span>Número de palabras = 2<sup>25</sup> / 2<sup>2</sup> = 2<sup>23</sup>.</span></div>
-      <div><b>4</b><span>Para seleccionar 2<sup>23</sup> palabras necesitamos <strong>23 bits de dirección</strong>.</span></div>
-    </div>
-    <div class="answer-strip"><span>Bus de datos: <strong>32 bits</strong></span><span>Bus de direcciones: <strong>23 bits</strong></span></div>
+    <h2>4. 32 Mbytes y palabras de 32 bits</h2>
+    <p><strong>Enunciado.</strong> Un computador tiene una capacidad máxima de memoria de 32 Mbytes y está organizado en palabras de 32 bits. ¿Cuál debe ser el ancho del bus de datos y cuántos bits necesita el bus de direcciones?</p>
+    <details class="inline-solution">
+      <summary>Resolución</summary>
+      <div class="worked-example">
+        <div><b>1</b><span>El bus de datos debe poder transferir una palabra completa: <strong>32 bits</strong>.</span></div>
+        <div><b>2</b><span>32 Mbytes = 32 × 2<sup>20</sup> bytes = 2<sup>25</sup> bytes.</span></div>
+        <div><b>3</b><span>Una palabra de 32 bits ocupa 4 bytes = 2<sup>2</sup> bytes; por tanto hay 2<sup>23</sup> palabras.</span></div>
+        <div><b>4</b><span>Para seleccionar 2<sup>23</sup> palabras hacen falta <strong>23 bits de dirección</strong>.</span></div>
+      </div>
+      <div class="answer-strip"><span>Bus de datos: <strong>32 bits</strong></span><span>Bus de direcciones: <strong>23 bits</strong></span></div>
+    </details>
     <p class="bridge-question">Mover información es solo el principio. Ahora veremos <strong>cómo la CPU encadena esos movimientos y operaciones para ejecutar un programa</strong>.</p>
   </section>
 
