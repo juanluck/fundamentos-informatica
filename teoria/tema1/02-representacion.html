@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1.2 · ¿Cómo representa la información? – Fundamentos de Informática</title>
+<title>Lección 1.2 · ¿Cómo representa la información? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,802 +26,425 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../teoria/tema1/04-comunicacion.html" rel="next">
-<link href="../../teoria/tema1/01-que-es-computador.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-46dfa6da0dab91ac6044353f8d28e0cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No se han encontrado resultados",
-    "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la búsqueda",
-    "search-hide-matches-text": "Ocultar resultados adicionales",
-    "search-more-match-text": "resultado adicional en este documento",
-    "search-more-matches-text": "resultados adicionales en este documento",
-    "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
-  }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../../styles/markdown-refactor.css">
 </head>
 
-<body class="nav-sidebar floating editorial-site lesson-page fullcontent quarto-light">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../../teoria/tema1/02-representacion.html"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Fundamentos de Informática</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Buscar"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos de Informática</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Parte I — Teoría</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teoria/tema1/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tema 1 · Introducción a los computadores</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teoria/tema1/01-que-es-computador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teoria/tema1/02-representacion.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teoria/tema1/04-comunicacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teoria/tema1/index.html">Parte I — Teoría</a></li><li class="breadcrumb-item"><a href="../../teoria/tema1/02-representacion.html"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-title">1.2 · ¿Cómo representa la información?</span></h1>
-</div>
+<body>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
+<header id="title-block-header">
+<h1 class="title"><span class="chapter-title">Lección 1.2 · ¿Cómo representa la información?</span></h1>
 
 </header>
 
 
-<div class="book-masthead">
-<a class="brand" href="../../index.html">Fundamentos de Informática</a>
-<nav>
-<a href="index.html">Tema 1</a><span>Lección 1.2</span>
-</nav>
+<div class="sheet lesson-1-2">
+<div class="running-head">
+<p>Tema 1 · Introducción a los computadores</p>
+<p>1.2 Representación de la información</p>
 </div>
-<div class="lesson-intro">
-<p class="kicker">
-LECCIÓN 1.2
-</p>
-<h1>
-¿Cómo representa<br>la información?
-</h1>
-<p class="deck">
-¿Cómo puede un computador representar una letra, una fotografía o una canción utilizando únicamente dos estados?
-</p>
+<div class="opening">
+<div class="kicker">
+<p>LECCIÓN 1.2</p>
 </div>
-<section id="dos-estados-muchas-posibilidades" class="level2 section-heading">
-<h2 class="section-heading anchored" data-anchor-id="dos-estados-muchas-posibilidades">1. Dos estados, muchas posibilidades</h2>
-<p>Un circuito digital puede distinguir de forma fiable dos estados. Dependiendo de la tecnología, pueden corresponder a tensión alta/baja, presencia/ausencia de carga o muchas otras realizaciones físicas.</p>
-<figure class="editorial-figure medium figure">
-<img src="../../assets/tema1/states-approved.webp" alt="Comparación visual entre estado 0 apagado y estado 1 encendido, inspirada en el diseño editorial aprobado." class="figure-img">
-<figcaption>
-Los símbolos 0 y 1 nos permiten nombrar dos estados distinguibles.
-</figcaption>
+<h1 id="cómo-representa-la-información">¿Cómo representa<br>la información?</h1>
+<div class="deck">
+<p>¿Cómo puede un computador representar una letra, una fotografía o una canción utilizando únicamente dos estados?</p>
+</div>
+<div class="short-rule">
+
+</div>
+</div>
+<section id="dos-estados-muchas-posibilidades" class="lesson-section states-section">
+<h2>1. Dos estados, muchas posibilidades</h2>
+<p>Un circuito digital solo puede encontrarse en dos estados distintos, que representamos como 0 y 1. A partir de estos dos estados podemos construir toda la información.</p>
+<div class="states-layout">
+<div class="state-figure">
+  <strong>Estado 0</strong>
+  <svg class="switch-illustration" viewbox="0 0 120 58" role="img" aria-label="Interruptor apagado"><defs><lineargradient id="metalOff" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2eee7"></stop><stop offset="1" stop-color="#d8d3ca"></stop></lineargradient><lineargradient id="knobOff" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8f6f1"></stop><stop offset="1" stop-color="#a9aaa5"></stop></lineargradient></defs><rect x="7" y="9" width="106" height="40" rx="7" fill="url(#metalOff)" stroke="#c5beb4"></rect><circle cx="31" cy="29" r="13" fill="url(#knobOff)" stroke="#8c908d" stroke-width="1.4"></circle><circle cx="31" cy="29" r="9.5" fill="#c9cbc7" stroke="#8e928f"></circle><circle cx="99" cy="29" r="3" fill="#384750"></circle><path d="M88 29h8" stroke="#9b9288" stroke-width="2" stroke-linecap="round"></path></svg>
+  <svg class="bulb-illustration bulb-off" viewbox="0 0 82 110" role="img" aria-label="Bombilla apagada"><path d="M41 9c-17 0-29 12-29 28 0 11 5 18 12 25 5 5 7 9 7 15h20c0-6 2-10 7-15 7-7 12-14 12-25C70 21 58 9 41 9Z" fill="#f6f2eb" stroke="#c9c3b9" stroke-width="2"></path><path d="M33 44c4 4 6 9 8 16M49 44c-4 4-6 9-8 16M35 44h12" fill="none" stroke="#d0c9bf" stroke-width="2"></path><path d="M31 78h20M32 84h18M34 90h14" stroke="#b5afa7" stroke-width="3" stroke-linecap="round"></path><path d="M35 95h12" stroke="#8e8b87" stroke-width="4" stroke-linecap="round"></path></svg>
+  <small>Sin corriente<br>(Apagado)</small>
+</div>
+<div class="state-figure">
+  <strong>Estado 1</strong>
+  <svg class="switch-illustration" viewbox="0 0 120 58" role="img" aria-label="Interruptor encendido"><defs><lineargradient id="terracottaOn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d66a46"></stop><stop offset="1" stop-color="#bd482b"></stop></lineargradient><lineargradient id="knobOn" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff7ec"></stop><stop offset="1" stop-color="#f0d7bd"></stop></lineargradient></defs><rect x="7" y="9" width="106" height="40" rx="7" fill="url(#terracottaOn)" stroke="#b8472b"></rect><circle cx="91" cy="29" r="13" fill="url(#knobOn)" stroke="#e4b590" stroke-width="1.4"></circle><circle cx="91" cy="29" r="9.5" fill="#fff3df" stroke="#edd0ae"></circle><circle cx="22" cy="29" r="3" fill="#7d2e20"></circle><path d="M26 29h8" stroke="#8f3322" stroke-width="2" stroke-linecap="round"></path></svg>
+  <svg class="bulb-illustration bulb-on" viewbox="0 0 82 110" role="img" aria-label="Bombilla encendida"><circle class="bulb-glow" cx="41" cy="39" r="35"></circle><path d="M41 9c-17 0-29 12-29 28 0 11 5 18 12 25 5 5 7 9 7 15h20c0-6 2-10 7-15 7-7 12-14 12-25C70 21 58 9 41 9Z" fill="#ffd36f" stroke="#e3a23e" stroke-width="2"></path><path d="M33 44c4 4 6 9 8 16M49 44c-4 4-6 9-8 16M35 44h12" fill="none" stroke="#fff1bf" stroke-width="2"></path><path d="M31 78h20M32 84h18M34 90h14" stroke="#6f7779" stroke-width="3" stroke-linecap="round"></path><path d="M35 95h12" stroke="#3f4b50" stroke-width="4" stroke-linecap="round"></path></svg>
+  <small>Con corriente<br>(Encendido)</small>
+</div>
+<div class="annotation-note">
+<p>Con solo<br>
+dos estados<br>
+podemos<br>
+representar<br>
+todo tipo de<br>
+información.</p>
+</div>
+</div>
+</section>
+<section id="el-bit-y-las-combinaciones" class="lesson-section bits-section">
+<h2>2. El bit y las combinaciones</h2>
+<p>Un bit (<em>binary digit</em>) es la unidad mínima de información y puede tomar dos valores: 0 o 1. Si combinamos varios bits, podemos representar muchas más posibilidades.</p>
+<div class="bits-figure">
+<section id="bit" class="bit-card">
+<h3>1 bit</h3>
+<div class="bit-subtitle">
+<p>2 combinaciones</p>
+</div>
+<div class="bit-values bit-values-1">
+<p><span class="bit-cell">0</span> <span class="bit-cell">1</span></p>
+</div>
+</section>
+<section id="bits" class="bit-card">
+<h3>2 bits</h3>
+<div class="bit-subtitle">
+<p>4 combinaciones</p>
+</div>
+<div class="bit-values bit-values-2">
+<p><span class="bit-cell">00</span> <span class="bit-cell">01</span> <span class="bit-cell">10</span> <span class="bit-cell">11</span></p>
+</div>
+</section>
+<section id="bits-1" class="bit-card bit-card-3">
+<h3>3 bits</h3>
+<div class="bit-subtitle">
+<p>8 combinaciones</p>
+</div>
+<div class="bit-values bit-values-3">
+<p><span class="bit-cell">000</span> <span class="bit-cell">001</span> <span class="bit-cell">010</span> <span class="bit-cell">011</span> <span class="bit-cell">100</span> <span class="bit-cell">101</span> <span class="bit-cell">110</span> <span class="bit-cell">111</span></p>
+</div>
+</section>
+</div>
+<div class="rule-band">
+<p>Con <strong>n bits</strong> podemos representar <strong>2<sup>n</sup> combinaciones</strong>.</p>
+</div>
+</section>
+<section id="del-bit-al-byte-y-a-las-unidades" class="lesson-section units-section">
+<h2>3. Del bit al byte y a las unidades</h2>
+<p>Un grupo de <strong>8 bits</strong> forma un <strong>byte</strong>. A partir del byte se expresan capacidades mayores.</p>
+<div class="rule-band">
+<p><strong>1 byte = 8 bits</strong></p>
+</div>
+<p>Las diapositivas distinguen dos familias de prefijos. Los múltiplos <strong>decimales</strong> están propuestos por el <strong>Sistema Internacional (SI)</strong>; los múltiplos <strong>binarios</strong>, por la <strong>IEC</strong>.</p>
+<div class="unit-comparison">
+<section id="decimal-si" class="unit-system soft-panel">
+<h3>Decimal · SI</h3>
+<p><strong>1 kB = 10<sup>3</sup> bytes</strong><br>
+<strong>1 MB = 10<sup>6</sup> bytes</strong><br>
+<strong>1 GB = 10<sup>9</sup> bytes</strong></p>
+</section>
+<section id="binario-iec" class="unit-system soft-panel">
+<h3>Binario · IEC</h3>
+<p><strong>1 KiB = 2<sup>10</sup> bytes</strong><br>
+<strong>1 MiB = 2<sup>20</sup> bytes</strong><br>
+<strong>1 GiB = 2<sup>30</sup> bytes</strong></p>
+</section>
+</div>
+</section>
+<section id="explorador-interactivo" class="lesson-section explorer-section">
+<h2>4. Explorador interactivo</h2>
+<p>Mueve el deslizador y observa todas las combinaciones posibles de <em>n</em> bits.</p>
+<figure class="explorer-figure" aria-label="Explorador interactivo de combinaciones binarias">
+  <div class="explorer-panel">
+    <div class="explorer-control-row"><label for="bit-range"><strong>Número de bits:</strong></label><span class="bit-count" id="bit-count">3</span><input class="explorer-range" id="bit-range" type="range" min="1" max="4" step="1" value="3" aria-describedby="explorer-status"></div>
+    <div class="combination-grid" id="combination-grid" aria-label="8 combinaciones de 3 bits"><b>000</b><b>001</b><b>010</b><b>011</b><b>100</b><b>101</b><b>110</b><b>111</b></div>
+  </div>
+  <div class="total-panel"><small>Total de combinaciones:</small><div class="total-burst"><i class="ray r1" aria-hidden="true"></i><i class="ray r2" aria-hidden="true"></i><i class="ray r3" aria-hidden="true"></i><i class="ray r4" aria-hidden="true"></i><i class="ray r5" aria-hidden="true"></i><i class="ray r6" aria-hidden="true"></i><strong id="combination-total">8</strong></div><span>(2<sup id="combination-exponent">3</sup>)</span></div>
 </figure>
-<div class="importante">
-<p><span class="component-kicker">Importante</span></p>
-<p>Aquí <code>0</code> y <code>1</code> no son únicamente números: son también <strong>símbolos para representar dos estados</strong>.</p>
-</div>
+<output class="sr-only" id="explorer-status" for="bit-range" aria-live="polite">3 bits: 8 combinaciones.</output>
+<script src="../../assets/book.js"></script>
 </section>
-<section id="el-bit-y-las-combinaciones" class="level2 section-heading">
-<h2 class="section-heading anchored" data-anchor-id="el-bit-y-las-combinaciones">2. El bit y las combinaciones</h2>
-<p>Un <strong>bit</strong> (<em>binary digit</em>) puede tomar dos valores. Cuando agrupamos bits, el número de patrones posibles crece muy deprisa.</p>
-<div class="bit-growth" aria-label="Crecimiento de combinaciones binarias">
-<div>
-<span>1 bit</span><strong>2</strong><small>0 · 1</small>
+<section id="cuántos-bits-necesito" class="lesson-section inverse-section">
+<h2>5. ¿Cuántos bits necesito?</h2>
+<p>Si quiero representar <em>N</em> elementos distintos, necesito el menor número <em>n</em> de bits tal que 2<sup>n</sup> ≥ N. Matemáticamente:</p>
+<div class="inverse-layout">
+<div class="inverse-formula">
+<p><span class="math-n"><em>n</em></span> <span class="equals">=</span> <span class="ceil">⌈</span> <span class="log">log<sub>2</sub></span> <span class="math-N"><em>N</em></span> <span class="ceil">⌉</span></p>
 </div>
-<div>
-<span>2 bits</span><strong>4</strong><small>00 · 01 · 10 · 11</small>
-</div>
-<div>
-<span>3 bits</span><strong>8</strong><small>000 … 111</small>
-</div>
-</div>
-<p>Cada bit añadido <strong>duplica</strong> las posibilidades. Solo después de observar ese patrón merece la pena escribir la regla general:</p>
-<p><span class="math display">\[n\text{ bits}\quad\longrightarrow\quad 2^n\text{ patrones}\]</span></p>
-<div class="bit-lab" data-bit-explorer="">
-<div class="bit-lab-head">
-<span class="kicker">PRUÉBALO</span><label>Número de bits: <strong data-bit-value="">3</strong><input type="range" min="1" max="6" value="3" step="1" aria-label="Número de bits"></label>
-</div>
-<p>
-<strong data-combination-count="">8</strong> combinaciones
-</p>
-<div class="bit-patterns" data-bit-patterns="">
-
+<div class="annotation-note inverse-note">
+<p>Primero la intuición,<br>
+después la fórmula.</p>
 </div>
 </div>
 </section>
-<section id="cuántos-bits-necesito" class="level2 section-heading">
-<h2 class="section-heading anchored" data-anchor-id="cuántos-bits-necesito">3. ¿Cuántos bits necesito?</h2>
-<p>Ahora invertimos la pregunta. Si queremos representar <span class="math inline">\(N\)</span> símbolos distintos, necesitamos el menor número de bits que cumpla:</p>
-<p><span class="math display">\[2^n\ge N\]</span></p>
-<p>Por tanto,</p>
-<p><span class="math display">\[n=\lceil\log_2N\rceil\]</span></p>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.2</span> <span class="difficulty-badge">● Básico</span></p>
-</div>
-<div class="exercise-title">
-<p>Codificar los diez dígitos</p>
-</div>
-<p>¿Cuántos bits hacen falta como mínimo para disponer de un patrón diferente para cada uno de los diez dígitos decimales (<code>0</code> a <code>9</code>)?</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p>Con 3 bits solo disponemos de <span class="math inline">\(2^3=8\)</span> patrones. Con 4 bits tenemos <span class="math inline">\(2^4=16\)</span>. El mínimo es <strong>4 bits</strong>.</p>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>5</p>
 </div>
 </div>
-</section>
-<section id="del-bit-al-byte" class="level2 section-heading">
-<h2 class="section-heading anchored" data-anchor-id="del-bit-al-byte">4. Del bit al byte</h2>
-<p>Ocho bits agrupados forman un <strong>byte</strong>. A partir de ahí aparecen las unidades habituales para expresar capacidad de memoria y almacenamiento.</p>
-<div class="byte-line">
-<span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span><strong>8 bits = 1 byte</strong>
-</div>
-<div class="editorial-split units">
-<div>
-<p class="kicker">
-DECIMAL
-</p>
-<h3 class="anchored">
-kB · MB · GB
-</h3>
-<p>
-Potencias de 10.
-</p>
-</div>
-<div>
-<p class="kicker teal">
-BINARIO
-</p>
-<h3 class="anchored">
-KiB · MiB · GiB
-</h3>
-<p>
-Potencias de 2.
-</p>
-</div>
-</div>
-</section>
-<section id="bit-y-byte-no-son-lo-mismo" class="level2 section-heading">
-<h2 class="section-heading anchored" data-anchor-id="bit-y-byte-no-son-lo-mismo">5. bit y byte no son lo mismo</h2>
-<p>Una conexión anunciada como <strong>100 Mb/s</strong> expresa una velocidad en megabits por segundo. Un archivo de <strong>1 GB</strong> expresa un tamaño en gigabytes. La diferencia entre <code>b</code> y <code>B</code> cambia el cálculo por un factor de ocho.</p>
-<div class="ejercicio">
-<div class="exercise-meta">
-<p><span class="exercise-label">Ejercicio 1.3</span> <span class="difficulty-badge">●● Intermedio</span></p>
-</div>
-<div class="exercise-title">
-<p>Tiempo de descarga</p>
-</div>
-<p>Ignorando pérdidas y sobrecargas, ¿cuánto tardaría en descargarse un archivo de 1 GB a través de una conexión de 100 Mb/s? Utiliza unidades decimales.</p>
-<div class="solucion">
-<p><span class="component-kicker">Solución</span></p>
-<p><span class="math inline">\(1\,\text{GB}=8\,\text{Gb}=8000\,\text{Mb}\)</span>.</p>
-<p><span class="math display">\[t=\frac{8000\,\text{Mb}}{100\,\text{Mb/s}}=80\,\text{s}\]</span></p>
-<p>En condiciones ideales, aproximadamente <strong>80 segundos</strong>.</p>
-</div>
-</div>
-<div class="takeaway">
-<span>IDEA ESENCIAL</span>
-<p>
-Los bits proporcionan patrones; los códigos determinan qué representa cada patrón.
-</p>
+<div class="lesson-nav">
+<p><a href="01-que-es-computador.html">← Lección 1.1</a></p>
+<p><a href="03-componentes.html">Lección 1.3 →</a></p>
 </div>
 
 
-</section>
+<div class="book-navigation" data-book-navigation="">
+  <header class="book-toolbar" aria-label="Navegación principal del libro">
+    <button class="book-menu-button" type="button" data-nav-open="" aria-controls="book-drawer" aria-expanded="false">
+      <span class="menu-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Índice</span>
+    </button>
+    <a class="book-brand" data-book-home="" href="#">Fundamentos de Informática</a>
+    <div class="book-location" aria-label="Ubicación actual">
+      <span data-nav-part="">Teoría</span><i aria-hidden="true">›</i><span data-nav-location="">Tema 1</span>
+    </div>
+    <button class="book-part-button" type="button" data-nav-part-button="" aria-controls="book-drawer" aria-expanded="false">
+      <span class="part-roman" data-nav-part-roman="">I</span>
+      <span data-nav-part-button-label="">Teoría</span>
+      <i aria-hidden="true">⌄</i>
+    </button>
+  </header>
 
-</main> <!-- /main -->
-<script>
-(() => {
-  const initSolutions = () => {
-    document.querySelectorAll('.ejercicio, .tarea').forEach((container) => {
-      const solution = container.querySelector(':scope > .solucion');
-      if (!solution || solution.dataset.enhanced === 'true') return;
-      solution.dataset.enhanced = 'true';
-      solution.dataset.collapsed = 'true';
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'solution-toggle';
-      button.textContent = 'Mostrar solución';
-      button.setAttribute('aria-expanded', 'false');
-      const id = solution.id || `solution-${Math.random().toString(36).slice(2, 10)}`;
-      solution.id = id;
-      button.setAttribute('aria-controls', id);
-      button.addEventListener('click', () => {
-        const collapsed = solution.dataset.collapsed === 'true';
-        solution.dataset.collapsed = collapsed ? 'false' : 'true';
-        button.setAttribute('aria-expanded', String(collapsed));
-        button.textContent = collapsed ? 'Ocultar solución' : 'Mostrar solución';
-      });
-      container.insertBefore(button, solution);
+  <div class="book-nav-backdrop" data-nav-backdrop="" hidden=""></div>
+
+  <aside class="book-drawer" id="book-drawer" role="dialog" aria-modal="true" aria-label="Índice del libro" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <span class="drawer-kicker">FUNDAMENTOS DE INFORMÁTICA</span>
+        <strong>Índice del libro</strong>
+      </div>
+      <button class="drawer-close" type="button" data-nav-close="" aria-label="Cerrar índice">×</button>
+    </div>
+
+    <div class="drawer-parts" role="tablist" aria-label="Partes del libro">
+      <button type="button" role="tab" class="drawer-part is-active" data-part-tab="theory" aria-selected="true">
+        <span>I</span><strong>Teoría</strong>
+      </button>
+      <button type="button" role="tab" class="drawer-part" data-part-tab="practice" aria-selected="false">
+        <span>II</span><strong>Prácticas</strong>
+      </button>
+    </div>
+
+    <div class="drawer-scroll">
+      <section class="drawer-panel is-active" data-part-panel="theory" aria-label="Teoría">
+        <p class="drawer-part-label">PARTE I · TEORÍA</p>
+
+        <details class="nav-theme" open="" data-theme="tema1">
+          <summary><span><b>Tema 1</b><small>Introducción a los computadores</small></span><i aria-hidden="true"></i></summary>
+          <nav class="nav-sections" aria-label="Secciones del Tema 1">
+            <a data-book-path="teoria/tema1/01-que-es-computador.html"><span>1.1</span><strong>¿Qué es un computador?</strong></a>
+            <a data-book-path="teoria/tema1/02-representacion.html"><span>1.2</span><strong>¿Cómo representa la información?</strong></a>
+            <a data-book-path="teoria/tema1/03-componentes.html"><span>1.3</span><strong>¿Qué hay dentro de un computador?</strong></a>
+            <a data-book-path="teoria/tema1/04-comunicacion.html"><span>1.4</span><strong>¿Cómo se comunican sus componentes?</strong></a>
+            <a data-book-path="teoria/tema1/05-ejecucion.html"><span>1.5</span><strong>¿Cómo ejecuta un programa?</strong></a>
+            <a data-book-path="teoria/tema1/06-tipos.html"><span>1.6</span><strong>¿Todos los computadores son iguales?</strong></a>
+            <a data-book-path="teoria/tema1/07-software.html"><span>1.7</span><strong>¿Qué papel juega el software?</strong></a>
+            <a data-book-path="teoria/tema1/ejercicios.html"><span>•</span><strong>Ejercicios</strong></a>
+          </nav>
+        </details>
+
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 2</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 3</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 4</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+      </section>
+
+      <section class="drawer-panel" data-part-panel="practice" aria-label="Prácticas" hidden="">
+        <p class="drawer-part-label">PARTE II · PRÁCTICAS</p>
+        <a class="practice-entry" data-book-path="practicas/index.html"><span>II</span><strong>Portada de prácticas</strong><i aria-hidden="true">→</i></a>
+
+        <details class="nav-theme" open="">
+          <summary><span><b>Tema 1</b><small>Área de prácticas</small></span><i aria-hidden="true"></i></summary>
+          <div class="nav-placeholder">Las prácticas concretas se incorporarán aquí cuando abordemos su estructura pedagógica.</div>
+        </details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 2</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 3</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 4</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+      </section>
+    </div>
+
+    <div class="drawer-foot">
+      <a data-book-home="" href="#">Portada del libro</a>
+      <span>El menú organiza; la página sigue siendo el libro.</span>
+    </div>
+  </aside>
+
+  <nav class="page-turn-nav" aria-label="Navegación secuencial del libro">
+    <a class="page-turn-link page-turn-prev" data-page-prev="" href="#" hidden="">
+      <span class="page-turn-arrow" aria-hidden="true">←</span>
+      <span class="page-turn-copy"><small>Anterior</small><strong data-page-prev-title=""></strong></span>
+    </a>
+    <a class="page-turn-link page-turn-next" data-page-next="" href="#" hidden="">
+      <span class="page-turn-copy"><small>Siguiente</small><strong data-page-next-title=""></strong></span>
+      <span class="page-turn-arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+
+  <script>
+  (() => {
+    const root = document.querySelector('[data-book-navigation]');
+    if (!root || root.dataset.navigationReady === 'true') return;
+    root.dataset.navigationReady = 'true';
+
+    const repoMarker = '/fundamentos-informatica/';
+    const path = window.location.pathname;
+    const markerIndex = path.indexOf(repoMarker);
+    const bookRoot = markerIndex >= 0 ? path.slice(0, markerIndex + repoMarker.length) : '/';
+    const relativePath = markerIndex >= 0
+      ? (path.slice(markerIndex + repoMarker.length) || 'index.html')
+      : (path.replace(/^\/+/, '') || 'index.html');
+    const urlFor = (rel = '') => `${bookRoot}${rel}`;
+
+    const pages = {
+      'index.html': { part: 'Inicio', roman: '•', location: 'Portada', title: 'Portada del libro' },
+      'teoria/tema1/01-que-es-computador.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.1', panel: 'theory', title: '1.1 · ¿Qué es un computador?' },
+      'teoria/tema1/02-representacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.2', panel: 'theory', title: '1.2 · ¿Cómo representa la información?' },
+      'teoria/tema1/03-componentes.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.3', panel: 'theory', title: '1.3 · ¿Qué hay dentro de un computador?' },
+      'teoria/tema1/04-comunicacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.4', panel: 'theory', title: '1.4 · ¿Cómo se comunican sus componentes?' },
+      'teoria/tema1/05-ejecucion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.5', panel: 'theory', title: '1.5 · ¿Cómo ejecuta un programa?' },
+      'teoria/tema1/06-tipos.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.6', panel: 'theory', title: '1.6 · ¿Todos los computadores son iguales?' },
+      'teoria/tema1/07-software.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.7', panel: 'theory', title: '1.7 · ¿Qué papel juega el software?' },
+      'teoria/tema1/ejercicios.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Ejercicios', panel: 'theory', title: 'Ejercicios' },
+      'practicas/index.html': { part: 'Prácticas', roman: 'II', location: 'Portada de prácticas', panel: 'practice', title: 'Parte II · Prácticas' }
+    };
+
+    const readingOrder = [
+      'index.html',
+      'teoria/tema1/01-que-es-computador.html',
+      'teoria/tema1/02-representacion.html',
+      'teoria/tema1/03-componentes.html',
+      'teoria/tema1/04-comunicacion.html',
+      'teoria/tema1/05-ejecucion.html',
+      'teoria/tema1/06-tipos.html',
+      'teoria/tema1/07-software.html',
+      'teoria/tema1/ejercicios.html',
+      'practicas/index.html'
+    ];
+
+    const current = pages[relativePath] || { part: 'Libro', roman: '•', location: 'Fundamentos de Informática', panel: 'theory', title: 'Fundamentos de Informática' };
+    const drawer = root.querySelector('#book-drawer');
+    const backdrop = root.querySelector('[data-nav-backdrop]');
+    const openButtons = root.querySelectorAll('[data-nav-open], [data-nav-part-button]');
+    const menuButton = root.querySelector('[data-nav-open]');
+    const partButton = root.querySelector('[data-nav-part-button]');
+    const closeButton = root.querySelector('[data-nav-close]');
+    const tabs = [...root.querySelectorAll('[data-part-tab]')];
+    const panels = [...root.querySelectorAll('[data-part-panel]')];
+    const prevLink = root.querySelector('[data-page-prev]');
+    const nextLink = root.querySelector('[data-page-next]');
+    let lastFocus = null;
+
+    if (!drawer || !backdrop || !menuButton || !partButton || !closeButton) return;
+
+    root.querySelectorAll('[data-book-home]').forEach((link) => { link.href = urlFor('index.html'); });
+    root.querySelectorAll('[data-book-path]').forEach((link) => {
+      const rel = link.getAttribute('data-book-path');
+      link.href = urlFor(rel);
+      if (rel === relativePath) {
+        link.classList.add('is-current');
+        link.setAttribute('aria-current', 'page');
+        const theme = link.closest('details');
+        if (theme) theme.open = true;
+      }
     });
-  };
 
-  const renderBitExplorer = (root) => {
-    const slider = root.querySelector('input[type="range"]');
-    const value = root.querySelector('[data-bit-value]');
-    const count = root.querySelector('[data-combination-count]');
-    const patterns = root.querySelector('[data-bit-patterns]');
-    if (!slider || !value || !count || !patterns) return;
-    const draw = () => {
-      const bits = Number(slider.value);
-      const total = 2 ** bits;
-      value.textContent = String(bits);
-      count.textContent = String(total);
-      patterns.replaceChildren();
-      for (let i = 0; i < total; i += 1) {
-        const token = document.createElement('span');
-        token.className = 'bit-pattern';
-        token.textContent = i.toString(2).padStart(bits, '0');
-        patterns.appendChild(token);
+    const currentIndex = readingOrder.indexOf(relativePath);
+    const wireTurnLink = (link, targetPath, label, titleTarget) => {
+      if (!link || !targetPath || !pages[targetPath]) {
+        if (link) link.hidden = true;
+        return;
       }
+      const target = pages[targetPath];
+      link.href = urlFor(targetPath);
+      link.hidden = false;
+      link.setAttribute('aria-label', `${label}: ${target.title}`);
+      link.title = `${label}: ${target.title}`;
+      const titleNode = link.querySelector(titleTarget);
+      if (titleNode) titleNode.textContent = target.title;
     };
-    slider.addEventListener('input', draw);
-    draw();
-  };
 
-  const init = () => {
-    initSolutions();
-    document.querySelectorAll('[data-bit-explorer]').forEach(renderBitExplorer);
-  };
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, { once: true });
-  } else {
-    init();
-  }
-})();
-</script>
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
+    if (currentIndex >= 0) {
+      wireTurnLink(prevLink, readingOrder[currentIndex - 1], 'Página anterior', '[data-page-prev-title]');
+      wireTurnLink(nextLink, readingOrder[currentIndex + 1], 'Página siguiente', '[data-page-next-title]');
+    }
+
+    const partText = root.querySelector('[data-nav-part]');
+    const locationText = root.querySelector('[data-nav-location]');
+    const partRoman = root.querySelector('[data-nav-part-roman]');
+    const partButtonLabel = root.querySelector('[data-nav-part-button-label]');
+    if (partText) partText.textContent = current.part;
+    if (locationText) locationText.textContent = current.location;
+    if (partRoman) partRoman.textContent = current.roman;
+    if (partButtonLabel) partButtonLabel.textContent = current.part === 'Inicio' ? 'Explorar' : current.part;
+
+    const activatePanel = (name) => {
+      tabs.forEach((tab) => {
+        const active = tab.dataset.partTab === name;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', String(active));
+      });
+      panels.forEach((panel) => {
+        const active = panel.dataset.partPanel === name;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+      });
     };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copiado");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copiado");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+
+    activatePanel(current.panel || 'theory');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => activatePanel(tab.dataset.partTab));
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
-          }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
+
+    const setExpanded = (expanded) => {
+      openButtons.forEach((button) => button.setAttribute('aria-expanded', String(expanded)));
     };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
+
+    const openDrawer = (preferredPanel) => {
+      lastFocus = document.activeElement;
+      if (preferredPanel) activatePanel(preferredPanel);
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      if ('inert' in drawer) drawer.inert = false;
+      backdrop.hidden = false;
+      requestAnimationFrame(() => backdrop.classList.add('is-visible'));
+      document.documentElement.classList.add('nav-open');
+      setExpanded(true);
+      closeButton.focus();
+    };
+
+    const closeDrawer = () => {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      if ('inert' in drawer) drawer.inert = true;
+      backdrop.classList.remove('is-visible');
+      window.setTimeout(() => { backdrop.hidden = true; }, 180);
+      document.documentElement.classList.remove('nav-open');
+      setExpanded(false);
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    };
+
+    if ('inert' in drawer) drawer.inert = true;
+    menuButton.addEventListener('click', () => openDrawer(current.panel || 'theory'));
+    partButton.addEventListener('click', () => openDrawer(current.panel || 'theory'));
+    closeButton.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+
+    drawer.addEventListener('keydown', (event) => {
+      if (event.key !== 'Tab') return;
+      const focusable = [...drawer.querySelectorAll('a[href], button:not([disabled]), summary')].filter((el) => !el.closest('[hidden]'));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+    });
+  })();
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../teoria/tema1/01-que-es-computador.html" class="pagination-link" aria-label="1.1 · ¿Qué es un computador?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1.1 · ¿Qué es un computador?</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../teoria/tema1/04-comunicacion.html" class="pagination-link" aria-label="1.4 · ¿Cómo se comunican sus componentes?">
-        <span class="nav-page-text"><span class="chapter-title">1.4 · ¿Cómo se comunican sus componentes?</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
-</div> <!-- /content -->
+</div>
 
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

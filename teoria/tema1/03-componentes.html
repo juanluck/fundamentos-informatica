@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lección 1.1 · ¿Qué es un computador? – Fundamentos de Informática</title>
+<title>Lección 1.3 · ¿Qué hay dentro de un computador? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -43,93 +43,73 @@ ul.task-list li input[type="checkbox"] {
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Lección 1.1 · ¿Qué es un computador?</span></h1>
+<h1 class="title"><span class="chapter-title">Lección 1.3 · ¿Qué hay dentro de un computador?</span></h1>
 
 </header>
 
 
-<div class="sheet lesson-1-1">
-<div class="running-head">
-<p>Tema 1 · Introducción a los computadores</p>
-<p>1.1 ¿Qué es un computador?</p>
-</div>
-<div class="opening">
-<div class="kicker">
-<p>LECCIÓN 1.1</p>
-</div>
-<h1 id="qué-es-realmente-un-computador">¿Qué es realmente<br>un computador?</h1>
-<div class="deck">
-<p>¿Qué ocurre entre los datos que introducimos y el resultado que recibimos, y qué hace que ese proceso pueda realizarse automáticamente?</p>
-</div>
-<div class="short-rule">
+<article class="sheet lesson-1-3" aria-label="Lección 1.3: qué hay dentro de un computador">
+  <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>1.3 Componentes internos</span></header>
 
-</div>
-</div>
-<section id="informática-tratar-información-automáticamente" class="lesson-section discipline-section">
-<h2>1. Informática: tratar información automáticamente</h2>
-<p>La Informática reúne los conocimientos científicos y las técnicas que hacen posible el <strong>tratamiento automático de la información</strong> mediante computadores electrónicos.</p>
-<div class="discipline-layout">
-<div class="discipline-flow soft-panel">
-<p><span class="flow-term"><strong>Información</strong></span> <span class="flow-arrow">→</span> <span class="flow-process"><em>tratamiento automático</em></span> <span class="flow-arrow">→</span> <span class="flow-term"><strong>Información</strong></span></p>
-</div>
-<div class="annotation-note distinction-note">
-<p>La Informática es la disciplina.<br>
-El computador es la máquina.</p>
-</div>
-</div>
-</section>
-<section id="un-computador-recibe-transforma-y-devuelve" class="lesson-section machine-section">
-<h2>2. Un computador recibe, transforma y devuelve</h2>
-<p>Un computador es una máquina capaz de aceptar datos de entrada, efectuar con ellos operaciones lógicas y aritméticas y proporcionar la información resultante a través de una salida.</p>
-<figure class="computer-figure" aria-labelledby="computer-figure-caption">
-  <svg viewbox="0 0 620 225" role="img" aria-labelledby="computer-svg-title computer-svg-desc">
-    <title id="computer-svg-title">Modelo básico de un computador</title>
-    <desc id="computer-svg-desc">Datos e instrucciones entran en el computador, este realiza operaciones controladas por un programa y produce datos de salida.</desc>
-    <defs><marker id="arrowTerracotta" markerwidth="9" markerheight="9" refx="7" refy="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#C45432"></path></marker></defs>
-    <g class="io-block input-block"><rect x="20" y="58" width="142" height="106" rx="8"></rect><text x="91" y="84" class="svg-kicker" text-anchor="middle">ENTRADA</text><text x="91" y="113" class="svg-main" text-anchor="middle">Datos</text><text x="91" y="139" class="svg-main" text-anchor="middle">Instrucciones</text></g>
-    <path class="flow-arrow" d="M174 111 H237" marker-end="url(#arrowTerracotta)"></path>
-    <g class="computer-block"><rect x="250" y="36" width="128" height="150" rx="18"></rect><text x="314" y="84" class="computer-label" text-anchor="middle">Computador</text><line x1="271" y1="103" x2="357" y2="103"></line><text x="314" y="128" class="svg-small" text-anchor="middle">operaciones</text><text x="314" y="148" class="svg-small" text-anchor="middle">lógicas y aritméticas</text><text x="314" y="174" class="svg-program" text-anchor="middle">programa</text></g>
-    <path class="flow-arrow" d="M391 111 H454" marker-end="url(#arrowTerracotta)"></path>
-    <g class="io-block output-block"><rect x="468" y="58" width="132" height="106" rx="8"></rect><text x="534" y="84" class="svg-kicker" text-anchor="middle">SALIDA</text><text x="534" y="120" class="svg-main" text-anchor="middle">Datos</text><text x="534" y="146" class="svg-main" text-anchor="middle">de salida</text></g>
-  </svg>
-  <figcaption id="computer-figure-caption">El esquema conserva la idea de la figura docente original: <strong>entrada → computador → salida</strong>.</figcaption>
-</figure>
-</section>
-<section id="el-programa-dirige-el-proceso" class="lesson-section program-section">
-<h2>3. El programa dirige el proceso</h2>
-<p>El tratamiento se realiza sin la intervención continua de un operador humano y bajo el control de un <strong>programa de instrucciones previamente almacenado</strong> en el propio computador.</p>
-<div class="program-layout">
-<div class="program-steps">
-<ol type="1">
-<li><strong>Entrada.</strong> Llegan los datos sobre los que se va a trabajar.</li>
-<li><strong>Proceso.</strong> El programa determina qué operaciones debe efectuar la máquina.</li>
-<li><strong>Salida.</strong> El computador devuelve la información resultante.</li>
-</ol>
-</div>
-<div class="annotation-note program-note">
-<p>Automático no significa “sin instrucciones”: significa que la máquina sigue el programa sin que una persona dirija cada operación.</p>
-</div>
-</div>
-</section>
-<section id="el-modelo-que-usaremos-a-partir-de-ahora" class="lesson-section model-section">
-<h2>4. El modelo que usaremos a partir de ahora</h2>
-<p>Para entender un computador iremos abriendo poco a poco esta caja: primero veremos cómo representa la información, después qué componentes contiene y finalmente cómo cooperan para ejecutar un programa.</p>
-<div class="rule-band model-rule">
-<p><span class="rule-term"><strong>datos + instrucciones</strong></span> <span class="rule-arrow">→</span> <span class="rule-term"><strong>computador</strong></span> <span class="rule-arrow">→</span> <span class="rule-term"><strong>resultado</strong></span></p>
-</div>
-<div class="bridge-question">
-<p>La siguiente pregunta es inevitable: <strong>¿cómo representa internamente todos esos datos e instrucciones?</strong></p>
-</div>
-</section>
-<div class="running-foot">
-<p>Fundamentos de Informática</p>
-<p>4</p>
-</div>
-</div>
-<div class="lesson-nav">
-<p><a href="../../index.html">← Índice</a></p>
-<p><a href="02-representacion.html">Lección 1.2 →</a></p>
-</div>
+  <section class="opening">
+    <p class="kicker">LECCIÓN 1.3</p>
+    <h1>¿Qué hay dentro<br>de un computador?</h1>
+    <p class="deck">Ya sabemos que un computador recibe datos e instrucciones. Ahora abrimos la caja: ¿qué elementos almacenan esa información y cuáles realizan las operaciones?</p>
+    <div class="short-rule" aria-hidden="true"></div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>1. La CPU: control y tratamiento</h2>
+    <p>La <strong>CPU</strong> (Central Processing Unit) es el procesador. En el esquema docente la descomponemos en dos piezas esenciales: la <strong>unidad de control (CU)</strong>, que dirige las operaciones, y la <strong>unidad aritmético-lógica (ALU)</strong>, que realiza operaciones aritméticas y lógicas.</p>
+    <div class="cpu-layout">
+      <div class="cpu-panel soft-panel" aria-label="CPU formada por unidad de control, ALU y registros">
+        <div class="cpu-title">CPU</div>
+        <div class="cpu-unit alu-unit"><span>ALU</span><small>operaciones</small></div>
+        <div class="cpu-unit cu-unit"><span>CU</span><small>control</small></div>
+        <div class="register-strip"><small>registro / palabra</small><b>1 1 1 0&nbsp;&nbsp;0 1 1 0</b></div>
+      </div>
+      <aside class="annotation-note compact-note">La CPU no “guarda todo”: trabaja con valores cercanos y deja el resto en memoria.</aside>
+    </div>
+    <div class="rule-band source-term-note">En las diapositivas aparece también la sigla <strong>MCU</strong> (<em>MicroController Unit</em>) como otra unidad de procesamiento.</div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>2. Registros y longitud de palabra</h2>
+    <p>Dentro del procesador hay <strong>registros</strong>: pequeños espacios donde se mantienen temporalmente los datos con los que se está trabajando. La <strong>longitud de palabra</strong> indica cuántos bits forman la unidad de trabajo del computador.</p>
+    <div class="word-figure" aria-label="Ejemplo de una palabra de ocho bits">
+      <span class="word-label">Ejemplo: palabra de 8 bits</span>
+      <div class="word-bits"><b>1</b><b>0</b><b>0</b><b>1</b><b>1</b><b>1</b><b>1</b><b>1</b></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>3. La memoria: datos e instrucciones</h2>
+    <p>La memoria principal mantiene los <strong>datos y las instrucciones</strong> que necesita el programa. En el material original aparecen RAM, ROM y caché como referencias de memoria; para comprender el flujo básico nos basta con observar que CPU y memoria trabajan continuamente juntas.</p>
+    <div class="cpu-memory-figure" aria-label="CPU y memoria principal intercambian información">
+      <div class="cm-box"><strong>CPU</strong><span>CU · ALU · registros</span></div>
+      <div class="cm-arrows"><i>→</i><small>peticiones / direcciones</small><i>←</i><small>datos e instrucciones</small></div>
+      <div class="cm-box memory-box"><strong>Memoria</strong><span>RAM · ROM · caché</span><div class="memory-words"><b>8 bits</b><b>8 bits</b><b>8 bits</b><b>8 bits</b></div></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>4. El mapa funcional completo</h2>
+    <p>Al ampliar el modelo de la lección 1.1 aparecen las unidades funcionales que utilizaremos durante el tema: entrada, memoria, procesador, salida y almacenamiento.</p>
+    <div class="functional-map" aria-label="Mapa funcional de un computador">
+      <div class="fm-node">Entrada (E)</div>
+      <span>→</span>
+      <div class="fm-core"><div>Memoria principal (M)<small>datos e instrucciones</small></div><div class="fm-cpu"><b>Procesador (CPU)</b><small>Unidad de control (CU) + unidad de tratamiento (ALU)</small></div></div>
+      <span>→</span>
+      <div class="fm-node">Salida (S)</div>
+      <div class="fm-storage">Memoria masiva (MM)</div>
+    </div>
+    <p class="bridge-question">Ya tenemos las piezas. La siguiente pregunta es: <strong>¿cómo intercambian información entre ellas?</strong></p>
+  </section>
+
+  <footer class="running-foot"><span>Fundamentos de Informática</span><span>6</span></footer>
+</article>
+
+<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="02-representacion.html">← Lección 1.2</a><a href="04-comunicacion.html">Lección 1.4 →</a></nav>
 
 
 <div class="book-navigation" data-book-navigation="">

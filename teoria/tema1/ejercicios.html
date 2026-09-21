@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lección 1.1 · ¿Qué es un computador? – Fundamentos de Informática</title>
+<title>Tema 1 · Ejercicios – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -43,92 +43,228 @@ ul.task-list li input[type="checkbox"] {
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Lección 1.1 · ¿Qué es un computador?</span></h1>
+<h1 class="title"><span class="chapter-title">Tema 1 · Ejercicios</span></h1>
 
 </header>
 
 
-<div class="sheet lesson-1-1">
+<div class="sheet exercise-sheet">
 <div class="running-head">
 <p>Tema 1 · Introducción a los computadores</p>
-<p>1.1 ¿Qué es un computador?</p>
+<p>Ejercicios</p>
 </div>
 <div class="opening">
 <div class="kicker">
-<p>LECCIÓN 1.1</p>
+<p>PONTE A PRUEBA</p>
 </div>
-<h1 id="qué-es-realmente-un-computador">¿Qué es realmente<br>un computador?</h1>
+<h1 id="ejercicios-del-tema-1">Ejercicios<br>del Tema 1</h1>
 <div class="deck">
-<p>¿Qué ocurre entre los datos que introducimos y el resultado que recibimos, y qué hace que ese proceso pueda realizarse automáticamente?</p>
+<p>Los enunciados permanecen siempre visibles. Intenta resolver cada ejercicio antes de desplegar su resolución.</p>
 </div>
 <div class="short-rule">
 
 </div>
 </div>
-<section id="informática-tratar-información-automáticamente" class="lesson-section discipline-section">
-<h2>1. Informática: tratar información automáticamente</h2>
-<p>La Informática reúne los conocimientos científicos y las técnicas que hacen posible el <strong>tratamiento automático de la información</strong> mediante computadores electrónicos.</p>
-<div class="discipline-layout">
-<div class="discipline-flow soft-panel">
-<p><span class="flow-term"><strong>Información</strong></span> <span class="flow-arrow">→</span> <span class="flow-process"><em>tratamiento automático</em></span> <span class="flow-arrow">→</span> <span class="flow-term"><strong>Información</strong></span></p>
+<section id="representación-de-la-información" class="lesson-section">
+<h2>Representación de la información</h2>
+<p>Los cinco primeros ejercicios proceden del bloque original <strong>L1.1 Definiciones básicas</strong>.</p>
+<div class="exercise-list">
+<div class="exercise-item">
+<section id="potencias-de-2-y-logaritmos" class="exercise-heading">
+<h3>1. Potencias de 2 y logaritmos</h3>
+<p><span class="exercise-difficulty">●</span></p>
+</section>
+<p><strong>Enunciado.</strong> ¿Cuáles son las potencias de 2? ¿Por qué son importantes en Informática? ¿Qué interpretación tienen los logaritmos en base 2?</p>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<p>
+Las potencias de 2 aparecen al contar combinaciones binarias: con <em>n</em> bits hay 2<sup>n</sup> combinaciones. El logaritmo en base 2 plantea la pregunta inversa: cuántos bits hacen falta para disponer de un cierto número de combinaciones.
+</p>
+<p>
+El material enlaza esta idea con unidades como <strong>bit</strong>, <strong>byte</strong> y los múltiplos binarios: 1 byte = 8 bits y 1 KiB = 2<sup>10</sup> bytes.
+</p>
 </div>
-<div class="annotation-note distinction-note">
-<p>La Informática es la disciplina.<br>
-El computador es la máquina.</p>
+</details>
 </div>
+<div class="exercise-item">
+<section id="cuántos-bits-para-los-10-dígitos" class="exercise-heading">
+<h3>2. ¿Cuántos bits para los 10 dígitos?</h3>
+<p><span class="exercise-difficulty">●</span></p>
+</section>
+<p><strong>Enunciado.</strong> ¿Cuántos bits necesitas para codificar los 10 dígitos numéricos?</p>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<p>
+Con 3 bits solo hay 2<sup>3</sup> = 8 combinaciones, que no bastan. Con 4 bits hay 2<sup>4</sup> = 16. Por tanto, necesitamos <strong>4 bits</strong>.
+</p>
+</div>
+</details>
+</div>
+<div class="exercise-item">
+<section id="símbolos-con-3-bits" class="exercise-heading">
+<h3>3. Símbolos con 3 bits</h3>
+<p><span class="exercise-difficulty">●</span></p>
+</section>
+<p><strong>Enunciado.</strong> ¿Cuántos símbolos diferentes puedes codificar con 3 bits?</p>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<p>
+2<sup>3</sup> = <strong>8 símbolos</strong>. La asignación mostrada en el material es 000→A, 001→B, 010→C, 011→D, 100→E, 101→F, 110→G y 111→H.
+</p>
+</div>
+</details>
+</div>
+<div class="exercise-item">
+<section id="codifica-happy" class="exercise-heading">
+<h3>4. Codifica “Happy”</h3>
+<p><span class="exercise-difficulty">●●</span></p>
+</section>
+<p><strong>Enunciado.</strong> ¿De qué forma podrías codificar el mensaje “Happy” si solo necesitas distinguir H, A, P e Y?</p>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<p>
+Una codificación posible, como en las diapositivas, es H→00, A→01, P→10 e Y→11. Entonces HAPPY se representa como <strong>00 01 10 10 11</strong>.
+</p>
+</div>
+</details>
+</div>
+<div class="exercise-item">
+<section id="fibra-de-100-megas-y-1-gbyte" class="exercise-heading">
+<h3>5. “Fibra de 100 Megas” y 1 GByte</h3>
+<p><span class="exercise-difficulty">●●</span></p>
+</section>
+<p><strong>Enunciado.</strong> ¿Qué quiere decir que tengo fibra de 100 Megas? ¿Cuánto tardaría en bajarme el último capítulo de “Watchmen” si ocupa 1 GByte?</p>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<p>
+En este contexto, 100 “Megas” significa 100 Mbit/s. Usando los prefijos decimales del SI, 1 GByte = 8 Gbit. Por tanto:
+</p>
+<div class="solution-formula">
+t = 8 Gbit / 100 Mbit/s = <strong>80 s</strong>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="resource-line">
+<p><strong>Para saber más.</strong> El material propone la leyenda de Sissa y el tablero de ajedrez como introducción a las potencias de 2: <a href="https://matematicascercanas.com/2014/03/10/la-leyenda-del-tablero-de-ajedrez-y-los-granos-de-trigo/">leer el recurso</a>.</p>
 </div>
 </section>
-<section id="un-computador-recibe-transforma-y-devuelve" class="lesson-section machine-section">
-<h2>2. Un computador recibe, transforma y devuelve</h2>
-<p>Un computador es una máquina capaz de aceptar datos de entrada, efectuar con ellos operaciones lógicas y aritméticas y proporcionar la información resultante a través de una salida.</p>
-<figure class="computer-figure" aria-labelledby="computer-figure-caption">
-  <svg viewbox="0 0 620 225" role="img" aria-labelledby="computer-svg-title computer-svg-desc">
-    <title id="computer-svg-title">Modelo básico de un computador</title>
-    <desc id="computer-svg-desc">Datos e instrucciones entran en el computador, este realiza operaciones controladas por un programa y produce datos de salida.</desc>
-    <defs><marker id="arrowTerracotta" markerwidth="9" markerheight="9" refx="7" refy="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#C45432"></path></marker></defs>
-    <g class="io-block input-block"><rect x="20" y="58" width="142" height="106" rx="8"></rect><text x="91" y="84" class="svg-kicker" text-anchor="middle">ENTRADA</text><text x="91" y="113" class="svg-main" text-anchor="middle">Datos</text><text x="91" y="139" class="svg-main" text-anchor="middle">Instrucciones</text></g>
-    <path class="flow-arrow" d="M174 111 H237" marker-end="url(#arrowTerracotta)"></path>
-    <g class="computer-block"><rect x="250" y="36" width="128" height="150" rx="18"></rect><text x="314" y="84" class="computer-label" text-anchor="middle">Computador</text><line x1="271" y1="103" x2="357" y2="103"></line><text x="314" y="128" class="svg-small" text-anchor="middle">operaciones</text><text x="314" y="148" class="svg-small" text-anchor="middle">lógicas y aritméticas</text><text x="314" y="174" class="svg-program" text-anchor="middle">programa</text></g>
-    <path class="flow-arrow" d="M391 111 H454" marker-end="url(#arrowTerracotta)"></path>
-    <g class="io-block output-block"><rect x="468" y="58" width="132" height="106" rx="8"></rect><text x="534" y="84" class="svg-kicker" text-anchor="middle">SALIDA</text><text x="534" y="120" class="svg-main" text-anchor="middle">Datos</text><text x="534" y="146" class="svg-main" text-anchor="middle">de salida</text></g>
-  </svg>
-  <figcaption id="computer-figure-caption">El esquema conserva la idea de la figura docente original: <strong>entrada → computador → salida</strong>.</figcaption>
-</figure>
+<section id="cpu-buses-ejecución-y-prestaciones" class="lesson-section">
+<h2>CPU, buses, ejecución y prestaciones</h2>
+<p>Las diapositivas continúan con preguntas de comprensión y tres problemas sobre tiempo de ejecución, buses y prestaciones.</p>
+<div class="exercise-list">
+<div class="exercise-item">
+<section id="dudas-que-surgen-de-las-lecciones" class="exercise-heading">
+<h3>6. Dudas que surgen de las lecciones</h3>
+<p><span class="exercise-difficulty">●●</span></p>
 </section>
-<section id="el-programa-dirige-el-proceso" class="lesson-section program-section">
-<h2>3. El programa dirige el proceso</h2>
-<p>El tratamiento se realiza sin la intervención continua de un operador humano y bajo el control de un <strong>programa de instrucciones previamente almacenado</strong> en el propio computador.</p>
-<div class="program-layout">
-<div class="program-steps">
+<p><strong>Enunciado.</strong> ¿Qué es un MFLOP? ¿Cuál es la diferencia con MIPS? ¿Qué es una operación en coma flotante? ¿Qué es la longitud de palabra de una memoria?</p>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<p>
+Como guía de comprobación: MIPS cuenta millones de instrucciones máquina por segundo; MFLOPS cuenta millones de operaciones en coma flotante por segundo. La longitud de palabra expresa cuántos bits forman una palabra de trabajo o transferencia en el modelo utilizado en el tema.
+</p>
+</div>
+</details>
+</div>
+<div class="exercise-item">
+<section id="tiempo-de-ejecución-de-un-programa" class="exercise-heading">
+<h3>7. Tiempo de ejecución de un programa</h3>
+<p><span class="exercise-difficulty">●●</span></p>
+</section>
+<p><strong>Enunciado.</strong> Un procesador tarda 4 ciclos por término medio en ejecutar cada instrucción y funciona a 1 GHz. ¿Cuánto tarda en ejecutar 10.000 instrucciones?</p>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<div class="solution-formula">
+t = (10.000 × 4) / 10<sup>9</sup> s = <strong>40 μs</strong>
+</div>
+</div>
+</details>
+</div>
+<div class="exercise-item">
+<section id="medidas-de-los-buses-de-comunicación" class="exercise-heading">
+<h3>8. Medidas de los buses de comunicación</h3>
+<p><span class="exercise-difficulty">●●●</span></p>
+</section>
+<p><strong>Enunciado.</strong> Un computador tiene una capacidad máxima de memoria de 32 Mbytes y está organizado en palabras de 32 bits.</p>
 <ol type="1">
-<li><strong>Entrada.</strong> Llegan los datos sobre los que se va a trabajar.</li>
-<li><strong>Proceso.</strong> El programa determina qué operaciones debe efectuar la máquina.</li>
-<li><strong>Salida.</strong> El computador devuelve la información resultante.</li>
+<li>¿Cuántos bits tiene la memoria en total?</li>
+<li>¿Cuál es el ancho de los buses de datos y de direcciones?</li>
+<li>Si el ancho de banda de la memoria es 200 MBytes/s, ¿qué velocidad de transferencia debe admitir cada hilo del bus de datos?</li>
 </ol>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<p>
+<strong>a)</strong> 32 Mbytes × 8 bits/byte = <strong>256 Mbits</strong>.
+</p>
+<p>
+<strong>b)</strong> El bus de datos tiene <strong>32 bits</strong>. Cada palabra ocupa 4 bytes; 32 Mbytes = 2<sup>25</sup> bytes y, por tanto, hay 2<sup>23</sup> palabras. El bus de direcciones necesita <strong>23 bits</strong>.
+</p>
+<p>
+<strong>c)</strong> 200 MBytes/s × 8 bits/byte repartidos entre 32 hilos = <strong>50 Mbit/s por hilo</strong>.
+</p>
 </div>
-<div class="annotation-note program-note">
-<p>Automático no significa “sin instrucciones”: significa que la máquina sigue el programa sin que una persona dirija cada operación.</p>
+</details>
 </div>
-</div>
+<div class="exercise-item">
+<section id="medidas-de-prestaciones-de-un-procesador" class="exercise-heading">
+<h3>9. Medidas de prestaciones de un procesador</h3>
+<p><span class="exercise-difficulty">●●</span></p>
 </section>
-<section id="el-modelo-que-usaremos-a-partir-de-ahora" class="lesson-section model-section">
-<h2>4. El modelo que usaremos a partir de ahora</h2>
-<p>Para entender un computador iremos abriendo poco a poco esta caja: primero veremos cómo representa la información, después qué componentes contiene y finalmente cómo cooperan para ejecutar un programa.</p>
-<div class="rule-band model-rule">
-<p><span class="rule-term"><strong>datos + instrucciones</strong></span> <span class="rule-arrow">→</span> <span class="rule-term"><strong>computador</strong></span> <span class="rule-arrow">→</span> <span class="rule-term"><strong>resultado</strong></span></p>
+<p><strong>Enunciado.</strong> Un programa de prueba se ejecuta a 100 MIPS y tarda 35 segundos. Si cada instrucción consume por término medio 6 ciclos de reloj:</p>
+<ol type="1">
+<li>Obtén la frecuencia de reloj.</li>
+<li>Obtén el número de instrucciones ejecutadas.</li>
+</ol>
+<details class="exercise-solution">
+<summary>
+Resolución
+</summary>
+<div class="resolution-body">
+<p>
+<strong>a)</strong> f = MIPS × CPI × 10<sup>6</sup> = 100 × 6 × 10<sup>6</sup> = <strong>600 MHz</strong>.
+</p>
+<p>
+<strong>b)</strong> 100 millones de instrucciones/s × 35 s = <strong>3.500 millones de instrucciones</strong>.
+</p>
 </div>
-<div class="bridge-question">
-<p>La siguiente pregunta es inevitable: <strong>¿cómo representa internamente todos esos datos e instrucciones?</strong></p>
+</details>
+</div>
 </div>
 </section>
 <div class="running-foot">
 <p>Fundamentos de Informática</p>
-<p>4</p>
+<p>Ejercicios</p>
 </div>
 </div>
 <div class="lesson-nav">
-<p><a href="../../index.html">← Índice</a></p>
-<p><a href="02-representacion.html">Lección 1.2 →</a></p>
+<p><a href="07-software.html">← Lección 1.7</a></p>
+<p><a href="../../index.html">Índice del tema →</a></p>
 </div>
 
 

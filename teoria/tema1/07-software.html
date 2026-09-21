@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lección 1.1 · ¿Qué es un computador? – Fundamentos de Informática</title>
+<title>Lección 1.7 · ¿Qué papel juega el software? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -43,93 +43,70 @@ ul.task-list li input[type="checkbox"] {
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Lección 1.1 · ¿Qué es un computador?</span></h1>
+<h1 class="title"><span class="chapter-title">Lección 1.7 · ¿Qué papel juega el software?</span></h1>
 
 </header>
 
 
-<div class="sheet lesson-1-1">
-<div class="running-head">
-<p>Tema 1 · Introducción a los computadores</p>
-<p>1.1 ¿Qué es un computador?</p>
-</div>
-<div class="opening">
-<div class="kicker">
-<p>LECCIÓN 1.1</p>
-</div>
-<h1 id="qué-es-realmente-un-computador">¿Qué es realmente<br>un computador?</h1>
-<div class="deck">
-<p>¿Qué ocurre entre los datos que introducimos y el resultado que recibimos, y qué hace que ese proceso pueda realizarse automáticamente?</p>
-</div>
-<div class="short-rule">
+<article class="sheet lesson-1-7" aria-label="Lección 1.7: el papel del software">
+  <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>1.7 Software</span></header>
 
-</div>
-</div>
-<section id="informática-tratar-información-automáticamente" class="lesson-section discipline-section">
-<h2>1. Informática: tratar información automáticamente</h2>
-<p>La Informática reúne los conocimientos científicos y las técnicas que hacen posible el <strong>tratamiento automático de la información</strong> mediante computadores electrónicos.</p>
-<div class="discipline-layout">
-<div class="discipline-flow soft-panel">
-<p><span class="flow-term"><strong>Información</strong></span> <span class="flow-arrow">→</span> <span class="flow-process"><em>tratamiento automático</em></span> <span class="flow-arrow">→</span> <span class="flow-term"><strong>Información</strong></span></p>
-</div>
-<div class="annotation-note distinction-note">
-<p>La Informática es la disciplina.<br>
-El computador es la máquina.</p>
-</div>
-</div>
-</section>
-<section id="un-computador-recibe-transforma-y-devuelve" class="lesson-section machine-section">
-<h2>2. Un computador recibe, transforma y devuelve</h2>
-<p>Un computador es una máquina capaz de aceptar datos de entrada, efectuar con ellos operaciones lógicas y aritméticas y proporcionar la información resultante a través de una salida.</p>
-<figure class="computer-figure" aria-labelledby="computer-figure-caption">
-  <svg viewbox="0 0 620 225" role="img" aria-labelledby="computer-svg-title computer-svg-desc">
-    <title id="computer-svg-title">Modelo básico de un computador</title>
-    <desc id="computer-svg-desc">Datos e instrucciones entran en el computador, este realiza operaciones controladas por un programa y produce datos de salida.</desc>
-    <defs><marker id="arrowTerracotta" markerwidth="9" markerheight="9" refx="7" refy="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#C45432"></path></marker></defs>
-    <g class="io-block input-block"><rect x="20" y="58" width="142" height="106" rx="8"></rect><text x="91" y="84" class="svg-kicker" text-anchor="middle">ENTRADA</text><text x="91" y="113" class="svg-main" text-anchor="middle">Datos</text><text x="91" y="139" class="svg-main" text-anchor="middle">Instrucciones</text></g>
-    <path class="flow-arrow" d="M174 111 H237" marker-end="url(#arrowTerracotta)"></path>
-    <g class="computer-block"><rect x="250" y="36" width="128" height="150" rx="18"></rect><text x="314" y="84" class="computer-label" text-anchor="middle">Computador</text><line x1="271" y1="103" x2="357" y2="103"></line><text x="314" y="128" class="svg-small" text-anchor="middle">operaciones</text><text x="314" y="148" class="svg-small" text-anchor="middle">lógicas y aritméticas</text><text x="314" y="174" class="svg-program" text-anchor="middle">programa</text></g>
-    <path class="flow-arrow" d="M391 111 H454" marker-end="url(#arrowTerracotta)"></path>
-    <g class="io-block output-block"><rect x="468" y="58" width="132" height="106" rx="8"></rect><text x="534" y="84" class="svg-kicker" text-anchor="middle">SALIDA</text><text x="534" y="120" class="svg-main" text-anchor="middle">Datos</text><text x="534" y="146" class="svg-main" text-anchor="middle">de salida</text></g>
-  </svg>
-  <figcaption id="computer-figure-caption">El esquema conserva la idea de la figura docente original: <strong>entrada → computador → salida</strong>.</figcaption>
-</figure>
-</section>
-<section id="el-programa-dirige-el-proceso" class="lesson-section program-section">
-<h2>3. El programa dirige el proceso</h2>
-<p>El tratamiento se realiza sin la intervención continua de un operador humano y bajo el control de un <strong>programa de instrucciones previamente almacenado</strong> en el propio computador.</p>
-<div class="program-layout">
-<div class="program-steps">
-<ol type="1">
-<li><strong>Entrada.</strong> Llegan los datos sobre los que se va a trabajar.</li>
-<li><strong>Proceso.</strong> El programa determina qué operaciones debe efectuar la máquina.</li>
-<li><strong>Salida.</strong> El computador devuelve la información resultante.</li>
-</ol>
-</div>
-<div class="annotation-note program-note">
-<p>Automático no significa “sin instrucciones”: significa que la máquina sigue el programa sin que una persona dirija cada operación.</p>
-</div>
-</div>
-</section>
-<section id="el-modelo-que-usaremos-a-partir-de-ahora" class="lesson-section model-section">
-<h2>4. El modelo que usaremos a partir de ahora</h2>
-<p>Para entender un computador iremos abriendo poco a poco esta caja: primero veremos cómo representa la información, después qué componentes contiene y finalmente cómo cooperan para ejecutar un programa.</p>
-<div class="rule-band model-rule">
-<p><span class="rule-term"><strong>datos + instrucciones</strong></span> <span class="rule-arrow">→</span> <span class="rule-term"><strong>computador</strong></span> <span class="rule-arrow">→</span> <span class="rule-term"><strong>resultado</strong></span></p>
-</div>
-<div class="bridge-question">
-<p>La siguiente pregunta es inevitable: <strong>¿cómo representa internamente todos esos datos e instrucciones?</strong></p>
-</div>
-</section>
-<div class="running-foot">
-<p>Fundamentos de Informática</p>
-<p>4</p>
-</div>
-</div>
-<div class="lesson-nav">
-<p><a href="../../index.html">← Índice</a></p>
-<p><a href="02-representacion.html">Lección 1.2 →</a></p>
-</div>
+  <section class="opening">
+    <p class="kicker">LECCIÓN 1.7</p>
+    <h1>¿Qué papel juega<br>el software?</h1>
+    <p class="deck">El hardware puede realizar operaciones, pero necesita instrucciones que indiquen qué hacer, en qué orden y con qué datos.</p>
+    <div class="short-rule" aria-hidden="true"></div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>1. De una instrucción a un programa</h2>
+    <p>En el material docente, una <strong>instrucción</strong> es un conjunto de símbolos que representa una orden de operación o tratamiento para el computador. Un <strong>programa</strong> es un conjunto ordenado de instrucciones que se proporcionan a la máquina para indicarle las operaciones o tareas que se desea que realice.</p>
+    <div class="instruction-program">
+      <div><strong>Instrucción</strong><span>una orden</span></div>
+      <i>+</i><div><strong>Instrucción</strong><span>otra orden</span></div>
+      <i>+</i><div><strong>…</strong><span>en un orden</span></div>
+      <i>→</i><div class="program-result"><strong>Programa</strong><span>secuencia de trabajo</span></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>2. Traducción: del lenguaje de alto nivel al lenguaje máquina</h2>
+    <p>El esquema original separa dos momentos. Primero, un <strong>programa traductor</strong> transforma el programa escrito por el usuario en lenguaje de alto nivel en un programa en <strong>lenguaje máquina</strong> que el computador pueda ejecutar.</p>
+    <div class="software-flow translation-flow" aria-label="Traducción de un programa de alto nivel a lenguaje máquina">
+      <div><strong>Programa del usuario</strong><span>lenguaje de alto nivel</span></div>
+      <div class="flow-tool"><small>programa traductor</small><b>→</b></div>
+      <div class="software-computer">Computador</div>
+      <b class="flow-arrow-text">→</b>
+      <div><strong>Programa del usuario</strong><span>lenguaje máquina</span></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>3. Ejecución: programa + datos → resultados</h2>
+    <p>Una vez traducido, el programa en lenguaje máquina y los datos del usuario se entregan al computador. Su ejecución produce los resultados del programa.</p>
+    <div class="software-flow execution-flow" aria-label="Ejecución de un programa con datos para producir resultados">
+      <div class="software-inputs"><span><strong>Programa</strong><small>lenguaje máquina</small></span><span><strong>Datos</strong><small>del usuario</small></span></div>
+      <b class="flow-arrow-text">→</b>
+      <div class="software-computer">Computador</div>
+      <b class="flow-arrow-text">→</b>
+      <div><strong>Resultados</strong><span>del programa</span></div>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>4. El software como herramienta de ingeniería</h2>
+    <p>El material distingue entre aplicaciones generales —ofimática, procesamiento sencillo de datos, hojas electrónicas— y aplicaciones específicas de ingeniería para facilitar el diseño, la fabricación, las pruebas, el control y la monitorización.</p>
+    <div class="engineering-software">
+      <div class="software-family"><strong>Diseño, fabricación y test</strong><span>CAD · CAM · CADMAT</span><small>AutoCAD · SPICE · LogicWorks · ORCAD · CADENCE</small></div>
+      <div class="software-family"><strong>Control y monitorización</strong><span>Informática industrial</span><small>SCADA</small></div>
+      <div class="software-family"><strong>Simulación</strong><span>modelos y sistemas</span><small>Matlab</small></div>
+    </div>
+  </section>
+
+  <footer class="running-foot"><span>Fundamentos de Informática</span><span>10</span></footer>
+</article>
+
+<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="06-tipos.html">← Lección 1.6</a><a href="../../index.html">Índice del tema →</a></nav>
 
 
 <div class="book-navigation" data-book-navigation="">
