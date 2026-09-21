@@ -18,8 +18,8 @@
 .exercise-solution summary::after{content:"mostrar";margin-left:auto;font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(19,42,58,.5)}
 .exercise-solution[open] summary::after{content:"ocultar"}
 .exercise-solution summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
-.solution{margin-top:6px;padding:11px 13px;background:var(--paper);border-left:3px solid var(--accent)}
-.solution p{font-size:14px;line-height:1.24;margin:0 0 7px}.solution p:last-child{margin-bottom:0}
+.resolution-body{margin-top:6px;padding:11px 13px;background:var(--paper);border-left:3px solid var(--accent)}
+.resolution-body p{font-size:14px;line-height:1.24;margin:0 0 7px}.solution p:last-child{margin-bottom:0}
 .solution-formula{text-align:center;font-size:16px;margin-top:8px;padding:7px 5px;background:var(--soft)}
 .resource-line{margin-top:16px!important;padding-top:10px;border-top:1px solid var(--line);font-size:13px!important}.resource-line a{color:var(--accent-text);text-decoration-thickness:1px;text-underline-offset:2px}
 .inline-solution{margin-top:11px;border-top:1px solid var(--line)}
