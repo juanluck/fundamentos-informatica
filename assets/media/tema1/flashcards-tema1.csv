@@ -1,0 +1,78 @@
+Definición: Informática,Es el estudio del tratamiento automático de la información mediante computadores.
+¿Qué es un computador desde una perspectiva funcional?,"Es una máquina electrónica programable que recibe, procesa, almacena y proporciona información."
+¿Cuál es la unidad mínima de representación binaria?,El bit (representado por $0$ o $1$).
+"¿Cómo se representa la información compleja (texto, imágenes, sonidos) en un computador digital?",Mediante secuencias de bits.
+"Si añadimos un bit adicional a un código binario, ¿qué ocurre con el número de combinaciones posibles?",El número de combinaciones se duplica.
+Fórmula para determinar el número de estados o combinaciones posibles con $n$ bits.,$2^{n}$ estados.
+Fórmula para calcular el número mínimo de bits necesarios para representar $N$ estados.,$n = \lceil \log_{2}(N) \rceil$ bits.
+"¿Cuántos bits se necesitan, como mínimo, para representar los 10 dígitos decimales ($0$ al $9$)?",$4$ bits (ya que $2^{4} = 16 \ge 10$).
+¿Cuántos bits de un código de $3$ bits quedarían sin asignar si solo queremos representar $5$ símbolos?,"$3$ códigos (de $2^{3}=8$ combinaciones totales, $8 - 5 = 3$)."
+¿Qué es un byte?,Una unidad de información que agrupa $8$ bits.
+¿Cuántas combinaciones distintas permite un solo byte?,$256$ combinaciones ($2^{8}$).
+¿Cuántos bits utiliza originalmente el código ASCII?,$7$ bits (aunque habitualmente se guarde en un byte de $8$ bits).
+"En el contexto de almacenamiento, ¿qué significa que un sistema sea 'digital'?",Que utiliza valores discretos para representar la información.
+Diferencia entre el factor decimal y el factor binario para el prefijo 'kilo' (k vs Ki).,"kilo (k) es $10^{3} = 1,000$ mientras que kibi (Ki) es $2^{10} = 1,024$."
+Diferencia entre el factor decimal y el factor binario para el prefijo 'mega' (M vs Mi).,mega (M) es $10^{6}$ mientras que mebi (Mi) es $2^{20}$.
+¿Cuál es la relación de magnitud entre un bit (b) y un byte (B)?,$1$ B = $8$ b.
+"Si una conexión de red es de $100$ Mb/s, ¿cuál es su tasa equivalente en MB/s?",$12.5$ MB/s ($100 \div 8$).
+"Fórmula que relaciona la cantidad de datos ($D$), la tasa de transferencia ($R$) y el tiempo ($t$).",$D = R \cdot t$
+¿Cuánto tiempo tarda en descargarse un archivo de $1$ GB (decimal) a una tasa de $100$ Mb/s?,"$80$ segundos ($8,000$ Mb $\div 100$ Mb/s)."
+¿Qué es la CPU (Central Processing Unit)?,La unidad encargada de ejecutar las instrucciones de los programas.
+¿Qué es un registro en el contexto de la CPU?,Un pequeño almacenamiento interno de alta velocidad que mantiene temporalmente un grupo de bits.
+¿Qué define la 'longitud de palabra' de un procesador?,El grupo de bits que el procesador maneja como unidad natural en sus operaciones.
+¿Qué función cumple la memoria principal (RAM)?,Almacenar los datos e instrucciones que el programa necesita durante su ejecución.
+¿Cuál es la función de la ALU (Arithmetic Logic Unit)?,"Realizar operaciones aritméticas (sumas) y lógicas (comparaciones, inversiones de bits)."
+¿Cuál es la función de la Unidad de Control (CU)?,Interpretar las instrucciones y coordinar el movimiento de datos y las operaciones de la ALU.
+Concepto: Microcontrolador (MCU),"Es un circuito integrado que reúne en un mismo chip la CPU, memoria y periféricos de entrada/salida."
+"En el ciclo de procesamiento, ¿cuál es el primer paso para operar con un dato situado en memoria?",Seleccionar la posición de memoria mediante su dirección.
+¿Qué ocurre con el contenido original de una posición de memoria tras una operación de lectura?,Se mantiene intacto; la lectura copia el valor sin borrarlo de la memoria.
+¿Qué ocurre con el contenido previo de una posición de memoria tras una operación de escritura?,"Se pierde, ya que es sustituido por el nuevo dato."
+¿Qué función cumple el Bus de Direcciones?,Identifica la posición de memoria específica a la que se desea acceder.
+¿Qué función cumple el Bus de Datos?,Transporta el contenido real (el valor) que se está leyendo o escribiendo.
+"Si un bus de direcciones tiene $n$ bits, ¿cuál es el número máximo de palabras direccionables?",$2^{n}$ palabras.
+"Si un computador tiene $m$ palabras de memoria, ¿cuántos bits mínimos debe tener su bus de direcciones?",$n = \lceil \log_{2}(m) \rceil$ bits.
+Diferencia entre Memoria Principal y Almacenamiento (SSD/HDD).,La memoria principal es volátil y contiene lo que está en uso; el almacenamiento es persistente y guarda archivos a largo plazo.
+¿Qué papel desempeña el 'Reloj' dentro de la CPU?,Proporciona una referencia temporal para coordinar los cambios de estado y sincronizar las operaciones.
+Relación entre el periodo ($T$) y la frecuencia de reloj ($f$).,$f = 1 \div T$
+¿Qué significa que la frecuencia sea de $2$ GHz?,Que el reloj realiza $2 \times 10^{9}$ ciclos por segundo.
+¿Qué representa el CPI medio de un programa?,El número promedio de ciclos de reloj que consume cada instrucción del programa.
+"Fórmula del Tiempo de CPU basado en instrucciones ($NI$), CPI y frecuencia ($f$).",$Tiempo = (NI \cdot CPI) \div f$
+Concepto: MIPS,Millones de Instrucciones por Segundo; mide la tasa de ejecución de instrucciones máquina.
+Concepto: MFLOPS,Millones de operaciones en coma flotante por segundo.
+Fórmula para calcular MIPS si conocemos el número de instrucciones ($NI$) y el tiempo ($t$).,$MIPS = NI \div (t \cdot 10^{6})$
+¿Por qué los MIPS no son una medida universal para comparar la rapidez de distintas arquitecturas?,Porque una instrucción máquina puede realizar una cantidad de trabajo muy diferente según la arquitectura.
+¿Cuál es el criterio definitivo para comparar el rendimiento de dos equipos en una misma tarea?,"El tiempo de ejecución de dicha tarea (a menor tiempo, mejor rendimiento)."
+¿Qué caracteriza a un computador de 'Uso Especializado' o empotrado?,Está diseñado para realizar una única función específica dentro de un dispositivo mayor.
+Diferencia entre un Servidor y un Supercomputador.,El servidor atiende a muchos usuarios; el supercomputador se enfoca en cálculos y simulaciones masivas.
+¿Qué significa SISD en la taxonomía de paralelismo?,Single Instruction Single Data: una instrucción sobre un dato cada vez.
+¿Qué significa SIMD en la taxonomía de paralelismo?,Single Instruction Multiple Data: una misma operación aplicada a varios datos a la vez.
+¿Qué significa MIMD en la taxonomía de paralelismo?,Multiple Instruction Multiple Data: varias instrucciones diferentes sobre distintos flujos de datos.
+Definición: Instrucción de software,Es una orden específica para realizar una operación sobre los datos.
+Definición: Programa,Es un conjunto organizado de instrucciones diseñadas para realizar una tarea compleja.
+¿Cuál es la función del compilador?,Traducir el programa fuente (lenguaje de alto nivel) a programa ejecutable (código máquina).
+¿Qué es el código máquina?,Es la representación binaria de las instrucciones que el hardware puede interpretar directamente.
+"En el proceso de ejecución de un programa, ¿cuándo se utilizan los datos de entrada?","Durante la etapa de ejecución, después de que el programa ha sido traducido."
+"Un procesador a $1$ GHz tarda $4$ ciclos por instrucción. ¿Cuánto tarda en ejecutar $10,000$ instrucciones?","$40 \mu s$ ($40,000$ ciclos $\div 10^{9}$ ciclos/s)."
+"Si una memoria de $32$ MiB está organizada en palabras de $32$ bits, ¿cuántas palabras tiene?",$2^{23}$ palabras ($32$ MiB = $2^{25}$ bytes; $32$ bits = $4$ bytes; $2^{25} \div 4 = 2^{23}$).
+¿Cuántos bits de dirección se necesitan para direccionar $2^{23}$ palabras?,$23$ bits.
+"Si un bus de datos tiene $32$ líneas y transfiere $200$ MB/s, ¿cuántos bits por segundo transmite cada línea?","$50$ Mbit/s ($200 \times 8 = 1,600$ Mbit/s totales; $1,600 \div 32 = 50$)."
+"Si un programa tarda $35$ s a $100$ MIPS con un CPI de $6$, ¿cuál es la frecuencia del procesador?",$600$ MHz ($100 \times 10^{6}$ instr/s $\times 6$ ciclos/instr).
+¿Cómo se calcula el número total de instrucciones ejecutadas ($NI$) si se conoce la tasa de MIPS y el tiempo?,$NI = MIPS \cdot 10^{6} \cdot tiempo$
+"En un programa con un bucle de $150$ instrucciones que se repite $50$ veces, y $50$ instrucciones fuera del bucle, ¿cuántas instrucciones se ejecutan en total?","$7,550$ instrucciones ($50 + (150 \times 50)$)."
+¿Qué es una operación en coma flotante?,Es una operación sobre números representados mediante significando y exponente (notación científica).
+Diferencia entre transferencia en paralelo y serial en buses.,El paralelo usa varias líneas para enviar varios bits simultáneamente; el serial usa una sola línea para enviar bits uno tras otro.
+El tiempo que tarda una señal en recorrer una distancia física entre componentes se ignora en este modelo básico. ¿Cómo se llama el factor de coordinación?,El Reloj.
+"En el código ASCII mostrado en el material, ¿qué carácter representa el binario $00100000$?",El espacio.
+¿Qué componentes forman parte de la arquitectura básica para 'procesar' información?,"La CPU (ALU, CU y Registros)."
+¿Qué componentes forman parte de la arquitectura básica para 'comunicar' información?,Las unidades de Entrada y Salida.
+¿Por qué un bit adicional duplica los estados?,"Porque cada estado anterior puede ahora terminar en $0$ o en $1$, creando dos variantes."
+"Si queremos asignar códigos de longitud fija a $26$ letras, ¿bastan $5$ bits?","Sí, porque $2^{5} = 32$, que es mayor que $26$."
+"Si duplicamos la tasa de transferencia de datos manteniendo el tamaño del archivo constante, ¿qué ocurre con el tiempo?",El tiempo de descarga se reduce a la mitad.
+El prefijo Gi (gibi) corresponde a la potencia _____.,$2^{30}$
+El prefijo G (giga) decimal corresponde a la potencia _____.,$10^{9}$
+¿Qué unidad funcional de la CPU decide qué instrucción se ejecuta a continuación?,La Unidad de Control.
+¿Cómo se llama el proceso de cargar un programa desde el almacenamiento a la memoria principal?,Carga (o 'loading').
+"Un ciclo de reloj, ¿equivale siempre a la ejecución de una instrucción completa?","No, una instrucción puede requerir varios ciclos (CPI $> 1$)."
+"En el modelo de buses, ¿qué unidad 'proporciona' siempre la dirección en el bus de direcciones?",El Procesador (CPU).
+"Si el CPI de un procesador disminuye, ¿qué ocurre con el tiempo de ejecución (frecuencia constante)?",El tiempo de ejecución disminuye.
+¿Qué es el código fuente?,Es el programa escrito por el programador en un lenguaje comprensible para humanos.
