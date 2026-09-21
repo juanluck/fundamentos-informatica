@@ -1,0 +1,97 @@
+---
+title: "Tema 1 · Material complementario"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .resources-sheet}
+
+:::::: {.running-head}
+Tema 1 · Introducción a los computadores
+
+Material complementario
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+RECURSOS DEL TEMA 1
+:::::
+
+# Material<br>complementario
+
+::::: {.deck}
+Tres formas de volver sobre el tema: practicar con tarjetas, verlo en movimiento y consultar las diapositivas completas con sus notas docentes.
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+:::::: {.lesson-section}
+## Tarjetas de repaso
+
+::: {.resource-feature .resource-flashcards}
+::: {.resource-mark}
+78
+:::
+::: {.resource-copy}
+**Preguntas y respuestas breves**
+
+Repaso activo de definiciones, relaciones, fórmulas y problemas del Tema 1. Las ampliaciones están identificadas como tales.
+
+[Practicar con las tarjetas →](tarjetas.html){.resource-action}
+:::
+:::
+::::::
+
+:::::: {.lesson-section}
+## Resumen audiovisual
+
+El vídeo de NotebookLM funciona bien como **visión global de menos de un minuto**. Se mantiene como recurso complementario: ayuda a construir una imagen mental, pero no sustituye las explicaciones del libro.
+
+```{=html}
+<div class="video-resource">
+  <div class="video-frame">
+    <video controls preload="metadata" playsinline>
+      <source src="../../assets/media/tema1/Tema1-Cómo_funciona_un_ordenador_desde_cero.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este vídeo.
+    </video>
+  </div>
+  <div class="video-caption">
+    <strong>¿Cómo funciona un ordenador desde cero?</strong>
+    <span>0:58 · formato vertical · resumen audiovisual generado con NotebookLM</span>
+    <a href="../../assets/media/tema1/Tema1-Cómo_funciona_un_ordenador_desde_cero.mp4" target="_blank" rel="noopener">Abrir el vídeo en una pestaña nueva ↗</a>
+  </div>
+</div>
+```
+::::::
+
+:::::: {.lesson-section}
+## Diapositivas con notas docentes
+
+::: {.resource-feature .slides-resource}
+::: {.resource-mark}
+65
+:::
+::: {.resource-copy}
+**Tema 1 · Resumen · Ejercicios · con notas**
+
+Esta versión conserva las diapositivas y añade debajo de cada una las notas explicativas: supuestos, matices, ejemplos y observaciones para la exposición. Es especialmente útil para contrastar el libro con el material de clase.
+
+[Consultar las diapositivas en PDF ↗](../../assets/media/tema1/Tema 1 - Resumen - Ejercicios-con notas.pdf){target="_blank" rel="noopener" .resource-action}
+:::
+:::
+
+::: {.resource-note}
+**Papel de este documento.** Es material complementario y de referencia. El libro mantiene su propia organización; las diapositivas permiten recuperar el contexto de clase y comprobar la procedencia de ejemplos y ejercicios.
+:::
+::::::
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+Tema 1 · Recursos
+::::::
+
+:::::::

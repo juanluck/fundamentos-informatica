@@ -1,0 +1,88 @@
+name: Publish Quarto Book
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: publish-quarto-book
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source branch
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render HTML book
+        run: quarto render --to html
+
+      - name: Publish book at repository root
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages:gh-pages
+          git worktree add /tmp/gh-pages gh-pages
+
+          # Replace only the files/directories owned by the Quarto book.
+          # Standalone visual prototypes and gates remain untouched.
+          rm -rf /tmp/gh-pages/teoria                  /tmp/gh-pages/practicas                  /tmp/gh-pages/assets                  /tmp/gh-pages/styles                  /tmp/gh-pages/site_libs
+          rm -f /tmp/gh-pages/index.html                 /tmp/gh-pages/search.json
+
+          cp -a _site/. /tmp/gh-pages/
+          touch /tmp/gh-pages/.nojekyll
+
+          # /book was the temporary preview location. Keep lightweight
+          # redirects for the routes that have already been shared.
+          rm -rf /tmp/gh-pages/book
+
+          make_redirect() {
+            local old_path="$1"
+            local new_path="$2"
+            mkdir -p "$(dirname "/tmp/gh-pages/$old_path")"
+            cat > "/tmp/gh-pages/$old_path" <<EOF
+          <!doctype html>
+          <html lang="es">
+          <head>
+            <meta charset="utf-8">
+            <meta http-equiv="refresh" content="0; url=$new_path">
+            <link rel="canonical" href="$new_path">
+            <title>Fundamentos de Informática</title>
+          </head>
+          <body>
+            <p><a href="$new_path">Continuar al libro</a></p>
+          </body>
+          </html>
+          EOF
+          }
+
+          make_redirect "book/index.html" "/fundamentos-informatica/"
+          make_redirect "book/teoria/tema1/01-que-es-computador.html" "/fundamentos-informatica/teoria/tema1/01-que-es-computador.html"
+          make_redirect "book/teoria/tema1/02-representacion.html" "/fundamentos-informatica/teoria/tema1/02-representacion.html"
+          make_redirect "book/teoria/tema1/03-componentes.html" "/fundamentos-informatica/teoria/tema1/03-componentes.html"
+          make_redirect "book/teoria/tema1/04-comunicacion.html" "/fundamentos-informatica/teoria/tema1/04-comunicacion.html"
+          make_redirect "book/teoria/tema1/05-ejecucion.html" "/fundamentos-informatica/teoria/tema1/05-ejecucion.html"
+          make_redirect "book/teoria/tema1/06-tipos.html" "/fundamentos-informatica/teoria/tema1/06-tipos.html"
+          make_redirect "book/teoria/tema1/07-software.html" "/fundamentos-informatica/teoria/tema1/07-software.html"
+          make_redirect "book/teoria/tema1/ejercicios.html" "/fundamentos-informatica/teoria/tema1/ejercicios.html"
+          make_redirect "book/practicas/index.html" "/fundamentos-informatica/practicas/"
+
+          cd /tmp/gh-pages
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No deployment changes"
+          else
+            git commit -m "Publish Quarto book at repository root"
+            git push origin gh-pages
+          fi

@@ -1,0 +1,92 @@
+---
+title: "Tema 1 · Tarjetas de repaso"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .flashcards-sheet}
+
+:::::: {.running-head}
+Tema 1 · Introducción a los computadores
+
+Tarjetas de repaso
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+RECURSO DE REPASO
+:::::
+
+# Tarjetas<br>didácticas
+
+::::: {.deck}
+Pregunta primero, respuesta después. Las tarjetas complementan el tema y no sustituyen a las lecciones ni a los ejercicios.
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+:::::: {.lesson-section}
+## Repasa a tu ritmo
+
+El conjunto contiene **78 tarjetas** generadas a partir del Tema 1. Las tarjetas marcadas como **Ampliación** incorporan ideas que no forman parte explícita del recorrido principal y se distinguen visualmente.
+
+```{=html}
+<div class="flashcard-app" data-flashcard-app>
+  <div class="flashcard-toolbar">
+    <label>Bloque
+      <select data-card-section>
+        <option value="all">Todas</option>
+        <option>Representación</option>
+        <option>Unidades funcionales</option>
+        <option>Tipos de computadores</option>
+        <option>Software</option>
+        <option>Ejercicios</option>
+        <option>Repaso</option>
+      </select>
+    </label>
+    <button type="button" data-card-shuffle>Mezclar</button>
+  </div>
+
+  <article class="study-card" data-study-card tabindex="0" aria-live="polite">
+    <div class="study-card-meta">
+      <span data-card-section-label></span>
+      <span class="card-kind" data-card-kind></span>
+    </div>
+    <div class="study-card-face">
+      <small>Pregunta</small>
+      <p data-card-question>Cargando tarjetas…</p>
+    </div>
+    <div class="study-card-answer" data-card-answer hidden>
+      <small>Respuesta</small>
+      <p data-card-answer-text></p>
+    </div>
+  </article>
+
+  <div class="flashcard-actions">
+    <button type="button" data-card-prev aria-label="Tarjeta anterior">←</button>
+    <button class="reveal-card" type="button" data-card-reveal>Mostrar respuesta</button>
+    <button type="button" data-card-next aria-label="Tarjeta siguiente">→</button>
+  </div>
+
+  <div class="flashcard-progress">
+    <span data-card-progress>1 / 78</span>
+    <div aria-hidden="true"><i data-card-progress-bar></i></div>
+  </div>
+
+  <p class="flashcard-help">Teclado: ←/→ cambia de tarjeta · espacio muestra u oculta la respuesta.</p>
+  <p class="sr-only" data-card-status aria-live="polite"></p>
+</div>
+<script src="../../assets/flashcards-tema1.js"></script>
+```
+::::::
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+Tema 1 · Recursos
+::::::
+
+:::::::

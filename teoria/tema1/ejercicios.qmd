@@ -1,0 +1,223 @@
+---
+title: "Tema 1 · Ejercicios"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .exercise-sheet}
+
+:::::: {.running-head}
+Tema 1 · Introducción a los computadores
+
+Ejercicios
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+PONTE A PRUEBA
+:::::
+
+# Ejercicios<br>del Tema 1
+
+::::: {.deck}
+Los enunciados permanecen siempre visibles. Intenta resolver cada ejercicio antes de desplegar su resolución.
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+:::::: {.lesson-section}
+## Representación de la información
+
+Los cinco primeros ejercicios proceden del bloque original **L1.1 Definiciones básicas**.
+
+::::: {.exercise-list}
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 1. Potencias de 2 y logaritmos
+[●]{.exercise-difficulty}
+:::
+
+**Enunciado.** ¿Cuáles son las potencias de 2? ¿Por qué son importantes en Informática? ¿Qué interpretación tienen los logaritmos en base 2?
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<p>Las potencias de 2 aparecen al contar combinaciones binarias: con <em>n</em> bits hay 2<sup>n</sup> combinaciones. El logaritmo en base 2 plantea la pregunta inversa: cuántos bits hacen falta para disponer de un cierto número de combinaciones.</p>
+<p>El material enlaza esta idea con unidades como <strong>bit</strong>, <strong>byte</strong> y los múltiplos binarios: 1 byte = 8 bits y 1 KiB = 2<sup>10</sup> bytes.</p>
+</div>
+</details>
+::::
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 2. ¿Cuántos bits para los 10 dígitos?
+[●]{.exercise-difficulty}
+:::
+
+**Enunciado.** ¿Cuántos bits necesitas para codificar los 10 dígitos numéricos?
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<p>Con 3 bits solo hay 2<sup>3</sup> = 8 combinaciones, que no bastan. Con 4 bits hay 2<sup>4</sup> = 16. Por tanto, necesitamos <strong>4 bits</strong>.</p>
+</div>
+</details>
+::::
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 3. Símbolos con 3 bits
+[●]{.exercise-difficulty}
+:::
+
+**Enunciado.** ¿Cuántos símbolos diferentes puedes codificar con 3 bits?
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<p>2<sup>3</sup> = <strong>8 símbolos</strong>. La asignación mostrada en el material es 000→A, 001→B, 010→C, 011→D, 100→E, 101→F, 110→G y 111→H.</p>
+</div>
+</details>
+::::
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 4. Codifica “Happy”
+[●●]{.exercise-difficulty}
+:::
+
+**Enunciado.** ¿De qué forma podrías codificar el mensaje “Happy” si solo necesitas distinguir H, A, P e Y?
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<p>Una codificación posible, como en las diapositivas, es H→00, A→01, P→10 e Y→11. Entonces HAPPY se representa como <strong>00 01 10 10 11</strong>.</p>
+</div>
+</details>
+::::
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 5. “Fibra de 100 Megas” y 1 GByte
+[●●]{.exercise-difficulty}
+:::
+
+**Enunciado.** ¿Qué quiere decir que tengo fibra de 100 Megas? ¿Cuánto tardaría en bajarme el último capítulo de “Watchmen” si ocupa 1 GByte?
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<p>En este contexto, 100 “Megas” significa 100 Mbit/s. Usando los prefijos decimales del SI, 1 GByte = 8 Gbit. Por tanto:</p>
+<div class="solution-formula">t = 8 Gbit / 100 Mbit/s = <strong>80 s</strong></div>
+</div>
+</details>
+::::
+
+:::::
+
+::: {.resource-line}
+**Para saber más.** El material propone la leyenda de Sissa y el tablero de ajedrez como introducción a las potencias de 2: [leer el recurso](https://matematicascercanas.com/2014/03/10/la-leyenda-del-tablero-de-ajedrez-y-los-granos-de-trigo/).
+:::
+::::::
+
+:::::: {.lesson-section}
+## CPU, buses, ejecución y prestaciones
+
+Las diapositivas continúan con preguntas de comprensión y tres problemas sobre tiempo de ejecución, buses y prestaciones.
+
+::::: {.exercise-list}
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 6. Dudas que surgen de las lecciones
+[●●]{.exercise-difficulty}
+:::
+
+**Enunciado.** ¿Qué es un MFLOP? ¿Cuál es la diferencia con MIPS? ¿Qué es una operación en coma flotante? ¿Qué es la longitud de palabra de una memoria?
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<p>Como guía de comprobación: MIPS cuenta millones de instrucciones máquina por segundo; MFLOPS cuenta millones de operaciones en coma flotante por segundo. La longitud de palabra expresa cuántos bits forman una palabra de trabajo o transferencia en el modelo utilizado en el tema.</p>
+</div>
+</details>
+::::
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 7. Tiempo de ejecución de un programa
+[●●]{.exercise-difficulty}
+:::
+
+**Enunciado.** Un procesador tarda 4 ciclos por término medio en ejecutar cada instrucción y funciona a 1 GHz. ¿Cuánto tarda en ejecutar 10.000 instrucciones?
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<div class="solution-formula">t = (10.000 × 4) / 10<sup>9</sup> s = <strong>40 μs</strong></div>
+</div>
+</details>
+::::
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 8. Medidas de los buses de comunicación
+[●●●]{.exercise-difficulty}
+:::
+
+**Enunciado.** Un computador tiene una capacidad máxima de memoria de 32 Mbytes y está organizado en palabras de 32 bits.
+
+1. ¿Cuántos bits tiene la memoria en total?
+2. ¿Cuál es el ancho de los buses de datos y de direcciones?
+3. Si el ancho de banda de la memoria es 200 MBytes/s, ¿qué velocidad de transferencia debe admitir cada hilo del bus de datos?
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<p><strong>a)</strong> 32 Mbytes × 8 bits/byte = <strong>256 Mbits</strong>.</p>
+<p><strong>b)</strong> El bus de datos tiene <strong>32 bits</strong>. Cada palabra ocupa 4 bytes; 32 Mbytes = 2<sup>25</sup> bytes y, por tanto, hay 2<sup>23</sup> palabras. El bus de direcciones necesita <strong>23 bits</strong>.</p>
+<p><strong>c)</strong> 200 MBytes/s × 8 bits/byte repartidos entre 32 hilos = <strong>50 Mbit/s por hilo</strong>.</p>
+</div>
+</details>
+::::
+
+:::: {.exercise-item}
+::: {.exercise-heading}
+### 9. Medidas de prestaciones de un procesador
+[●●]{.exercise-difficulty}
+:::
+
+**Enunciado.** Un programa de prueba se ejecuta a 100 MIPS y tarda 35 segundos. Si cada instrucción consume por término medio 6 ciclos de reloj:
+
+1. Obtén la frecuencia de reloj.
+2. Obtén el número de instrucciones ejecutadas.
+
+<details class="exercise-solution">
+<summary>Resolución</summary>
+<div class="resolution-body">
+<p><strong>a)</strong> f = MIPS × CPI × 10<sup>6</sup> = 100 × 6 × 10<sup>6</sup> = <strong>600 MHz</strong>.</p>
+<p><strong>b)</strong> 100 millones de instrucciones/s × 35 s = <strong>3.500 millones de instrucciones</strong>.</p>
+</div>
+</details>
+::::
+
+:::::
+::::::
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+Ejercicios
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Lección 1.7](07-software.html)
+
+[Índice del tema →](../../index.html)
+:::

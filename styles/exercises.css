@@ -1,0 +1,35 @@
+/* Tema 1 · ejercicios. Enunciado siempre visible; solo la resolución se despliega. */
+.exercise-sheet{min-height:0}
+.exercise-list{display:grid;gap:12px;margin-top:17px}
+.exercise-item{padding:13px 14px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(244,229,213,.32)}
+.exercise-item+.exercise-item{margin-top:-1px}
+.exercise-heading{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:7px}
+.exercise-heading h3{margin:0;font-size:16px;line-height:1.12;font-weight:700;color:var(--ink)}
+.exercise-heading h3::first-letter{color:var(--accent-text)}
+.exercise-difficulty{font-size:11px;letter-spacing:.12em;color:var(--accent-text);white-space:nowrap}
+.exercise-item>p{margin:0 0 9px;font-size:14.5px;line-height:1.28}
+.exercise-item>ol{margin:7px 0 10px;padding-left:22px}
+.exercise-item>ol li{margin:4px 0;font-size:14.5px;line-height:1.25}
+.exercise-solution{margin-top:10px;border-top:1px solid var(--line)}
+.exercise-solution summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:9px 1px 4px;color:var(--accent-text);font-size:12.5px;font-weight:700;letter-spacing:.025em}
+.exercise-solution summary::-webkit-details-marker{display:none}
+.exercise-solution summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border:1px solid rgba(169,69,42,.35);border-radius:50%;font-size:15px;line-height:1;font-weight:400}
+.exercise-solution[open] summary::before{content:"−"}
+.exercise-solution summary::after{content:"mostrar";margin-left:auto;font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(19,42,58,.5)}
+.exercise-solution[open] summary::after{content:"ocultar"}
+.exercise-solution summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+.resolution-body{margin-top:6px;padding:11px 13px;background:var(--paper);border-left:3px solid var(--accent)}
+.resolution-body p{font-size:14px;line-height:1.24;margin:0 0 7px}.solution p:last-child{margin-bottom:0}
+.solution-formula{text-align:center;font-size:16px;margin-top:8px;padding:7px 5px;background:var(--soft)}
+.resource-line{margin-top:16px!important;padding-top:10px;border-top:1px solid var(--line);font-size:13px!important}.resource-line a{color:var(--accent-text);text-decoration-thickness:1px;text-underline-offset:2px}
+.inline-solution{margin-top:11px;border-top:1px solid var(--line)}
+.inline-solution summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:9px 2px;color:var(--accent-text);font-size:13px;font-weight:700}
+.inline-solution summary::-webkit-details-marker{display:none}
+.inline-solution summary::before{content:"+";font-size:18px;font-weight:400;line-height:1}
+.inline-solution[open] summary::before{content:"−"}
+.inline-solution summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+.inline-solution .worked-example{margin-top:7px}
+.inline-solution .answer-strip{margin-bottom:2px}
+.book-index .exercise-link{margin-top:12px;background:rgba(244,229,213,.42);padding-left:8px;padding-right:8px}
+.book-index .exercise-link .lesson-number{font-family:var(--hand);font-size:19px}
+@media (max-width:620px){.exercise-item{padding-left:11px;padding-right:11px}.exercise-heading{gap:8px}.exercise-difficulty{font-size:10px}}

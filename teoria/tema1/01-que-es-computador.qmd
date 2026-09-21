@@ -1,0 +1,100 @@
+---
+title: "Lección 1.1 · ¿Qué es un computador?"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .lesson-1-1}
+
+:::::: {.running-head}
+Tema 1 · Introducción a los computadores
+
+1.1 ¿Qué es un computador?
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+LECCIÓN 1.1
+:::::
+
+# ¿Qué es realmente<br>un computador?
+
+::::: {.deck}
+¿Qué ocurre entre los datos que introducimos y el resultado que recibimos, y qué hace que ese proceso pueda realizarse automáticamente?
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+:::::: {.lesson-section .discipline-section}
+## 1. Informática: tratar información automáticamente
+
+La Informática reúne los conocimientos científicos y las técnicas que hacen posible el **tratamiento automático de la información** mediante computadores electrónicos.
+
+::::: {.discipline-layout}
+:::: {.discipline-flow .soft-panel}
+[**Información**]{.flow-term} [→]{.flow-arrow} [*tratamiento automático*]{.flow-process} [→]{.flow-arrow} [**Información**]{.flow-term}
+::::
+
+:::: {.annotation-note .distinction-note}
+La Informática es la disciplina.  
+El computador es la máquina.
+::::
+:::::
+::::::
+
+:::::: {.lesson-section .machine-section}
+## 2. Un computador recibe, transforma y devuelve
+
+Un computador es una máquina capaz de aceptar datos de entrada, efectuar con ellos operaciones lógicas y aritméticas y proporcionar la información resultante a través de una salida.
+
+{{< include ../../components/tema1/_computer-figure.qmd >}}
+::::::
+
+:::::: {.lesson-section .program-section}
+## 3. El programa dirige el proceso
+
+El tratamiento se realiza sin la intervención continua de un operador humano y bajo el control de un **programa de instrucciones previamente almacenado** en el propio computador.
+
+::::: {.program-layout}
+:::: {.program-steps}
+1. **Entrada.** Llegan los datos sobre los que se va a trabajar.
+2. **Proceso.** El programa determina qué operaciones debe efectuar la máquina.
+3. **Salida.** El computador devuelve la información resultante.
+::::
+
+:::: {.annotation-note .program-note}
+Automático no significa “sin instrucciones”: significa que la máquina sigue el programa sin que una persona dirija cada operación.
+::::
+:::::
+::::::
+
+:::::: {.lesson-section .model-section}
+## 4. El modelo que usaremos a partir de ahora
+
+Para entender un computador iremos abriendo poco a poco esta caja: primero veremos cómo representa la información, después qué componentes contiene y finalmente cómo cooperan para ejecutar un programa.
+
+::::: {.rule-band .model-rule}
+[**datos + instrucciones**]{.rule-term} [→]{.rule-arrow} [**computador**]{.rule-term} [→]{.rule-arrow} [**resultado**]{.rule-term}
+:::::
+
+::::: {.bridge-question}
+La siguiente pregunta es inevitable: **¿cómo representa internamente todos esos datos e instrucciones?**
+:::::
+::::::
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+4
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Índice](../../index.html)
+
+[Lección 1.2 →](02-representacion.html)
+:::

@@ -1,0 +1,165 @@
+---
+title: "Lección 1.2 · ¿Cómo representa la información?"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .lesson-1-2}
+
+:::::: {.running-head}
+Tema 1 · Introducción a los computadores
+
+1.2 Representación de la información
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+LECCIÓN 1.2
+:::::
+
+# ¿Cómo representa<br>la información?
+
+::::: {.deck}
+¿Cómo puede un computador representar una letra, una fotografía o una canción utilizando únicamente dos estados?
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+:::::: {.lesson-section .states-section}
+## 1. Dos estados, muchas posibilidades
+
+Un circuito digital solo puede encontrarse en dos estados distintos, que representamos como 0 y 1. A partir de estos dos estados podemos construir toda la información.
+
+::::: {.states-layout}
+{{< include ../../components/tema1/_states-figure.qmd >}}
+
+:::: {.annotation-note}
+Con solo  
+dos estados  
+podemos  
+representar  
+todo tipo de  
+información.
+::::
+:::::
+::::::
+
+:::::: {.lesson-section .bits-section}
+## 2. El bit y las combinaciones
+
+Un bit (*binary digit*) es la unidad mínima de información y puede tomar dos valores: 0 o 1. Si combinamos varios bits, podemos representar muchas más posibilidades.
+
+::::: {.bits-figure}
+:::: {.bit-card}
+### 1 bit
+
+::: {.bit-subtitle}
+2 combinaciones
+:::
+
+::: {.bit-values .bit-values-1}
+[0]{.bit-cell} [1]{.bit-cell}
+:::
+::::
+
+:::: {.bit-card}
+### 2 bits
+
+::: {.bit-subtitle}
+4 combinaciones
+:::
+
+::: {.bit-values .bit-values-2}
+[00]{.bit-cell} [01]{.bit-cell} [10]{.bit-cell} [11]{.bit-cell}
+:::
+::::
+
+:::: {.bit-card .bit-card-3}
+### 3 bits
+
+::: {.bit-subtitle}
+8 combinaciones
+:::
+
+::: {.bit-values .bit-values-3}
+[000]{.bit-cell} [001]{.bit-cell} [010]{.bit-cell} [011]{.bit-cell} [100]{.bit-cell} [101]{.bit-cell} [110]{.bit-cell} [111]{.bit-cell}
+:::
+::::
+:::::
+
+::::: {.rule-band}
+Con **n bits** podemos representar **2^n^ combinaciones**.
+:::::
+::::::
+
+:::::: {.lesson-section .units-section}
+## 3. Del bit al byte y a las unidades
+
+Un grupo de **8 bits** forma un **byte**. A partir del byte se expresan capacidades mayores.
+
+::::: {.rule-band}
+**1 byte = 8 bits**
+:::::
+
+Las diapositivas distinguen dos familias de prefijos. Los múltiplos **decimales** están propuestos por el **Sistema Internacional (SI)**; los múltiplos **binarios**, por la **IEC**.
+
+::::: {.unit-comparison}
+:::: {.unit-system .soft-panel}
+### Decimal · SI
+
+**1 kB = 10^3^ bytes**  
+**1 MB = 10^6^ bytes**  
+**1 GB = 10^9^ bytes**
+::::
+
+:::: {.unit-system .soft-panel}
+### Binario · IEC
+
+**1 KiB = 2^10^ bytes**  
+**1 MiB = 2^20^ bytes**  
+**1 GiB = 2^30^ bytes**
+::::
+:::::
+::::::
+
+:::::: {.lesson-section .explorer-section}
+## 4. Explorador interactivo
+
+Mueve el deslizador y observa todas las combinaciones posibles de *n* bits.
+
+{{< include ../../components/tema1/_bit-explorer.qmd >}}
+::::::
+
+:::::: {.lesson-section .inverse-section}
+## 5. ¿Cuántos bits necesito?
+
+Si quiero representar *N* elementos distintos, necesito el menor número *n* de bits tal que 2^n^ ≥ N. Matemáticamente:
+
+::::: {.inverse-layout}
+:::: {.inverse-formula}
+[*n*]{.math-n} [=]{.equals} [⌈]{.ceil} [log~2~]{.log} [*N*]{.math-N} [⌉]{.ceil}
+::::
+
+:::: {.annotation-note .inverse-note}
+Primero la intuición,  
+después la fórmula.
+::::
+:::::
+::::::
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+5
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Lección 1.1](01-que-es-computador.html)
+
+[Lección 1.3 →](03-componentes.html)
+:::

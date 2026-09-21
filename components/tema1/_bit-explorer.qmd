@@ -1,0 +1,11 @@
+```{=html}
+<figure class="explorer-figure" aria-label="Explorador interactivo de combinaciones binarias">
+  <div class="explorer-panel">
+    <div class="explorer-control-row"><label for="bit-range"><strong>Número de bits:</strong></label><span class="bit-count" id="bit-count">3</span><input class="explorer-range" id="bit-range" type="range" min="1" max="4" step="1" value="3" aria-describedby="explorer-status"></div>
+    <div class="combination-grid" id="combination-grid" aria-label="8 combinaciones de 3 bits"><b>000</b><b>001</b><b>010</b><b>011</b><b>100</b><b>101</b><b>110</b><b>111</b></div>
+  </div>
+  <div class="total-panel"><small>Total de combinaciones:</small><div class="total-burst"><i class="ray r1" aria-hidden="true"></i><i class="ray r2" aria-hidden="true"></i><i class="ray r3" aria-hidden="true"></i><i class="ray r4" aria-hidden="true"></i><i class="ray r5" aria-hidden="true"></i><i class="ray r6" aria-hidden="true"></i><strong id="combination-total">8</strong></div><span>(2<sup id="combination-exponent">3</sup>)</span></div>
+</figure>
+<output class="sr-only" id="explorer-status" for="bit-range" aria-live="polite">3 bits: 8 combinaciones.</output>
+<script src="../../assets/book.js"></script>
+```

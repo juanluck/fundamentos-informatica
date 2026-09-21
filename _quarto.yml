@@ -1,0 +1,53 @@
+project:
+  type: book
+  output-dir: _site
+  resources:
+    - assets/**
+    - styles/**
+
+book:
+  title: "Fundamentos de Informática"
+  author: "Juan Luis Jiménez"
+  chapters:
+    - index.qmd
+    - part: "PARTE I · TEORÍA"
+      chapters:
+        - teoria/tema1/01-que-es-computador.qmd
+        - teoria/tema1/02-representacion.qmd
+        - teoria/tema1/03-componentes.qmd
+        - teoria/tema1/04-comunicacion.qmd
+        - teoria/tema1/05-ejecucion.qmd
+        - teoria/tema1/06-tipos.qmd
+        - teoria/tema1/07-software.qmd
+        - teoria/tema1/ejercicios.qmd
+        - teoria/tema1/tarjetas.qmd
+        - teoria/tema1/recursos.qmd
+    - part: "PARTE II · PRÁCTICAS"
+      chapters:
+        - practicas/index.qmd
+  page-navigation: false
+  search: false
+
+format:
+  html:
+    theme: none
+    minimal: true
+    css:
+      - styles/book.css
+      - styles/tema1.css
+      - styles/exercises.css
+      - styles/navigation.css
+      - styles/markdown-refactor.css
+      - styles/resources.css
+    include-after-body:
+      - assets/navigation.html
+    toc: false
+    number-sections: false
+    anchor-sections: false
+    page-layout: full
+    title-block-style: none
+
+execute:
+  freeze: auto
+
+lang: es

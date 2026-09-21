@@ -1,0 +1,196 @@
+/* Markdown-first authoring bridge for approved lessons 1.1 and 1.2.
+   The visual system remains unchanged; these rules only normalize the HTML
+   that Pandoc generates from semantic Markdown/fenced divs. */
+
+.running-head > p,
+.running-foot > p,
+.deck > p,
+.annotation-note > p,
+.rule-band > p,
+.bridge-question > p,
+.lesson-nav > p,
+.kicker > p,
+.bit-subtitle > p{
+  margin:0;
+}
+
+.running-head > p:last-child,
+.running-foot > p:last-child{
+  text-align:right;
+}
+
+/* Opening blocks authored as Quarto fenced divs. */
+.kicker{display:block}
+.deck{display:block}
+
+/* 1.1 · Markdown-generated layout wrappers */
+.discipline-flow > p{
+  display:contents;
+}
+.discipline-flow .flow-term{
+  font-size:16px;
+  color:var(--ink);
+}
+.discipline-flow .flow-process{
+  font-size:15px;
+  line-height:1.12;
+  color:var(--ink);
+}
+.discipline-flow .flow-arrow{
+  font-size:22px;
+  color:var(--accent);
+}
+.discipline-flow .flow-process em{
+  font-style:normal;
+}
+
+.program-steps{
+  display:block;
+}
+.program-steps ol{
+  list-style:none;
+  counter-reset:program-step;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:9px;
+}
+.program-steps li{
+  counter-increment:program-step;
+  position:relative;
+  display:block;
+  min-height:30px;
+  padding:0 0 8px 40px;
+  border-bottom:1px solid var(--line);
+  font-size:15px;
+  line-height:1.2;
+}
+.program-steps li:last-child{
+  border-bottom:0;
+  padding-bottom:0;
+}
+.program-steps li::before{
+  content:counter(program-step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:30px;
+  font-size:25px;
+  line-height:.95;
+  font-weight:600;
+  color:var(--accent-text);
+}
+.program-steps li > p{
+  margin:0;
+}
+.program-steps li strong{
+  font-weight:700;
+}
+
+.model-rule{
+  display:block;
+}
+.model-rule > p{
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:11px;
+}
+.model-rule .rule-term{
+  color:var(--ink);
+  font-size:16px;
+}
+.model-rule .rule-arrow{
+  color:var(--accent);
+  font-size:22px;
+  line-height:1;
+}
+
+/* 1.2 · Bit cards now authored with Markdown headings/spans. */
+.bit-card h3{
+  margin:0;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.03;
+  letter-spacing:-.01em;
+  color:var(--accent-text);
+}
+.bit-subtitle{
+  margin:2px 0 13px;
+  font-size:12.5px;
+  font-weight:600;
+  line-height:1.03;
+  color:var(--ink);
+}
+.bit-values > p{
+  display:contents;
+}
+.bit-values .bit-cell{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:30px;
+  background:var(--paper);
+  border:1px solid #EADAC9;
+  border-radius:4px;
+  color:var(--ink);
+  font-size:15px;
+  font-weight:700;
+  line-height:1;
+  box-shadow:0 1px 0 rgba(19,42,58,.03);
+}
+.bit-values-3 .bit-cell{
+  height:26px;
+  font-size:12.5px;
+  padding:0 2px;
+}
+
+.inverse-formula > p{
+  display:contents;
+  margin:0;
+}
+.inverse-formula .math-n em,
+.inverse-formula .math-N em{
+  font-style:italic;
+}
+
+/* Keep Markdown navigation visually identical to the previous raw HTML. */
+.lesson-nav > p{
+  display:block;
+}
+
+@media (max-width:620px){
+  .model-rule > p{
+    flex-wrap:wrap;
+  }
+}
+
+
+/* 1.2 · source units restored from the original slides. */
+.unit-comparison{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:14px;
+}
+.unit-system{
+  padding:12px 14px;
+}
+.unit-system h3{
+  margin:0 0 8px;
+  font-size:15px;
+  line-height:1.1;
+  color:var(--accent-text);
+}
+.unit-system p{
+  margin:0;
+  font-size:13.5px;
+  line-height:1.45;
+}
+.source-term-note{
+  margin-top:14px;
+}
+@media (max-width:620px){
+  .unit-comparison{grid-template-columns:1fr}
+}
