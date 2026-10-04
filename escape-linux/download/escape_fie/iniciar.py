@@ -40,7 +40,7 @@ def bar(progress):
     return "█" * k + "░" * (n - k)
 
 
-def box(title, lines, progress, footer="Esperando cambios en el sistema..."):
+def box(title, lines, progress, footer="Trabaja en otra terminal; esta consola comprobará tus cambios."):
     global LAST_SCROLL_SCREEN
     wrapped = []
     for raw in lines:
@@ -54,7 +54,7 @@ def box(title, lines, progress, footer="Esperando cambios en el sistema..."):
         screen = (title, tuple(wrapped), progress, footer, columns, rows)
         if screen != LAST_SCROLL_SCREEN:
             print(f"\n--- {title} · {int(progress * 100)} % ---")
-            print("Ventana pequeña: desplázate para leer; las instrucciones se conservan.")
+            print("La ventana es pequeña. Puedes desplazarte para leer todas las instrucciones.")
             print("\n".join(wrapped))
             print(footer, flush=True)
             LAST_SCROLL_SCREEN = screen
@@ -120,10 +120,10 @@ def render_lesson(content, detail=None, hint=None, previous=None):
         lines += ["PISTA: " + hint]
     lines += [
         "", "COMPRUEBA", *content["verification"],
-        "", "ESTADO", detail or "Esperando a que completes el objetivo.",
+        "", "ESTADO", detail or "El objetivo está pendiente. La consola avanzará cuando lo completes.",
     ]
     if previous:
-        lines += ["✓ Último avance: " + previous]
+        lines += ["✓ " + previous]
     return lines + ["", "PARA AMPLIAR", content["manuals"]]
 
 
@@ -149,7 +149,7 @@ def completed(msg):
 
 def has_dirs():
     if not REC.exists():
-        return False, f"No existe todavía: {REC}"
+        return False, "Aún no existe la carpeta FIE_RECOVERY en tu directorio personal."
     needed = ["documentos", "informes", "sistema"]
     missing = [n for n in needed if not (REC / n).is_dir()]
     wrong_case = []
@@ -161,18 +161,18 @@ def has_dirs():
     except OSError:
         pass
     if wrong_case:
-        return False, "Hay un nombre con mayúsculas/minúsculas incorrectas. Linux las distingue."
+        return False, "Revisa las mayúsculas: los nombres de las tres carpetas deben estar en minúsculas."
     if missing:
-        return False, "Faltan: " + ", ".join(missing)
+        return False, "Todavía faltan estas carpetas: " + ", ".join(missing) + "."
     return True, None
 
 
 def copied_state():
     dst = REC / "sistema" / "estado_inicial.txt"
     if not dst.exists():
-        return False, "Aún no se ha detectado estado_inicial.txt"
+        return False, "Aún no aparece estado_inicial.txt en la carpeta sistema."
     if not same_file(FRAG / "estado.txt", dst):
-        return False, "estado_inicial.txt existe, pero su contenido no coincide con estado.txt"
+        return False, "La copia existe, pero su contenido no coincide con estado.txt. Revisa el archivo que has copiado."
     return True, None
 
 
@@ -182,13 +182,13 @@ def docs_copied():
     present = {p.name for p in d.glob("*.txt")} if d.exists() else set()
     missing = expected - present
     if missing:
-        return False, f"Documentos .txt recuperados: {len(expected)-len(missing)}/{len(expected)}"
+        return False, f"Se han encontrado {len(expected)-len(missing)} de los {len(expected)} documentos .txt que debes copiar."
     return True, None
 
 
 def obsolete_removed():
     p = REC / "documentos" / "estado_old.txt"
-    return (not p.exists(), "estado_old.txt continúa en documentos/" if p.exists() else None)
+    return (not p.exists(), "La copia estado_old.txt sigue en documentos. Aún debes eliminarla." if p.exists() else None)
 
 
 def system_files_ok():
@@ -200,11 +200,11 @@ def system_files_ok():
     ok_mem = "MemTotal:" in mem and "MemFree:" in mem
     ok_ver = "Linux version" in ver
     pending = []
-    if not ok_cpu: pending.append("cpu.txt ← /proc/cpuinfo")
-    if not ok_mem: pending.append("memoria.txt ← /proc/meminfo")
-    if not ok_ver: pending.append("version.txt ← /proc/version")
+    if not ok_cpu: pending.append("cpu.txt")
+    if not ok_mem: pending.append("memoria.txt")
+    if not ok_ver: pending.append("version.txt")
     if pending:
-        return False, "Pendiente: " + " | ".join(pending)
+        return False, "Faltan copias válidas de estos archivos: " + ", ".join(pending) + "."
     return True, None
 
 
@@ -217,7 +217,8 @@ def unlock_odt():
 def dossier_read():
     # Confirmación de lectura desde otra terminal; no se intenta detectar
     # la apertura de Writer ni se solicita una respuesta dentro de Python.
-    return (REC / "sistema" / "expediente_leido.txt").is_file(), None
+    return ((REC / "sistema" / "expediente_leido.txt").is_file(),
+            "Puedes leer sin prisa. Falta crear el archivo que confirma la lectura.")
 
 
 def grep_tutorial_ok():
@@ -226,7 +227,7 @@ def grep_tutorial_ok():
     got = text(out).splitlines()
     if got == src_lines:
         return True, None
-    return False, "Genera sistema/errores.txt con las líneas que contienen ERROR."
+    return False, "errores.txt aún no contiene las líneas esperadas. Revisa la búsqueda y la ruta de destino."
 
 
 def find_tutorial_ok():
@@ -235,7 +236,7 @@ def find_tutorial_ok():
     expected = {p.name for p in REPORTS.glob("*.enc")}
     if got == expected and expected:
         return True, None
-    return False, f"cifrados.txt debe listar los {len(expected)} ficheros .enc del paquete."
+    return False, f"La lista todavía no incluye correctamente los {len(expected)} archivos .enc. Revisa la búsqueda."
 
 
 def pipe_tutorial_ok():
@@ -246,7 +247,7 @@ def pipe_tutorial_ok():
         got = -1
     if got == expected:
         return True, None
-    return False, "numero_errores.txt debe contener únicamente el número de líneas ERROR."
+    return False, "El recuento aún no es correcto o no está guardado en numero_errores.txt."
 
 
 def boss_index_ok():
@@ -254,7 +255,7 @@ def boss_index_ok():
     lines = [l.strip() for l in text(REC / "informes" / "indice.txt").splitlines() if l.strip()]
     if lines == [target] or any(target in l for l in lines):
         return True, target
-    return False, "Busca FINAL_REPORT en los registros y guarda el resultado en informes/indice.txt."
+    return False, "La referencia al informe todavía no aparece en indice.txt. Revisa la búsqueda y dónde guardas el resultado."
 
 
 def final_ok():
@@ -263,181 +264,165 @@ def final_ok():
     if "HE COMPLETADO EL RETO" in t and "mochila del profesor" in t:
         return True, None
     if p.exists():
-        return False, "informe_final.txt existe, pero no parece haberse descifrado correctamente."
-    return False, "Esperando informe_final.txt..."
+        return False, "El archivo de destino existe, pero no contiene el informe esperado. Revisa la contraseña y el archivo de origen."
+    return False, "Todavía no se ha creado informe_final.txt en la carpeta informes."
 
 
 def main():
-    wait_until(lambda: (REC.is_dir(), None), "CONSOLA DE RECUPERACIÓN", lesson(
+    wait_until(lambda: (REC.is_dir(), "Aún no existe la carpeta FIE_RECOVERY."),
+               "CONSOLA DE RECUPERACIÓN", lesson(
         [("UBICACIÓN QUE DEBES CREAR", REC)],
-        ["Reconstruye el sistema para localizar el respaldo físico.",
-         "Primero crea el directorio indicado. Trabaja en otra terminal."],
-        ["mkdir ensayo crea una carpeta llamada ensayo en el directorio actual.",
-         "pwd muestra dónde estás; ls lista el contenido; ~ es tu HOME.",
-         "Consulta man mkdir: flechas/espacio para avanzar, /palabra para buscar,",
-         "n para la siguiente coincidencia y q para salir del manual."],
-        ["Debe aparecer FIE_RECOVERY en tu HOME. La consola lo detectará."],
-        "man mkdir, man pwd y man ls. Ejecuta cada consulta por separado."
-    ), 0.0, ["Piensa qué comando crea un directorio nuevo."])
-    completed("DIRECTORIO DE RECUPERACIÓN DETECTADO")
+        ["Crea en tu directorio personal la carpeta FIE_RECOVERY. Allí irás reconstruyendo los archivos del proyecto."],
+        ["Deja esta consola abierta y trabaja en otra terminal. El comando mkdir crea una carpeta; por ejemplo:",
+         "  mkdir ensayo",
+         "La carpeta se crea donde estés situado. Puedes comprobar esa ubicación con pwd y cambiarla con cd. El símbolo ~ representa tu directorio personal."],
+        ["Utiliza ls para comprobar que FIE_RECOVERY aparece dentro de tu directorio personal."],
+        "Consulta man mkdir. Usa las flechas para leer, /palabra para buscar y q para salir."
+    ), 0.0, ["Puedes volver a tu directorio personal con cd ~ antes de crear la carpeta."])
+    completed("La carpeta de recuperación ya está creada.")
 
     wait_until(has_dirs, "FASE 1 · RECONSTRUCCIÓN", lesson(
         [("UBICACIÓN DONDE DEBES CREAR LAS CARPETAS", REC)],
-        ["Crea dentro de esa ubicación: documentos/, informes/ y sistema/."],
-        ["mkdir uno dos crea dos carpetas; cd cambia el directorio de trabajo.",
-         "Una ruta relativa se interpreta desde el directorio actual.",
-         "Linux distingue mayúsculas y minúsculas: sistema no es Sistema."],
-        ["Usa pwd para orientarte y ls para comprobar que están las tres."],
-        "man mkdir; para cd, utiliza help cd en Bash."
-    ), 0.10, ["Puedes crear varios directorios con mkdir."])
-    completed("ESTRUCTURA BÁSICA RESTAURADA")
+        ["Crea tres carpetas dentro de FIE_RECOVERY: documentos, informes y sistema."],
+        ["Entra con cd en FIE_RECOVERY y utiliza mkdir para crear las tres carpetas. Puedes hacerlo en una sola orden, indicando sus nombres separados por espacios.",
+         "Escribe los nombres en minúsculas: para Linux, sistema y Sistema son carpetas distintas."],
+        ["Ejecuta ls dentro de FIE_RECOVERY. Deben aparecer las tres carpetas, cada una con su nombre correcto."],
+        "Consulta man mkdir. Para saber más sobre cd, utiliza help cd."
+    ), 0.10, ["Por ejemplo, mkdir fotos videos crea dos carpetas en la ubicación actual."])
+    completed("Las tres carpetas del proyecto están preparadas.")
 
     wait_until(copied_state, "FASE 1 · RECUPERAR ESTADO", lesson(
         [("ORIGEN · de dónde partimos", FRAG / "estado.txt"),
          ("DESTINO · dónde debe quedar", REC / "sistema" / "estado_inicial.txt")],
-        ["Copia el archivo del origen al destino con el nuevo nombre."],
-        ["cp notas.txt copia.txt conserva el original y crea una copia.",
-         "Primer argumento: origen. Segundo: destino y su nuevo nombre.",
-         "Revisa las mayúsculas: estado.txt no es Estado.txt."],
-        ["Lee la copia con cat: cambia su nombre, no la información."],
-        "man cp y man cat."
-    ), 0.18, ["Necesitas copiar un fichero y cambiar su nombre en el destino."])
-    completed("ESTADO INICIAL VERIFICADO")
+        ["Copia estado.txt en la carpeta sistema y guarda la copia con el nombre estado_inicial.txt."],
+        ["El comando cp necesita dos rutas: la del archivo original y la de la copia que quieres crear. Por ejemplo:",
+         "  cp notas.txt copia.txt",
+         "Este comando crea copia.txt con el mismo contenido y conserva notas.txt. Adapta el ejemplo a las rutas indicadas arriba."],
+        ["Lee la copia con cat seguido de su ruta. Debe contener el mismo texto que estado.txt, aunque tenga otro nombre."],
+        "Consulta man cp y man cat para conocer sus opciones."
+    ), 0.18, ["En la segunda ruta debes incluir el nuevo nombre del archivo."])
+    completed("La copia del estado inicial tiene el contenido correcto.")
 
     wait_until(docs_copied, "FASE 1 · DOCUMENTACIÓN", lesson(
         [("ORIGEN · de dónde partimos", FRAG),
          ("DESTINO · dónde debe quedar", REC / "documentos")],
-        ["Copia TODOS los archivos .txt del origen al directorio de destino."],
-        ["* representa cualquier secuencia de caracteres; ? uno solo.",
-         "Ejemplo: ls *.txt lista los nombres terminados en .txt.",
-         "El shell expande el patrón antes de ejecutar el comando."],
-        ["Con ls en el destino verás las copias; los originales se conservan."],
-        "man cp; man bash, busca /Pathname Expansion."
-    ), 0.26, ["Los comodines permiten seleccionar muchos ficheros: piensa en *.txt"])
-    completed("DOCUMENTACIÓN RECUPERADA")
+        ["Copia todos los archivos terminados en .txt de fragmentos a documentos. Conserva sus nombres."],
+        ["Puedes seleccionar varios archivos con un comodín. El asterisco * representa cualquier secuencia de caracteres; por eso, *.txt selecciona los nombres que terminan en .txt.",
+         "Prueba ls con ese patrón para ver qué archivos selecciona. Después utiliza cp con el mismo patrón y la carpeta de destino."],
+        ["Consulta con ls la carpeta documentos: deben aparecer las copias de todos los .txt. Los archivos originales deben seguir en fragmentos."],
+        "Consulta man cp. El manual man bash también explica los comodines."
+    ), 0.26, ["Cuando copias varios archivos, el destino debe ser una carpeta que ya exista."])
+    completed("Los documentos de texto ya se han recuperado.")
 
     wait_until(obsolete_removed, "FASE 1 · DEPURACIÓN", lesson(
         [("ARCHIVO QUE DEBES ELIMINAR", REC / "documentos" / "estado_old.txt")],
-        ["Elimina esta copia obsoleta del sistema reconstruido."],
-        ["rm copia.txt elimina ese archivo; no lo envía a la papelera.",
-         "Comprueba el nombre con ls antes de eliminarlo."],
-        ["Con ls verás que desaparece solo esa copia; las demás deben seguir."],
-        "man rm."
-    ), 0.34, ["rm elimina ficheros. Comprueba bien la ruta antes de usarlo."])
-    completed("FASE 1 COMPLETADA")
+        ["Elimina estado_old.txt de la carpeta documentos: es una versión antigua que ya no necesitamos."],
+        ["El comando rm elimina el archivo cuya ruta le indiques. Por ejemplo, rm copia.txt borra ese archivo de la carpeta actual.",
+         "Revisa bien el nombre antes de ejecutarlo: rm no envía los archivos a la papelera."],
+        ["Vuelve a listar documentos con ls. estado_old.txt debe haber desaparecido y los demás archivos deben seguir allí."],
+        "Consulta man rm para conocer las opciones de borrado."
+    ), 0.34, ["Borra la copia de documentos, no el archivo original de fragmentos."])
+    completed("La copia antigua se ha eliminado.")
 
     wait_until(system_files_ok, "FASE 2 · IDENTIFICACIÓN", lesson(
         [("ORIGEN · de dónde partimos", Path("/proc")),
          ("DESTINO · dónde debe quedar", REC / "sistema")],
-        ["Copia estos archivos, conservando la correspondencia de nombres:",
-         "cpuinfo → cpu.txt; meminfo → memoria.txt; version → version.txt."],
-        ["/proc es virtual: el kernel ofrece datos sobre el sistema.",
-         "cat muestra esos datos; cp guarda una instantánea.",
-         "La CPU, la memoria y la versión del kernel documentan el equipo."],
-        ["Lee las copias con cat: MemTotal da la memoria total en kB;",
-         "model name identifica la CPU. La memoria varía con el tiempo."],
-        "man proc, man cat y man cp."
-    ), 0.42, ["Los ficheros de /proc pueden copiarse igual que cualquier fichero de texto."])
-    completed("EQUIPO IDENTIFICADO")
+        ["Guarda información sobre el equipo copiando estos tres archivos con los nombres indicados:",
+         "  cpuinfo → cpu.txt    meminfo → memoria.txt    version → version.txt"],
+        ["Linux ofrece información sobre el equipo en /proc. Sus archivos describen, entre otras cosas, el procesador, la memoria y la versión del sistema.",
+         "Utiliza cp para guardar una copia de cada uno en sistema. Así conservarás los datos disponibles en ese momento."],
+        ["Lee las copias con cat. En memoria.txt, MemTotal indica la memoria total en kB; en cpu.txt, busca el modelo del procesador."],
+        "Consulta man proc para saber más sobre estos archivos."
+    ), 0.42, ["Cada copia necesita su propia orden cp, con el archivo de origen y el nuevo nombre en el destino."])
+    completed("Las copias de la información del equipo están preparadas.")
     unlock_odt()
 
     wait_until(dossier_read, "FASE 3 · EXPEDIENTE RECUPERADO", lesson(
         [("DOCUMENTO QUE DEBES ABRIR", REC / "documentos" / "Informe_Mantenimiento.odt"),
          ("CONFIRMACIÓN DE LECTURA", REC / "sistema" / "expediente_leido.txt")],
-        ["Lee el documento y usa su URL para descodificar la referencia.",
-         "Conserva la contraseña obtenida para el descifrado final."],
-        ["En otra terminal, entra en la carpeta y abre Writer:",
+        ["Abre el informe recuperado y sigue sus instrucciones para obtener la contraseña. Guárdala: la necesitarás más adelante."],
+        ["En otra terminal, entra en documentos y abre el informe con Writer, el procesador de textos de LibreOffice:",
          "  cd ~/FIE_RECOVERY/documentos",
-         "  libreoffice --writer Informe_Mantenimiento.odt",
-         "--writer selecciona el procesador de textos de LibreOffice."],
-        ["Cuando tengas la contraseña, cierra Writer y confirma la lectura:",
+         "  libreoffice --writer Informe_Mantenimiento.odt"],
+        ["Cuando hayas obtenido la contraseña, cierra Writer y ejecuta:",
          "  touch ~/FIE_RECOVERY/sistema/expediente_leido.txt",
-         "touch crea el archivo vacío; si existe, actualiza sus fechas.",
-         "La pantalla permanece hasta que exista esa confirmación."],
-        "libreoffice --help y man touch."
+         "touch crea un archivo vacío que confirma que has terminado. Esta pantalla te esperará hasta que lo crees."],
+        "Consulta libreoffice --help y man touch si necesitas más información."
     ), 0.57)
-    completed("LECTURA DEL EXPEDIENTE CONFIRMADA")
+    completed("Has confirmado la lectura del informe.")
 
-    wait_until(grep_tutorial_ok, "FASE 4 · TUTORIAL: grep", lesson(
+    wait_until(grep_tutorial_ok, "FASE 4 · BUSCAR CON grep", lesson(
         [("ORIGEN · de dónde partimos", TUTORIAL / "registro.log"),
          ("DESTINO · dónde debe quedar", REC / "sistema" / "errores.txt")],
-        ["Selecciona las líneas ERROR del origen y guárdalas en el destino."],
-        ['grep "ERROR" archivo.log busca el patrón ERROR en archivo.log.',
-         "Muestra las líneas completas coincidentes, en su orden original.",
-         'grep "AVISO" archivo.log > avisos.txt guarda la salida en un archivo.',
-         "> crea o sobrescribe el destino; >> añade al final. No edita el origen."],
-        ["Con > la salida ya no aparece en pantalla: lee el destino con cat.",
-         "Debe contener las líneas ERROR, no un recuento de ellas."],
-        "man grep; man bash, busca /REDIRECTION. q sale del manual."
-    ), 0.60, ['Una posible forma empieza por: grep "ERROR" ... > ...'])
-    completed("grep DOMINADO")
+        ["Guarda en errores.txt las líneas de registro.log que contienen la palabra ERROR."],
+        ["grep busca un texto dentro de un archivo y muestra las líneas en las que aparece. Puedes guardar esas líneas usando >, como en este ejemplo:",
+         '  grep "ERROR" archivo.log > seleccion.txt',
+         "Aquí se buscan las líneas con ERROR en archivo.log y se guardan en seleccion.txt. Si el destino ya existe, > sustituye su contenido."],
+        ["Lee errores.txt con cat. Debe contener las líneas completas con ERROR, en el mismo orden que en el registro."],
+        "Consulta man grep. En man bash encontrarás la explicación de >."
+    ), 0.60, ["Sustituye los dos nombres del ejemplo por las rutas de ORIGEN y DESTINO."])
+    completed("Las líneas de error se han guardado correctamente.")
 
-    wait_until(find_tutorial_ok, "FASE 4 · TUTORIAL: find", lesson(
+    wait_until(find_tutorial_ok, "FASE 4 · LOCALIZAR CON find", lesson(
         [("ORIGEN · directorio que debes explorar", REPORTS),
          ("DESTINO · dónde debe quedar la lista", REC / "informes" / "cifrados.txt")],
-        ["Busca TODOS los .enc dentro del origen y guarda sus rutas en el destino."],
-        ['find . -name "*.txt" recorre el directorio actual y sus subdirectorios.',
-         ". indica dónde empieza; -name filtra por nombre; *.txt es el patrón.",
-         "Las comillas evitan que el shell expanda *: find recibe el patrón.",
-         "El resultado es una lista de rutas. Guárdala mediante >."],
-        ["Lee cifrados.txt con cat: contiene rutas, no copias de los .enc."],
-        "man find. Busca /-name; q vuelve a la terminal."
-    ), 0.68, ["Cambia el punto del ejemplo por el directorio que quieres explorar."])
-    completed("find DOMINADO")
+        ["Localiza los archivos terminados en .enc y guarda sus rutas en cifrados.txt."],
+        ["find busca archivos en una carpeta y sus subcarpetas. Por ejemplo:",
+         '  find . -name "*.txt"',
+         "El punto indica la carpeta actual y -name permite buscar por nombre. Las comillas hacen que find reciba el patrón *.txt sin que la terminal lo sustituya antes por una lista de archivos.",
+         "Busca los .enc en la carpeta de ORIGEN y guarda la lista con >."],
+        ["Al abrir cifrados.txt con cat, debes ver una ruta por línea."],
+        "Consulta man find para explorar otras formas de buscar archivos."
+    ), 0.68, ["Cambia el punto por la carpeta de ORIGEN y el patrón por el de los archivos que buscas."])
+    completed("La lista de archivos cifrados está preparada.")
 
-    wait_until(pipe_tutorial_ok, "FASE 4 · TUTORIAL: PIPELINE", lesson(
+    wait_until(pipe_tutorial_ok, "FASE 4 · CONECTAR COMANDOS", lesson(
         [("ORIGEN · de dónde partimos", TUTORIAL / "registro.log"),
          ("DESTINO · dónde debe quedar", REC / "sistema" / "numero_errores.txt")],
-        ["Cuenta las líneas ERROR del origen y guarda el número en el destino."],
-        ['Ejemplo: grep "ERROR" archivo.log | wc -l',
-         "1. grep selecciona las líneas que contienen ERROR.",
-         "2. | entrega esas líneas a wc, sin crear un archivo intermedio.",
-         "3. wc -l cuenta las líneas recibidas; añade > para guardar el número.",
-         "| y > son operadores del shell; -l indica que se cuentan líneas."],
-        ["cat debe mostrar un número, no las líneas ni el número de palabras.",
-         "Si ERROR aparece dos veces en una línea, esa línea se cuenta una vez."],
-        "man wc; man bash, busca /Pipelines."
-    ), 0.75, ["La tubería cuenta; la redirección final guarda ese número."])
-    completed("TUTORIAL AVANZADO COMPLETADO")
+        ["Cuenta cuántas líneas contienen ERROR y guarda el resultado en numero_errores.txt."],
+        ["El símbolo |, llamado tubería, envía la salida de un comando al siguiente. En este ejemplo, grep selecciona las líneas y wc -l las cuenta:",
+         '  grep "ERROR" archivo.log | wc -l',
+         "La opción -l indica que queremos contar líneas. Adapta el archivo de origen y añade > al final para guardar el número en el destino."],
+        ["Lee el resultado con cat: debe aparecer un único número. Cada línea se cuenta una vez, aunque contenga la palabra ERROR varias veces."],
+        "Consulta man wc. El manual man bash explica cómo funcionan las tuberías."
+    ), 0.75, ["La tubería conecta los dos comandos; > guarda el resultado del último."])
+    completed("El recuento de líneas de error es correcto.")
 
-    wait_until(boss_index_ok, "BOSS DIGITAL · ÍNDICE DAÑADO", lesson(
+    wait_until(boss_index_ok, "RETO FINAL · BUSCAR EL INFORME", lesson(
         [("ORIGEN · registros que debes investigar", LOGS),
          ("DESTINO · dónde debe quedar", REC / "informes" / "indice.txt")],
-        ["Localiza la única línea con FINAL_REPORT y guárdala en el destino."],
-        ["Ya puedes trabajar sobre los registros reales.",
-         "Decide cómo combinar las herramientas aprendidas para extraer la línea."],
-        ["Lee indice.txt con cat: la marca revela qué informe debes descifrar."],
-        "man grep, man find, man wc y man bash."
-    ), 0.82, ["grep puede buscar el mismo texto en varios *.log"])
-    completed("INFORME FINAL IDENTIFICADO: informe_01.enc")
+        ["Busca en los registros la línea que contiene FINAL_REPORT y guárdala en indice.txt. Esa pista identifica el informe que necesitas."],
+        ["Ahora aplicarás lo aprendido a los registros del proyecto. La pista está en uno de los archivos .log; utiliza grep para buscarla.",
+         "Puedes buscar en varios archivos a la vez y guardar la línea encontrada con >."],
+        ["Lee indice.txt con cat. Junto a FINAL_REPORT debe aparecer el nombre de un archivo cifrado."],
+        "Repasa man grep si necesitas ayuda para buscar en varios archivos."
+    ), 0.82, ["El patrón *.log permite seleccionar todos los registros de la carpeta."])
+    completed("El informe que debes descifrar ya está identificado.")
 
-    wait_until(final_ok, "FASE 5 · DESCIFRADO FINAL", lesson(
+    wait_until(final_ok, "FASE 5 · DESCIFRAR EL INFORME", lesson(
         [("ORIGEN · archivo cifrado", REPORTS / "informe_01.enc"),
          ("DESTINO · archivo descifrado", REC / "informes" / "informe_final.txt")],
-        ["Descifra el origen usando la contraseña obtenida con César."],
-        ["OpenSSL enc procesa el archivo; -d descifra; -in es el origen;",
-         "-out es el destino. AES-256-CBC cifra y PBKDF2 deriva la clave.",
-         "Completa ARCHIVO y DESTINO con las rutas indicadas arriba:",
+        ["Descifra el informe con la contraseña que obtuviste al leer el documento de mantenimiento."],
+        ["OpenSSL permite recuperar el texto de un archivo cifrado. Sustituye ARCHIVO y DESTINO por las rutas indicadas arriba:",
          "  openssl enc -d -aes-256-cbc -pbkdf2 \\",
-         "    -in ARCHIVO \\",
-         "    -out DESTINO",
-         "\\ al final continúa el comando. La contraseña no se verá al teclearla."],
-        ["El .enc se conserva y el nuevo .txt contiene texto legible."],
-        "man openssl y man openssl-enc."
-    ), 0.90, ["Utiliza la ruta de ORIGEN para -in y la de DESTINO para -out."])
+         "    -in ARCHIVO -out DESTINO",
+         "La opción -d pide descifrar; -in indica qué archivo leer y -out dónde guardar el resultado. El resto selecciona el cifrado y cómo obtener la clave a partir de la contraseña.",
+         "La barra \\ permite continuar la orden en otra línea. OpenSSL te pedirá la contraseña; no se verá mientras la escribes."],
+        ["El nuevo informe_final.txt debe contener texto legible. El archivo cifrado original se conserva."],
+        "Consulta man openssl-enc para conocer las opciones del comando."
+    ), 0.90, ["Escribe la contraseña de César con sus mayúsculas y guiones."])
 
     while True:
         box("RECUPERACIÓN DIGITAL COMPLETADA", render_lesson(lesson(
             [("DOCUMENTO QUE DEBES LEER", REC / "informes" / "informe_final.txt")],
-            ["Lee el informe: la última operación ocurre fuera del ordenador."],
-            ["cat muestra el contenido de un archivo de texto en la terminal.",
-             "El sistema está restaurado: estructura, equipo, expediente e informe."],
-            ["Sigue las instrucciones del documento para localizar el respaldo.",
-             "Solicita autorización al profesor antes de recuperar el objeto."],
-            "man cat."
-        ), detail="✓ Recuperación digital completada. Continúa con el profesor."),
-            1.0, "Fin de la supervisión automática.")
+            ["Lee el informe final y sigue sus instrucciones para encontrar el dispositivo. La última parte del reto ocurre fuera del ordenador."],
+            ["Utiliza cat seguido de la ruta del informe para mostrar su contenido en la terminal. Lee las instrucciones completas antes de actuar."],
+            ["El documento explica qué debes hacer a continuación. Pide autorización al profesor antes de recuperar el objeto."],
+            "Puedes consultar man cat si necesitas recordar cómo leer un archivo."
+        ), detail="✓ Has completado todos los pasos de recuperación en el ordenador."),
+            1.0, "Lee el informe final para continuar el reto.")
         time.sleep(1)
+
 
 if __name__ == "__main__":
     try:
