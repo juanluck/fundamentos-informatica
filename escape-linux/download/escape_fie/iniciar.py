@@ -79,23 +79,20 @@ def box(title, lines, progress, footer="Esperando cambios en el sistema..."):
     sys.stdout.flush()
 
 
-def wait_until(check, title, lines, progress, hints=()):
+def wait_until(check, title, content, progress, hints=()):
     started = time.time()
     while True:
         ok, detail = check()
         if ok:
             return detail
         age = time.time() - started
-        extra = list(lines)
-        if LAST_EVENT:
-            extra += ["", "✓ " + LAST_EVENT]
-        if detail:
-            extra += ["", detail]
+        hint = None
         if hints:
             idx = min(len(hints), int(age // 45))
             if idx:
-                extra += ["", "PISTA:", hints[idx - 1]]
-        box(title, extra, progress)
+                hint = hints[idx - 1]
+        lines = render_lesson(content, detail, hint, LAST_EVENT)
+        box(title, lines, progress)
         time.sleep(1)
 
 
@@ -108,16 +105,26 @@ def display_path(path):
 
 
 def lesson(locations, task, explanation, verification, manuals):
-    """El bloque de ubicaciones ocupa siempre el inicio de la pantalla."""
-    lines = []
-    for label, path in locations:
+    """Contenido de una pantalla, separado de su estado y presentación."""
+    return dict(locations=locations, task=task, explanation=explanation,
+                verification=verification, manuals=manuals)
+
+
+def render_lesson(content, detail=None, hint=None, previous=None):
+    """Objetivo primero; pistas en la ayuda y avisos automáticos en ESTADO."""
+    lines = ["OBJETIVO", *content["task"], ""]
+    for label, path in content["locations"]:
         lines += [label, "  " + display_path(path)]
-    return lines + [
-        "", "QUÉ DEBES HACER", *task,
-        "", "CÓMO FUNCIONA", *explanation,
-        "", "QUÉ DEBES COMPROBAR", *verification,
-        "", "PARA AMPLIAR: " + manuals,
+    lines += ["", "CÓMO HACERLO", *content["explanation"]]
+    if hint:
+        lines += ["PISTA: " + hint]
+    lines += [
+        "", "COMPRUEBA", *content["verification"],
+        "", "ESTADO", detail or "Esperando a que completes el objetivo.",
     ]
+    if previous:
+        lines += ["✓ Último avance: " + previous]
+    return lines + ["", "PARA AMPLIAR", content["manuals"]]
 
 
 def same_file(a, b):
@@ -420,7 +427,7 @@ def main():
     ), 0.90, ["Utiliza la ruta de ORIGEN para -in y la de DESTINO para -out."])
 
     while True:
-        box("RECUPERACIÓN DIGITAL COMPLETADA", lesson(
+        box("RECUPERACIÓN DIGITAL COMPLETADA", render_lesson(lesson(
             [("DOCUMENTO QUE DEBES LEER", REC / "informes" / "informe_final.txt")],
             ["Lee el informe: la última operación ocurre fuera del ordenador."],
             ["cat muestra el contenido de un archivo de texto en la terminal.",
@@ -428,7 +435,8 @@ def main():
             ["Sigue las instrucciones del documento para localizar el respaldo.",
              "Solicita autorización al profesor antes de recuperar el objeto."],
             "man cat."
-        ), 1.0, "Fin de la supervisión automática.")
+        ), detail="✓ Recuperación digital completada. Continúa con el profesor."),
+            1.0, "Fin de la supervisión automática.")
         time.sleep(1)
 
 if __name__ == "__main__":

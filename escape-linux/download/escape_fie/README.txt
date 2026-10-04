@@ -9,9 +9,10 @@ Organización recomendada durante la actividad:
   Terminal 3: ~                   -> reconstruir ~/FIE_RECOVERY
 
 La consola de recuperación supervisa automáticamente ~/FIE_RECOVERY.
-Debajo del progreso, ORIGEN y DESTINO indican las rutas del objetivo.
+Debajo del progreso aparece el OBJETIVO y después ORIGEN y DESTINO.
 Para crear, eliminar o abrir se muestra la ubicación o el archivo correspondiente.
-Después verás qué hacer, cómo funciona, qué comprobar y dónde ampliar información.
+Siguen CÓMO HACERLO (incluye pistas), COMPRUEBA (qué debes observar),
+ESTADO (lo que detecta la consola) y PARA AMPLIAR (consulta al manual).
 Las instrucciones permanecen hasta que completes el objetivo mostrado.
 En la fase del documento, lee el informe y obtén la contraseña sin prisa.
 Después crea el archivo de confirmación que indica la consola para continuar.
