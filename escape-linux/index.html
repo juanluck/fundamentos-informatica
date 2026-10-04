@@ -11,41 +11,41 @@
     <section class="hero">
       <div class="eyebrow">FUNDAMENTOS DE INFORMÁTICA Y EMPRESA · LINUX</div>
       <h1>Operación Recuperación</h1>
-      <p class="lead">Un escape room para reforzar lo aprendido sobre Linux y descubrir nuevos comandos.</p>
-      <p>Esta mañana, el laboratorio ha amanecido con los archivos de un proyecto desordenados. Solo queda un paquete de emergencia y una pista: entre sus documentos están las instrucciones para encontrar la copia de seguridad. <strong>Reconstruye las carpetas, sigue las pistas y encuentra el dispositivo.</strong></p>
+      <p class="lead">En este escape room pondrás en práctica lo aprendido sobre Linux y descubrirás nuevos comandos para resolver los retos.</p>
+      <p>Durante el mantenimiento del laboratorio, las carpetas de un proyecto han quedado desorganizadas y el dispositivo con la copia de seguridad ha desaparecido. El profesor ha reunido los archivos que pudieron salvarse: entre ellos hay pistas para encontrarlo. <strong>Tu misión es reconstruir las carpetas, recuperar la información y localizar el dispositivo.</strong></p>
       <a class="download" href="./download/escape_fie.zip" download>Descargar escape_fie.zip</a>
-      <p class="small">Para mantener el reto, no busques soluciones en el código. Edita solo la primera línea indicada abajo.</p>
+      <p class="small">Para mantener el reto, evita buscar soluciones en el código del juego. Solo tendrás que editar la primera línea, como se explica abajo.</p>
     </section>
 
     <section class="panel">
       <h2>Prepara la consola</h2>
-      <p>Abre una terminal donde hayas descargado el ZIP y ejecuta los comandos en orden.</p>
+      <p>Abre una terminal en la carpeta donde hayas descargado el ZIP. Sigue estos pasos para preparar el juego; después, su consola te guiará por los retos.</p>
 
       <h3>1. Descomprime y entra en la carpeta</h3>
       <pre><code>unzip escape_fie.zip
 mv escape_fie ~/escape_fie
 cd ~/escape_fie
 ls</code></pre>
-      <p><code>unzip</code> descomprime; <code>mv</code> mueve; <code>cd</code> cambia de carpeta; <code>ls</code> muestra su contenido. <code>~</code> es tu directorio personal (HOME). Comprueba que aparece <code>iniciar.py</code>.</p>
-      <p class="small">Si descomprimes directamente en tu HOME, omite <code>mv</code>. Para saber dónde estás: <code>pwd</code>.</p>
+      <p>Con <code>unzip</code> extraes el paquete y con <code>mv</code> lo mueves a tu directorio personal, representado por <code>~</code> y también llamado HOME. Después, <code>cd</code> te sitúa en la carpeta del juego y <code>ls</code> muestra su contenido: comprueba que aparece <code>iniciar.py</code>.</p>
+      <p class="small">Si has descomprimido el ZIP directamente en tu HOME, omite <code>mv</code>. Puedes usar <code>pwd</code> para comprobar en qué carpeta estás.</p>
 
       <h3>2. Localiza Python</h3>
       <pre><code>which python3</code></pre>
-      <p><code>which</code> muestra la ruta del programa. Guarda el resultado: Python será el intérprete que ejecute el juego.</p>
+      <p>El juego está escrito en Python y necesita su intérprete para ejecutarse. <code>which</code> te indica dónde está instalado; conserva la ruta que aparezca, porque la usarás en el siguiente paso.</p>
 
       <h3>3. Indica el intérprete</h3>
       <pre><code>nano iniciar.py</code></pre>
-      <p><code>nano</code> abre el editor. Sustituye <code>#!RUTA_PYTHON</code> por <code>#!</code> seguido de la ruta obtenida antes. Por ejemplo:</p>
+      <p>Este comando abre <code>iniciar.py</code> en el editor Nano. En la primera línea, sustituye <code>#!RUTA_PYTHON</code> por <code>#!</code> seguido de la ruta que has obtenido. Si era <code>/usr/bin/python3</code>, quedaría así:</p>
       <pre><code>#!/usr/bin/python3</code></pre>
-      <p>Esta primera línea, llamada <em>shebang</em>, indica a Linux qué intérprete debe usar.</p>
+      <p>Esta línea se llama <em>shebang</em> e indica a Linux qué intérprete debe utilizar. Guarda el cambio y sal del editor con estas teclas:</p>
       <div class="keys"><span>Ctrl+O</span> guardar <span>Enter</span> confirmar <span>Ctrl+X</span> salir</div>
 
       <h3>4. Añade el permiso de ejecución</h3>
       <pre><code>ls -l iniciar.py
 chmod +x iniciar.py
 ls -l iniciar.py</code></pre>
-      <p>El primer <code>ls -l</code> muestra los permisos. <code>chmod +x</code> añade el de ejecución. El último <code>ls -l</code> permite comprobar el cambio.</p>
-      <p><strong><code>r</code>: leer · <code>w</code>: escribir · <code>x</code>: ejecutar · <code>-</code>: permiso ausente.</strong></p>
+      <p>Antes de arrancarlo, debes permitir que Linux ejecute el archivo. El primer <code>ls -l</code> muestra sus permisos; <code>chmod +x</code> añade el de ejecución y el segundo <code>ls -l</code> te permite comparar el resultado.</p>
+      <p>En los permisos, <strong><code>r</code> permite leer, <code>w</code> escribir y <code>x</code> ejecutar</strong>. Se agrupan para el propietario, el grupo y los demás usuarios; un <code>-</code> indica que ese permiso no está concedido.</p>
       <div class="table-scroll">
         <table class="permissions">
           <caption>Ejemplo: <code>-rw-r--r--</code></caption>
@@ -53,11 +53,11 @@ ls -l iniciar.py</code></pre>
           <tbody><tr><td><code>-</code> archivo</td><td><code>rw-</code></td><td><code>r--</code></td><td><code>r--</code></td></tr></tbody>
         </table>
       </div>
-      <p>Tras el cambio podría aparecer <code>-rwxr-xr-x</code>. Comprueba que el propietario tiene <code>x</code>.</p>
+      <p>El primer carácter indica el tipo de archivo. En este ejemplo, el propietario puede leer y escribir, pero todavía no ejecutar. Tras <code>chmod +x</code> podría aparecer <code>-rwxr-xr-x</code>: fíjate en las nuevas <code>x</code>.</p>
 
       <h3>5. Arranca el juego</h3>
       <pre><code>./iniciar.py</code></pre>
-      <p><code>./</code> indica que ejecutas un archivo del directorio actual. Aparecerá la consola con tu primer objetivo.</p>
+      <p>Con <code>./</code> indicas que quieres ejecutar el archivo que está en la carpeta actual. Aparecerá la consola de recuperación con tu primer objetivo. Déjala abierta y prepara otras dos terminales.</p>
     </section>
 
     <section class="panel terminals">
@@ -65,22 +65,22 @@ ls -l iniciar.py</code></pre>
       <div class="terminal-grid">
         <article>
           <div class="t-title">1 · CONSOLA</div>
-          <p>Deja el juego abierto. Lee aquí los objetivos y el progreso.</p>
+          <p>Aquí permanece abierto el juego. Consulta los objetivos y observa cómo se actualiza tu progreso.</p>
         </article>
         <article>
           <div class="t-title">2 · PAQUETE ORIGINAL</div>
           <pre><code>cd ~/escape_fie</code></pre>
-          <p>Consulta los archivos y las pistas.</p>
+          <p>Utiliza esta terminal para explorar los archivos originales y consultar las pistas.</p>
         </article>
         <article>
           <div class="t-title">3 · RECONSTRUCCIÓN</div>
           <pre><code>cd ~</code></pre>
-          <p>Construye <code>~/FIE_RECOVERY</code> siguiendo el juego.</p>
+          <p>Desde tu HOME, crea <code>~/FIE_RECOVERY</code> y reconstruye su contenido siguiendo los objetivos del juego.</p>
         </article>
       </div>
-      <p>Cada terminal tiene su propia ubicación, pero todas comparten los archivos. La consola detecta tus cambios y avanza automáticamente; puedes leer sin prisa.</p>
-      <p class="small">Consola recomendada: 80 columnas × 40 filas. En ventanas pequeñas, desplázate para leer.</p>
-      <p><strong>Para ampliar:</strong> <code>man comando</code> abre el manual. Flechas o espacio para avanzar, <code>/palabra</code> para buscar y <code>q</code> para salir. Para <code>cd</code>: <code>help cd</code>.</p>
+      <p>Cambiar de carpeta en una terminal no cambia la ubicación de las demás, aunque todas comparten los archivos. La consola comprueba tus cambios y avanza cuando completas cada objetivo; las instrucciones permanecen visibles mientras trabajas.</p>
+      <p class="small">Una ventana de 80 columnas y 40 filas permite ver cómodamente la consola. Si es más pequeña, puedes desplazarte para leer.</p>
+      <p><strong>Si quieres saber más,</strong> abre el manual con <code>man comando</code>, por ejemplo <code>man chmod</code>. Usa las flechas o el espacio para avanzar, <code>/palabra</code> para buscar y <code>q</code> para salir. Para consultar <code>cd</code>, utiliza <code>help cd</code>.</p>
     </section>
   </main>
 </body>
