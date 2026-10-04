@@ -26,6 +26,9 @@ jobs:
       - name: Render HTML book
         run: quarto render --to html
 
+      - name: Build Linux escape room package
+        run: python3 escape-linux/build_escape.py
+
       - name: Publish book at repository root
         shell: bash
         run: |
@@ -37,8 +40,14 @@ jobs:
 
           # Replace only the files/directories owned by the Quarto book.
           # Standalone visual prototypes and gates remain untouched.
-          rm -rf /tmp/gh-pages/teoria                  /tmp/gh-pages/practicas                  /tmp/gh-pages/assets                  /tmp/gh-pages/styles                  /tmp/gh-pages/site_libs
-          rm -f /tmp/gh-pages/index.html                 /tmp/gh-pages/search.json
+          rm -rf /tmp/gh-pages/teoria \
+                 /tmp/gh-pages/practicas \
+                 /tmp/gh-pages/assets \
+                 /tmp/gh-pages/styles \
+                 /tmp/gh-pages/site_libs \
+                 /tmp/gh-pages/escape-linux
+          rm -f /tmp/gh-pages/index.html \
+                /tmp/gh-pages/search.json
 
           cp -a _site/. /tmp/gh-pages/
           touch /tmp/gh-pages/.nojekyll
