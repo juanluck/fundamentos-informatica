@@ -1,0 +1,6 @@
+FIE-LAB / ESTADO DEL SISTEMA
+============================
+Estado previo al mantenimiento: OPERATIVO
+Perfil de recuperación: estándar
+Documentación asociada: disponible
+Índice de informes: pendiente de verificación
