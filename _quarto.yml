@@ -4,6 +4,9 @@ project:
   resources:
     - assets/**
     - styles/**
+    - escape-linux/index.html
+    - escape-linux/escape.css
+    - escape-linux/cesar/**
 
 book:
   title: "Fundamentos de Informática"
