@@ -1,0 +1,4 @@
+LECTURA 01
+==========
+Registro parcial de mantenimiento.
+El sistema de respaldo fue preparado antes de la intervención.

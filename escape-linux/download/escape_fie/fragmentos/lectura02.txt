@@ -1,0 +1,4 @@
+LECTURA 02
+==========
+Los informes sensibles fueron cifrados antes de realizar la copia de seguridad.
+La contraseña se conservó separada del fichero final.

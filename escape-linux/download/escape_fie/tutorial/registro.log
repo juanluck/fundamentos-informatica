@@ -1,0 +1,8 @@
+INFO  Arranque de subsistema
+INFO  Comprobación de red
+ERROR Fallo temporal de lectura
+INFO  Reintento automático
+ERROR Copia incompleta
+INFO  Servicio restaurado
+ERROR Índice no encontrado
+INFO  Fin del diagnóstico

@@ -1,0 +1,6 @@
+NOTAS DEL TÉCNICO
+=================
+1. Reconstruir la estructura antes de usar los informes.
+2. Verificar el equipo mediante /proc.
+3. No confiar en copias obsoletas.
+4. El informe final está cifrado.
