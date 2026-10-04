@@ -71,6 +71,9 @@ Organización recomendada durante la actividad:
   Terminal 3: ~                   -> reconstruir ~/FIE_RECOVERY
 
 La consola de recuperación supervisa automáticamente ~/FIE_RECOVERY.
+Las instrucciones permanecen hasta que completes el objetivo mostrado.
+En la fase del documento, lee el informe y obtén la contraseña sin prisa.
+Después crea el archivo de confirmación que indica la consola para continuar.
 ''')
 
 write(PKG / "tutorial" / "registro.log", '''
