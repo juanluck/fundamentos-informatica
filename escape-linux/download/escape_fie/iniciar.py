@@ -270,7 +270,8 @@ def main():
         "",
         "    documentos/",
         "    informes/",
-        "    sistema/"
+        "    sistema/",
+        "Comprueba con ls: deben aparecer las tres carpetas en el destino."
     ], 0.10, ["Puedes crear varios directorios con mkdir."])
     completed("ESTRUCTURA BÁSICA RESTAURADA")
 
@@ -284,7 +285,8 @@ def main():
         f"Origen:  {FRAG / 'estado.txt'}",
         f"Destino: {REC / 'sistema' / 'estado_inicial.txt'}",
         "",
-        "Recupéralo conservando exactamente su contenido."
+        "Recupéralo conservando exactamente su contenido.",
+        "Comprueba con cat la copia: cambia su nombre, no la información."
     ], 0.18, ["Necesitas copiar un fichero y cambiar su nombre en el destino."])
     completed("ESTADO INICIAL VERIFICADO")
 
@@ -300,7 +302,8 @@ def main():
         f"Origen:  {FRAG}",
         f"Destino: {REC / 'documentos'}",
         "",
-        "Los documentos válidos tienen extensión .txt"
+        "Los documentos válidos tienen extensión .txt",
+        "Con ls en el destino verás las copias; los originales se conservan."
     ], 0.26, ["Los comodines permiten seleccionar muchos ficheros: piensa en *.txt"])
     completed("DOCUMENTACIÓN RECUPERADA")
 
@@ -313,7 +316,8 @@ def main():
         "",
         f"    {REC / 'documentos' / 'estado_old.txt'}",
         "",
-        "Elimínala del sistema reconstruido."
+        "Elimínala del sistema reconstruido.",
+        "Comprueba con ls: desaparece esa copia; las demás deben seguir."
     ], 0.34, ["rm elimina ficheros. Comprueba bien la ruta antes de usarlo."])
     completed("FASE 1 COMPLETADA")
 
@@ -330,6 +334,8 @@ def main():
         "  memoria.txt  ← /proc/meminfo",
         "  version.txt  ← /proc/version",
         "",
+        "Lee las copias con cat: MemTotal indica la memoria total en kB.",
+        "En cpu.txt, model name identifica el modelo del procesador.",
         "La consola verificará automáticamente su contenido."
     ], 0.42, ["Los ficheros de /proc pueden copiarse igual que cualquier fichero de texto."])
     completed("EQUIPO IDENTIFICADO")
@@ -372,7 +378,8 @@ def main():
         f"    {REC / 'sistema' / 'errores.txt'}",
         "con las líneas ERROR de:",
         f"    {TUTORIAL / 'registro.log'}",
-        "Combina la selección de líneas y su guardado en un archivo."
+        "Combina la selección de líneas y su guardado en un archivo.",
+        "Con > no verás esas líneas en pantalla: lee el resultado con cat."
     ], 0.60, ["Una posible forma empieza por: grep \"ERROR\" ... > ..."])
     completed("grep DOMINADO")
 
@@ -390,7 +397,8 @@ def main():
         "Busca TODOS los .enc dentro de:",
         f"    {REPORTS}",
         "",
-        "Guarda el resultado mediante >"
+        "Guarda el resultado mediante >.",
+        "Lee cifrados.txt con cat: contiene rutas, no copias de los .enc."
     ], 0.68, ["Cambia el punto del ejemplo por el directorio que quieres explorar."])
     completed("find DOMINADO")
 
@@ -410,7 +418,8 @@ def main():
         "Archivo que debes analizar:",
         f"    {TUTORIAL / 'registro.log'}",
         "",
-        "Combina grep, |, wc -l y >"
+        "Combina grep, |, wc -l y >.",
+        "Al leer la salida con cat, verás un número en vez de las líneas."
     ], 0.75, ["La tubería cuenta; la redirección final guarda ese número."])
     completed("TUTORIAL AVANZADO COMPLETADO")
 
@@ -426,6 +435,7 @@ def main():
         f"    {REC / 'informes' / 'indice.txt'}",
         "",
         "Esta vez decide tú cómo combinar las herramientas aprendidas.",
+        "Lee indice.txt con cat: la marca revela qué informe debes abrir.",
         "Para repasar: man grep, man find, man wc y man bash."
     ], 0.82, ["grep puede buscar el mismo texto en varios *.log"])
     completed("INFORME FINAL IDENTIFICADO: informe_01.enc")
@@ -446,7 +456,8 @@ def main():
         "OpenSSL pedirá la contraseña de César; no se verá al escribirla.",
         "Archivo: informe_01.enc (consulta informes/cifrados.txt).",
         "",
-        f"El destino debe ser: {REC / 'informes' / 'informe_final.txt'}"
+        f"El destino debe ser: {REC / 'informes' / 'informe_final.txt'}",
+        "El .enc se conserva; la nueva copia .txt contendrá texto legible."
     ], 0.90, [f"El archivo cifrado está en {REPORTS / 'informe_01.enc'}"])
 
     while True:

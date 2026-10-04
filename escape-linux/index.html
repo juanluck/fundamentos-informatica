@@ -24,36 +24,65 @@
 
     <section class="panel">
       <h2>0 · Preparar la consola</h2>
-      <p>Descarga el ZIP y abre una terminal en la carpeta donde lo hayas guardado.</p>
+      <p>Descarga el ZIP y abre una terminal en la carpeta donde lo hayas guardado. Ejecuta cada comando y observa su efecto antes de pasar al siguiente. Escribe solo el comando: el indicador de la terminal, como <code>~$</code>, no se copia.</p>
 
       <h3>1. Descomprime el paquete y colócalo en tu HOME</h3>
-      <pre><code>unzip escape_fie.zip
-mv escape_fie ~/escape_fie
-cd ~/escape_fie
+      <pre><code>unzip escape_fie.zip</code></pre>
+      <p><code>unzip</code> extrae los archivos del ZIP y crea la carpeta <code>escape_fie</code> en el directorio actual. Verás los nombres de los archivos que se van extrayendo.</p>
+      <pre><code>mv escape_fie ~/escape_fie</code></pre>
+      <p><code>mv</code> mueve la carpeta: el primer argumento es el origen y el segundo el destino. <code>~</code> representa tu directorio personal, también llamado HOME. Si ya has descomprimido el paquete directamente en tu HOME, omite este comando: la carpeta ya está donde debe estar.</p>
+      <pre><code>cd ~/escape_fie
 ls</code></pre>
+      <p><code>cd</code> cambia el directorio de trabajo de esta terminal; no mueve los archivos. <code>ls</code> lista su contenido. Comprueba que aparece <code>iniciar.py</code>. Puedes ejecutar <code>pwd</code> para ver la ruta completa del directorio en el que estás.</p>
       <p>A partir de ahora el paquete original estará en <code>~/escape_fie</code>. El sistema reconstruido se creará aparte, directamente bajo tu directorio HOME.</p>
+      <p class="small">Para ampliar, consulta <code>man unzip</code>, <code>man mv</code> o <code>man ls</code>. Dentro del manual, usa las flechas o el espacio para avanzar, <code>/palabra</code> para buscar, <code>n</code> para la siguiente coincidencia y <code>q</code> para salir. Para <code>cd</code>, integrado en Bash, utiliza <code>help cd</code>.</p>
 
       <h3>2. Averigua dónde está Python 3</h3>
-      <p>Necesitarás indicar al programa qué intérprete debe ejecutarlo.</p>
+      <p>El archivo <code>iniciar.py</code> contiene instrucciones escritas en Python. El intérprete Python 3 es el programa que las ejecuta; primero vamos a localizarlo.</p>
       <pre><code>which python3</code></pre>
-      <p>Obtendrás una ruta similar a <code>/usr/bin/python3</code>. Conserva exactamente la que aparezca en tu equipo.</p>
+      <p><code>which</code> busca el ejecutable en los directorios de <code>PATH</code>, la lista de lugares donde se buscan los comandos. Obtendrás una ruta similar a <code>/usr/bin/python3</code>. Conserva exactamente la que aparezca en tu equipo: la utilizarás en el siguiente paso. Para ampliar: <code>man which</code>.</p>
 
       <h3>3. Edita la primera línea de <code>iniciar.py</code></h3>
       <pre><code>nano iniciar.py</code></pre>
+      <p><code>nano</code> abre el archivo en un editor de texto dentro de la terminal. Vamos a modificar únicamente la primera línea para indicar dónde está el intérprete.</p>
       <p>La primera línea contiene:</p>
       <pre><code>#!RUTA_PYTHON</code></pre>
       <p>Sustitúyela por <code>#!</code> seguido de la ruta obtenida con <code>which python3</code>. Por ejemplo:</p>
       <pre><code>#!/usr/bin/python3</code></pre>
+      <p>Esta línea se llama <em>shebang</em>: <code>#!</code> indica que la ruta que le sigue identifica el intérprete. Al ejecutar el archivo directamente, Linux utilizará ese programa para leer sus instrucciones. La ruta del ejemplo solo sirve si coincide con la que has obtenido.</p>
       <div class="keys"><span>Ctrl+O</span> guardar <span>Enter</span> confirmar <span>Ctrl+X</span> salir</div>
+      <p>Al pulsar <code>Ctrl+O</code>, Nano te pregunta con qué nombre guardar; pulsa <code>Enter</code> para conservar <code>iniciar.py</code>. Después, <code>Ctrl+X</code> cierra el editor y devuelve el control a la terminal. Para ampliar: <code>man nano</code>.</p>
 
       <h3>4. Haz ejecutable el programa</h3>
-      <pre><code>ls -l iniciar.py
-chmod +x iniciar.py
-ls -l iniciar.py</code></pre>
-      <p>Comprueba cómo aparece el permiso <code>x</code>.</p>
+      <p><strong>Primero, observa los permisos actuales.</strong> Tener un archivo con código no implica que Linux permita ejecutarlo directamente.</p>
+      <pre><code>ls -l iniciar.py</code></pre>
+      <p><code>ls</code> muestra información del archivo; la opción <code>-l</code> pide el formato largo. La línea incluye el tipo y los permisos, el propietario, el grupo, el tamaño, la fecha y el nombre. Fíjate en sus primeros caracteres, que podrían ser:</p>
+      <pre aria-label="Ejemplo de permisos antes de ejecutar chmod"><code>-rw-r--r--</code></pre>
+      <p>El primer carácter <code>-</code> indica que es un archivo normal; en un directorio aparecería <code>d</code>. Los nueve caracteres siguientes se leen en tres grupos:</p>
+      <div class="table-scroll">
+        <table class="permissions">
+          <caption>Cómo leer el ejemplo <code>-rw-r--r--</code></caption>
+          <thead><tr><th scope="col">Grupo</th><th scope="col">Permisos</th><th scope="col">Qué permite sobre este archivo</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Propietario</th><td><code>rw-</code></td><td>Leerlo y modificarlo; todavía no ejecutarlo.</td></tr>
+            <tr><th scope="row">Grupo</th><td><code>r--</code></td><td>Leerlo; no modificarlo ni ejecutarlo.</td></tr>
+            <tr><th scope="row">Otros usuarios</th><td><code>r--</code></td><td>Leerlo; no modificarlo ni ejecutarlo.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>En cada grupo, <code>r</code> (<em>read</em>) permite leer el contenido; <code>w</code> (<em>write</em>), modificarlo; y <code>x</code> (<em>execute</em>), ejecutarlo. Un <code>-</code> en cualquiera de esas posiciones indica que ese permiso no está concedido. Por tanto, la primera <code>r</code> del ejemplo es el permiso de lectura del propietario.</p>
+      <p><strong>Ahora, añade el permiso de ejecución.</strong></p>
+      <pre><code>chmod +x iniciar.py</code></pre>
+      <p><code>chmod</code> modifica los permisos; <code>+</code> significa añadir y <code>x</code> es el permiso de ejecución. Cambias los permisos del archivo, no su contenido. Normalmente el comando termina sin mostrar ningún mensaje.</p>
+      <p><strong>Por último, comprueba qué ha cambiado.</strong></p>
+      <pre><code>ls -l iniciar.py</code></pre>
+      <p>Compara el resultado con el anterior. Con una configuración habitual, el ejemplo pasaría de <code>-rw-r--r--</code> a <code>-rwxr-xr-x</code>: han aparecido las <code>x</code>. Los permisos exactos pueden variar según la configuración del equipo; comprueba especialmente la <code>x</code> del propietario, en el primer grupo.</p>
+      <p class="small">Para ampliar: <code>man ls</code> y <code>man chmod</code>. El segundo explica cómo expresar otros cambios de permisos. Recuerda que <code>q</code> permite salir del manual.</p>
 
       <h3>5. Inicia la recuperación</h3>
       <pre><code>./iniciar.py</code></pre>
+      <p><code>.</code> representa el directorio actual; <code>./iniciar.py</code> pide ejecutar el archivo que está aquí. Linux comprueba el permiso de ejecución y utiliza el intérprete indicado por el <em>shebang</em>. Debería aparecer la consola de recuperación.</p>
+      <p>Si aparece <code>Permission denied</code>, revisa el permiso <code>x</code>. Si el error señala que el intérprete no existe, comprueba que la primera línea coincide con la ruta devuelta por <code>which python3</code>.</p>
       <div class="notice">
         <strong>En cuanto arranque la consola, esta página deja de darte instrucciones.</strong>
         <p>Deja esa terminal abierta y prepara dos terminales adicionales.</p>
@@ -71,14 +100,15 @@ ls -l iniciar.py</code></pre>
         <article>
           <div class="t-title">TERMINAL 2 · PAQUETE</div>
           <pre><code>~/escape_fie$</code></pre>
-          <p>Consulta los materiales originales.</p>
+          <p>Ejecuta <code>cd ~/escape_fie</code> para consultar los materiales originales.</p>
         </article>
         <article>
           <div class="t-title">TERMINAL 3 · SISTEMA</div>
           <pre><code>~$</code></pre>
-          <p>Reconstruye aquí el sistema de respaldo.</p>
+          <p>Ejecuta <code>cd ~</code> para situarte en tu HOME. Reconstruye aquí el sistema de respaldo.</p>
         </article>
       </div>
+      <p>Cada terminal mantiene su propio directorio de trabajo: un <code>cd</code> en una no cambia la ubicación de las demás. Los archivos sí son compartidos: una copia creada en una terminal puede verse desde otra. Usa <code>pwd</code> cuando necesites comprobar dónde estás.</p>
       <p class="final-note">La consola de recuperación supervisará automáticamente los cambios en <code>~/FIE_RECOVERY</code> y avanzará cuando detecte una solución correcta.</p>
       <p>Las instrucciones permanecen visibles hasta que completes cada objetivo. Cuando tengas que leer el informe de LibreOffice, la consola mostrará cómo abrirlo y cómo confirmar desde otra terminal que has terminado. Puedes leerlo sin límite de tiempo.</p>
       <p>Para ver cómodamente la consola, utiliza una ventana de al menos 80 columnas y 40 filas (puedes maximizarla o reducir el tamaño de letra). En ventanas pequeñas, las instrucciones se conservan como texto por el que puedes desplazarte. Cada herramienta nueva incluye una explicación, un ejemplo y una referencia al manual: <code>man comando</code>. Pulsa <code>q</code> para salir del manual.</p>
