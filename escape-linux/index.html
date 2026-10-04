@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FIE · Operación Recuperación</title>
+  <link rel="stylesheet" href="./escape.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">FUNDAMENTOS DE INFORMÁTICA Y EMPRESA · LINUX</div>
+      <h1>Operación Recuperación</h1>
+      <p class="lead">Un procedimiento de recuperación quedó incompleto durante una intervención de mantenimiento. Conservamos un paquete de emergencia. Tu misión es reconstruir el sistema y localizar el dispositivo físico de respaldo.</p>
+      <div class="status-grid">
+        <div><span class="dot bad"></span>Estructura de trabajo <strong>DAÑADA</strong></div>
+        <div><span class="dot warn"></span>Equipo <strong>NO IDENTIFICADO</strong></div>
+        <div><span class="dot warn"></span>Expediente <strong>BLOQUEADO</strong></div>
+        <div><span class="dot bad"></span>Dispositivo <strong>NO LOCALIZADO</strong></div>
+      </div>
+      <a class="download" href="./download/escape_fie.zip" download>Descargar escape_fie.zip</a>
+      <p class="small">No abras ni inspecciones el código fuente del paquete: forma parte del reto.</p>
+    </section>
+
+    <section class="panel">
+      <h2>0 · Preparar la consola</h2>
+      <p>Descarga el ZIP y abre una terminal en la carpeta donde lo hayas guardado.</p>
+
+      <h3>1. Descomprime el paquete</h3>
+      <pre><code>unzip escape_fie.zip
+cd escape_fie
+ls</code></pre>
+
+      <h3>2. Averigua dónde está Python 3</h3>
+      <p>Necesitarás indicar al programa qué intérprete debe ejecutarlo.</p>
+      <pre><code>which python3</code></pre>
+      <p>Obtendrás una ruta similar a <code>/usr/bin/python3</code>. Conserva exactamente la que aparezca en tu equipo.</p>
+
+      <h3>3. Edita la primera línea de <code>iniciar.py</code></h3>
+      <pre><code>nano iniciar.py</code></pre>
+      <p>La primera línea contiene:</p>
+      <pre><code>#!RUTA_PYTHON</code></pre>
+      <p>Sustitúyela por <code>#!</code> seguido de la ruta obtenida con <code>which python3</code>. Por ejemplo:</p>
+      <pre><code>#!/usr/bin/python3</code></pre>
+      <div class="keys"><span>Ctrl+O</span> guardar <span>Enter</span> confirmar <span>Ctrl+X</span> salir</div>
+
+      <h3>4. Haz ejecutable el programa</h3>
+      <pre><code>ls -l iniciar.py
+chmod +x iniciar.py
+ls -l iniciar.py</code></pre>
+      <p>Comprueba cómo aparece el permiso <code>x</code>.</p>
+
+      <h3>5. Inicia la recuperación</h3>
+      <pre><code>./iniciar.py</code></pre>
+      <div class="notice">
+        <strong>En cuanto arranque la consola, esta página deja de darte instrucciones.</strong>
+        <p>Deja esa terminal abierta y prepara dos terminales adicionales.</p>
+      </div>
+    </section>
+
+    <section class="panel terminals">
+      <h2>Organización recomendada</h2>
+      <div class="terminal-grid">
+        <article>
+          <div class="t-title">TERMINAL 1 · CONTROL</div>
+          <pre><code>~/escape_fie$ ./iniciar.py</code></pre>
+          <p>Lee. No trabajes aquí.</p>
+        </article>
+        <article>
+          <div class="t-title">TERMINAL 2 · PAQUETE</div>
+          <pre><code>~/escape_fie$</code></pre>
+          <p>Consulta los materiales originales.</p>
+        </article>
+        <article>
+          <div class="t-title">TERMINAL 3 · SISTEMA</div>
+          <pre><code>~$</code></pre>
+          <p>Reconstruye aquí el sistema de respaldo.</p>
+        </article>
+      </div>
+      <p class="final-note">La consola de recuperación supervisará automáticamente los cambios en <code>~/FIE_RECOVERY</code> y avanzará cuando detecte una solución correcta.</p>
+    </section>
+  </main>
+</body>
+</html>
