@@ -16,6 +16,7 @@ REC = HOME / "FIE_RECOVERY"
 START = time.time()
 WIDTH = 76
 LAST_EVENT = ""
+LAST_SCROLL_SCREEN = None
 
 FRAG = PACKAGE / "fragmentos"
 LOGS = PACKAGE / "registros"
@@ -40,6 +41,25 @@ def bar(progress):
 
 
 def box(title, lines, progress, footer="Esperando cambios en el sistema..."):
+    global LAST_SCROLL_SCREEN
+    wrapped = []
+    for raw in lines:
+        for line in str(raw).splitlines() or [""]:
+            wrapped.extend(textwrap.wrap(line, WIDTH - 2, replace_whitespace=False,
+                                         break_on_hyphens=False) or [""])
+    columns, rows = shutil.get_terminal_size((80, 40))
+    # En ventanas pequeñas no borrar ni repetir cada segundo el texto que
+    # el alumno está leyendo con el desplazamiento de su terminal.
+    if columns < WIDTH + 2 or rows < len(wrapped) + 9:
+        screen = (title, tuple(wrapped), progress, footer, columns, rows)
+        if screen != LAST_SCROLL_SCREEN:
+            print(f"\n--- {title} · {int(progress * 100)} % ---")
+            print("Ventana pequeña: desplázate para leer; las instrucciones se conservan.")
+            print("\n".join(wrapped))
+            print(footer, flush=True)
+            LAST_SCROLL_SCREEN = screen
+        return
+    LAST_SCROLL_SCREEN = None
     clear()
     print("╔" + "═" * WIDTH + "╗")
     header = f" FIE-LAB // {title}"
@@ -50,11 +70,8 @@ def box(title, lines, progress, footer="Esperando cambios en el sistema..."):
     p = f"  PROGRESO  {bar(progress)}  {pct:3d}%"
     print("║" + p.ljust(WIDTH) + "║")
     print("║" + "".ljust(WIDTH) + "║")
-    for raw in lines:
-        for line in str(raw).splitlines() or [""]:
-            for part in textwrap.wrap(line, WIDTH - 2, replace_whitespace=False,
-                                      break_on_hyphens=False) or [""]:
-                print("║" + ("  " + part).ljust(WIDTH) + "║")
+    for part in wrapped:
+        print("║" + ("  " + part).ljust(WIDTH) + "║")
     print("║" + "".ljust(WIDTH) + "║")
     print("╠" + "─" * WIDTH + "╣")
     print("║" + ("  " + footer)[:WIDTH].ljust(WIDTH) + "║")
@@ -224,18 +241,18 @@ def final_ok():
 
 def main():
     wait_until(lambda: (REC.is_dir(), None), "CONSOLA DE RECUPERACIÓN", [
-        "Paquete de emergencia detectado.",
+        "MISIÓN: reconstruir el sistema y localizar su respaldo físico.",
+        "Deja esta consola abierta. Ejecuta comandos en otras terminales.",
         "",
-        "ESTADO",
-        "  Estructura de trabajo ........ DAÑADA",
-        "  Identificación del equipo .... DESCONOCIDA",
-        "  Expediente de mantenimiento .. BLOQUEADO",
-        "  Índice de informes ........... DAÑADO",
-        "  Dispositivo de respaldo ...... NO LOCALIZADO",
+        "ORIENTARSE: pwd muestra dónde estás; ls lista el contenido.",
+        "~ representa tu directorio personal; / inicia una ruta absoluta.",
+        "mkdir crea directorios. Ejemplo: mkdir ensayo",
+        "crea ensayo dentro del directorio en el que estás trabajando.",
         "",
-        "OBJETIVO: recuperar el dispositivo físico de respaldo.",
-        "",
-        "Mantén esta consola abierta. Trabaja desde otras terminales.",
+        "APRENDER CON EL MANUAL: prueba man mkdir en otra terminal.",
+        "Flechas: mover; espacio: avanzar; /palabra: buscar; n: siguiente.",
+        "Pulsa q para salir del manual y volver a la terminal.",
+        "Para ampliar: man pwd, man ls. No escribas las comas.",
         "",
         "PRIMER OBJETIVO: crea el directorio de recuperación:",
         f"    {REC}",
@@ -244,6 +261,11 @@ def main():
     completed("DIRECTORIO DE RECUPERACIÓN DETECTADO")
 
     wait_until(has_dirs, "FASE 1 · RECONSTRUCCIÓN", [
+        "mkdir admite varios nombres: mkdir uno dos crea dos carpetas.",
+        "cd cambia de directorio; pwd permite comprobar dónde estás.",
+        "Una ruta relativa se interpreta desde ese directorio actual.",
+        "Para ampliar: man mkdir; para cd, ejecuta help cd en Bash.",
+        "",
         "Reconstruye dentro de FIE_RECOVERY los tres módulos originales:",
         "",
         "    documentos/",
@@ -253,7 +275,11 @@ def main():
     completed("ESTRUCTURA BÁSICA RESTAURADA")
 
     wait_until(copied_state, "FASE 1 · RECUPERAR ESTADO", [
-        "En el paquete original se conserva el estado del equipo.",
+        "cp copia archivos sin borrar el original.",
+        "Ejemplo: cp notas.txt copia.txt",
+        "Primer argumento: origen. Segundo: destino y su nuevo nombre.",
+        "Linux distingue estado.txt de Estado.txt: revisa las mayúsculas.",
+        "Para ampliar: man cp. Puedes leer un texto con cat: man cat.",
         "",
         f"Origen:  {FRAG / 'estado.txt'}",
         f"Destino: {REC / 'sistema' / 'estado_inicial.txt'}",
@@ -263,6 +289,12 @@ def main():
     completed("ESTADO INICIAL VERIFICADO")
 
     wait_until(docs_copied, "FASE 1 · DOCUMENTACIÓN", [
+        "Un comodín permite seleccionar varios nombres de archivo.",
+        "* representa cualquier secuencia de caracteres; ? uno solo.",
+        "Ejemplo: ls *.txt lista los nombres terminados en .txt.",
+        "Aquí el shell expande el patrón antes de ejecutar el comando.",
+        "Para ampliar: man bash, busca /Pathname Expansion; q para salir.",
+        "",
         "Recupera TODOS los documentos de texto del directorio fragmentos/.",
         "",
         f"Origen:  {FRAG}",
@@ -273,6 +305,10 @@ def main():
     completed("DOCUMENTACIÓN RECUPERADA")
 
     wait_until(obsolete_removed, "FASE 1 · DEPURACIÓN", [
+        "rm elimina un archivo: rm copia.txt elimina esa copia.",
+        "No lo envía a la papelera. Comprueba antes el nombre con ls.",
+        "Para ampliar: man rm.",
+        "",
         "El manifiesto marca una copia obsoleta que no debe conservarse:",
         "",
         f"    {REC / 'documentos' / 'estado_old.txt'}",
@@ -282,7 +318,12 @@ def main():
     completed("FASE 1 COMPLETADA")
 
     wait_until(system_files_ok, "FASE 2 · IDENTIFICACIÓN", [
-        "Antes de confiar en los informes hay que documentar el sistema real.",
+        "/proc es un directorio virtual: el kernel ofrece datos del sistema.",
+        "cat /proc/meminfo los muestra; cp permite guardar una instantánea.",
+        "cpuinfo describe la CPU; meminfo, la memoria; version, el kernel.",
+        "Los datos de memoria cambian: tu copia conserva un momento concreto.",
+        "Para ampliar: man proc, man cat y man cp.",
+        "",
         "Crea estas copias dentro de FIE_RECOVERY/sistema/:",
         "",
         "  cpu.txt      ← /proc/cpuinfo",
@@ -299,42 +340,54 @@ def main():
         "",
         "  libreoffice --writer \\",
         '    "$HOME/FIE_RECOVERY/documentos/Informe_Mantenimiento.odt" &',
-        "",
+        "--writer selecciona Writer; $HOME es tu directorio personal.",
+        "Las comillas protegen espacios; \\ al final continúa en otra línea.",
         "El símbolo & deja la terminal disponible mientras usas Writer.",
+        "Para ampliar: libreoffice --help; man bash explica &.",
         "Lee la referencia y visita la URL del informe para descodificarla.",
         "Conserva la contraseña obtenida: la necesitarás al final.",
         "",
         "Cuando hayas terminado, confirma desde otra terminal:",
         '  touch "$HOME/FIE_RECOVERY/sistema/expediente_leido.txt"',
         "",
-        "touch crea un archivo vacío que señala que has terminado de leer.",
+        "touch crea un archivo vacío; si existe, actualiza sus fechas.",
+        "Aquí confirma tu lectura. Para ampliar: man touch.",
         "Esta pantalla permanecerá hasta que crees ese archivo."
     ], 0.57)
     completed("LECTURA DEL EXPEDIENTE CONFIRMADA")
 
     wait_until(grep_tutorial_ok, "FASE 4 · TUTORIAL: grep", [
-        "Los registros son demasiado grandes para leerlos línea a línea.",
-        "grep selecciona las líneas que contienen un texto.",
+        "grep busca líneas que coinciden con un patrón, sin editar el archivo.",
+        'Ejemplo: grep "ERROR" archivo.log',
+        '"ERROR" es el patrón; archivo.log es el archivo que se lee.',
+        "Verás las líneas completas que contienen ERROR, respetando su orden.",
+        "Para ampliar: man grep. /palabra busca; n repite; q sale.",
         "",
-        "Ejemplo:",
-        "    grep \"ERROR\" archivo.log",
+        "GUARDAR LA SALIDA: > redirige lo que iría a la pantalla.",
+        'Ejemplo: grep "AVISO" archivo.log > avisos.txt',
+        "Crea avisos.txt o sobrescribe su contenido; >> añade al final.",
+        "Para ampliar: man bash, busca /REDIRECTION.",
         "",
-        "Ahora genera:",
+        "TU RETO: guarda las líneas ERROR en:",
         f"    {REC / 'sistema' / 'errores.txt'}",
         "con las líneas ERROR de:",
         f"    {TUTORIAL / 'registro.log'}",
-        "",
-        "Para guardar la salida de un comando en un fichero puedes usar >"
+        "Combina la selección de líneas y su guardado en un archivo."
     ], 0.60, ["Una posible forma empieza por: grep \"ERROR\" ... > ..."])
     completed("grep DOMINADO")
 
     wait_until(find_tutorial_ok, "FASE 4 · TUTORIAL: find", [
-        "find localiza ficheros por criterios.",
+        "find recorre un directorio y sus subdirectorios buscando nombres.",
+        'Ejemplo: find . -name "*.txt"',
+        ". indica dónde empieza; -name filtra por el nombre del archivo.",
+        '"*.txt" selecciona nombres que terminan en .txt.',
+        "Las comillas evitan que el shell expanda *: find recibe el patrón.",
+        "El resultado es una lista de rutas, no el contenido de los archivos.",
+        "Para ampliar: man find. Busca /-name; q vuelve a la terminal.",
         "",
-        "Ejemplo:",
-        "    find . -name \"*.txt\"",
-        "",
-        "Genera informes/cifrados.txt con las rutas de TODOS los .enc que hay en:",
+        "TU RETO: guarda la lista de rutas en:",
+        f"    {REC / 'informes' / 'cifrados.txt'}",
+        "Busca TODOS los .enc dentro de:",
         f"    {REPORTS}",
         "",
         "Guarda el resultado mediante >"
@@ -342,13 +395,19 @@ def main():
     completed("find DOMINADO")
 
     wait_until(pipe_tutorial_ok, "FASE 4 · TUTORIAL: PIPELINE", [
-        "El símbolo | conecta programas:",
-        "la salida del primero pasa a ser la entrada del segundo.",
+        "Una tubería | conecta la salida de un programa con otro.",
+        'Ejemplo: grep "ERROR" archivo.log | wc -l',
+        "1. grep selecciona las líneas que contienen ERROR.",
+        "2. | entrega esas líneas a wc, sin crear un archivo intermedio.",
+        "3. wc -l cuenta las líneas recibidas (-l significa líneas).",
+        "Verás un número: no cuenta palabras ni todos los errores repetidos",
+        "dentro de una misma línea, sino las líneas seleccionadas.",
+        "Para ampliar: man wc; man bash, busca /Pipelines.",
+        "| y > son operadores del shell: se explican en man bash.",
         "",
-        "Ejemplo:",
-        "    grep \"ERROR\" archivo.log | wc -l",
-        "",
-        "Genera sistema/numero_errores.txt con el número de líneas ERROR de:",
+        "TU RETO: guarda el número de líneas ERROR en:",
+        f"    {REC / 'sistema' / 'numero_errores.txt'}",
+        "Archivo que debes analizar:",
         f"    {TUTORIAL / 'registro.log'}",
         "",
         "Combina grep, |, wc -l y >"
@@ -366,23 +425,26 @@ def main():
         "Localízala y guarda esa línea en:",
         f"    {REC / 'informes' / 'indice.txt'}",
         "",
-        "Esta vez decide tú cómo combinar las herramientas aprendidas."
+        "Esta vez decide tú cómo combinar las herramientas aprendidas.",
+        "Para repasar: man grep, man find, man wc y man bash."
     ], 0.82, ["grep puede buscar el mismo texto en varios *.log"])
     completed("INFORME FINAL IDENTIFICADO: informe_01.enc")
 
     wait_until(final_ok, "FASE 5 · DESCIFRADO FINAL", [
-        "Dispones de las dos piezas necesarias:",
-        "",
-        "  Archivo:    informe_01.enc",
-        "  Contraseña: la obtenida con el decodificador César",
-        "",
-        "El informe usa AES-256-CBC con PBKDF2.",
-        "Patrón del comando:",
+        "Descifrar recupera el texto original usando la contraseña correcta.",
+        "OpenSSL ofrece herramientas de cifrado; enc procesa este archivo.",
+        "AES-256-CBC es el cifrado usado; PBKDF2 deriva la clave a partir",
+        "de la contraseña. Las opciones deben coincidir con las del cifrado.",
+        "-d descifra; -in indica el origen; -out el archivo que se creará.",
+        "Para ampliar: man openssl y man openssl-enc.",
+        "TU RETO: completa ARCHIVO y DESTINO con sus rutas reales:",
         "",
         "  openssl enc -d -aes-256-cbc -pbkdf2 \\",
         "    -in ARCHIVO \\",
-        "    -out DESTINO \\",
-        "    -pass pass:CONTRASEÑA",
+        "    -out DESTINO",
+        "\\ al final continúa el mismo comando en la línea siguiente.",
+        "OpenSSL pedirá la contraseña de César; no se verá al escribirla.",
+        "Archivo: informe_01.enc (consulta informes/cifrados.txt).",
         "",
         f"El destino debe ser: {REC / 'informes' / 'informe_final.txt'}"
     ], 0.90, [f"El archivo cifrado está en {REPORTS / 'informe_01.enc'}"])
