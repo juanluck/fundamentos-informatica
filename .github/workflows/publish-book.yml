@@ -20,6 +20,11 @@ jobs:
       - name: Check out source branch
         uses: actions/checkout@v4
 
+      - name: Validate escape room scripts
+        run: |
+          python3 -m py_compile escape-linux/package-src/iniciar.py
+          python3 -m py_compile escape-linux/build_escape.py
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
@@ -27,7 +32,9 @@ jobs:
         run: quarto render --to html
 
       - name: Build Linux escape room package
-        run: python3 escape-linux/build_escape.py
+        run: |
+          python3 escape-linux/build_escape.py
+          unzip -t _site/escape-linux/download/escape_fie.zip
 
       - name: Publish book at repository root
         shell: bash
