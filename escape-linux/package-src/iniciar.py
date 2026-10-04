@@ -8,12 +8,14 @@ import os
 import shutil
 import sys
 import time
+import textwrap
 
 PACKAGE = Path(__file__).resolve().parent
 HOME = Path.home()
 REC = HOME / "FIE_RECOVERY"
 START = time.time()
 WIDTH = 76
+LAST_EVENT = ""
 
 FRAG = PACKAGE / "fragmentos"
 LOGS = PACKAGE / "registros"
@@ -50,8 +52,9 @@ def box(title, lines, progress, footer="Esperando cambios en el sistema..."):
     print("║" + "".ljust(WIDTH) + "║")
     for raw in lines:
         for line in str(raw).splitlines() or [""]:
-            txt = ("  " + line)[:WIDTH]
-            print("║" + txt.ljust(WIDTH) + "║")
+            for part in textwrap.wrap(line, WIDTH - 2, replace_whitespace=False,
+                                      break_on_hyphens=False) or [""]:
+                print("║" + ("  " + part).ljust(WIDTH) + "║")
     print("║" + "".ljust(WIDTH) + "║")
     print("╠" + "─" * WIDTH + "╣")
     print("║" + ("  " + footer)[:WIDTH].ljust(WIDTH) + "║")
@@ -67,6 +70,8 @@ def wait_until(check, title, lines, progress, hints=()):
             return detail
         age = time.time() - started
         extra = list(lines)
+        if LAST_EVENT:
+            extra = ["✓ " + LAST_EVENT, ""] + extra
         if detail:
             extra += ["", detail]
         if hints:
@@ -91,11 +96,10 @@ def text(path):
         return ""
 
 
-def flash(msg, progress, seconds=2):
-    end = time.time() + seconds
-    while time.time() < end:
-        box("CAMBIO DETECTADO", ["", "✓ " + msg, ""], progress, "Verificando siguiente etapa...")
-        time.sleep(0.25)
+def completed(msg):
+    # El aviso permanece en el siguiente objetivo, sin pantallas temporizadas.
+    global LAST_EVENT
+    LAST_EVENT = msg
 
 
 def has_dirs():
@@ -165,6 +169,12 @@ def unlock_odt():
         shutil.copy2(DOCS / "Informe_Mantenimiento.odt", dst)
 
 
+def dossier_read():
+    # Confirmación de lectura desde otra terminal; no se intenta detectar
+    # la apertura de Writer ni se solicita una respuesta dentro de Python.
+    return (REC / "sistema" / "expediente_leido.txt").is_file(), None
+
+
 def grep_tutorial_ok():
     src_lines = [l for l in text(TUTORIAL / "registro.log").splitlines() if "ERROR" in l]
     out = REC / "sistema" / "errores.txt"
@@ -213,7 +223,7 @@ def final_ok():
 
 
 def main():
-    box("CONSOLA DE RECUPERACIÓN", [
+    wait_until(lambda: (REC.is_dir(), None), "CONSOLA DE RECUPERACIÓN", [
         "Paquete de emergencia detectado.",
         "",
         "ESTADO",
@@ -225,17 +235,13 @@ def main():
         "",
         "OBJETIVO: recuperar el dispositivo físico de respaldo.",
         "",
-        "Mantén esta consola abierta. Trabaja desde otras terminales."
-    ], 0.0, "La supervisión automática comienza en 4 segundos...")
-    time.sleep(4)
-
-    wait_until(lambda: (REC.is_dir(), None if REC.is_dir() else f"Crea el directorio {REC}"),
-               "FASE 1 · RECONSTRUCCIÓN", [
-                   "El directorio principal del sistema de respaldo se ha perdido.",
-                   "La ruta registrada era:",
-                   f"    {REC}"
-               ], 0.04, ["Piensa qué comando crea un directorio nuevo."])
-    flash("DIRECTORIO DE RECUPERACIÓN DETECTADO", 0.08)
+        "Mantén esta consola abierta. Trabaja desde otras terminales.",
+        "",
+        "PRIMER OBJETIVO: crea el directorio de recuperación:",
+        f"    {REC}",
+        "La consola avanzará cuando detecte ese directorio."
+    ], 0.0, ["Piensa qué comando crea un directorio nuevo."])
+    completed("DIRECTORIO DE RECUPERACIÓN DETECTADO")
 
     wait_until(has_dirs, "FASE 1 · RECONSTRUCCIÓN", [
         "Reconstruye dentro de FIE_RECOVERY los tres módulos originales:",
@@ -244,7 +250,7 @@ def main():
         "    informes/",
         "    sistema/"
     ], 0.10, ["Puedes crear varios directorios con mkdir."])
-    flash("ESTRUCTURA BÁSICA RESTAURADA", 0.16)
+    completed("ESTRUCTURA BÁSICA RESTAURADA")
 
     wait_until(copied_state, "FASE 1 · RECUPERAR ESTADO", [
         "En el paquete original se conserva el estado del equipo.",
@@ -254,7 +260,7 @@ def main():
         "",
         "Recupéralo conservando exactamente su contenido."
     ], 0.18, ["Necesitas copiar un fichero y cambiar su nombre en el destino."])
-    flash("ESTADO INICIAL VERIFICADO", 0.24)
+    completed("ESTADO INICIAL VERIFICADO")
 
     wait_until(docs_copied, "FASE 1 · DOCUMENTACIÓN", [
         "Recupera TODOS los documentos de texto del directorio fragmentos/.",
@@ -264,7 +270,7 @@ def main():
         "",
         "Los documentos válidos tienen extensión .txt"
     ], 0.26, ["Los comodines permiten seleccionar muchos ficheros: piensa en *.txt"])
-    flash("DOCUMENTACIÓN RECUPERADA", 0.32)
+    completed("DOCUMENTACIÓN RECUPERADA")
 
     wait_until(obsolete_removed, "FASE 1 · DEPURACIÓN", [
         "El manifiesto marca una copia obsoleta que no debe conservarse:",
@@ -273,7 +279,7 @@ def main():
         "",
         "Elimínala del sistema reconstruido."
     ], 0.34, ["rm elimina ficheros. Comprueba bien la ruta antes de usarlo."])
-    flash("FASE 1 COMPLETADA", 0.40)
+    completed("FASE 1 COMPLETADA")
 
     wait_until(system_files_ok, "FASE 2 · IDENTIFICACIÓN", [
         "Antes de confiar en los informes hay que documentar el sistema real.",
@@ -285,21 +291,26 @@ def main():
         "",
         "La consola verificará automáticamente su contenido."
     ], 0.42, ["Los ficheros de /proc pueden copiarse igual que cualquier fichero de texto."])
-    flash("EQUIPO IDENTIFICADO", 0.52)
+    completed("EQUIPO IDENTIFICADO")
     unlock_odt()
 
-    box("FASE 3 · EXPEDIENTE RECUPERADO", [
-        "Se ha desbloqueado un documento asociado al procedimiento:",
+    wait_until(dossier_read, "FASE 3 · EXPEDIENTE RECUPERADO", [
+        "Abre el informe en LibreOffice Writer desde otra terminal:",
         "",
-        f"    {REC / 'documentos' / 'Informe_Mantenimiento.odt'}",
+        "  libreoffice --writer \\",
+        '    "$HOME/FIE_RECOVERY/documentos/Informe_Mantenimiento.odt" &',
         "",
-        "Ábrelo con LibreOffice Writer.",
-        "El informe contiene una referencia codificada y una URL exacta.",
-        "Usa esa página para obtener la contraseña de recuperación.",
+        "El símbolo & deja la terminal disponible mientras usas Writer.",
+        "Lee la referencia y visita la URL del informe para descodificarla.",
+        "Conserva la contraseña obtenida: la necesitarás al final.",
         "",
-        "No tendrás que escribir la contraseña en esta consola: consérvala."
-    ], 0.57, "La siguiente fase se activará automáticamente en 10 segundos...")
-    time.sleep(10)
+        "Cuando hayas terminado, confirma desde otra terminal:",
+        '  touch "$HOME/FIE_RECOVERY/sistema/expediente_leido.txt"',
+        "",
+        "touch crea un archivo vacío que señala que has terminado de leer.",
+        "Esta pantalla permanecerá hasta que crees ese archivo."
+    ], 0.57)
+    completed("LECTURA DEL EXPEDIENTE CONFIRMADA")
 
     wait_until(grep_tutorial_ok, "FASE 4 · TUTORIAL: grep", [
         "Los registros son demasiado grandes para leerlos línea a línea.",
@@ -315,7 +326,7 @@ def main():
         "",
         "Para guardar la salida de un comando en un fichero puedes usar >"
     ], 0.60, ["Una posible forma empieza por: grep \"ERROR\" ... > ..."])
-    flash("grep DOMINADO", 0.66)
+    completed("grep DOMINADO")
 
     wait_until(find_tutorial_ok, "FASE 4 · TUTORIAL: find", [
         "find localiza ficheros por criterios.",
@@ -328,7 +339,7 @@ def main():
         "",
         "Guarda el resultado mediante >"
     ], 0.68, ["Cambia el punto del ejemplo por el directorio que quieres explorar."])
-    flash("find DOMINADO", 0.73)
+    completed("find DOMINADO")
 
     wait_until(pipe_tutorial_ok, "FASE 4 · TUTORIAL: PIPELINE", [
         "El símbolo | conecta programas:",
@@ -342,7 +353,7 @@ def main():
         "",
         "Combina grep, |, wc -l y >"
     ], 0.75, ["La tubería cuenta; la redirección final guarda ese número."])
-    flash("TUTORIAL AVANZADO COMPLETADO", 0.80)
+    completed("TUTORIAL AVANZADO COMPLETADO")
 
     wait_until(boss_index_ok, "BOSS DIGITAL · ÍNDICE DAÑADO", [
         "Ya puedes trabajar sobre los registros reales.",
@@ -357,7 +368,7 @@ def main():
         "",
         "Esta vez decide tú cómo combinar las herramientas aprendidas."
     ], 0.82, ["grep puede buscar el mismo texto en varios *.log"])
-    flash("INFORME FINAL IDENTIFICADO: informe_01.enc", 0.88)
+    completed("INFORME FINAL IDENTIFICADO: informe_01.enc")
 
     wait_until(final_ok, "FASE 5 · DESCIFRADO FINAL", [
         "Dispones de las dos piezas necesarias:",
