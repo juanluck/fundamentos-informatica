@@ -26,10 +26,12 @@
       <h2>0 · Preparar la consola</h2>
       <p>Descarga el ZIP y abre una terminal en la carpeta donde lo hayas guardado.</p>
 
-      <h3>1. Descomprime el paquete</h3>
+      <h3>1. Descomprime el paquete y colócalo en tu HOME</h3>
       <pre><code>unzip escape_fie.zip
-cd escape_fie
+mv escape_fie ~/escape_fie
+cd ~/escape_fie
 ls</code></pre>
+      <p>A partir de ahora el paquete original estará en <code>~/escape_fie</code>. El sistema reconstruido se creará aparte, directamente bajo tu directorio HOME.</p>
 
       <h3>2. Averigua dónde está Python 3</h3>
       <p>Necesitarás indicar al programa qué intérprete debe ejecutarlo.</p>
