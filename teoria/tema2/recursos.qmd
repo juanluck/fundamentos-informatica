@@ -1,0 +1,88 @@
+---
+title: "Recursos · Para volver al material"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .tema2-sheet}
+
+:::::: {.running-head}
+Tema 2 · Representación de la información
+
+Recursos
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+TEMA 2 · MATERIAL COMPLEMENTARIO
+:::::
+
+# Para volver al material
+
+::::: {.deck}
+Las diapositivas con notas y los ejemplos interactivos acompañan el recorrido del libro.
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+
+
+:::::: {.lesson-section}
+## Diapositivas con notas
+
+El PDF reúne **247 páginas**, incluidas transiciones, ejemplos, ejercicios y notas para estudiar. El libro transforma ese recorrido en ocho lecciones continuas, de 2.0 a 2.7.
+
+**[Abrir las diapositivas del Tema 2 con notas](../../assets/media/tema2/tema2-resumen-ejercicios-con-notas.pdf)**
+
+El documento está alojado junto al libro y puede descargarse desde el visor del navegador.
+::::::
+
+
+:::::: {.lesson-section}
+## Laboratorios interactivos
+
+| Recurso | Qué observar | Lección |
+|:--|:--|:--|
+| [Nyquist–Shannon](../../assets/interactivos/nyquist-shannon.html) | Muestreo, reconstrucción y aliasing. | [2.3 · Sonidos](03-sonidos.qmd) |
+| [JPEG paso a paso](../../assets/interactivos/jpeg-paso-a-paso.html) | Componentes, submuestreo, transformación y cuantificación. | [2.4 · Imágenes](04-imagenes.qmd) |
+
+Cada laboratorio se abre como página independiente para disponer de espacio suficiente, también en pantallas pequeñas. Antes de mover un control, predice qué debería cambiar y comprueba después el resultado.
+::::::
+
+
+:::::: {.lesson-section}
+## Repasar y resolver
+
+- [48 tarjetas de repaso](tarjetas.qmd), filtradas por las ocho lecciones.
+- [Ejercicios con resolución desplegable](ejercicios.qmd), con las hipótesis y unidades de cada problema.
+::::::
+
+
+:::::: {.lesson-section}
+## Referencias del material docente
+
+- [Unicode: arquitectura del estándar](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-2/) y [preguntas sobre UTF y orden de bytes](https://www.unicode.org/faq/utf_bom.html).
+- [CIE: Colorimetry](https://cie.co.at/publications/colorimetry-4th-edition), para colorimetría y espacios de referencia.
+- [Library of Congress: serie de Muybridge](https://www.loc.gov/item/97502309/), para el contexto histórico del movimiento fotografiado.
+- [Conversor de precisión simple](https://www.binaryconvert.com/convert_float.html), enlazado en las diapositivas. Úsalo para comprobar los campos después de calcularlos.
+
+Las fotografías y figuras originales reutilizadas proceden del material docente aportado. Las leyendas identifican las obras conocidas; el detalle de procedencia y adaptación queda documentado en el repositorio.
+::::::
+
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+Tema 2 · Recursos
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Anterior](tarjetas.qmd)
+
+[Siguiente →](../../index.qmd)
+:::

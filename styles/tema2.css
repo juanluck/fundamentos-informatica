@@ -1,0 +1,48 @@
+/* Tema 2: semantic Markdown within the existing Design System v1.
+   All additions are scoped so the approved Tema 1 stays unchanged. */
+.tema2-sheet{min-height:0}
+.tema2-sheet .lesson-section>p{margin:0 0 13px;line-height:1.38}
+.tema2-sheet .lesson-section h2{margin-bottom:13px}
+.tema2-sheet h3{font-size:19px;line-height:1.15;margin:20px 0 10px}
+.tema2-sheet li{font-size:16px;line-height:1.38;margin-bottom:7px}
+.tema2-sheet a{color:var(--accent-text);text-underline-offset:3px}
+.tema2-sheet .table-scroll{overflow-x:auto;margin:18px 0;max-width:100%}
+.tema2-sheet table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.3}
+.tema2-sheet th{background:var(--soft);font-weight:700;text-align:left}
+.tema2-sheet td,.tema2-sheet th{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tema2-sheet tbody tr:last-child td{border-bottom:2px solid var(--line)}
+.tema2-sheet figure{margin:22px 0}
+.tema2-sheet figure img{display:block;max-width:100%;height:auto;margin:auto}
+.tema2-sheet figcaption{font-size:12px;line-height:1.35;color:var(--ink);opacity:.8;margin-top:8px}
+.tema2-sheet .figure-pair{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:start}
+.tema2-sheet .figure-pair figure{margin:14px 0}
+.tema2-sheet .rule-band{margin:20px 0;padding:15px;line-height:1.4}
+.tema2-sheet .rule-band p{margin:0}
+.tema2-sheet .math.display{display:block;overflow-x:auto;max-width:100%;padding:5px 0}
+.tema2-sheet math[display="block"]{display:block;overflow-x:auto;max-width:100%;padding:8px 0}
+.tema2-sheet pre{overflow-x:auto;padding:15px;background:var(--soft);font-size:13px;line-height:1.55;border-left:2px solid var(--accent)}
+.tema2-sheet code{font-size:.86em;overflow-wrap:anywhere}
+.tema2-sheet pre code{overflow-wrap:normal}
+.tema2-sheet .resource-note{font-size:15px;line-height:1.4;margin:22px 0}
+.tema2-sheet .resource-note p{margin:0}
+.tema2-sheet .exercise-item{margin:22px 0;padding:18px;border-top:2px solid var(--line);background:rgba(244,229,213,.3)}
+.tema2-sheet .exercise-item h3{margin-top:0}
+.tema2-sheet .exercise-item>p{line-height:1.4}
+.tema2-sheet .resolution-body p{font-size:15.5px;line-height:1.4}
+.tema2-sheet .exercise-solution summary{cursor:pointer;color:var(--accent-text);padding:10px 0;font-weight:700}
+.tema2-sheet :focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+@media(max-width:620px){
+  .tema2-sheet .figure-pair{grid-template-columns:1fr}
+  .tema2-sheet .figure-pair figure{max-width:100%}
+  .tema2-sheet .figure-pair img{max-height:280px;object-fit:contain}
+  .tema2-sheet h1{font-size:clamp(37px,10vw,50px);overflow-wrap:break-word}
+  .tema2-sheet table{font-size:13px;min-width:440px}
+  .tema2-sheet td,.tema2-sheet th{padding:8px}
+  .tema2-sheet .exercise-item{padding:12px}
+  .tema2-sheet .running-head{gap:12px}
+}
+@media print{
+  .tema2-sheet .table-scroll{overflow:visible}
+  .tema2-sheet table{min-width:0}
+  .tema2-sheet details::details-content{content-visibility:visible}
+}

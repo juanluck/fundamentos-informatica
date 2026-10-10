@@ -1,0 +1,564 @@
+---
+title: "Ejercicios · Ponte a prueba"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .tema2-sheet}
+
+:::::: {.running-head}
+Tema 2 · Representación de la información
+
+Ejercicios
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+TEMA 2 · EJERCICIOS
+:::::
+
+# Ponte a prueba
+
+::::: {.deck}
+24 ejercicios organizados por lección. Lee el enunciado, fija las unidades y la convención, y despliega la resolución después de intentarlo.
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+
+
+:::::: {.lesson-section}
+## Sistemas de numeración {#numeracion}
+
+Practica las conversiones antes de consultar las tablas. Los ejercicios 1–4 recogen ejemplos y cuestiones de L2.0.
+
+::::: {.exercise-item}
+### 1. Leer y convertir
+
+**Enunciado.** Interpreta `00001001` como entero sin signo. Convierte 74 a binario y 678 a hexadecimal. Comprueba los resultados mediante pesos.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+$00001001_2=8+1=9$. Las divisiones sucesivas dan $74_{10}=1001010_2$ y $678_{10}=2A6_{16}$.
+
+Comprobaciones: $64+8+2=74$ y $2\times256+10\times16+6=678$. Los ceros iniciales no cambian el valor sin signo.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 2. Una fracción que no termina
+
+**Enunciado.** Convierte 0,423 a binario conservando seis cifras fraccionarias mediante truncamiento. ¿Es exacto el resultado?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Las partes enteras de las seis multiplicaciones sucesivas por dos son **0, 1, 1, 0, 1, 1**. Por tanto:
+
+$$0{,}423_{10}\approx0{,}011011_2=\frac14+\frac18+\frac1{32}+\frac1{64}=0{,}421875$$
+
+La diferencia es 0,001125. Queda una fracción pendiente, de modo que no es exacto.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 3. Agrupar desde la coma
+
+**Enunciado.** Convierte $101101{,}011_2$ a hexadecimal. Explica dónde añades ceros y comprueba el recorrido inverso.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Agrupamos desde la coma: `0010 1101 , 0110`. Los ceros añadidos quedan a la izquierda de la parte entera y a la derecha de la fracción. Obtenemos **$2D{,}6_{16}$**.
+
+Cada cifra vuelve a convertirse en cuatro bits: 2 → 0010, D → 1101, 6 → 0110. Quitar los ceros no significativos devuelve el número inicial.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 4. Operaciones y desplazamientos
+
+**Enunciado.** Calcula $1110_2+0111_2$, $10101_2-01010_2$ y $1101_2\times101_2$. ¿Qué ocurre al desplazar $1010_2$ un bit a la izquierda?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Los resultados son **10101**, **01011** y **1000001**, respectivamente. Corresponden a 21, 11 y 65 en decimal.
+
+Con espacio suficiente, desplazar 1010 produce 10100: $10\times2=20$. En solo cuatro bits se pierde el bit superior y queda 0100, valor 4; ya no representa el resultado exacto.
+::::
+
+</details>
+:::::
+::::::
+
+
+:::::: {.lesson-section}
+## Códigos y compresión {#codigos}
+
+Aplicación de los ejemplos de L2.1: patrones disponibles, control de errores y medidas de reducción.
+
+::::: {.exercise-item}
+### 5. Patrones y paridad
+
+**Enunciado.** ¿Cuántos bits de longitud fija necesitas para cinco objetos? Añade paridad par a los datos 1011. ¿Podrías corregir un error solo con ese bit?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Necesitamos **tres bits**: dos dan cuatro patrones; tres dan ocho.
+
+1011 contiene tres unos. Añadimos un **1** para obtener cuatro unos en total. Un cambio de bit altera la paridad; dos cambios pueden mantenerla. La paridad sola no identifica la posición incorrecta y no permite corregirla.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 6. Tres medidas de compresión
+
+**Enunciado.** Un archivo pasa de 14 MB a 5 MB. Calcula el factor de compresión, el porcentaje que permanece y el ahorro porcentual.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+El factor es $14/5=\mathbf{2{,}8:1}$. Permanece $5/14\times100\approx\mathbf{35{,}7\%}$. El ahorro es $9/14\times100\approx\mathbf{64{,}3\%}$.
+
+No confundas 35,7 % de tamaño restante con 35,7 % de ahorro.
+::::
+
+</details>
+:::::
+::::::
+
+
+:::::: {.lesson-section}
+## Texto: contar caracteres y bytes {#texto}
+
+Ejercicios de L2.2. Se excluyen BOM, cabeceras y otros bytes adicionales. Los puntos de código de los grupos indicados son válidos.
+
+::::: {.exercise-item}
+### 7. De UTF-16 a UTF-8
+
+**Enunciado.** Un archivo contiene 18.325 caracteres de U+0000–U+007F, 127 de U+0080–U+07FF y 14 de U+0800–U+FFFF. Suponiendo dos bytes por carácter en UTF-16, ¿qué factor de reducción se obtiene al recodificarlo en UTF-8?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+En UTF-8 sumamos tamaños por grupo:
+
+| Grupo | Bytes |
+|:--|--:|
+| 18.325 × 1 | 18.325 |
+| 127 × 2 | 254 |
+| 14 × 3 | 42 |
+| **Total** | **18.621** |
+
+Hay $18\,325+127+14=18\,466$ caracteres. En UTF-16 ocupan $18\,466\times2=36\,932$ B.
+
+$$f_c=\frac{36\,932}{18\,621}\approx\mathbf{1{,}98:1}$$
+
+Es una recodificación del mismo texto, no un compresor general.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 8. Del tamaño al número de caracteres
+
+**Enunciado.** Un archivo UTF-8 ocupa 139 KiB. Contiene 1.024 caracteres de tres bytes, 4.096 de dos bytes y el resto de un byte. ¿Cuánto ocupará en UTF-16, suponiendo dos bytes por carácter?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Los grupos conocidos ocupan $1024\times3=3$ KiB y $4096\times2=8$ KiB. Quedan $139-11=128$ KiB: **131.072 caracteres de un byte**.
+
+El total es $1024+4096+131\,072=136\,192$ caracteres. En UTF-16:
+
+$$136\,192\times2=272\,384\text{ B}=\mathbf{266\text{ KiB}}$$
+
+No olvides volver a sumar los caracteres de los dos grupos conocidos.
+::::
+
+</details>
+:::::
+::::::
+
+
+:::::: {.lesson-section}
+## Sonido: tiempo, amplitud y tamaño {#sonido}
+
+Ejercicios de L2.3. El tamaño del primer problema corresponde solo a datos PCM.
+
+::::: {.exercise-item}
+### 9. Deducir la frecuencia de muestreo
+
+**Enunciado.** Un audio estéreo dura 20 s, utiliza 16 bits por muestra y ocupa 625 KiB de datos sin comprimir. ¿A qué frecuencia se ha muestreado?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Convertimos $625\times1024=640\,000$ B. Despejamos la frecuencia:
+
+$$f_s=\frac{8C}{n_sct}=\frac{8\times640\,000}{16\times2\times20}=\mathbf{8000\text{ Hz}}$$
+
+Son 8.000 muestras por segundo **en cada canal**. Sustituir este valor en la fórmula del tamaño devuelve los 625 KiB.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 10. La condición de muestreo
+
+**Enunciado.** ¿Cuál es el límite teórico de muestreo para una señal de banda base cuya frecuencia máxima es 20 kHz? ¿Bastaría aumentar los bits por muestra si se muestrea demasiado despacio?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+El límite es $2f_{\max}=\mathbf{40\text{ kHz}}$. Para evitar casos límite y permitir filtrado usamos una frecuencia **superior** a 40 kHz.
+
+Aumentar bits mejora la cuantificación de amplitud, pero no corrige el aliasing causado por muestreo insuficiente.
+::::
+
+</details>
+:::::
+::::::
+
+
+:::::: {.lesson-section}
+## Imagen: píxeles, color y paleta {#imagen}
+
+Los cuatro ejercicios proceden de L2.4. Mantén las exclusiones del enunciado: no estás calculando necesariamente el tamaño final de un archivo real.
+
+::::: {.exercise-item}
+### 11. Imagen RGB pequeña
+
+**Enunciado.** Una imagen mide 10 × 15 píxeles y usa RGB de 24 bits por píxel. ¿Cuántos bytes ocupan sus datos sin compresión, cabecera ni relleno?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Tiene 150 píxeles y cada uno ocupa tres bytes:
+
+$$C=10\times15\times\frac{24}{8}=\mathbf{450\text{ B}}$$
+
+El resultado 3.600 corresponde a **bits**, no a bytes.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 12. Escala de grises
+
+**Enunciado.** Una imagen mide 256 × 256 píxeles y usa ocho bits por píxel. Calcula sus datos en KiB, sin compresión, cabecera ni paleta.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Un píxel ocupa un byte. $256\times256=65\,536$ B. Al dividir entre 1024 obtenemos **64 KiB**.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 13. Submuestreo de color
+
+**Enunciado.** Partimos de RGB con 24 bits por píxel. Por cada cuadrado de 5 × 5 píxeles guardamos 25 valores de Y′, uno de Cb y uno de Cr; cada componente usa ocho bits. Calcula el factor de reducción y el ahorro.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+El bloque RGB original ocupa $25\times24=600$ bits. El modelo reducido ocupa $(25+1+1)\times8=216$ bits.
+
+$$f_c=600/216\approx\mathbf{2{,}78:1}$$
+
+Permanece $216/600=36\%$ y se ahorra **64 %**. Este modelo simplificado no calcula el tamaño completo de un JPEG.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 14. RGB frente a una paleta
+
+**Enunciado.** Una imagen de 1600 × 900 píxeles pasa de RGB truecolor de 24 bits a índices de una paleta de 256 colores RGB. Calcula: a) paleta; b) índices y conjunto; c) factor de reducción. Excluye cabeceras, relleno y compresión LZW.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+**a) Paleta.** $256\times3=\mathbf{768\text{ B}}=0{,}75$ KiB.
+
+**b) Índices.** Cada píxel necesita ocho bits. Hay $1600\times900=1\,440\,000$ píxeles: **1.440.000 B** de índices. Con la paleta: **1.440.768 B**.
+
+**c) Factor.** RGB ocupa $1\,440\,000\times3=4\,320\,000$ B:
+
+$$f_c=\frac{4\,320\,000}{1\,440\,768}\approx\mathbf{2{,}998:1}$$
+
+Queda ligeramente por debajo de tres por el coste fijo de la paleta. Reducir los colores puede perder fidelidad aunque LZW, si se aplicara después, preservara los índices.
+::::
+
+</details>
+:::::
+::::::
+
+
+:::::: {.lesson-section}
+## Vídeo: contar grupos y fotogramas {#video}
+
+Ejercicios de L2.5. Se conserva el modelo didáctico original: grupos I–P–B completos, B de cero bytes y ausencia de audio y metadatos. No es una propiedad general de un códec real.
+
+::::: {.exercise-item}
+### 15. Tamaño de un vídeo
+
+**Enunciado.** Un vídeo de cinco minutos contiene 9.000 fotogramas de 1,4 megapíxeles. Se agrupan de tres en tres: I usa 3 B/píxel, P usa 1 B/píxel y B se reconstruye sin aportar bytes. ¿Cuántos GB ocupan los datos? Usa unidades decimales.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Hay $9000/3=3000$ grupos. Cada I ocupa $1\,400\,000\times3=4{,}2$ MB y cada P, $1{,}4$ MB. Un grupo ocupa **5,6 MB**.
+
+$$3000\times5{,}6=16\,800\text{ MB}=\mathbf{16{,}8\text{ GB}}$$
+
+La duración permite comprobar que el vídeo tiene 30 fps, pero no hace falta para calcular el tamaño cuando ya conocemos el número de imágenes.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 16. Deducir los fps
+
+**Enunciado.** Un vídeo de diez minutos ocupa 16,1 GB. Sus fotogramas de 1600 × 900 píxeles se agrupan de tres en tres: I utiliza 16 bits/píxel, P utiliza ocho y B no aporta bytes. Calcula los fps aproximados. El tamaño está redondeado; usa 1 GB = 10⁹ B.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Hay 1.440.000 píxeles por imagen. I ocupa 2.880.000 B; P, 1.440.000 B. Un grupo cuesta **4.320.000 B**.
+
+$$\text{grupos}\approx\frac{16\,100\,000\,000}{4\,320\,000}=3726{,}85$$
+
+Multiplicamos por tres, porque B también cuenta: aproximadamente 11.180,56 fotogramas. Dividimos entre 600 s:
+
+$$f\approx\mathbf{18{,}63\text{ fps}}$$
+
+Los decimales intermedios reflejan el tamaño redondeado. No representan grupos o fotogramas físicamente fraccionados.
+::::
+
+</details>
+:::::
+::::::
+
+
+:::::: {.lesson-section}
+## Enteros: fijar ancho y convención {#enteros}
+
+Ejercicios de L2.6. Todos los patrones de esta sección tienen ocho bits.
+
+::::: {.exercise-item}
+### 17. Codificar −37 en CA1 y CA2
+
+**Enunciado.** Representa −37 en CA1 y en CA2. Escribe los patrones binarios y su abreviatura hexadecimal.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+$37=32+4+1$ se escribe `00100101`.
+
+| Convención | Procedimiento | Resultado |
+|:--|:--|:--|
+| CA1 | Invertir los ocho bits | **11011010 = DA** |
+| CA2 | Invertir y sumar uno | **11011011 = DB** |
+
+El ancho se fija antes de invertir. En CA1 no se suma uno.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 18. D6 con dos interpretaciones
+
+**Enunciado.** El patrón D6 hexadecimal codifica un entero. Obtén su valor si la convención es CA1 y si es CA2.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+D6 se escribe `11010110`; el bit superior es 1.
+
+En **CA1**, invertimos: `00101001` = 41. El valor es **−41**.
+
+En **CA2**, su valor sin signo es 214: $214-256=\mathbf{-42}$. También puede invertirse y sumar uno para obtener su magnitud: `00101010` = 42.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 19. Un entero con sesgo
+
+**Enunciado.** Representa −18 con ocho bits y sesgo 128. Da su código binario y hexadecimal y compruébalo en sentido inverso.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+El código es $N+S=-18+128=110$. Como entero sin signo, 110 se escribe **01101110 = 6E**.
+
+Al decodificar: $110-128=\mathbf{-18}$. No se interpreta el primer bit como signo independiente.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 20. Sumar −14 + 7 en CA2
+
+**Enunciado.** Codifica los operandos en CA2 de ocho bits, suma e interpreta el resultado. ¿Hay desbordamiento?
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+$+14$ es `00001110`; invertimos y sumamos uno para obtener $-14$: `11110010`. $+7$ es `00000111`.
+
+$$11110010+00000111=11111001$$
+
+El resultado sin signo es 249: $249-256=\mathbf{-7}$. No hay desbordamiento; −7 pertenece al rango. Además, los operandos tienen signos distintos.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 21. Acarreo y desbordamiento
+
+**Enunciado.** Compara 127 + 1 y −1 + 1 en CA2 de ocho bits. Indica acarreo exterior, patrón conservado y desbordamiento.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+| Suma | Acarreo | Ocho bits conservados | Desbordamiento |
+|:--|--:|:--|:--|
+| 127 + 1 | 0 | 10000000 | **Sí**: 128 no cabe. |
+| −1 + 1 | 1 | 00000000 | **No**: el resultado es 0. |
+
+El primer resultado se leería como −128, distinto de la suma matemática. El segundo representa correctamente cero aunque salga un acarreo.
+::::
+
+</details>
+:::::
+::::::
+
+
+:::::: {.lesson-section}
+## Reales: codificar, decodificar y comprobar {#reales}
+
+Ejemplos y ejercicios de L2.7. Se utiliza IEEE 754 binary32, con 1 bit de signo, 8 de exponente y 23 de fracción.
+
+::::: {.exercise-item}
+### 22. Codificar un número ya expresado en binario
+
+**Enunciado.** Codifica $-11{,}0011_2$ en IEEE 754 de 32 bits. Obtén signo, exponente sesgado, fracción y palabra hexadecimal.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+La magnitud se normaliza como $1{,}10011_2\times2^1$. Así, $s=1$, $E=1$ y $e=1+127=128$.
+
+| Campo | Bits |
+|:--|:--|
+| Signo | `1` |
+| Exponente | `10000000` |
+| Fracción | `10011000000000000000000` |
+
+La palabra es **C04C0000**. Su valor decimal es −3,1875. No se aplica complemento a dos a la palabra IEEE 754.
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 23. Decodificar 01F80000
+
+**Enunciado.** Interpreta 01F80000 hexadecimal como binary32. Comprueba el tipo de número antes de usar la fórmula.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Los campos son $s=0$, $e=3$ y fracción `1111000…`. Como $1\le3\le254$, es normal.
+
+$$E=3-127=-124,\qquad M=1{,}1111_2=1{,}9375$$
+
+$$N=1{,}9375\times2^{-124}\approx\mathbf{9{,}1100812\times10^{-38}}$$
+::::
+
+</details>
+:::::
+
+::::: {.exercise-item}
+### 24. Normales y casos especiales
+
+**Enunciado.** Clasifica 00000000, 80000000, 3F800000, 7F800000, FF800000 y 7FC00000. Codifica además 87 como comprobación.
+
+<details class="exercise-solution">
+<summary>Resolución paso a paso</summary>
+
+:::: {.resolution-body}
+Los patrones representan, respectivamente, **+0, −0, 1, +∞, −∞ y un NaN**. NaN admite otros patrones.
+
+Para 87: $1010111_2=1{,}010111_2\times2^6$. $s=0$, $e=133=10000101_2$ y fracción `010111` completada con ceros. La palabra es **42AE0000**.
+::::
+
+</details>
+:::::
+::::::
+
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+Tema 2 · Ejercicios
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Anterior](07-reales.qmd)
+
+[Siguiente →](tarjetas.qmd)
+:::

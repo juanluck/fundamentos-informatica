@@ -1,0 +1,173 @@
+---
+title: "2.2 · ¿Cómo se guarda un texto?"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .tema2-sheet}
+
+:::::: {.running-head}
+Tema 2 · Representación de la información
+
+2.2
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+LECCIÓN 2.2
+:::::
+
+# ¿Cómo se guarda un texto?
+
+::::: {.deck}
+Leer letras en la pantalla oculta dos decisiones: qué número identifica cada carácter y cómo se escribe ese número en bytes.
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+
+
+:::::: {.lesson-section}
+## 1. Del texto a los números
+
+En la escena de comunicación de *The Martian*, un repertorio limitado de símbolos sirve para transmitir mensajes. La idea informática es acordar un código: si Ana asigna `01` a A y Luis lo asigna a B, los mismos bits producen un malentendido.
+
+El texto **Hoy**, en ASCII o UTF-8 y sin salto de línea, se guarda así:
+
+| Carácter | Decimal | Hexadecimal | Byte en binario |
+|:--|--:|:--|:--|
+| H | 72 | 48 | 01001000 |
+| o | 111 | 6F | 01101111 |
+| y | 121 | 79 | 01111001 |
+
+Son tres caracteres y tres bytes. `48` es la escritura hexadecimal del byte de H, no dos caracteres que se hayan añadido al mensaje. Un editor hexadecimal muestra los bytes junto a una interpretación textual.
+::::::
+
+
+:::::: {.lesson-section}
+## 2. ASCII: un repertorio de siete bits
+
+ASCII define **128 posiciones**, porque $2^7=128$. Incluye letras latinas sin acentos, cifras, signos y caracteres de control. Guardado en bytes, el bit superior es cero.
+
+| Códigos hexadecimales | Contenido | Ejemplo |
+|:--|:--|:--|
+| 00–1F | Controles | LF = 0A, salto de línea |
+| 20 | Espacio | Separación entre palabras |
+| 30–39 | Cifras | «0» = 30; «9» = 39 |
+| 41–5A | Mayúsculas | A = 41 |
+| 61–7A | Minúsculas | a = 61; j = 6A |
+| 7F | Control | DEL |
+
+El carácter **«0»** tiene código 48 en decimal; no es el entero cero. Para localizar j, combinamos 6 y A: $6A_{16}=106_{10}=01101010_2$.
+
+Un repertorio de 105 caracteres ya necesita siete bits: $64<105\le128$. No hay que confundir los caracteres utilizados con todos los patrones disponibles.
+::::::
+
+
+:::::: {.lesson-section}
+## 3. De las tablas de ocho bits a Unicode
+
+Las extensiones de ocho bits ofrecen 256 posiciones y conservan ASCII en su parte baja, pero difieren en las posiciones superiores. ISO 8859-1 (**Latin-1**) incluye ñ con el byte **F1**; otras tablas atienden a otras escrituras.
+
+| Familia | Repertorio principal |
+|:--|:--|
+| Latin-1 / ISO 8859-1 | Europa occidental |
+| Latin-2 / ISO 8859-2 | Europa central y oriental |
+| ISO 8859-5, -6, -7, -8 | Cirílico, árabe, griego y hebreo |
+| Latin-9 / ISO 8859-15 | Revisión de Latin-1 que incluye € |
+
+Elegir la tabla incorrecta cambia la interpretación. Además, 256 posiciones no permiten combinar todas las escrituras en un mismo repertorio.
+
+**Unicode** proporciona identificadores comunes, llamados **puntos de código**. La notación `U+` va seguida de un número hexadecimal.
+
+| Carácter | Punto de código |
+|:--|:--|
+| A | U+0041 |
+| ñ | U+00F1 |
+| ॐ | U+0950 |
+| 月 | U+6708 |
+
+Un punto de código identifica un elemento del repertorio; todavía no determina los bytes del archivo. Para eso elegimos una codificación, como UTF-8 o UTF-16. Tampoco debe suponerse que cada símbolo visible contiene exactamente un punto de código: algunas letras con acentos y muchos emojis pueden construirse con secuencias.
+::::::
+
+
+:::::: {.lesson-section}
+## 4. UTF-8: de uno a cuatro bytes
+
+Los prefijos indican la estructura de los bytes. Las `x` contienen los bits del punto de código.
+
+| Punto de código | Bytes | Estructura |
+|:--|--:|:--|
+| U+0000–U+007F | 1 | `0xxxxxxx` |
+| U+0080–U+07FF | 2 | `110xxxxx 10xxxxxx` |
+| U+0800–U+FFFF | 3 | `1110xxxx 10xxxxxx 10xxxxxx` |
+| U+10000–U+10FFFF | 4 | `11110xxx 10xxxxxx 10xxxxxx 10xxxxxx` |
+
+Se excluyen los sustitutos U+D800–U+DFFF: no son valores escalares que puedan codificarse aisladamente en UTF-8. Los caracteres ASCII conservan exactamente sus bytes.
+
+**Construyamos ñ paso a paso.** Su punto de código es U+00F1, es decir, 241. Le corresponden dos bytes, con once huecos de datos:
+
+1. Escribimos 241 en binario: `11110001`.
+2. Completamos once posiciones: `00011110001`.
+3. Separamos cinco y seis bits: `00011` y `110001`.
+4. Añadimos los prefijos: `11000011` y `10110001`.
+
+::: {.rule-band}
+**ñ → U+00F1 → UTF-8: C3 B1**
+:::
+
+Los prefijos `110` y `10` no forman parte del valor 241. Si los retiramos y reunimos los bits restantes, recuperamos el punto de código.
+::::::
+
+
+:::::: {.lesson-section}
+## 5. UTF-16: unidades de dos bytes
+
+UTF-16 utiliza unidades de **16 bits**. Muchos caracteres del Plano Básico Multilingüe (BMP) necesitan una unidad; los situados fuera de él requieren un par de sustitutos, dos unidades: **cuatro bytes**.
+
+| Carácter | UTF-8 | Unidades UTF-16 |
+|:--|:--|:--|
+| A | 41 · 1 B | 0041 · 2 B |
+| ñ | C3 B1 · 2 B | 00F1 · 2 B |
+| 月 | E6 9C 88 · 3 B | 6708 · 2 B |
+
+La unidad 00F1 puede almacenarse como `00 F1` (big-endian) o `F1 00` (little-endian). Hay que especificar el orden de bytes. En los ejercicios se excluyen cabeceras y marcas de orden de bytes salvo indicación contraria.
+
+UTF-8 no ocupa siempre menos que UTF-16. Depende de qué caracteres haya. Cambiar de UTF-16 a UTF-8 es **recodificar** el texto; no equivale a aplicarle un compresor general.
+::::::
+
+
+:::::: {.lesson-section}
+## 6. Compruébalo en Linux
+
+En una terminal configurada para UTF-8:
+
+```bash
+printf 'Hoy' | od -An -tx1
+# 48 6f 79
+printf 'ñ' | od -An -tx1
+# c3 b1
+printf 'ñ' | iconv -f UTF-8 -t ISO-8859-1 | od -An -tx1
+# f1
+```
+
+`printf` evita añadir un salto de línea. Los tres comandos permiten observar la diferencia entre **carácter**, **punto de código** y **bytes**. Practica el cálculo del tamaño en [los ejercicios de texto](ejercicios.qmd#texto).
+::::::
+
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+Tema 2 · 2.2
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Anterior](01-representacion.qmd)
+
+[Siguiente →](03-sonidos.qmd)
+:::

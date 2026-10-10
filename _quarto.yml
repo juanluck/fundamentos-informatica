@@ -25,6 +25,17 @@ book:
         - teoria/tema1/ejercicios.qmd
         - teoria/tema1/tarjetas.qmd
         - teoria/tema1/recursos.qmd
+        - teoria/tema2/00-sistemas-numeracion.qmd
+        - teoria/tema2/01-representacion.qmd
+        - teoria/tema2/02-textos.qmd
+        - teoria/tema2/03-sonidos.qmd
+        - teoria/tema2/04-imagenes.qmd
+        - teoria/tema2/05-video.qmd
+        - teoria/tema2/06-enteros.qmd
+        - teoria/tema2/07-reales.qmd
+        - teoria/tema2/ejercicios.qmd
+        - teoria/tema2/tarjetas.qmd
+        - teoria/tema2/recursos.qmd
     - part: "PARTE II · PRÁCTICAS"
       chapters:
         - practicas/index.qmd
@@ -42,6 +53,7 @@ format:
       - styles/navigation.css
       - styles/markdown-refactor.css
       - styles/resources.css
+      - styles/tema2.css
     include-after-body:
       - assets/navigation.html
     toc: false

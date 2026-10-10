@@ -1,0 +1,167 @@
+---
+title: "2.0 · ¿Cómo contamos con dos cifras?"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .tema2-sheet}
+
+:::::: {.running-head}
+Tema 2 · Representación de la información
+
+2.0
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+LECCIÓN 2.0
+:::::
+
+# ¿Cómo contamos con dos cifras?
+
+::::: {.deck}
+La cantidad no cambia al cambiar de base. Cambia la forma de escribirla y el peso que damos a cada posición.
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+
+
+:::::: {.lesson-section}
+## 1. Una cifra vale según dónde esté
+
+En **4567,28**, el 4 aporta cuatro millares y el 7, siete unidades. La posición determina el peso: hacia la izquierda multiplicamos por diez; hacia la derecha de la coma dividimos por diez.
+
+| Cifra | 4 | 5 | 6 | 7 | 2 | 8 |
+|:--|--:|--:|--:|--:|--:|--:|
+| Posición | 3 | 2 | 1 | 0 | −1 | −2 |
+| Peso | $10^3$ | $10^2$ | $10^1$ | $10^0$ | $10^{-1}$ | $10^{-2}$ |
+| Aportación | 4000 | 500 | 60 | 7 | 0,2 | 0,08 |
+
+En un sistema **posicional de base $b$** hay $b$ cifras, con valores de 0 a $b-1$. Cada posición pesa $b$ veces la de su derecha. El número es la suma de todas las aportaciones:
+
+::: {.rule-band}
+$$N=\sum_{i=-m}^{n}d_i b^i$$
+Cada cifra $d_i$ multiplica el peso $b^i$ de su posición.
+:::
+
+| Base | Cifras disponibles | La cantidad nueve |
+|:--|:--|:--|
+| Decimal, 10 | 0–9 | $9_{10}$ |
+| Binaria, 2 | 0 y 1 | $1001_2$ |
+| Hexadecimal, 16 | 0–9 y A–F | $9_{16}$ |
+
+El subíndice indica la base. Sin él, `10` podría significar diez, dos o dieciséis.
+::::::
+
+
+:::::: {.lesson-section}
+## 2. Leer un número binario
+
+En binario los pesos son potencias de dos. Para interpretar un entero **sin signo**, sumamos los pesos de las posiciones que contienen un 1.
+
+| Peso | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|:--|--:|--:|--:|--:|--:|--:|--:|--:|
+| Bit | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
+
+$$00001001_2=8+1=9_{10}$$
+
+Los ceros iniciales no cambian este valor, pero indican el ancho utilizado. Después de la coma los pesos son $1/2$, $1/4$, $1/8$, etc. Por ejemplo, $10{,}101_2=2+1/2+1/8=2{,}625_{10}$.
+::::::
+
+
+:::::: {.lesson-section}
+## 3. De decimal a binario: dividir y multiplicar
+
+Para convertir la **parte entera**, dividimos sucesivamente entre dos hasta llegar a cociente cero. Los restos se leen desde el último hasta el primero.
+
+| Dividendo | Cociente | Resto |
+|--:|--:|--:|
+| 74 | 37 | 0 |
+| 37 | 18 | 1 |
+| 18 | 9 | 0 |
+| 9 | 4 | 1 |
+| 4 | 2 | 0 |
+| 2 | 1 | 0 |
+| 1 | 0 | 1 |
+
+Así, $74_{10}=1001010_2$. Comprobación: $64+8+2=74$.
+
+Para convertir la **parte fraccionaria**, multiplicamos por dos y recogemos la parte entera del resultado. La fracción restante continúa en el siguiente paso. Esta vez leemos las cifras en el orden en que aparecen.
+
+| Operación | Cifra obtenida | Fracción que continúa |
+|:--|--:|--:|
+| 0,423 × 2 = 0,846 | 0 | 0,846 |
+| 0,846 × 2 = 1,692 | 1 | 0,692 |
+| 0,692 × 2 = 1,384 | 1 | 0,384 |
+| 0,384 × 2 = 0,768 | 0 | 0,768 |
+| 0,768 × 2 = 1,536 | 1 | 0,536 |
+| 0,536 × 2 = 1,072 | 1 | 0,072 |
+
+Con seis cifras, **truncamos** en $0{,}011011_2=0{,}421875_{10}$. Es una aproximación de 0,423. No toda fracción decimal tiene una expansión binaria finita; truncar tampoco es lo mismo que redondear al valor más próximo.
+::::::
+
+
+:::::: {.lesson-section}
+## 4. Hexadecimal: cuatro bits por cifra
+
+Como $16=2^4$, una cifra hexadecimal representa exactamente cuatro bits. A, B, C, D, E y F tienen los valores decimales 10, 11, 12, 13, 14 y 15.
+
+| Hex. | Binario | Hex. | Binario |
+|:--|:--|:--|:--|
+| 0 | 0000 | 8 | 1000 |
+| 1 | 0001 | 9 | 1001 |
+| 2 | 0010 | A | 1010 |
+| 3 | 0011 | B | 1011 |
+| 4 | 0100 | C | 1100 |
+| 5 | 0101 | D | 1101 |
+| 6 | 0110 | E | 1110 |
+| 7 | 0111 | F | 1111 |
+
+Para convertir de binario a hexadecimal, formamos grupos de cuatro **a partir de la coma**. A la izquierda completamos con ceros por la izquierda; a la derecha, por la derecha.
+
+$$101101{,}011_2=0010\;1101{,}0110_2=2D{,}6_{16}$$
+
+La conversión inversa sustituye cada cifra por sus cuatro bits. Dos cifras hexadecimales bastan para escribir un byte.
+
+Para pasar a decimal volvemos a los pesos: $2A6_{16}=2\times16^2+10\times16+6=678$. En sentido inverso, las divisiones $678/16$, $42/16$ y $2/16$ dan los restos 6, 10 y 2: leídos al revés, **2A6**.
+::::::
+
+
+:::::: {.lesson-section}
+## 5. Operar en base dos
+
+Las reglas son las mismas que en decimal, pero agrupamos de dos en dos. En una columna, $1+1=10_2$: escribimos 0 y llevamos 1. Con acarreo previo, $1+1+1=11_2$.
+
+| Operación | Resultado | Comprobación decimal |
+|:--|:--|:--|
+| $1110_2+0111_2$ | $10101_2$ | 14 + 7 = 21 |
+| $10101_2-01010_2$ | $01011_2$ | 21 − 10 = 11 |
+| $1101_2\times101_2$ | $1000001_2$ | 13 × 5 = 65 |
+
+En una resta, pedir prestado a la columna izquierda aporta **dos unidades del peso actual**. En un producto, cada 1 del multiplicador aporta una copia del multiplicando desplazada a su posición: $13\times5=13+13\times4$.
+
+Desplazar un entero sin signo un bit a la izquierda multiplica por dos **si no se pierden bits**. Si el almacenamiento tiene ancho fijo, el resultado puede no caber. Lo estudiaremos en [los números enteros](06-enteros.qmd).
+
+::: {.bridge-question}
+Ya sabemos leer un patrón como número. ¿Cómo decidimos si esos mismos bits representan un número, una letra o un color?
+:::
+::::::
+
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+Tema 2 · 2.0
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Anterior](../tema1/ejercicios.qmd)
+
+[Siguiente →](01-representacion.qmd)
+:::
