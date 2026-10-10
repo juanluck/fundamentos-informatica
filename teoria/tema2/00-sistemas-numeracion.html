@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2.0 · ¿Cómo contamos con dos cifras? – Fundamentos de Informática</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+
+
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../../styles/markdown-refactor.css">
+<link rel="stylesheet" href="../../styles/resources.css">
+<link rel="stylesheet" href="../../styles/tema2.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title"><span class="chapter-title">2.0 · ¿Cómo contamos con dos cifras?</span></h1>
+
+</header>
+
+
+<div class="sheet tema2-sheet">
+<div class="running-head">
+<p>Tema 2 · Representación de la información</p>
+<p>2.0</p>
+</div>
+<div class="opening">
+<div class="kicker">
+<p>LECCIÓN 2.0</p>
+</div>
+<h1 id="cómo-contamos-con-dos-cifras">¿Cómo contamos con dos cifras?</h1>
+<div class="deck">
+<p>La cantidad no cambia al cambiar de base. Cambia la forma de escribirla y el peso que damos a cada posición.</p>
+</div>
+<div class="short-rule">
+
+</div>
+</div>
+<section id="una-cifra-vale-según-dónde-esté" class="lesson-section">
+<h2>1. Una cifra vale según dónde esté</h2>
+<p>En <strong>4567,28</strong>, el 4 aporta cuatro millares y el 7, siete unidades. La posición determina el peso: hacia la izquierda multiplicamos por diez; hacia la derecha de la coma dividimos por diez.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cifra</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">5</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">7</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Posición</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">−1</td>
+<td style="text-align: right;">−2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Peso</td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mn>3</mn></msup><annotation encoding="application/x-tex">10^3</annotation></semantics></math></td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mn>2</mn></msup><annotation encoding="application/x-tex">10^2</annotation></semantics></math></td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mn>1</mn></msup><annotation encoding="application/x-tex">10^1</annotation></semantics></math></td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mn>0</mn></msup><annotation encoding="application/x-tex">10^0</annotation></semantics></math></td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">10^{-1}</annotation></semantics></math></td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mi>−</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">10^{-2}</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aportación</td>
+<td style="text-align: right;">4000</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0,2</td>
+<td style="text-align: right;">0,08</td>
+</tr>
+</tbody>
+</table>
+<p>En un sistema <strong>posicional de base <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math></strong> hay <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> cifras, con valores de 0 a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">b-1</annotation></semantics></math>. Cada posición pesa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> veces la de su derecha. El número es la suma de todas las aportaciones:</p>
+<div class="rule-band">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mi>−</mi><mi>m</mi></mrow><mi>n</mi></munderover><msub><mi>d</mi><mi>i</mi></msub><msup><mi>b</mi><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">N=\sum_{i=-m}^{n}d_i b^i</annotation></semantics></math> Cada cifra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>i</mi></msub><annotation encoding="application/x-tex">d_i</annotation></semantics></math> multiplica el peso <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>b</mi><mi>i</mi></msup><annotation encoding="application/x-tex">b^i</annotation></semantics></math> de su posición.</p>
+</div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Base</th>
+<th style="text-align: left;">Cifras disponibles</th>
+<th style="text-align: left;">La cantidad nueve</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Decimal, 10</td>
+<td style="text-align: left;">0–9</td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mn>9</mn><mn>10</mn></msub><annotation encoding="application/x-tex">9_{10}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Binaria, 2</td>
+<td style="text-align: left;">0 y 1</td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mn>1001</mn><mn>2</mn></msub><annotation encoding="application/x-tex">1001_2</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hexadecimal, 16</td>
+<td style="text-align: left;">0–9 y A–F</td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mn>9</mn><mn>16</mn></msub><annotation encoding="application/x-tex">9_{16}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>El subíndice indica la base. Sin él, <code>10</code> podría significar diez, dos o dieciséis.</p>
+</section>
+<section id="leer-un-número-binario" class="lesson-section">
+<h2>2. Leer un número binario</h2>
+<p>En binario los pesos son potencias de dos. Para interpretar un entero <strong>sin signo</strong>, sumamos los pesos de las posiciones que contienen un 1.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Peso</th>
+<th style="text-align: right;">128</th>
+<th style="text-align: right;">64</th>
+<th style="text-align: right;">32</th>
+<th style="text-align: right;">16</th>
+<th style="text-align: right;">8</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>00001001</mn><mn>2</mn></msub><mo>=</mo><mn>8</mn><mo>+</mo><mn>1</mn><mo>=</mo><msub><mn>9</mn><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">00001001_2=8+1=9_{10}</annotation></semantics></math></p>
+<p>Los ceros iniciales no cambian este valor, pero indican el ancho utilizado. Después de la coma los pesos son <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">1/8</annotation></semantics></math>, etc. Por ejemplo, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mo>,</mo><msub><mn>101</mn><mn>2</mn></msub><mo>=</mo><mn>2</mn><mo>+</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>+</mo><mn>1</mn><mi>/</mi><mn>8</mn><mo>=</mo><mn>2</mn><mo>,</mo><msub><mn>625</mn><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">10{,}101_2=2+1/2+1/8=2{,}625_{10}</annotation></semantics></math>.</p>
+</section>
+<section id="de-decimal-a-binario-dividir-y-multiplicar" class="lesson-section">
+<h2>3. De decimal a binario: dividir y multiplicar</h2>
+<p>Para convertir la <strong>parte entera</strong>, dividimos sucesivamente entre dos hasta llegar a cociente cero. Los restos se leen desde el último hasta el primero.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Dividendo</th>
+<th style="text-align: right;">Cociente</th>
+<th style="text-align: right;">Resto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Así, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>74</mn><mn>10</mn></msub><mo>=</mo><msub><mn>1001010</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">74_{10}=1001010_2</annotation></semantics></math>. Comprobación: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>+</mo><mn>8</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>74</mn></mrow><annotation encoding="application/x-tex">64+8+2=74</annotation></semantics></math>.</p>
+<p>Para convertir la <strong>parte fraccionaria</strong>, multiplicamos por dos y recogemos la parte entera del resultado. La fracción restante continúa en el siguiente paso. Esta vez leemos las cifras en el orden en que aparecen.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operación</th>
+<th style="text-align: right;">Cifra obtenida</th>
+<th style="text-align: right;">Fracción que continúa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0,423 × 2 = 0,846</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0,846</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0,846 × 2 = 1,692</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,692</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0,692 × 2 = 1,384</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,384</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0,384 × 2 = 0,768</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0,768</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0,768 × 2 = 1,536</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,536</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0,536 × 2 = 1,072</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,072</td>
+</tr>
+</tbody>
+</table>
+<p>Con seis cifras, <strong>truncamos</strong> en <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><msub><mn>011011</mn><mn>2</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><msub><mn>421875</mn><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">0{,}011011_2=0{,}421875_{10}</annotation></semantics></math>. Es una aproximación de 0,423. No toda fracción decimal tiene una expansión binaria finita; truncar tampoco es lo mismo que redondear al valor más próximo.</p>
+</section>
+<section id="hexadecimal-cuatro-bits-por-cifra" class="lesson-section">
+<h2>4. Hexadecimal: cuatro bits por cifra</h2>
+<p>Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn><mo>=</mo><msup><mn>2</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">16=2^4</annotation></semantics></math>, una cifra hexadecimal representa exactamente cuatro bits. A, B, C, D, E y F tienen los valores decimales 10, 11, 12, 13, 14 y 15.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Hex.</th>
+<th style="text-align: left;">Binario</th>
+<th style="text-align: left;">Hex.</th>
+<th style="text-align: left;">Binario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0000</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">1000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">1001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0010</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">1010</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0011</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">1011</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0100</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">1100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0101</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">1101</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0110</td>
+<td style="text-align: left;">E</td>
+<td style="text-align: left;">1110</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">0111</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">1111</td>
+</tr>
+</tbody>
+</table>
+<p>Para convertir de binario a hexadecimal, formamos grupos de cuatro <strong>a partir de la coma</strong>. A la izquierda completamos con ceros por la izquierda; a la derecha, por la derecha.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>101101</mn><mo>,</mo><msub><mn>011</mn><mn>2</mn></msub><mo>=</mo><mn>0010</mn><mspace width="0.278em"></mspace><mn>1101</mn><mo>,</mo><msub><mn>0110</mn><mn>2</mn></msub><mo>=</mo><mn>2</mn><mi>D</mi><mo>,</mo><msub><mn>6</mn><mn>16</mn></msub></mrow><annotation encoding="application/x-tex">101101{,}011_2=0010\;1101{,}0110_2=2D{,}6_{16}</annotation></semantics></math></p>
+<p>La conversión inversa sustituye cada cifra por sus cuatro bits. Dos cifras hexadecimales bastan para escribir un byte.</p>
+<p>Para pasar a decimal volvemos a los pesos: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>A</mi><msub><mn>6</mn><mn>16</mn></msub><mo>=</mo><mn>2</mn><mo>×</mo><msup><mn>16</mn><mn>2</mn></msup><mo>+</mo><mn>10</mn><mo>×</mo><mn>16</mn><mo>+</mo><mn>6</mn><mo>=</mo><mn>678</mn></mrow><annotation encoding="application/x-tex">2A6_{16}=2\times16^2+10\times16+6=678</annotation></semantics></math>. En sentido inverso, las divisiones <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>678</mn><mi>/</mi><mn>16</mn></mrow><annotation encoding="application/x-tex">678/16</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>42</mn><mi>/</mi><mn>16</mn></mrow><annotation encoding="application/x-tex">42/16</annotation></semantics></math> y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>/</mi><mn>16</mn></mrow><annotation encoding="application/x-tex">2/16</annotation></semantics></math> dan los restos 6, 10 y 2: leídos al revés, <strong>2A6</strong>.</p>
+</section>
+<section id="operar-en-base-dos" class="lesson-section">
+<h2>5. Operar en base dos</h2>
+<p>Las reglas son las mismas que en decimal, pero agrupamos de dos en dos. En una columna, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><msub><mn>10</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1+1=10_2</annotation></semantics></math>: escribimos 0 y llevamos 1. Con acarreo previo, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><msub><mn>11</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1+1+1=11_2</annotation></semantics></math>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operación</th>
+<th style="text-align: left;">Resultado</th>
+<th style="text-align: left;">Comprobación decimal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>1110</mn><mn>2</mn></msub><mo>+</mo><msub><mn>0111</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1110_2+0111_2</annotation></semantics></math></td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mn>10101</mn><mn>2</mn></msub><annotation encoding="application/x-tex">10101_2</annotation></semantics></math></td>
+<td style="text-align: left;">14 + 7 = 21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>10101</mn><mn>2</mn></msub><mo>−</mo><msub><mn>01010</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">10101_2-01010_2</annotation></semantics></math></td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mn>01011</mn><mn>2</mn></msub><annotation encoding="application/x-tex">01011_2</annotation></semantics></math></td>
+<td style="text-align: left;">21 − 10 = 11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>1101</mn><mn>2</mn></msub><mo>×</mo><msub><mn>101</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1101_2\times101_2</annotation></semantics></math></td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mn>1000001</mn><mn>2</mn></msub><annotation encoding="application/x-tex">1000001_2</annotation></semantics></math></td>
+<td style="text-align: left;">13 × 5 = 65</td>
+</tr>
+</tbody>
+</table>
+<p>En una resta, pedir prestado a la columna izquierda aporta <strong>dos unidades del peso actual</strong>. En un producto, cada 1 del multiplicador aporta una copia del multiplicando desplazada a su posición: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mo>×</mo><mn>5</mn><mo>=</mo><mn>13</mn><mo>+</mo><mn>13</mn><mo>×</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">13\times5=13+13\times4</annotation></semantics></math>.</p>
+<p>Desplazar un entero sin signo un bit a la izquierda multiplica por dos <strong>si no se pierden bits</strong>. Si el almacenamiento tiene ancho fijo, el resultado puede no caber. Lo estudiaremos en <a href="../../teoria/tema2/06-enteros.html">los números enteros</a>.</p>
+<div class="bridge-question">
+<p>Ya sabemos leer un patrón como número. ¿Cómo decidimos si esos mismos bits representan un número, una letra o un color?</p>
+</div>
+</section>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>Tema 2 · 2.0</p>
+</div>
+</div>
+<div class="lesson-nav">
+<p><a href="../../teoria/tema1/ejercicios.html">← Anterior</a></p>
+<p><a href="../../teoria/tema2/01-representacion.html">Siguiente →</a></p>
+</div>
+
+
+<div class="book-navigation" data-book-navigation="">
+  <header class="book-toolbar" aria-label="Navegación principal del libro">
+    <button class="book-menu-button" type="button" data-nav-open="" aria-controls="book-drawer" aria-expanded="false">
+      <span class="menu-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Índice</span>
+    </button>
+    <a class="book-brand" data-book-home="" href="#">Fundamentos de Informática</a>
+    <div class="book-location" aria-label="Ubicación actual">
+      <span data-nav-part="">Teoría</span><i aria-hidden="true">›</i><span data-nav-location="">Tema 1</span>
+    </div>
+    <button class="book-part-button" type="button" data-nav-part-button="" aria-controls="book-drawer" aria-expanded="false">
+      <span class="part-roman" data-nav-part-roman="">I</span>
+      <span data-nav-part-button-label="">Teoría</span>
+      <i aria-hidden="true">⌄</i>
+    </button>
+  </header>
+
+  <div class="book-nav-backdrop" data-nav-backdrop="" hidden=""></div>
+
+  <aside class="book-drawer" id="book-drawer" role="dialog" aria-modal="true" aria-label="Índice del libro" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <span class="drawer-kicker">FUNDAMENTOS DE INFORMÁTICA</span>
+        <strong>Índice del libro</strong>
+      </div>
+      <button class="drawer-close" type="button" data-nav-close="" aria-label="Cerrar índice">×</button>
+    </div>
+
+    <div class="drawer-parts" role="tablist" aria-label="Partes del libro">
+      <button type="button" role="tab" class="drawer-part is-active" data-part-tab="theory" aria-selected="true">
+        <span>I</span><strong>Teoría</strong>
+      </button>
+      <button type="button" role="tab" class="drawer-part" data-part-tab="practice" aria-selected="false">
+        <span>II</span><strong>Prácticas</strong>
+      </button>
+    </div>
+
+    <div class="drawer-scroll">
+      <section class="drawer-panel is-active" data-part-panel="theory" aria-label="Teoría">
+        <p class="drawer-part-label">PARTE I · TEORÍA</p>
+
+        <details class="nav-theme" open="" data-theme="tema1">
+          <summary><span><b>Tema 1</b><small>Introducción a los computadores</small></span><i aria-hidden="true"></i></summary>
+          <nav class="nav-sections" aria-label="Secciones del Tema 1">
+            <a data-book-path="teoria/tema1/01-que-es-computador.html"><span>1.1</span><strong>¿Qué es un computador?</strong></a>
+            <a data-book-path="teoria/tema1/02-representacion.html"><span>1.2</span><strong>¿Cómo representa la información?</strong></a>
+            <a data-book-path="teoria/tema1/03-componentes.html"><span>1.3</span><strong>¿Qué hay dentro de un computador?</strong></a>
+            <a data-book-path="teoria/tema1/04-comunicacion.html"><span>1.4</span><strong>¿Cómo se comunican sus componentes?</strong></a>
+            <a data-book-path="teoria/tema1/05-ejecucion.html"><span>1.5</span><strong>¿Cómo ejecuta un programa?</strong></a>
+            <a data-book-path="teoria/tema1/06-tipos.html"><span>1.6</span><strong>¿Todos los computadores son iguales?</strong></a>
+            <a data-book-path="teoria/tema1/07-software.html"><span>1.7</span><strong>¿Qué papel juega el software?</strong></a>
+            <a data-book-path="teoria/tema1/ejercicios.html"><span>•</span><strong>Ejercicios</strong></a>
+            <a class="nav-resource" data-book-path="teoria/tema1/tarjetas.html"><span>T</span><strong>Tarjetas de repaso</strong></a>
+            <a class="nav-resource" data-book-path="teoria/tema1/recursos.html"><span>+</span><strong>Material complementario</strong></a>
+          </nav>
+        </details>
+
+        <details class="nav-theme" data-theme="tema2">
+          <summary><span><b>Tema 2</b><small>Representación de la información</small></span><i aria-hidden="true"></i></summary>
+          <nav class="nav-sections" aria-label="Secciones del Tema 2">
+            <a data-book-path="teoria/tema2/00-sistemas-numeracion.html"><span>2.0</span><strong>¿Cómo contamos con dos cifras?</strong></a>
+            <a data-book-path="teoria/tema2/01-representacion.html"><span>2.1</span><strong>¿Qué significan estos bits?</strong></a>
+            <a data-book-path="teoria/tema2/02-textos.html"><span>2.2</span><strong>¿Cómo se guarda un texto?</strong></a>
+            <a data-book-path="teoria/tema2/03-sonidos.html"><span>2.3</span><strong>¿Cómo se digitaliza un sonido?</strong></a>
+            <a data-book-path="teoria/tema2/04-imagenes.html"><span>2.4</span><strong>¿Cómo se representa una imagen?</strong></a>
+            <a data-book-path="teoria/tema2/05-video.html"><span>2.5</span><strong>¿Cómo se guarda el movimiento?</strong></a>
+            <a data-book-path="teoria/tema2/06-enteros.html"><span>2.6</span><strong>¿Dónde se guarda el signo?</strong></a>
+            <a data-book-path="teoria/tema2/07-reales.html"><span>2.7</span><strong>¿Cómo se guardan los decimales?</strong></a>
+            <a data-book-path="teoria/tema2/ejercicios.html"><span>E</span><strong>Ejercicios</strong></a>
+            <a data-book-path="teoria/tema2/tarjetas.html"><span>T</span><strong>Tarjetas de repaso</strong></a>
+            <a data-book-path="teoria/tema2/recursos.html"><span>+</span><strong>Material complementario</strong></a>
+          </nav>
+        </details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 3</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 4</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+      </section>
+
+      <section class="drawer-panel" data-part-panel="practice" aria-label="Prácticas" hidden="">
+        <p class="drawer-part-label">PARTE II · PRÁCTICAS</p>
+        <a class="practice-entry" data-book-path="practicas/index.html"><span>II</span><strong>Portada de prácticas</strong><i aria-hidden="true">→</i></a>
+
+        <details class="nav-theme" open="">
+          <summary><span><b>Tema 1</b><small>Área de prácticas</small></span><i aria-hidden="true"></i></summary>
+          <div class="nav-placeholder">Las prácticas concretas se incorporarán aquí cuando abordemos su estructura pedagógica.</div>
+        </details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 2</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 3</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 4</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+      </section>
+    </div>
+
+    <div class="drawer-foot">
+      <a data-book-home="" href="#">Portada del libro</a>
+      <span>El menú organiza; la página sigue siendo el libro.</span>
+    </div>
+  </aside>
+
+  <nav class="page-turn-nav" aria-label="Navegación secuencial del libro">
+    <a class="page-turn-link page-turn-prev" data-page-prev="" href="#" hidden="">
+      <span class="page-turn-arrow" aria-hidden="true">←</span>
+      <span class="page-turn-copy"><small>Anterior</small><strong data-page-prev-title=""></strong></span>
+    </a>
+    <a class="page-turn-link page-turn-next" data-page-next="" href="#" hidden="">
+      <span class="page-turn-copy"><small>Siguiente</small><strong data-page-next-title=""></strong></span>
+      <span class="page-turn-arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+
+  <script>
+  (() => {
+    const root = document.querySelector('[data-book-navigation]');
+    if (!root || root.dataset.navigationReady === 'true') return;
+    root.dataset.navigationReady = 'true';
+
+    const repoMarker = '/fundamentos-informatica/';
+    const path = window.location.pathname;
+    const markerIndex = path.indexOf(repoMarker);
+    const bookRoot = markerIndex >= 0 ? path.slice(0, markerIndex + repoMarker.length) : '/';
+    const relativePath = markerIndex >= 0
+      ? (path.slice(markerIndex + repoMarker.length) || 'index.html')
+      : (path.replace(/^\/+/, '') || 'index.html');
+    const urlFor = (rel = '') => `${bookRoot}${rel}`;
+
+    const pages = {
+      'index.html': { part: 'Inicio', roman: '•', location: 'Portada', title: 'Portada del libro' },
+      'teoria/tema1/01-que-es-computador.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.1', panel: 'theory', title: '1.1 · ¿Qué es un computador?' },
+      'teoria/tema1/02-representacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.2', panel: 'theory', title: '1.2 · ¿Cómo representa la información?' },
+      'teoria/tema1/03-componentes.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.3', panel: 'theory', title: '1.3 · ¿Qué hay dentro de un computador?' },
+      'teoria/tema1/04-comunicacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.4', panel: 'theory', title: '1.4 · ¿Cómo se comunican sus componentes?' },
+      'teoria/tema1/05-ejecucion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.5', panel: 'theory', title: '1.5 · ¿Cómo ejecuta un programa?' },
+      'teoria/tema1/06-tipos.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.6', panel: 'theory', title: '1.6 · ¿Todos los computadores son iguales?' },
+      'teoria/tema1/07-software.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.7', panel: 'theory', title: '1.7 · ¿Qué papel juega el software?' },
+      'teoria/tema1/ejercicios.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Ejercicios', panel: 'theory', title: 'Ejercicios' },
+      'teoria/tema1/tarjetas.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Tarjetas', panel: 'theory', title: 'Tarjetas de repaso' },
+      'teoria/tema1/recursos.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Recursos', panel: 'theory', title: 'Material complementario' },
+      'teoria/tema2/00-sistemas-numeracion.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.0", "panel": "theory", "title": "2.0 · ¿Cómo contamos con dos cifras?"},
+      'teoria/tema2/01-representacion.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.1", "panel": "theory", "title": "2.1 · ¿Qué significan estos bits?"},
+      'teoria/tema2/02-textos.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.2", "panel": "theory", "title": "2.2 · ¿Cómo se guarda un texto?"},
+      'teoria/tema2/03-sonidos.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.3", "panel": "theory", "title": "2.3 · ¿Cómo se digitaliza un sonido?"},
+      'teoria/tema2/04-imagenes.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.4", "panel": "theory", "title": "2.4 · ¿Cómo se representa una imagen?"},
+      'teoria/tema2/05-video.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.5", "panel": "theory", "title": "2.5 · ¿Cómo se guarda el movimiento?"},
+      'teoria/tema2/06-enteros.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.6", "panel": "theory", "title": "2.6 · ¿Dónde se guarda el signo?"},
+      'teoria/tema2/07-reales.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.7", "panel": "theory", "title": "2.7 · ¿Cómo se guardan los decimales?"},
+      'teoria/tema2/ejercicios.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · Ejercicios", "panel": "theory", "title": "Tema 2 · Ejercicios"},
+      'teoria/tema2/tarjetas.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · Tarjetas de repaso", "panel": "theory", "title": "Tema 2 · Tarjetas de repaso"},
+      'teoria/tema2/recursos.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · Material complementario", "panel": "theory", "title": "Tema 2 · Material complementario"},
+      'practicas/index.html': { part: 'Prácticas', roman: 'II', location: 'Portada de prácticas', panel: 'practice', title: 'Parte II · Prácticas' }
+    };
+
+    const readingOrder = [
+      'index.html',
+      'teoria/tema1/01-que-es-computador.html',
+      'teoria/tema1/02-representacion.html',
+      'teoria/tema1/03-componentes.html',
+      'teoria/tema1/04-comunicacion.html',
+      'teoria/tema1/05-ejecucion.html',
+      'teoria/tema1/06-tipos.html',
+      'teoria/tema1/07-software.html',
+      'teoria/tema1/ejercicios.html',
+      'teoria/tema2/00-sistemas-numeracion.html',
+      'teoria/tema2/01-representacion.html',
+      'teoria/tema2/02-textos.html',
+      'teoria/tema2/03-sonidos.html',
+      'teoria/tema2/04-imagenes.html',
+      'teoria/tema2/05-video.html',
+      'teoria/tema2/06-enteros.html',
+      'teoria/tema2/07-reales.html',
+      'teoria/tema2/ejercicios.html',
+      'practicas/index.html'
+    ];
+
+    const current = pages[relativePath] || { part: 'Libro', roman: '•', location: 'Fundamentos de Informática', panel: 'theory', title: 'Fundamentos de Informática' };
+    const drawer = root.querySelector('#book-drawer');
+    const backdrop = root.querySelector('[data-nav-backdrop]');
+    const openButtons = root.querySelectorAll('[data-nav-open], [data-nav-part-button]');
+    const menuButton = root.querySelector('[data-nav-open]');
+    const partButton = root.querySelector('[data-nav-part-button]');
+    const closeButton = root.querySelector('[data-nav-close]');
+    const tabs = [...root.querySelectorAll('[data-part-tab]')];
+    const panels = [...root.querySelectorAll('[data-part-panel]')];
+    const prevLink = root.querySelector('[data-page-prev]');
+    const nextLink = root.querySelector('[data-page-next]');
+    let lastFocus = null;
+
+    if (!drawer || !backdrop || !menuButton || !partButton || !closeButton) return;
+
+    root.querySelectorAll('[data-book-home]').forEach((link) => { link.href = urlFor('index.html'); });
+    root.querySelectorAll('[data-book-path]').forEach((link) => {
+      const rel = link.getAttribute('data-book-path');
+      link.href = urlFor(rel);
+      if (rel === relativePath) {
+        link.classList.add('is-current');
+        link.setAttribute('aria-current', 'page');
+        const theme = link.closest('details');
+        if (theme) theme.open = true;
+      }
+    });
+
+    const currentIndex = readingOrder.indexOf(relativePath);
+    const wireTurnLink = (link, targetPath, label, titleTarget) => {
+      if (!link || !targetPath || !pages[targetPath]) {
+        if (link) link.hidden = true;
+        return;
+      }
+      const target = pages[targetPath];
+      link.href = urlFor(targetPath);
+      link.hidden = false;
+      link.setAttribute('aria-label', `${label}: ${target.title}`);
+      link.title = `${label}: ${target.title}`;
+      const titleNode = link.querySelector(titleTarget);
+      if (titleNode) titleNode.textContent = target.title;
+    };
+
+    if (currentIndex >= 0) {
+      wireTurnLink(prevLink, readingOrder[currentIndex - 1], 'Página anterior', '[data-page-prev-title]');
+      wireTurnLink(nextLink, readingOrder[currentIndex + 1], 'Página siguiente', '[data-page-next-title]');
+    }
+
+    const partText = root.querySelector('[data-nav-part]');
+    const locationText = root.querySelector('[data-nav-location]');
+    const partRoman = root.querySelector('[data-nav-part-roman]');
+    const partButtonLabel = root.querySelector('[data-nav-part-button-label]');
+    if (partText) partText.textContent = current.part;
+    if (locationText) locationText.textContent = current.location;
+    if (partRoman) partRoman.textContent = current.roman;
+    if (partButtonLabel) partButtonLabel.textContent = current.part === 'Inicio' ? 'Explorar' : current.part;
+
+    const activatePanel = (name) => {
+      tabs.forEach((tab) => {
+        const active = tab.dataset.partTab === name;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', String(active));
+      });
+      panels.forEach((panel) => {
+        const active = panel.dataset.partPanel === name;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+      });
+    };
+
+    activatePanel(current.panel || 'theory');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => activatePanel(tab.dataset.partTab));
+    });
+
+    const setExpanded = (expanded) => {
+      openButtons.forEach((button) => button.setAttribute('aria-expanded', String(expanded)));
+    };
+
+    const openDrawer = (preferredPanel) => {
+      lastFocus = document.activeElement;
+      if (preferredPanel) activatePanel(preferredPanel);
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      if ('inert' in drawer) drawer.inert = false;
+      backdrop.hidden = false;
+      requestAnimationFrame(() => backdrop.classList.add('is-visible'));
+      document.documentElement.classList.add('nav-open');
+      setExpanded(true);
+      closeButton.focus();
+    };
+
+    const closeDrawer = () => {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      if ('inert' in drawer) drawer.inert = true;
+      backdrop.classList.remove('is-visible');
+      window.setTimeout(() => { backdrop.hidden = true; }, 180);
+      document.documentElement.classList.remove('nav-open');
+      setExpanded(false);
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    };
+
+    if ('inert' in drawer) drawer.inert = true;
+    menuButton.addEventListener('click', () => openDrawer(current.panel || 'theory'));
+    partButton.addEventListener('click', () => openDrawer(current.panel || 'theory'));
+    closeButton.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+
+    drawer.addEventListener('keydown', (event) => {
+      if (event.key !== 'Tab') return;
+      const focusable = [...drawer.querySelectorAll('a[href], button:not([disabled]), summary')].filter((el) => !el.closest('[hidden]'));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+    });
+  })();
+  </script>
+</div>
+<script src="../../assets/tema2.js"></script>
+
+
+
+
+</body></html>

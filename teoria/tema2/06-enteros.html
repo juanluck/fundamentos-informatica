@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prácticas – Fundamentos de Informática</title>
+<title>2.6 · ¿Dónde se guarda el signo? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,54 +26,264 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
 
 
-<link rel="stylesheet" href="../styles/book.css">
-<link rel="stylesheet" href="../styles/tema1.css">
-<link rel="stylesheet" href="../styles/exercises.css">
-<link rel="stylesheet" href="../styles/navigation.css">
-<link rel="stylesheet" href="../styles/markdown-refactor.css">
-<link rel="stylesheet" href="../styles/resources.css">
-<link rel="stylesheet" href="../styles/tema2.css">
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../../styles/markdown-refactor.css">
+<link rel="stylesheet" href="../../styles/resources.css">
+<link rel="stylesheet" href="../../styles/tema2.css">
 </head>
 
 <body>
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Prácticas</span></h1>
+<h1 class="title"><span class="chapter-title">2.6 · ¿Dónde se guarda el signo?</span></h1>
 
 </header>
 
 
-<article class="sheet practice-index" aria-label="Portada provisional de prácticas">
-  <header class="running-head"><span>Fundamentos de Informática</span><span>Parte II · Prácticas</span></header>
+<div class="sheet tema2-sheet">
+<div class="running-head">
+<p>Tema 2 · Representación de la información</p>
+<p>2.6</p>
+</div>
+<div class="opening">
+<div class="kicker">
+<p>LECCIÓN 2.6</p>
+</div>
+<h1 id="dónde-se-guarda-el-signo">¿Dónde se guarda el signo?</h1>
+<div class="deck">
+<p>Ocho bits permiten 256 patrones. La convención elegida decide si representan de 0 a 255, números negativos o incluso cifras decimales separadas.</p>
+</div>
+<div class="short-rule">
 
-  <section class="opening">
-    <p class="kicker">PARTE II · PRÁCTICAS</p>
-    <h1>Prácticas</h1>
-    <p class="deck">Esta portada es provisional y existe únicamente para validar el sistema de navegación entre teoría y prácticas. Su organización pedagógica se decidirá más adelante.</p>
-    <div class="short-rule" aria-hidden="true"></div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>Estructura visual preparada</h2>
-    <p>El menú puede organizar las prácticas por temas y, dentro de cada tema, por prácticas y secciones internas sin cambiar el lenguaje visual del libro.</p>
-    <div class="practice-structure" aria-label="Estructura provisional de navegación de prácticas">
-      <div><b>Temas</b><span>Primer nivel de agrupación, paralelo a la teoría.</span></div>
-      <div><b>Prácticas</b><span>Segundo nivel dentro de cada tema.</span></div>
-      <div><b>Secciones</b><span>Tercer nivel cuando una práctica necesite pasos o apartados.</span></div>
-    </div>
-  </section>
-
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Prácticas</span></footer>
-</article>
-
-<nav class="lesson-nav" aria-label="Navegación del libro"><a href="../index.html">← Portada del libro</a><a href="../teoria/tema1/01-que-es-computador.html">Ir a Teoría →</a></nav>
+</div>
+</div>
+<section id="guardar-un-número-no-es-guardar-su-texto" class="lesson-section">
+<h2>1. Guardar un número no es guardar su texto</h2>
+<p>Como texto ASCII o UTF-8, <strong>«255»</strong> ocupa tres bytes: <code>32 35 35</code> en hexadecimal. Como entero sin signo de ocho bits, <strong>255</strong> ocupa un byte: <code>FF</code>. El contenido de un archivo de texto y el de una variable numérica son representaciones distintas.</p>
+<p>En <strong>binario natural</strong>, un entero de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> bits representa desde 0 hasta <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^n-1</annotation></semantics></math>. Con ocho bits, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>28</mn><mo>=</mo><mn>16</mn><mo>+</mo><mn>8</mn><mo>+</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">28=16+8+4</annotation></semantics></math> se escribe <code>00011100</code>. Para incluir negativos debemos acordar otra interpretación; el símbolo «−» no se añade como un carácter al entero de ancho fijo.</p>
+</section>
+<section id="signo-y-magnitud" class="lesson-section">
+<h2>2. Signo y magnitud</h2>
+<p>Reservamos el primer bit para el signo: 0 positivo y 1 negativo. Los otros <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math> bits contienen el valor absoluto.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Valor, con 8 bits</th>
+<th style="text-align: left;">Signo</th>
+<th style="text-align: left;">Magnitud</th>
+<th style="text-align: left;">Patrón</th>
+<th style="text-align: left;">Hex.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">+28</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0011100</td>
+<td style="text-align: left;">00011100</td>
+<td style="text-align: left;">1C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">−28</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0011100</td>
+<td style="text-align: left;">10011100</td>
+<td style="text-align: left;">9C</td>
+</tr>
+</tbody>
+</table>
+<p>El rango es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mo stretchy="false" form="prefix">(</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-(2^{n-1}-1)</annotation></semantics></math> a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{n-1}-1</annotation></semantics></math>: <strong>−127 a 127</strong> con ocho bits. Hay dos ceros, <code>00000000</code> y <code>10000000</code>. Tenemos 256 patrones pero solo 255 valores distintos.</p>
+<p>No sumes estos patrones como si fueran binario natural y esperes obtener siempre la suma con signo: el bit superior tiene otro papel.</p>
+</section>
+<section id="complemento-a-uno-ca1" class="lesson-section">
+<h2>3. Complemento a uno, CA1</h2>
+<p>Los positivos se mantienen. Para obtener el negativo de un valor <strong>invertimos todos sus bits</strong>, con el ancho ya fijado: cada 0 se convierte en 1 y viceversa.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Paso</th>
+<th style="text-align: left;">Patrón de ocho bits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">+28</td>
+<td style="text-align: left;"><code>00011100</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Invertir todos los bits</td>
+<td style="text-align: left;"><code>11100011</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">−28 en CA1</td>
+<td style="text-align: left;"><code>11100011</code> = E3</td>
+</tr>
+</tbody>
+</table>
+<p>El rango sigue siendo <strong>−127 a 127</strong>. Hay dos ceros: <code>00000000</code> y <code>11111111</code>. Para leer un negativo invertimos sus bits, calculamos la magnitud y añadimos el signo menos. En CA1 <strong>no sumamos uno</strong> tras invertir.</p>
+</section>
+<section id="complemento-a-dos-ca2" class="lesson-section">
+<h2>4. Complemento a dos, CA2</h2>
+<p>CA2 modifica la codificación negativa para tener un único cero y facilitar la aritmética. Para codificar un negativo representable, invertimos los bits de su magnitud y sumamos uno en el ancho elegido.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Paso</th>
+<th style="text-align: left;">Patrón de ocho bits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">+28</td>
+<td style="text-align: left;"><code>00011100</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Invertir</td>
+<td style="text-align: left;"><code>11100011</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sumar uno</td>
+<td style="text-align: left;"><code>11100100</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">−28 en CA2</td>
+<td style="text-align: left;"><code>11100100</code> = E4</td>
+</tr>
+</tbody>
+</table>
+<p>El bit superior tiene <strong>peso negativo</strong>, no es simplemente un signo separado de la magnitud:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mi>−</mi><msub><mi>b</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></munderover><msub><mi>b</mi><mi>i</mi></msub><msup><mn>2</mn><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">N=-b_{n-1}2^{n-1}+\sum_{i=0}^{n-2}b_i2^i</annotation></semantics></math></p>
+<p>Una forma equivalente de decodificar: lee el patrón como entero sin signo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>; si su bit superior es 1, calcula <strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>−</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">U-2^n</annotation></semantics></math></strong>. Así, E4 = 228 sin signo y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>228</mn><mo>−</mo><mn>256</mn><mo>=</mo><mi>−</mi><mn>28</mn></mrow><annotation encoding="application/x-tex">228-256=-28</annotation></semantics></math> en CA2.</p>
+<div class="rule-band">
+<p><strong>CA2 con <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> bits:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>≤</mo><mi>N</mi><mo>≤</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-2^{n-1}\le N\le2^{n-1}-1</annotation></semantics></math>.<br>
+Con ocho bits: <strong>−128 a 127</strong>, con un único cero.</p>
+</div>
+<p>El patrón <code>10000000</code> representa −128. Su opuesto matemático, +128, <strong>no cabe</strong> en ocho bits con signo. El procedimiento de invertir y sumar no hace que ese valor quepa.</p>
+</section>
+<section id="sumar-y-distinguir-acarreo-de-desbordamiento" class="lesson-section">
+<h2>5. Sumar y distinguir acarreo de desbordamiento</h2>
+<p>En CA2 sumamos los patrones y conservamos los <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> bits inferiores. El resultado representa la suma si esta está dentro del rango. Por ejemplo:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>18</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mn>11</mn><mspace width="2.0em"></mspace><mn>00000111</mn><mo>+</mo><mn>11101110</mn><mo>=</mo><mn>11110101</mn></mrow><annotation encoding="application/x-tex">7+(-18)=-11\qquad 00000111+11101110=11110101</annotation></semantics></math></p>
+<p><strong>Acarreo</strong> es el bit que sale de la columna más alta. <strong>Desbordamiento</strong> significa que el resultado matemático no cabe en la representación elegida. No son lo mismo.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operación, CA2 de 8 bits</th>
+<th style="text-align: left;">Bits conservados</th>
+<th style="text-align: left;">Acarreo exterior</th>
+<th style="text-align: left;">¿Desborda?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">127 + 1</td>
+<td style="text-align: left;"><code>10000000</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Sí: 128 no cabe.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">−1 + 1</td>
+<td style="text-align: left;"><code>00000000</code></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">No: el resultado es 0.</td>
+</tr>
+</tbody>
+</table>
+<p>Al sumar en CA2, hay desbordamiento si dos operandos del mismo signo producen bits que se interpretan con el signo contrario. Dos operandos de signos distintos no desbordan en una suma. La interpretación sin signo tiene otro rango y otro criterio.</p>
+</section>
+<section id="representación-sesgada" class="lesson-section">
+<h2>6. Representación sesgada</h2>
+<p>Desplazamos los valores mediante una constante <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>, el <strong>sesgo</strong>. El código se lee como entero sin signo:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">código</mtext><mo>=</mo><mi>N</mi><mo>+</mo><mi>S</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>N</mi><mo>=</mo><mtext mathvariant="normal">código</mtext><mo>−</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">\text{código}=N+S,\qquad N=\text{código}-S</annotation></semantics></math></p>
+<p>Con ocho bits y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mn>128</mn></mrow><annotation encoding="application/x-tex">S=128</annotation></semantics></math>, +28 se codifica como 156 (<code>10011100</code>, 9C) y −28 como 100 (<code>01100100</code>, 64). El cero se codifica como 128 (<code>10000000</code>). El primer bit <strong>no es un signo independiente</strong>.</p>
+<p>El rango general es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">-S</annotation></semantics></math> a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo>−</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">2^n-1-S</annotation></semantics></math>. Con sesgo 128 coincide con el rango de CA2 de ocho bits, pero <strong>sus patrones no coinciden</strong>. Más adelante el exponente de binary32 utilizará sesgo 127.</p>
+</section>
+<section id="bcd-codificar-cada-cifra-decimal" class="lesson-section">
+<h2>7. BCD: codificar cada cifra decimal</h2>
+<p>BCD (<em>Binary-Coded Decimal</em>) codifica cada cifra decimal por separado. En el BCD 8421 mostrado, cada cifra ocupa cuatro bits:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>729</mn><mn>10</mn></msub><mo>→</mo><munder><munder><mn>0111</mn><mo accent="true">⏟</mo></munder><mn>7</mn></munder><mspace width="0.278em"></mspace><munder><munder><mn>0010</mn><mo accent="true">⏟</mo></munder><mn>2</mn></munder><mspace width="0.278em"></mspace><munder><munder><mn>1001</mn><mo accent="true">⏟</mo></munder><mn>9</mn></munder></mrow><annotation encoding="application/x-tex">729_{10}\longrightarrow\underbrace{0111}_{7}\;\underbrace{0010}_{2}\;\underbrace{1001}_{9}</annotation></semantics></math></p>
+<p>Los grupos de <code>1010</code> a <code>1111</code> no representan cifras decimales. No confundas BCD con convertir el número completo a binario: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>729</mn><mn>10</mn></msub><mo>=</mo><msub><mn>1011011001</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">729_{10}=1011011001_2</annotation></semantics></math> en binario natural. En BCD hemos reservado doce bits para las tres cifras.</p>
+</section>
+<section id="el-mismo-patrón-varios-significados" class="lesson-section">
+<h2>8. El mismo patrón, varios significados</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Convención, ocho bits</th>
+<th style="text-align: right;">Mínimo</th>
+<th style="text-align: right;">Máximo</th>
+<th style="text-align: left;">−28</th>
+<th style="text-align: left;">Cero</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sin signo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: left;">No representable</td>
+<td style="text-align: left;">00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Signo y magnitud</td>
+<td style="text-align: right;">−127</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: left;">9C</td>
+<td style="text-align: left;">00 y 80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CA1</td>
+<td style="text-align: right;">−127</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: left;">E3</td>
+<td style="text-align: left;">00 y FF</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CA2</td>
+<td style="text-align: right;">−128</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: left;">E4</td>
+<td style="text-align: left;">00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sesgo 128</td>
+<td style="text-align: right;">−128</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">80</td>
+</tr>
+</tbody>
+</table>
+<p>Los códigos de la tabla están en hexadecimal. El patrón <code>11111001</code> vale <strong>249 sin signo</strong> y <strong>−7 en CA2</strong>. La notación hexadecimal solo abrevia los bits; no decide su interpretación.</p>
+<p>En C, conviene conocer el tipo y su ancho. No deduzcas el tamaño de <code>int</code> a partir de que la máquina se anuncie como «de 64 bits». <code>sizeof</code> y <code>&lt;limits.h&gt;</code> permiten consultar la implementación; los tipos como <code>int8_t</code>, cuando están disponibles, expresan un ancho exacto. Tampoco extrapoles sin más la aritmética modular del papel al desbordamiento de enteros con signo en un programa C.</p>
+<div class="bridge-question">
+<p>¿Qué ocurre si queremos representar 53,25 o valores muy pequeños? Necesitamos separar precisión y escala.</p>
+</div>
+</section>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>Tema 2 · 2.6</p>
+</div>
+</div>
+<div class="lesson-nav">
+<p><a href="../../teoria/tema2/05-video.html">← Anterior</a></p>
+<p><a href="../../teoria/tema2/07-reales.html">Siguiente →</a></p>
+</div>
 
 
 <div class="book-navigation" data-book-navigation="">
@@ -372,6 +582,7 @@ ul.task-list li input[type="checkbox"] {
   })();
   </script>
 </div>
+<script src="../../assets/tema2.js"></script>
 
 
 

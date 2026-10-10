@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lección 1.5 · ¿Cómo ejecuta un programa? – Fundamentos de Informática</title>
+<title>2.7 · ¿Cómo se guardan los decimales? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,7 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
@@ -45,73 +44,214 @@ ul.task-list li input[type="checkbox"] {
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Lección 1.5 · ¿Cómo ejecuta un programa?</span></h1>
+<h1 class="title"><span class="chapter-title">2.7 · ¿Cómo se guardan los decimales?</span></h1>
 
 </header>
 
 
-<article class="sheet lesson-1-5" aria-label="Lección 1.5: cómo ejecuta un programa un computador">
-  <header class="running-head"><span>Tema 1 · Introducción a los computadores</span><span>1.5 Ejecución de programas</span></header>
+<div class="sheet tema2-sheet">
+<div class="running-head">
+<p>Tema 2 · Representación de la información</p>
+<p>2.7</p>
+</div>
+<div class="opening">
+<div class="kicker">
+<p>LECCIÓN 2.7</p>
+</div>
+<h1 id="cómo-se-guardan-los-decimales">¿Cómo se guardan los decimales?</h1>
+<div class="deck">
+<p>La coma flotante combina signo, significando y exponente. Permite cubrir muchas magnitudes, pero sigue disponiendo de un número finito de patrones.</p>
+</div>
+<div class="short-rule">
 
-  <section class="opening">
-    <p class="kicker">LECCIÓN 1.5</p>
-    <h1>¿Cómo ejecuta<br>un programa?</h1>
-    <p class="deck">Un programa está almacenado como instrucciones y datos. Ejecutarlo consiste en repetir una secuencia coordinada de lecturas, decisiones y operaciones.</p>
-    <div class="short-rule" aria-hidden="true"></div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>1. CPU y memoria trabajan en ciclo</h2>
-    <p>Las diapositivas originales construyen el proceso paso a paso. Conservamos esa secuencia de seis movimientos entre la unidad de control, la memoria, el registro y la ALU.</p>
-    <div class="execution-cycle" aria-label="Secuencia de seis pasos mostrada en las diapositivas">
-      <div class="cycle-step"><b>1</b><strong>Seleccionar en memoria</strong><span>La unidad de control indica la posición de memoria que se quiere leer.</span></div>
-      <div class="cycle-step"><b>2</b><strong>Leer al registro</strong><span>El contenido de esa posición se copia desde memoria al registro o palabra de la CPU.</span></div>
-      <div class="cycle-step"><b>3</b><strong>Llevar a la ALU</strong><span>El valor del registro se presenta a la unidad aritmético-lógica.</span></div>
-      <div class="cycle-step"><b>4</b><strong>Operar</strong><span>La unidad de control determina la operación y la ALU produce el resultado, que vuelve al registro.</span></div>
-      <div class="cycle-step"><b>5</b><strong>Seleccionar destino</strong><span>La unidad de control indica la posición de memoria en la que se almacenará el resultado.</span></div>
-      <div class="cycle-step"><b>6</b><strong>Escribir en memoria</strong><span>El valor del registro se copia en la posición de memoria seleccionada.</span></div>
-    </div>
-    <div class="cycle-map" aria-hidden="true"><span>Memoria</span><i>→</i><span>Registro</span><i>→</i><span>ALU</span><i>→</i><span>Registro</span><i>→</i><span>Memoria</span></div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>2. El reloj marca el ritmo</h2>
-    <p>El procesador se sincroniza mediante un <strong>reloj</strong>. Su frecuencia indica cuántos ciclos se producen por segundo y suele expresarse en MHz o GHz. Una instrucción puede necesitar varios ciclos.</p>
-    <div class="clock-figure soft-panel" aria-label="Señal de reloj con ciclos regulares">
-      <span class="clock-label">reloj</span>
-      <svg viewbox="0 0 410 72" role="img" aria-label="Onda cuadrada que representa ciclos de reloj"><path d="M10 52 H45 V18 H90 V52 H135 V18 H180 V52 H225 V18 H270 V52 H315 V18 H360 V52 H400" fill="none" stroke="#C45432" stroke-width="4" stroke-linejoin="round"></path><path d="M45 62 H90" stroke="#132A3A" stroke-width="1.5"></path><path d="M45 58 V66 M90 58 V66" stroke="#132A3A" stroke-width="1.5"></path><text x="67" y="70" text-anchor="middle">1 ciclo</text></svg>
-    </div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>3. Del número de instrucciones al tiempo de ejecución</h2>
-    <p>Si un programa ejecuta <strong>NI</strong> instrucciones, cada instrucción necesita por término medio <strong>CPI</strong> ciclos (NCI en la notación usada en el ejercicio original) y el reloj funciona a una frecuencia <strong>f</strong>, el tiempo de CPU puede expresarse como:</p>
-    <div class="execution-formula"><span>t<sub>e</sub> =</span><strong>NI × CPI</strong><i>/</i><span>f</span></div>
-    <div class="source-exercise">
-      <strong>Ejercicio del material original</strong>
-      <p><strong>Enunciado.</strong> Un programa ejecuta 10.000 instrucciones; cada instrucción necesita por término medio 4 ciclos y el procesador funciona a 1 GHz. ¿Cuál es el tiempo de ejecución?</p>
-      <details class="inline-solution">
-        <summary>Resolución</summary>
-        <div class="calculation">t<sub>e</sub> = (10.000 × 4) / 10<sup>9</sup> s = 40 × 10<sup>−6</sup> s = <strong>40 μs</strong></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>4. ¿Cómo hablamos de rendimiento?</h2>
-    <p>El material introduce tres medidas: la frecuencia de reloj, los <strong>MIPS</strong> (millones de instrucciones máquina por segundo) y los <strong>MFLOPS</strong> (millones de operaciones en coma flotante por segundo). En la diapositiva, MegaFLOPS se ejemplifica como operaciones con números reales de 64 bits.</p>
-    <div class="metric-row">
-      <div><strong>Frecuencia</strong><span>ciclos / segundo</span></div>
-      <div><strong>MIPS</strong><span>instrucciones / segundo</span></div>
-      <div><strong>MFLOPS</strong><span>operaciones en coma flotante / segundo</span></div>
-    </div>
-    <p class="bridge-question">Hasta ahora hemos hablado de “un computador”. Pero <strong>hay muchas formas de organizar y utilizar estas máquinas</strong>.</p>
-  </section>
-
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>8</span></footer>
-</article>
-
-<nav class="lesson-nav" aria-label="Navegación entre lecciones"><a href="04-comunicacion.html">← Lección 1.4</a><a href="06-tipos.html">Lección 1.6 →</a></nav>
+</div>
+</div>
+<section id="mover-la-coma-sin-cambiar-el-valor" class="lesson-section">
+<h2>1. Mover la coma sin cambiar el valor</h2>
+<p>En notación científica, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>53</mn><mo>,</mo><mn>25</mn><mo>=</mo><mn>5</mn><mo>,</mo><mn>325</mn><mo>×</mo><msup><mn>10</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">53{,}25=5{,}325\times10^1</annotation></semantics></math>. Si desplazamos la coma, el exponente compensa el cambio. En base dos seguimos la misma idea, normalizando la magnitud como <strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>M</mi><mo>&lt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1\le M&lt;2</annotation></semantics></math></strong>.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mi>S</mi><mo>×</mo><mi>M</mi><mo>×</mo><msup><mn>2</mn><mi>E</mi></msup></mrow><annotation encoding="application/x-tex">N=S\times M\times2^E</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math> vale +1 o −1; <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math> es el <strong>significando</strong>, llamado mantisa en las diapositivas, y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math> es el exponente real. Distinguiremos ese factor <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math> del bit de signo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>s</mi></msup></mrow><annotation encoding="application/x-tex">S=(-1)^s</annotation></semantics></math>.</p>
+<p>La parte entera de 53,25 es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mn>110101</mn><mn>2</mn></msub><annotation encoding="application/x-tex">110101_2</annotation></semantics></math>; su fracción es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><msub><mn>01</mn><mn>2</mn></msub><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">0{,}01_2=1/4</annotation></semantics></math>. Por tanto:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>53</mn><mo>,</mo><msub><mn>25</mn><mn>10</mn></msub><mo>=</mo><mn>110101</mn><mo>,</mo><msub><mn>01</mn><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mn>1010101</mn><mn>2</mn></msub><mo>×</mo><msup><mn>2</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">53{,}25_{10}=110101{,}01_2=1{,}1010101_2\times2^5</annotation></semantics></math></p>
+<p>Hemos desplazado cinco posiciones la coma hacia la izquierda y compensado con <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mn>5</mn></msup><annotation encoding="application/x-tex">2^5</annotation></semantics></math>. El valor no cambia.</p>
+</section>
+<section id="ieee-754-campos-con-funciones-distintas" class="lesson-section">
+<h2>2. IEEE 754: campos con funciones distintas</h2>
+<p>Los formatos binarios de precisión simple y doble reparten sus bits así:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Formato</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Signo</th>
+<th style="text-align: right;">Exponente</th>
+<th style="text-align: right;">Fracción</th>
+<th style="text-align: right;">Sesgo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">binary32</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">127</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">binary64</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">1023</td>
+</tr>
+</tbody>
+</table>
+<p>Para un <strong>número normal</strong> se almacena el exponente sesgado <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mi>E</mi><mo>+</mo><mtext mathvariant="normal">sesgo</mtext></mrow><annotation encoding="application/x-tex">e=E+\text{sesgo}</annotation></semantics></math>. El 1 inicial del significando es implícito: solo se guardan los bits de su fracción <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</p>
+<div class="rule-band">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>s</mi></msup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mtext mathvariant="normal">sesgo</mtext></mrow></msup></mrow><annotation encoding="application/x-tex">N=(-1)^s(1+f)2^{e-\text{sesgo}}</annotation></semantics></math> Esta fórmula se aplica a <strong>números normales</strong>. Primero hay que comprobar el campo exponente.</p>
+</div>
+<p>En binary32, los exponentes normales almacenados van de 1 a 254: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>−</mi><mn>126</mn><mi>…</mi><mn>127</mn></mrow><annotation encoding="application/x-tex">E=-126\ldots127</annotation></semantics></math>. En binary64 van de 1 a 2046: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>−</mi><mn>1022</mn><mi>…</mi><mn>1023</mn></mrow><annotation encoding="application/x-tex">E=-1022\ldots1023</annotation></semantics></math>.</p>
+<p>Los 23 bits de fracción de binary32, con el 1 implícito, dan <strong>24 bits de precisión</strong> para normales. En binary64 son <strong>53</strong>. Más bits de fracción mejoran la precisión; más bits de exponente amplían el rango de magnitudes. <code>float</code> y <code>double</code> suelen corresponder a esos formatos en las implementaciones habituales de C, pero hay que comprobar el entorno.</p>
+</section>
+<section id="codificar-5325" class="lesson-section">
+<h2>3. Codificar 53,25</h2>
+<p>Partimos de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><msub><mn>1010101</mn><mn>2</mn></msub><mo>×</mo><msup><mn>2</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1{,}1010101_2\times2^5</annotation></semantics></math>. El valor es positivo: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=0</annotation></semantics></math>. El exponente almacenado es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>5</mn><mo>+</mo><mn>127</mn><mo>=</mo><mn>132</mn><mo>=</mo><msub><mn>10000100</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">e=5+127=132=10000100_2</annotation></semantics></math>. La fracción <code>1010101</code> se completa con ceros a la derecha hasta 23 bits.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/ieee754.svg" alt="Tres campos etiquetados de 1, 8 y 23 bits para representar 53,25. La palabra completa en hexadecimal es 42550000."></p>
+<figcaption>Campos de 53,25 en IEEE 754 binary32: signo cero, exponente 132 y fracción 1010101 seguida de ceros.</figcaption>
+</figure>
+</div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Bits almacenados</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Signo</td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Exponente</td>
+<td style="text-align: left;"><code>10000100</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fracción</td>
+<td style="text-align: left;"><code>10101010000000000000000</code></td>
+</tr>
+</tbody>
+</table>
+<p>La palabra completa es <strong>42550000</strong> en hexadecimal. Agrupamos los 32 bits de cuatro en cuatro <strong>después</strong> de construir los campos. Las fronteras entre cifras hexadecimales no tienen por qué coincidir con las fronteras entre signo, exponente y fracción.</p>
+<p>Un segundo ejemplo: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>4</mn><mn>10</mn></msub><mo>=</mo><msub><mn>100</mn><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mn>0</mn><mn>2</mn></msub><mo>×</mo><msup><mn>2</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4_{10}=100_2=1{,}0_2\times2^2</annotation></semantics></math>. Sus campos son <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=0</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>129</mn></mrow><annotation encoding="application/x-tex">e=129</annotation></semantics></math> y fracción nula. Su representación binary32 es <strong>40800000</strong>.</p>
+</section>
+<section id="decodificar-recorrer-el-camino-inverso" class="lesson-section">
+<h2>4. Decodificar: recorrer el camino inverso</h2>
+<p>Considera <strong>01F80000</strong> como palabra IEEE 754 binary32, no como entero hexadecimal:</p>
+<ol type="1">
+<li>Despliega sus ocho cifras en 32 bits y separa 1 + 8 + 23.</li>
+<li>Obtienes <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=0</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msub><mn>00000011</mn><mn>2</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">e=00000011_2=3</annotation></semantics></math> y fracción <code>1111000…</code>.</li>
+<li>Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>e</mi><mo>≤</mo><mn>254</mn></mrow><annotation encoding="application/x-tex">1\le e\le254</annotation></semantics></math>, es normal: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mn>3</mn><mo>−</mo><mn>127</mn><mo>=</mo><mi>−</mi><mn>124</mn></mrow><annotation encoding="application/x-tex">E=3-127=-124</annotation></semantics></math>.</li>
+<li>Recupera <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>1</mn><mo>,</mo><msub><mn>1111</mn><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>9375</mn></mrow><annotation encoding="application/x-tex">M=1{,}1111_2=1{,}9375</annotation></semantics></math> sumando los pesos: uno, un medio, un cuarto, un octavo y un dieciseisavo.</li>
+</ol>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>9375</mn><mo>×</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>124</mn></mrow></msup><mo>≈</mo><mn>9</mn><mo>,</mo><mn>1100812</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>38</mn></mrow></msup></mrow><annotation encoding="application/x-tex">N=1{,}9375\times2^{-124}\approx9{,}1100812\times10^{-38}</annotation></semantics></math></p>
+<p>El orden físico de los bytes en memoria es una cuestión adicional: no cambia la distribución conceptual de estos campos en la palabra de 32 bits.</p>
+</section>
+<section id="cero-subnormales-infinitos-y-nan" class="lesson-section">
+<h2>5. Cero, subnormales, infinitos y NaN</h2>
+<p>El campo exponente reserva dos extremos. La interpretación completa de binary32 es:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Exponente <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math></th>
+<th style="text-align: left;">Fracción <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math></th>
+<th style="text-align: left;">Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1–254</td>
+<td style="text-align: left;">Cualquiera</td>
+<td style="text-align: left;">Normal: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>s</mi></msup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>127</mn></mrow></msup></mrow><annotation encoding="application/x-tex">(-1)^s(1+f)2^{e-127}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Cero con signo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Distinta de 0</td>
+<td style="text-align: left;">Subnormal: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>s</mi></msup><mi>f</mi><mspace width="0.167em"></mspace><msup><mn>2</mn><mrow><mi>−</mi><mn>126</mn></mrow></msup></mrow><annotation encoding="application/x-tex">(-1)^s f\,2^{-126}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">255</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Infinito con signo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">255</td>
+<td style="text-align: left;">Distinta de 0</td>
+<td style="text-align: left;">NaN (<em>Not a Number</em>)</td>
+</tr>
+</tbody>
+</table>
+<p>Los subnormales —también llamados denormalizados— se acercan a cero sin el 1 implícito. Tienen menor precisión relativa. El menor positivo es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>−</mi><mn>149</mn></mrow></msup><mo>≈</mo><mn>1</mn><mo>,</mo><mn>40</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>45</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-149}\approx1{,}40\times10^{-45}</annotation></semantics></math>; el menor normal es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>−</mi><mn>126</mn></mrow></msup><mo>≈</mo><mn>1</mn><mo>,</mo><mn>18</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>38</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-126}\approx1{,}18\times10^{-38}</annotation></semantics></math> y el mayor finito ronda <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>,</mo><mn>40</mn><mo>×</mo><msup><mn>10</mn><mn>38</mn></msup></mrow><annotation encoding="application/x-tex">3{,}40\times10^{38}</annotation></semantics></math>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Valor</th>
+<th style="text-align: left;">Palabra binary32 hexadecimal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">+0</td>
+<td style="text-align: left;">00000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">−0</td>
+<td style="text-align: left;">80000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3F800000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">+\infty</annotation></semantics></math></td>
+<td style="text-align: left;">7F800000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty</annotation></semantics></math></td>
+<td style="text-align: left;">FF800000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Un ejemplo de NaN</td>
+<td style="text-align: left;">7FC00000</td>
+</tr>
+</tbody>
+</table>
+<p>NaN tiene muchos patrones posibles. No todos los exponentes permiten añadir el 1 implícito.</p>
+</section>
+<section id="rango-no-es-precisión" class="lesson-section">
+<h2>6. Rango no es precisión</h2>
+<p>Un formato finito no representa todos los reales. Por ejemplo, 0,1 no tiene expansión binaria finita; debe aproximarse. Más magnitud tampoco significa más detalle: los valores normales representables están más separados cuando crece el exponente.</p>
+<p>Hay <strong>desbordamiento</strong> (<em>overflow</em>) cuando se supera la magnitud finita máxima. Cerca de cero, un resultado puede pasar a subnormal, perder precisión relativa o redondearse a cero: es la zona asociada al <strong>agotamiento</strong> (<em>underflow</em>).</p>
+<p>Para comprobar el procedimiento, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>87</mn><mo>=</mo><mn>1</mn><mo>,</mo><msub><mn>010111</mn><mn>2</mn></msub><mo>×</mo><msup><mn>2</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">87=1{,}010111_2\times2^6</annotation></semantics></math> tiene <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>133</mn></mrow><annotation encoding="application/x-tex">e=133</annotation></semantics></math> y palabra <strong>42AE0000</strong>. En <a href="../../teoria/tema2/ejercicios.html#reales">los ejercicios</a> codificarás un negativo y separarás casos especiales. Conserva el signo por separado: <strong>no se aplica CA2 a toda la palabra IEEE 754</strong>.</p>
+</section>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>Tema 2 · 2.7</p>
+</div>
+</div>
+<div class="lesson-nav">
+<p><a href="../../teoria/tema2/06-enteros.html">← Anterior</a></p>
+<p><a href="../../teoria/tema2/ejercicios.html">Siguiente →</a></p>
+</div>
 
 
 <div class="book-navigation" data-book-navigation="">
@@ -410,6 +550,7 @@ ul.task-list li input[type="checkbox"] {
   })();
   </script>
 </div>
+<script src="../../assets/tema2.js"></script>
 
 
 

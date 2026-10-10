@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Ejercicios · Ponte a prueba – Fundamentos de Informática</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+
+
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../../styles/markdown-refactor.css">
+<link rel="stylesheet" href="../../styles/resources.css">
+<link rel="stylesheet" href="../../styles/tema2.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title"><span class="chapter-title">Ejercicios · Ponte a prueba</span></h1>
+
+</header>
+
+
+<div class="sheet tema2-sheet">
+<div class="running-head">
+<p>Tema 2 · Representación de la información</p>
+<p>Ejercicios</p>
+</div>
+<div class="opening">
+<div class="kicker">
+<p>TEMA 2 · EJERCICIOS</p>
+</div>
+<h1 id="ponte-a-prueba">Ponte a prueba</h1>
+<div class="deck">
+<p>24 ejercicios organizados por lección. Lee el enunciado, fija las unidades y la convención, y despliega la resolución después de intentarlo.</p>
+</div>
+<div class="short-rule">
+
+</div>
+</div>
+<section id="numeracion" class="lesson-section">
+<h2>Sistemas de numeración</h2>
+<p>Practica las conversiones antes de consultar las tablas. Los ejercicios 1–4 recogen ejemplos y cuestiones de L2.0.</p>
+<section id="leer-y-convertir" class="exercise-item">
+<h3>1. Leer y convertir</h3>
+<p><strong>Enunciado.</strong> Interpreta <code>00001001</code> como entero sin signo. Convierte 74 a binario y 678 a hexadecimal. Comprueba los resultados mediante pesos.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>00001001</mn><mn>2</mn></msub><mo>=</mo><mn>8</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">00001001_2=8+1=9</annotation></semantics></math>. Las divisiones sucesivas dan <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>74</mn><mn>10</mn></msub><mo>=</mo><msub><mn>1001010</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">74_{10}=1001010_2</annotation></semantics></math> y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>678</mn><mn>10</mn></msub><mo>=</mo><mn>2</mn><mi>A</mi><msub><mn>6</mn><mn>16</mn></msub></mrow><annotation encoding="application/x-tex">678_{10}=2A6_{16}</annotation></semantics></math>.</p>
+<p>Comprobaciones: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>+</mo><mn>8</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>74</mn></mrow><annotation encoding="application/x-tex">64+8+2=74</annotation></semantics></math> y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><mn>256</mn><mo>+</mo><mn>10</mn><mo>×</mo><mn>16</mn><mo>+</mo><mn>6</mn><mo>=</mo><mn>678</mn></mrow><annotation encoding="application/x-tex">2\times256+10\times16+6=678</annotation></semantics></math>. Los ceros iniciales no cambian el valor sin signo.</p>
+</div>
+</details>
+</section>
+<section id="una-fracción-que-no-termina" class="exercise-item">
+<h3>2. Una fracción que no termina</h3>
+<p><strong>Enunciado.</strong> Convierte 0,423 a binario conservando seis cifras fraccionarias mediante truncamiento. ¿Es exacto el resultado?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Las partes enteras de las seis multiplicaciones sucesivas por dos son <strong>0, 1, 1, 0, 1, 1</strong>. Por tanto:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><msub><mn>423</mn><mn>10</mn></msub><mo>≈</mo><mn>0</mn><mo>,</mo><msub><mn>011011</mn><mn>2</mn></msub><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>32</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>64</mn></mfrac><mo>=</mo><mn>0</mn><mo>,</mo><mn>421875</mn></mrow><annotation encoding="application/x-tex">0{,}423_{10}\approx0{,}011011_2=\frac14+\frac18+\frac1{32}+\frac1{64}=0{,}421875</annotation></semantics></math></p>
+<p>La diferencia es 0,001125. Queda una fracción pendiente, de modo que no es exacto.</p>
+</div>
+</details>
+</section>
+<section id="agrupar-desde-la-coma" class="exercise-item">
+<h3>3. Agrupar desde la coma</h3>
+<p><strong>Enunciado.</strong> Convierte <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>101101</mn><mo>,</mo><msub><mn>011</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">101101{,}011_2</annotation></semantics></math> a hexadecimal. Explica dónde añades ceros y comprueba el recorrido inverso.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Agrupamos desde la coma: <code>0010 1101 , 0110</code>. Los ceros añadidos quedan a la izquierda de la parte entera y a la derecha de la fracción. Obtenemos <strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>D</mi><mo>,</mo><msub><mn>6</mn><mn>16</mn></msub></mrow><annotation encoding="application/x-tex">2D{,}6_{16}</annotation></semantics></math></strong>.</p>
+<p>Cada cifra vuelve a convertirse en cuatro bits: 2 → 0010, D → 1101, 6 → 0110. Quitar los ceros no significativos devuelve el número inicial.</p>
+</div>
+</details>
+</section>
+<section id="operaciones-y-desplazamientos" class="exercise-item">
+<h3>4. Operaciones y desplazamientos</h3>
+<p><strong>Enunciado.</strong> Calcula <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>1110</mn><mn>2</mn></msub><mo>+</mo><msub><mn>0111</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1110_2+0111_2</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>10101</mn><mn>2</mn></msub><mo>−</mo><msub><mn>01010</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">10101_2-01010_2</annotation></semantics></math> y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>1101</mn><mn>2</mn></msub><mo>×</mo><msub><mn>101</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1101_2\times101_2</annotation></semantics></math>. ¿Qué ocurre al desplazar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mn>1010</mn><mn>2</mn></msub><annotation encoding="application/x-tex">1010_2</annotation></semantics></math> un bit a la izquierda?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Los resultados son <strong>10101</strong>, <strong>01011</strong> y <strong>1000001</strong>, respectivamente. Corresponden a 21, 11 y 65 en decimal.</p>
+<p>Con espacio suficiente, desplazar 1010 produce 10100: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">10\times2=20</annotation></semantics></math>. En solo cuatro bits se pierde el bit superior y queda 0100, valor 4; ya no representa el resultado exacto.</p>
+</div>
+</details>
+</section>
+</section>
+<section id="codigos" class="lesson-section">
+<h2>Códigos y compresión</h2>
+<p>Aplicación de los ejemplos de L2.1: patrones disponibles, control de errores y medidas de reducción.</p>
+<section id="patrones-y-paridad" class="exercise-item">
+<h3>5. Patrones y paridad</h3>
+<p><strong>Enunciado.</strong> ¿Cuántos bits de longitud fija necesitas para cinco objetos? Añade paridad par a los datos 1011. ¿Podrías corregir un error solo con ese bit?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Necesitamos <strong>tres bits</strong>: dos dan cuatro patrones; tres dan ocho.</p>
+<p>1011 contiene tres unos. Añadimos un <strong>1</strong> para obtener cuatro unos en total. Un cambio de bit altera la paridad; dos cambios pueden mantenerla. La paridad sola no identifica la posición incorrecta y no permite corregirla.</p>
+</div>
+</details>
+</section>
+<section id="tres-medidas-de-compresión" class="exercise-item">
+<h3>6. Tres medidas de compresión</h3>
+<p><strong>Enunciado.</strong> Un archivo pasa de 14 MB a 5 MB. Calcula el factor de compresión, el porcentaje que permanece y el ahorro porcentual.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>El factor es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>14</mn><mi>/</mi><mn>5</mn><mo>=</mo><mrow><mn mathvariant="bold">𝟐</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟖</mn><mo mathvariant="bold">:</mo><mn mathvariant="bold">𝟏</mn></mrow></mrow><annotation encoding="application/x-tex">14/5=\mathbf{2{,}8:1}</annotation></semantics></math>. Permanece <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>/</mi><mn>14</mn><mo>×</mo><mn>100</mn><mo>≈</mo><mrow><mn mathvariant="bold">𝟑𝟓</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟕</mn><mi mathvariant="bold-italic">%</mi></mrow></mrow><annotation encoding="application/x-tex">5/14\times100\approx\mathbf{35{,}7\%}</annotation></semantics></math>. El ahorro es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mi>/</mi><mn>14</mn><mo>×</mo><mn>100</mn><mo>≈</mo><mrow><mn mathvariant="bold">𝟔𝟒</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟑</mn><mi mathvariant="bold-italic">%</mi></mrow></mrow><annotation encoding="application/x-tex">9/14\times100\approx\mathbf{64{,}3\%}</annotation></semantics></math>.</p>
+<p>No confundas 35,7 % de tamaño restante con 35,7 % de ahorro.</p>
+</div>
+</details>
+</section>
+</section>
+<section id="texto" class="lesson-section">
+<h2>Texto: contar caracteres y bytes</h2>
+<p>Ejercicios de L2.2. Se excluyen BOM, cabeceras y otros bytes adicionales. Los puntos de código de los grupos indicados son válidos.</p>
+<section id="de-utf-16-a-utf-8" class="exercise-item">
+<h3>7. De UTF-16 a UTF-8</h3>
+<p><strong>Enunciado.</strong> Un archivo contiene 18.325 caracteres de U+0000–U+007F, 127 de U+0080–U+07FF y 14 de U+0800–U+FFFF. Suponiendo dos bytes por carácter en UTF-16, ¿qué factor de reducción se obtiene al recodificarlo en UTF-8?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>En UTF-8 sumamos tamaños por grupo:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Grupo</th>
+<th style="text-align: right;">Bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">18.325 × 1</td>
+<td style="text-align: right;">18.325</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">127 × 2</td>
+<td style="text-align: right;">254</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">14 × 3</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>18.621</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Hay <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mspace width="0.167em"></mspace><mn>325</mn><mo>+</mo><mn>127</mn><mo>+</mo><mn>14</mn><mo>=</mo><mn>18</mn><mspace width="0.167em"></mspace><mn>466</mn></mrow><annotation encoding="application/x-tex">18\,325+127+14=18\,466</annotation></semantics></math> caracteres. En UTF-16 ocupan <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mspace width="0.167em"></mspace><mn>466</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>36</mn><mspace width="0.167em"></mspace><mn>932</mn></mrow><annotation encoding="application/x-tex">18\,466\times2=36\,932</annotation></semantics></math> B.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mn>36</mn><mspace width="0.167em"></mspace><mn>932</mn></mrow><mrow><mn>18</mn><mspace width="0.167em"></mspace><mn>621</mn></mrow></mfrac><mo>≈</mo><mrow><mn mathvariant="bold">𝟏</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟗𝟖</mn><mo mathvariant="bold">:</mo><mn mathvariant="bold">𝟏</mn></mrow></mrow><annotation encoding="application/x-tex">f_c=\frac{36\,932}{18\,621}\approx\mathbf{1{,}98:1}</annotation></semantics></math></p>
+<p>Es una recodificación del mismo texto, no un compresor general.</p>
+</div>
+</details>
+</section>
+<section id="del-tamaño-al-número-de-caracteres" class="exercise-item">
+<h3>8. Del tamaño al número de caracteres</h3>
+<p><strong>Enunciado.</strong> Un archivo UTF-8 ocupa 139 KiB. Contiene 1.024 caracteres de tres bytes, 4.096 de dos bytes y el resto de un byte. ¿Cuánto ocupará en UTF-16, suponiendo dos bytes por carácter?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Los grupos conocidos ocupan <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1024</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1024\times3=3</annotation></semantics></math> KiB y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4096</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">4096\times2=8</annotation></semantics></math> KiB. Quedan <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>139</mn><mo>−</mo><mn>11</mn><mo>=</mo><mn>128</mn></mrow><annotation encoding="application/x-tex">139-11=128</annotation></semantics></math> KiB: <strong>131.072 caracteres de un byte</strong>.</p>
+<p>El total es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1024</mn><mo>+</mo><mn>4096</mn><mo>+</mo><mn>131</mn><mspace width="0.167em"></mspace><mn>072</mn><mo>=</mo><mn>136</mn><mspace width="0.167em"></mspace><mn>192</mn></mrow><annotation encoding="application/x-tex">1024+4096+131\,072=136\,192</annotation></semantics></math> caracteres. En UTF-16:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>136</mn><mspace width="0.167em"></mspace><mn>192</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>272</mn><mspace width="0.167em"></mspace><mn>384</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> B</mtext></mrow><mo>=</mo><mrow><mn mathvariant="bold">𝟐𝟔𝟔</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="bold"> 𝐊𝐢𝐁</mtext></mrow></mrow></mrow><annotation encoding="application/x-tex">136\,192\times2=272\,384\text{ B}=\mathbf{266\text{ KiB}}</annotation></semantics></math></p>
+<p>No olvides volver a sumar los caracteres de los dos grupos conocidos.</p>
+</div>
+</details>
+</section>
+</section>
+<section id="sonido" class="lesson-section">
+<h2>Sonido: tiempo, amplitud y tamaño</h2>
+<p>Ejercicios de L2.3. El tamaño del primer problema corresponde solo a datos PCM.</p>
+<section id="deducir-la-frecuencia-de-muestreo" class="exercise-item">
+<h3>9. Deducir la frecuencia de muestreo</h3>
+<p><strong>Enunciado.</strong> Un audio estéreo dura 20 s, utiliza 16 bits por muestra y ocupa 625 KiB de datos sin comprimir. ¿A qué frecuencia se ha muestreado?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Convertimos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>625</mn><mo>×</mo><mn>1024</mn><mo>=</mo><mn>640</mn><mspace width="0.167em"></mspace><mn>000</mn></mrow><annotation encoding="application/x-tex">625\times1024=640\,000</annotation></semantics></math> B. Despejamos la frecuencia:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>s</mi></msub><mo>=</mo><mfrac><mrow><mn>8</mn><mi>C</mi></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mi>c</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>8</mn><mo>×</mo><mn>640</mn><mspace width="0.167em"></mspace><mn>000</mn></mrow><mrow><mn>16</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>20</mn></mrow></mfrac><mo>=</mo><mrow><mn mathvariant="bold">𝟖𝟎𝟎𝟎</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="bold"> 𝐇𝐳</mtext></mrow></mrow></mrow><annotation encoding="application/x-tex">f_s=\frac{8C}{n_sct}=\frac{8\times640\,000}{16\times2\times20}=\mathbf{8000\text{ Hz}}</annotation></semantics></math></p>
+<p>Son 8.000 muestras por segundo <strong>en cada canal</strong>. Sustituir este valor en la fórmula del tamaño devuelve los 625 KiB.</p>
+</div>
+</details>
+</section>
+<section id="la-condición-de-muestreo" class="exercise-item">
+<h3>10. La condición de muestreo</h3>
+<p><strong>Enunciado.</strong> ¿Cuál es el límite teórico de muestreo para una señal de banda base cuya frecuencia máxima es 20 kHz? ¿Bastaría aumentar los bits por muestra si se muestrea demasiado despacio?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>El límite es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>f</mi><mi mathvariant="normal">max</mi></msub><mo>=</mo><mrow><mn mathvariant="bold">𝟒𝟎</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="bold"> 𝐤𝐇𝐳</mtext></mrow></mrow></mrow><annotation encoding="application/x-tex">2f_{\max}=\mathbf{40\text{ kHz}}</annotation></semantics></math>. Para evitar casos límite y permitir filtrado usamos una frecuencia <strong>superior</strong> a 40 kHz.</p>
+<p>Aumentar bits mejora la cuantificación de amplitud, pero no corrige el aliasing causado por muestreo insuficiente.</p>
+</div>
+</details>
+</section>
+</section>
+<section id="imagen" class="lesson-section">
+<h2>Imagen: píxeles, color y paleta</h2>
+<p>Los cuatro ejercicios proceden de L2.4. Mantén las exclusiones del enunciado: no estás calculando necesariamente el tamaño final de un archivo real.</p>
+<section id="imagen-rgb-pequeña" class="exercise-item">
+<h3>11. Imagen RGB pequeña</h3>
+<p><strong>Enunciado.</strong> Una imagen mide 10 × 15 píxeles y usa RGB de 24 bits por píxel. ¿Cuántos bytes ocupan sus datos sin compresión, cabecera ni relleno?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Tiene 150 píxeles y cada uno ocupa tres bytes:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mn>10</mn><mo>×</mo><mn>15</mn><mo>×</mo><mfrac><mn>24</mn><mn>8</mn></mfrac><mo>=</mo><mrow><mn mathvariant="bold">𝟒𝟓𝟎</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="bold"> 𝐁</mtext></mrow></mrow></mrow><annotation encoding="application/x-tex">C=10\times15\times\frac{24}{8}=\mathbf{450\text{ B}}</annotation></semantics></math></p>
+<p>El resultado 3.600 corresponde a <strong>bits</strong>, no a bytes.</p>
+</div>
+</details>
+</section>
+<section id="escala-de-grises" class="exercise-item">
+<h3>12. Escala de grises</h3>
+<p><strong>Enunciado.</strong> Una imagen mide 256 × 256 píxeles y usa ocho bits por píxel. Calcula sus datos en KiB, sin compresión, cabecera ni paleta.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Un píxel ocupa un byte. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>256</mn><mo>×</mo><mn>256</mn><mo>=</mo><mn>65</mn><mspace width="0.167em"></mspace><mn>536</mn></mrow><annotation encoding="application/x-tex">256\times256=65\,536</annotation></semantics></math> B. Al dividir entre 1024 obtenemos <strong>64 KiB</strong>.</p>
+</div>
+</details>
+</section>
+<section id="submuestreo-de-color" class="exercise-item">
+<h3>13. Submuestreo de color</h3>
+<p><strong>Enunciado.</strong> Partimos de RGB con 24 bits por píxel. Por cada cuadrado de 5 × 5 píxeles guardamos 25 valores de Y′, uno de Cb y uno de Cr; cada componente usa ocho bits. Calcula el factor de reducción y el ahorro.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>El bloque RGB original ocupa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>×</mo><mn>24</mn><mo>=</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">25\times24=600</annotation></semantics></math> bits. El modelo reducido ocupa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>25</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mn>8</mn><mo>=</mo><mn>216</mn></mrow><annotation encoding="application/x-tex">(25+1+1)\times8=216</annotation></semantics></math> bits.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>c</mi></msub><mo>=</mo><mn>600</mn><mi>/</mi><mn>216</mn><mo>≈</mo><mrow><mn mathvariant="bold">𝟐</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟕𝟖</mn><mo mathvariant="bold">:</mo><mn mathvariant="bold">𝟏</mn></mrow></mrow><annotation encoding="application/x-tex">f_c=600/216\approx\mathbf{2{,}78:1}</annotation></semantics></math></p>
+<p>Permanece <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>216</mn><mi>/</mi><mn>600</mn><mo>=</mo><mn>36</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">216/600=36\%</annotation></semantics></math> y se ahorra <strong>64 %</strong>. Este modelo simplificado no calcula el tamaño completo de un JPEG.</p>
+</div>
+</details>
+</section>
+<section id="rgb-frente-a-una-paleta" class="exercise-item">
+<h3>14. RGB frente a una paleta</h3>
+<p><strong>Enunciado.</strong> Una imagen de 1600 × 900 píxeles pasa de RGB truecolor de 24 bits a índices de una paleta de 256 colores RGB. Calcula: a) paleta; b) índices y conjunto; c) factor de reducción. Excluye cabeceras, relleno y compresión LZW.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p><strong>a) Paleta.</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>256</mn><mo>×</mo><mn>3</mn><mo>=</mo><mrow><mn mathvariant="bold">𝟕𝟔𝟖</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="bold"> 𝐁</mtext></mrow></mrow><mo>=</mo><mn>0</mn><mo>,</mo><mn>75</mn></mrow><annotation encoding="application/x-tex">256\times3=\mathbf{768\text{ B}}=0{,}75</annotation></semantics></math> KiB.</p>
+<p><strong>b) Índices.</strong> Cada píxel necesita ocho bits. Hay <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1600</mn><mo>×</mo><mn>900</mn><mo>=</mo><mn>1</mn><mspace width="0.167em"></mspace><mn>440</mn><mspace width="0.167em"></mspace><mn>000</mn></mrow><annotation encoding="application/x-tex">1600\times900=1\,440\,000</annotation></semantics></math> píxeles: <strong>1.440.000 B</strong> de índices. Con la paleta: <strong>1.440.768 B</strong>.</p>
+<p><strong>c) Factor.</strong> RGB ocupa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.167em"></mspace><mn>440</mn><mspace width="0.167em"></mspace><mn>000</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>4</mn><mspace width="0.167em"></mspace><mn>320</mn><mspace width="0.167em"></mspace><mn>000</mn></mrow><annotation encoding="application/x-tex">1\,440\,000\times3=4\,320\,000</annotation></semantics></math> B:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mn>4</mn><mspace width="0.167em"></mspace><mn>320</mn><mspace width="0.167em"></mspace><mn>000</mn></mrow><mrow><mn>1</mn><mspace width="0.167em"></mspace><mn>440</mn><mspace width="0.167em"></mspace><mn>768</mn></mrow></mfrac><mo>≈</mo><mrow><mn mathvariant="bold">𝟐</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟗𝟗𝟖</mn><mo mathvariant="bold">:</mo><mn mathvariant="bold">𝟏</mn></mrow></mrow><annotation encoding="application/x-tex">f_c=\frac{4\,320\,000}{1\,440\,768}\approx\mathbf{2{,}998:1}</annotation></semantics></math></p>
+<p>Queda ligeramente por debajo de tres por el coste fijo de la paleta. Reducir los colores puede perder fidelidad aunque LZW, si se aplicara después, preservara los índices.</p>
+</div>
+</details>
+</section>
+</section>
+<section id="video" class="lesson-section">
+<h2>Vídeo: contar grupos y fotogramas</h2>
+<p>Ejercicios de L2.5. Se conserva el modelo didáctico original: grupos I–P–B completos, B de cero bytes y ausencia de audio y metadatos. No es una propiedad general de un códec real.</p>
+<section id="tamaño-de-un-vídeo" class="exercise-item">
+<h3>15. Tamaño de un vídeo</h3>
+<p><strong>Enunciado.</strong> Un vídeo de cinco minutos contiene 9.000 fotogramas de 1,4 megapíxeles. Se agrupan de tres en tres: I usa 3 B/píxel, P usa 1 B/píxel y B se reconstruye sin aportar bytes. ¿Cuántos GB ocupan los datos? Usa unidades decimales.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Hay <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9000</mn><mi>/</mi><mn>3</mn><mo>=</mo><mn>3000</mn></mrow><annotation encoding="application/x-tex">9000/3=3000</annotation></semantics></math> grupos. Cada I ocupa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.167em"></mspace><mn>400</mn><mspace width="0.167em"></mspace><mn>000</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>4</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1\,400\,000\times3=4{,}2</annotation></semantics></math> MB y cada P, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">1{,}4</annotation></semantics></math> MB. Un grupo ocupa <strong>5,6 MB</strong>.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3000</mn><mo>×</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>=</mo><mn>16</mn><mspace width="0.167em"></mspace><mn>800</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> MB</mtext></mrow><mo>=</mo><mrow><mn mathvariant="bold">𝟏𝟔</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟖</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="bold"> 𝐆𝐁</mtext></mrow></mrow></mrow><annotation encoding="application/x-tex">3000\times5{,}6=16\,800\text{ MB}=\mathbf{16{,}8\text{ GB}}</annotation></semantics></math></p>
+<p>La duración permite comprobar que el vídeo tiene 30 fps, pero no hace falta para calcular el tamaño cuando ya conocemos el número de imágenes.</p>
+</div>
+</details>
+</section>
+<section id="deducir-los-fps" class="exercise-item">
+<h3>16. Deducir los fps</h3>
+<p><strong>Enunciado.</strong> Un vídeo de diez minutos ocupa 16,1 GB. Sus fotogramas de 1600 × 900 píxeles se agrupan de tres en tres: I utiliza 16 bits/píxel, P utiliza ocho y B no aporta bytes. Calcula los fps aproximados. El tamaño está redondeado; usa 1 GB = 10⁹ B.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Hay 1.440.000 píxeles por imagen. I ocupa 2.880.000 B; P, 1.440.000 B. Un grupo cuesta <strong>4.320.000 B</strong>.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">grupos</mtext><mo>≈</mo><mfrac><mrow><mn>16</mn><mspace width="0.167em"></mspace><mn>100</mn><mspace width="0.167em"></mspace><mn>000</mn><mspace width="0.167em"></mspace><mn>000</mn></mrow><mrow><mn>4</mn><mspace width="0.167em"></mspace><mn>320</mn><mspace width="0.167em"></mspace><mn>000</mn></mrow></mfrac><mo>=</mo><mn>3726</mn><mo>,</mo><mn>85</mn></mrow><annotation encoding="application/x-tex">\text{grupos}\approx\frac{16\,100\,000\,000}{4\,320\,000}=3726{,}85</annotation></semantics></math></p>
+<p>Multiplicamos por tres, porque B también cuenta: aproximadamente 11.180,56 fotogramas. Dividimos entre 600 s:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>≈</mo><mrow><mn mathvariant="bold">𝟏𝟖</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟔𝟑</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="bold"> 𝐟𝐩𝐬</mtext></mrow></mrow></mrow><annotation encoding="application/x-tex">f\approx\mathbf{18{,}63\text{ fps}}</annotation></semantics></math></p>
+<p>Los decimales intermedios reflejan el tamaño redondeado. No representan grupos o fotogramas físicamente fraccionados.</p>
+</div>
+</details>
+</section>
+</section>
+<section id="enteros" class="lesson-section">
+<h2>Enteros: fijar ancho y convención</h2>
+<p>Ejercicios de L2.6. Todos los patrones de esta sección tienen ocho bits.</p>
+<section id="codificar-37-en-ca1-y-ca2" class="exercise-item">
+<h3>17. Codificar −37 en CA1 y CA2</h3>
+<p><strong>Enunciado.</strong> Representa −37 en CA1 y en CA2. Escribe los patrones binarios y su abreviatura hexadecimal.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>37</mn><mo>=</mo><mn>32</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">37=32+4+1</annotation></semantics></math> se escribe <code>00100101</code>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Convención</th>
+<th style="text-align: left;">Procedimiento</th>
+<th style="text-align: left;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CA1</td>
+<td style="text-align: left;">Invertir los ocho bits</td>
+<td style="text-align: left;"><strong>11011010 = DA</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CA2</td>
+<td style="text-align: left;">Invertir y sumar uno</td>
+<td style="text-align: left;"><strong>11011011 = DB</strong></td>
+</tr>
+</tbody>
+</table>
+<p>El ancho se fija antes de invertir. En CA1 no se suma uno.</p>
+</div>
+</details>
+</section>
+<section id="d6-con-dos-interpretaciones" class="exercise-item">
+<h3>18. D6 con dos interpretaciones</h3>
+<p><strong>Enunciado.</strong> El patrón D6 hexadecimal codifica un entero. Obtén su valor si la convención es CA1 y si es CA2.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>D6 se escribe <code>11010110</code>; el bit superior es 1.</p>
+<p>En <strong>CA1</strong>, invertimos: <code>00101001</code> = 41. El valor es <strong>−41</strong>.</p>
+<p>En <strong>CA2</strong>, su valor sin signo es 214: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>214</mn><mo>−</mo><mn>256</mn><mo>=</mo><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟒𝟐</mn></mrow></mrow><annotation encoding="application/x-tex">214-256=\mathbf{-42}</annotation></semantics></math>. También puede invertirse y sumar uno para obtener su magnitud: <code>00101010</code> = 42.</p>
+</div>
+</details>
+</section>
+<section id="un-entero-con-sesgo" class="exercise-item">
+<h3>19. Un entero con sesgo</h3>
+<p><strong>Enunciado.</strong> Representa −18 con ocho bits y sesgo 128. Da su código binario y hexadecimal y compruébalo en sentido inverso.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>El código es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>+</mo><mi>S</mi><mo>=</mo><mi>−</mi><mn>18</mn><mo>+</mo><mn>128</mn><mo>=</mo><mn>110</mn></mrow><annotation encoding="application/x-tex">N+S=-18+128=110</annotation></semantics></math>. Como entero sin signo, 110 se escribe <strong>01101110 = 6E</strong>.</p>
+<p>Al decodificar: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>110</mn><mo>−</mo><mn>128</mn><mo>=</mo><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟏𝟖</mn></mrow></mrow><annotation encoding="application/x-tex">110-128=\mathbf{-18}</annotation></semantics></math>. No se interpreta el primer bit como signo independiente.</p>
+</div>
+</details>
+</section>
+<section id="sumar-14-7-en-ca2" class="exercise-item">
+<h3>20. Sumar −14 + 7 en CA2</h3>
+<p><strong>Enunciado.</strong> Codifica los operandos en CA2 de ocho bits, suma e interpreta el resultado. ¿Hay desbordamiento?</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>14</mn></mrow><annotation encoding="application/x-tex">+14</annotation></semantics></math> es <code>00001110</code>; invertimos y sumamos uno para obtener <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>14</mn></mrow><annotation encoding="application/x-tex">-14</annotation></semantics></math>: <code>11110010</code>. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">+7</annotation></semantics></math> es <code>00000111</code>.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>11110010</mn><mo>+</mo><mn>00000111</mn><mo>=</mo><mn>11111001</mn></mrow><annotation encoding="application/x-tex">11110010+00000111=11111001</annotation></semantics></math></p>
+<p>El resultado sin signo es 249: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>249</mn><mo>−</mo><mn>256</mn><mo>=</mo><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟕</mn></mrow></mrow><annotation encoding="application/x-tex">249-256=\mathbf{-7}</annotation></semantics></math>. No hay desbordamiento; −7 pertenece al rango. Además, los operandos tienen signos distintos.</p>
+</div>
+</details>
+</section>
+<section id="acarreo-y-desbordamiento" class="exercise-item">
+<h3>21. Acarreo y desbordamiento</h3>
+<p><strong>Enunciado.</strong> Compara 127 + 1 y −1 + 1 en CA2 de ocho bits. Indica acarreo exterior, patrón conservado y desbordamiento.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Suma</th>
+<th style="text-align: right;">Acarreo</th>
+<th style="text-align: left;">Ocho bits conservados</th>
+<th style="text-align: left;">Desbordamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">127 + 1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">10000000</td>
+<td style="text-align: left;"><strong>Sí</strong>: 128 no cabe.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">−1 + 1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">00000000</td>
+<td style="text-align: left;"><strong>No</strong>: el resultado es 0.</td>
+</tr>
+</tbody>
+</table>
+<p>El primer resultado se leería como −128, distinto de la suma matemática. El segundo representa correctamente cero aunque salga un acarreo.</p>
+</div>
+</details>
+</section>
+</section>
+<section id="reales" class="lesson-section">
+<h2>Reales: codificar, decodificar y comprobar</h2>
+<p>Ejemplos y ejercicios de L2.7. Se utiliza IEEE 754 binary32, con 1 bit de signo, 8 de exponente y 23 de fracción.</p>
+<section id="codificar-un-número-ya-expresado-en-binario" class="exercise-item">
+<h3>22. Codificar un número ya expresado en binario</h3>
+<p><strong>Enunciado.</strong> Codifica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>11</mn><mo>,</mo><msub><mn>0011</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">-11{,}0011_2</annotation></semantics></math> en IEEE 754 de 32 bits. Obtén signo, exponente sesgado, fracción y palabra hexadecimal.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>La magnitud se normaliza como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><msub><mn>10011</mn><mn>2</mn></msub><mo>×</mo><msup><mn>2</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">1{,}10011_2\times2^1</annotation></semantics></math>. Así, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s=1</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">E=1</annotation></semantics></math> y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>1</mn><mo>+</mo><mn>127</mn><mo>=</mo><mn>128</mn></mrow><annotation encoding="application/x-tex">e=1+127=128</annotation></semantics></math>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Bits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Signo</td>
+<td style="text-align: left;"><code>1</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Exponente</td>
+<td style="text-align: left;"><code>10000000</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fracción</td>
+<td style="text-align: left;"><code>10011000000000000000000</code></td>
+</tr>
+</tbody>
+</table>
+<p>La palabra es <strong>C04C0000</strong>. Su valor decimal es −3,1875. No se aplica complemento a dos a la palabra IEEE 754.</p>
+</div>
+</details>
+</section>
+<section id="decodificar-01f80000" class="exercise-item">
+<h3>23. Decodificar 01F80000</h3>
+<p><strong>Enunciado.</strong> Interpreta 01F80000 hexadecimal como binary32. Comprueba el tipo de número antes de usar la fórmula.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Los campos son <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=0</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">e=3</annotation></semantics></math> y fracción <code>1111000…</code>. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mn>3</mn><mo>≤</mo><mn>254</mn></mrow><annotation encoding="application/x-tex">1\le3\le254</annotation></semantics></math>, es normal.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mn>3</mn><mo>−</mo><mn>127</mn><mo>=</mo><mi>−</mi><mn>124</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>M</mi><mo>=</mo><mn>1</mn><mo>,</mo><msub><mn>1111</mn><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>9375</mn></mrow><annotation encoding="application/x-tex">E=3-127=-124,\qquad M=1{,}1111_2=1{,}9375</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>9375</mn><mo>×</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>124</mn></mrow></msup><mo>≈</mo><mrow><mn mathvariant="bold">𝟗</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟏𝟏𝟎𝟎𝟖𝟏𝟐</mn><mo mathvariant="bold">×</mo><msup><mn mathvariant="bold">𝟏𝟎</mn><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟑𝟖</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">N=1{,}9375\times2^{-124}\approx\mathbf{9{,}1100812\times10^{-38}}</annotation></semantics></math></p>
+</div>
+</details>
+</section>
+<section id="normales-y-casos-especiales" class="exercise-item">
+<h3>24. Normales y casos especiales</h3>
+<p><strong>Enunciado.</strong> Clasifica 00000000, 80000000, 3F800000, 7F800000, FF800000 y 7FC00000. Codifica además 87 como comprobación.</p>
+<details class="exercise-solution">
+<summary>
+Resolución paso a paso
+</summary>
+<div class="resolution-body">
+<p>Los patrones representan, respectivamente, <strong>+0, −0, 1, +∞, −∞ y un NaN</strong>. NaN admite otros patrones.</p>
+<p>Para 87: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mn>1010111</mn><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mn>010111</mn><mn>2</mn></msub><mo>×</mo><msup><mn>2</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">1010111_2=1{,}010111_2\times2^6</annotation></semantics></math>. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=0</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>133</mn><mo>=</mo><msub><mn>10000101</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">e=133=10000101_2</annotation></semantics></math> y fracción <code>010111</code> completada con ceros. La palabra es <strong>42AE0000</strong>.</p>
+</div>
+</details>
+</section>
+</section>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>Tema 2 · Ejercicios</p>
+</div>
+</div>
+<div class="lesson-nav">
+<p><a href="../../teoria/tema2/07-reales.html">← Anterior</a></p>
+<p><a href="../../teoria/tema2/tarjetas.html">Siguiente →</a></p>
+</div>
+
+
+<div class="book-navigation" data-book-navigation="">
+  <header class="book-toolbar" aria-label="Navegación principal del libro">
+    <button class="book-menu-button" type="button" data-nav-open="" aria-controls="book-drawer" aria-expanded="false">
+      <span class="menu-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Índice</span>
+    </button>
+    <a class="book-brand" data-book-home="" href="#">Fundamentos de Informática</a>
+    <div class="book-location" aria-label="Ubicación actual">
+      <span data-nav-part="">Teoría</span><i aria-hidden="true">›</i><span data-nav-location="">Tema 1</span>
+    </div>
+    <button class="book-part-button" type="button" data-nav-part-button="" aria-controls="book-drawer" aria-expanded="false">
+      <span class="part-roman" data-nav-part-roman="">I</span>
+      <span data-nav-part-button-label="">Teoría</span>
+      <i aria-hidden="true">⌄</i>
+    </button>
+  </header>
+
+  <div class="book-nav-backdrop" data-nav-backdrop="" hidden=""></div>
+
+  <aside class="book-drawer" id="book-drawer" role="dialog" aria-modal="true" aria-label="Índice del libro" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <span class="drawer-kicker">FUNDAMENTOS DE INFORMÁTICA</span>
+        <strong>Índice del libro</strong>
+      </div>
+      <button class="drawer-close" type="button" data-nav-close="" aria-label="Cerrar índice">×</button>
+    </div>
+
+    <div class="drawer-parts" role="tablist" aria-label="Partes del libro">
+      <button type="button" role="tab" class="drawer-part is-active" data-part-tab="theory" aria-selected="true">
+        <span>I</span><strong>Teoría</strong>
+      </button>
+      <button type="button" role="tab" class="drawer-part" data-part-tab="practice" aria-selected="false">
+        <span>II</span><strong>Prácticas</strong>
+      </button>
+    </div>
+
+    <div class="drawer-scroll">
+      <section class="drawer-panel is-active" data-part-panel="theory" aria-label="Teoría">
+        <p class="drawer-part-label">PARTE I · TEORÍA</p>
+
+        <details class="nav-theme" open="" data-theme="tema1">
+          <summary><span><b>Tema 1</b><small>Introducción a los computadores</small></span><i aria-hidden="true"></i></summary>
+          <nav class="nav-sections" aria-label="Secciones del Tema 1">
+            <a data-book-path="teoria/tema1/01-que-es-computador.html"><span>1.1</span><strong>¿Qué es un computador?</strong></a>
+            <a data-book-path="teoria/tema1/02-representacion.html"><span>1.2</span><strong>¿Cómo representa la información?</strong></a>
+            <a data-book-path="teoria/tema1/03-componentes.html"><span>1.3</span><strong>¿Qué hay dentro de un computador?</strong></a>
+            <a data-book-path="teoria/tema1/04-comunicacion.html"><span>1.4</span><strong>¿Cómo se comunican sus componentes?</strong></a>
+            <a data-book-path="teoria/tema1/05-ejecucion.html"><span>1.5</span><strong>¿Cómo ejecuta un programa?</strong></a>
+            <a data-book-path="teoria/tema1/06-tipos.html"><span>1.6</span><strong>¿Todos los computadores son iguales?</strong></a>
+            <a data-book-path="teoria/tema1/07-software.html"><span>1.7</span><strong>¿Qué papel juega el software?</strong></a>
+            <a data-book-path="teoria/tema1/ejercicios.html"><span>•</span><strong>Ejercicios</strong></a>
+            <a class="nav-resource" data-book-path="teoria/tema1/tarjetas.html"><span>T</span><strong>Tarjetas de repaso</strong></a>
+            <a class="nav-resource" data-book-path="teoria/tema1/recursos.html"><span>+</span><strong>Material complementario</strong></a>
+          </nav>
+        </details>
+
+        <details class="nav-theme" data-theme="tema2">
+          <summary><span><b>Tema 2</b><small>Representación de la información</small></span><i aria-hidden="true"></i></summary>
+          <nav class="nav-sections" aria-label="Secciones del Tema 2">
+            <a data-book-path="teoria/tema2/00-sistemas-numeracion.html"><span>2.0</span><strong>¿Cómo contamos con dos cifras?</strong></a>
+            <a data-book-path="teoria/tema2/01-representacion.html"><span>2.1</span><strong>¿Qué significan estos bits?</strong></a>
+            <a data-book-path="teoria/tema2/02-textos.html"><span>2.2</span><strong>¿Cómo se guarda un texto?</strong></a>
+            <a data-book-path="teoria/tema2/03-sonidos.html"><span>2.3</span><strong>¿Cómo se digitaliza un sonido?</strong></a>
+            <a data-book-path="teoria/tema2/04-imagenes.html"><span>2.4</span><strong>¿Cómo se representa una imagen?</strong></a>
+            <a data-book-path="teoria/tema2/05-video.html"><span>2.5</span><strong>¿Cómo se guarda el movimiento?</strong></a>
+            <a data-book-path="teoria/tema2/06-enteros.html"><span>2.6</span><strong>¿Dónde se guarda el signo?</strong></a>
+            <a data-book-path="teoria/tema2/07-reales.html"><span>2.7</span><strong>¿Cómo se guardan los decimales?</strong></a>
+            <a data-book-path="teoria/tema2/ejercicios.html"><span>E</span><strong>Ejercicios</strong></a>
+            <a data-book-path="teoria/tema2/tarjetas.html"><span>T</span><strong>Tarjetas de repaso</strong></a>
+            <a data-book-path="teoria/tema2/recursos.html"><span>+</span><strong>Material complementario</strong></a>
+          </nav>
+        </details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 3</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 4</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Las secciones se incorporarán aquí manteniendo esta misma jerarquía.</p></details>
+      </section>
+
+      <section class="drawer-panel" data-part-panel="practice" aria-label="Prácticas" hidden="">
+        <p class="drawer-part-label">PARTE II · PRÁCTICAS</p>
+        <a class="practice-entry" data-book-path="practicas/index.html"><span>II</span><strong>Portada de prácticas</strong><i aria-hidden="true">→</i></a>
+
+        <details class="nav-theme" open="">
+          <summary><span><b>Tema 1</b><small>Área de prácticas</small></span><i aria-hidden="true"></i></summary>
+          <div class="nav-placeholder">Las prácticas concretas se incorporarán aquí cuando abordemos su estructura pedagógica.</div>
+        </details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 2</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 3</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+        <details class="nav-theme nav-theme-future"><summary><span><b>Tema 4</b><small>Estructura preparada</small></span><i aria-hidden="true"></i></summary><p>Preparado para prácticas y secciones internas.</p></details>
+      </section>
+    </div>
+
+    <div class="drawer-foot">
+      <a data-book-home="" href="#">Portada del libro</a>
+      <span>El menú organiza; la página sigue siendo el libro.</span>
+    </div>
+  </aside>
+
+  <nav class="page-turn-nav" aria-label="Navegación secuencial del libro">
+    <a class="page-turn-link page-turn-prev" data-page-prev="" href="#" hidden="">
+      <span class="page-turn-arrow" aria-hidden="true">←</span>
+      <span class="page-turn-copy"><small>Anterior</small><strong data-page-prev-title=""></strong></span>
+    </a>
+    <a class="page-turn-link page-turn-next" data-page-next="" href="#" hidden="">
+      <span class="page-turn-copy"><small>Siguiente</small><strong data-page-next-title=""></strong></span>
+      <span class="page-turn-arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+
+  <script>
+  (() => {
+    const root = document.querySelector('[data-book-navigation]');
+    if (!root || root.dataset.navigationReady === 'true') return;
+    root.dataset.navigationReady = 'true';
+
+    const repoMarker = '/fundamentos-informatica/';
+    const path = window.location.pathname;
+    const markerIndex = path.indexOf(repoMarker);
+    const bookRoot = markerIndex >= 0 ? path.slice(0, markerIndex + repoMarker.length) : '/';
+    const relativePath = markerIndex >= 0
+      ? (path.slice(markerIndex + repoMarker.length) || 'index.html')
+      : (path.replace(/^\/+/, '') || 'index.html');
+    const urlFor = (rel = '') => `${bookRoot}${rel}`;
+
+    const pages = {
+      'index.html': { part: 'Inicio', roman: '•', location: 'Portada', title: 'Portada del libro' },
+      'teoria/tema1/01-que-es-computador.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.1', panel: 'theory', title: '1.1 · ¿Qué es un computador?' },
+      'teoria/tema1/02-representacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.2', panel: 'theory', title: '1.2 · ¿Cómo representa la información?' },
+      'teoria/tema1/03-componentes.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.3', panel: 'theory', title: '1.3 · ¿Qué hay dentro de un computador?' },
+      'teoria/tema1/04-comunicacion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.4', panel: 'theory', title: '1.4 · ¿Cómo se comunican sus componentes?' },
+      'teoria/tema1/05-ejecucion.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.5', panel: 'theory', title: '1.5 · ¿Cómo ejecuta un programa?' },
+      'teoria/tema1/06-tipos.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.6', panel: 'theory', title: '1.6 · ¿Todos los computadores son iguales?' },
+      'teoria/tema1/07-software.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · 1.7', panel: 'theory', title: '1.7 · ¿Qué papel juega el software?' },
+      'teoria/tema1/ejercicios.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Ejercicios', panel: 'theory', title: 'Ejercicios' },
+      'teoria/tema1/tarjetas.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Tarjetas', panel: 'theory', title: 'Tarjetas de repaso' },
+      'teoria/tema1/recursos.html': { part: 'Teoría', roman: 'I', location: 'Tema 1 · Recursos', panel: 'theory', title: 'Material complementario' },
+      'teoria/tema2/00-sistemas-numeracion.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.0", "panel": "theory", "title": "2.0 · ¿Cómo contamos con dos cifras?"},
+      'teoria/tema2/01-representacion.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.1", "panel": "theory", "title": "2.1 · ¿Qué significan estos bits?"},
+      'teoria/tema2/02-textos.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.2", "panel": "theory", "title": "2.2 · ¿Cómo se guarda un texto?"},
+      'teoria/tema2/03-sonidos.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.3", "panel": "theory", "title": "2.3 · ¿Cómo se digitaliza un sonido?"},
+      'teoria/tema2/04-imagenes.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.4", "panel": "theory", "title": "2.4 · ¿Cómo se representa una imagen?"},
+      'teoria/tema2/05-video.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.5", "panel": "theory", "title": "2.5 · ¿Cómo se guarda el movimiento?"},
+      'teoria/tema2/06-enteros.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.6", "panel": "theory", "title": "2.6 · ¿Dónde se guarda el signo?"},
+      'teoria/tema2/07-reales.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · 2.7", "panel": "theory", "title": "2.7 · ¿Cómo se guardan los decimales?"},
+      'teoria/tema2/ejercicios.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · Ejercicios", "panel": "theory", "title": "Tema 2 · Ejercicios"},
+      'teoria/tema2/tarjetas.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · Tarjetas de repaso", "panel": "theory", "title": "Tema 2 · Tarjetas de repaso"},
+      'teoria/tema2/recursos.html': {"part": "Teoría", "roman": "I", "location": "Tema 2 · Material complementario", "panel": "theory", "title": "Tema 2 · Material complementario"},
+      'practicas/index.html': { part: 'Prácticas', roman: 'II', location: 'Portada de prácticas', panel: 'practice', title: 'Parte II · Prácticas' }
+    };
+
+    const readingOrder = [
+      'index.html',
+      'teoria/tema1/01-que-es-computador.html',
+      'teoria/tema1/02-representacion.html',
+      'teoria/tema1/03-componentes.html',
+      'teoria/tema1/04-comunicacion.html',
+      'teoria/tema1/05-ejecucion.html',
+      'teoria/tema1/06-tipos.html',
+      'teoria/tema1/07-software.html',
+      'teoria/tema1/ejercicios.html',
+      'teoria/tema2/00-sistemas-numeracion.html',
+      'teoria/tema2/01-representacion.html',
+      'teoria/tema2/02-textos.html',
+      'teoria/tema2/03-sonidos.html',
+      'teoria/tema2/04-imagenes.html',
+      'teoria/tema2/05-video.html',
+      'teoria/tema2/06-enteros.html',
+      'teoria/tema2/07-reales.html',
+      'teoria/tema2/ejercicios.html',
+      'practicas/index.html'
+    ];
+
+    const current = pages[relativePath] || { part: 'Libro', roman: '•', location: 'Fundamentos de Informática', panel: 'theory', title: 'Fundamentos de Informática' };
+    const drawer = root.querySelector('#book-drawer');
+    const backdrop = root.querySelector('[data-nav-backdrop]');
+    const openButtons = root.querySelectorAll('[data-nav-open], [data-nav-part-button]');
+    const menuButton = root.querySelector('[data-nav-open]');
+    const partButton = root.querySelector('[data-nav-part-button]');
+    const closeButton = root.querySelector('[data-nav-close]');
+    const tabs = [...root.querySelectorAll('[data-part-tab]')];
+    const panels = [...root.querySelectorAll('[data-part-panel]')];
+    const prevLink = root.querySelector('[data-page-prev]');
+    const nextLink = root.querySelector('[data-page-next]');
+    let lastFocus = null;
+
+    if (!drawer || !backdrop || !menuButton || !partButton || !closeButton) return;
+
+    root.querySelectorAll('[data-book-home]').forEach((link) => { link.href = urlFor('index.html'); });
+    root.querySelectorAll('[data-book-path]').forEach((link) => {
+      const rel = link.getAttribute('data-book-path');
+      link.href = urlFor(rel);
+      if (rel === relativePath) {
+        link.classList.add('is-current');
+        link.setAttribute('aria-current', 'page');
+        const theme = link.closest('details');
+        if (theme) theme.open = true;
+      }
+    });
+
+    const currentIndex = readingOrder.indexOf(relativePath);
+    const wireTurnLink = (link, targetPath, label, titleTarget) => {
+      if (!link || !targetPath || !pages[targetPath]) {
+        if (link) link.hidden = true;
+        return;
+      }
+      const target = pages[targetPath];
+      link.href = urlFor(targetPath);
+      link.hidden = false;
+      link.setAttribute('aria-label', `${label}: ${target.title}`);
+      link.title = `${label}: ${target.title}`;
+      const titleNode = link.querySelector(titleTarget);
+      if (titleNode) titleNode.textContent = target.title;
+    };
+
+    if (currentIndex >= 0) {
+      wireTurnLink(prevLink, readingOrder[currentIndex - 1], 'Página anterior', '[data-page-prev-title]');
+      wireTurnLink(nextLink, readingOrder[currentIndex + 1], 'Página siguiente', '[data-page-next-title]');
+    }
+
+    const partText = root.querySelector('[data-nav-part]');
+    const locationText = root.querySelector('[data-nav-location]');
+    const partRoman = root.querySelector('[data-nav-part-roman]');
+    const partButtonLabel = root.querySelector('[data-nav-part-button-label]');
+    if (partText) partText.textContent = current.part;
+    if (locationText) locationText.textContent = current.location;
+    if (partRoman) partRoman.textContent = current.roman;
+    if (partButtonLabel) partButtonLabel.textContent = current.part === 'Inicio' ? 'Explorar' : current.part;
+
+    const activatePanel = (name) => {
+      tabs.forEach((tab) => {
+        const active = tab.dataset.partTab === name;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', String(active));
+      });
+      panels.forEach((panel) => {
+        const active = panel.dataset.partPanel === name;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+      });
+    };
+
+    activatePanel(current.panel || 'theory');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => activatePanel(tab.dataset.partTab));
+    });
+
+    const setExpanded = (expanded) => {
+      openButtons.forEach((button) => button.setAttribute('aria-expanded', String(expanded)));
+    };
+
+    const openDrawer = (preferredPanel) => {
+      lastFocus = document.activeElement;
+      if (preferredPanel) activatePanel(preferredPanel);
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      if ('inert' in drawer) drawer.inert = false;
+      backdrop.hidden = false;
+      requestAnimationFrame(() => backdrop.classList.add('is-visible'));
+      document.documentElement.classList.add('nav-open');
+      setExpanded(true);
+      closeButton.focus();
+    };
+
+    const closeDrawer = () => {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      if ('inert' in drawer) drawer.inert = true;
+      backdrop.classList.remove('is-visible');
+      window.setTimeout(() => { backdrop.hidden = true; }, 180);
+      document.documentElement.classList.remove('nav-open');
+      setExpanded(false);
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    };
+
+    if ('inert' in drawer) drawer.inert = true;
+    menuButton.addEventListener('click', () => openDrawer(current.panel || 'theory'));
+    partButton.addEventListener('click', () => openDrawer(current.panel || 'theory'));
+    closeButton.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+
+    drawer.addEventListener('keydown', (event) => {
+      if (event.key !== 'Tab') return;
+      const focusable = [...drawer.querySelectorAll('a[href], button:not([disabled]), summary')].filter((el) => !el.closest('[hidden]'));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+    });
+  })();
+  </script>
+</div>
+<script src="../../assets/tema2.js"></script>
+
+
+
+
+</body></html>

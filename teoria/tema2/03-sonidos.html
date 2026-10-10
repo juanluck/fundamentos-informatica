@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prácticas – Fundamentos de Informática</title>
+<title>2.3 · ¿Cómo se digitaliza un sonido? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,54 +26,209 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
 
 
-<link rel="stylesheet" href="../styles/book.css">
-<link rel="stylesheet" href="../styles/tema1.css">
-<link rel="stylesheet" href="../styles/exercises.css">
-<link rel="stylesheet" href="../styles/navigation.css">
-<link rel="stylesheet" href="../styles/markdown-refactor.css">
-<link rel="stylesheet" href="../styles/resources.css">
-<link rel="stylesheet" href="../styles/tema2.css">
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../../styles/markdown-refactor.css">
+<link rel="stylesheet" href="../../styles/resources.css">
+<link rel="stylesheet" href="../../styles/tema2.css">
 </head>
 
 <body>
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Prácticas</span></h1>
+<h1 class="title"><span class="chapter-title">2.3 · ¿Cómo se digitaliza un sonido?</span></h1>
 
 </header>
 
 
-<article class="sheet practice-index" aria-label="Portada provisional de prácticas">
-  <header class="running-head"><span>Fundamentos de Informática</span><span>Parte II · Prácticas</span></header>
+<div class="sheet tema2-sheet">
+<div class="running-head">
+<p>Tema 2 · Representación de la información</p>
+<p>2.3</p>
+</div>
+<div class="opening">
+<div class="kicker">
+<p>LECCIÓN 2.3</p>
+</div>
+<h1 id="cómo-se-digitaliza-un-sonido">¿Cómo se digitaliza un sonido?</h1>
+<div class="deck">
+<p>La onda es continua. Para guardarla elegimos cuándo medirla, con qué precisión representar cada medida y cómo codificarla.</p>
+</div>
+<div class="short-rule">
 
-  <section class="opening">
-    <p class="kicker">PARTE II · PRÁCTICAS</p>
-    <h1>Prácticas</h1>
-    <p class="deck">Esta portada es provisional y existe únicamente para validar el sistema de navegación entre teoría y prácticas. Su organización pedagógica se decidirá más adelante.</p>
-    <div class="short-rule" aria-hidden="true"></div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>Estructura visual preparada</h2>
-    <p>El menú puede organizar las prácticas por temas y, dentro de cada tema, por prácticas y secciones internas sin cambiar el lenguaje visual del libro.</p>
-    <div class="practice-structure" aria-label="Estructura provisional de navegación de prácticas">
-      <div><b>Temas</b><span>Primer nivel de agrupación, paralelo a la teoría.</span></div>
-      <div><b>Prácticas</b><span>Segundo nivel dentro de cada tema.</span></div>
-      <div><b>Secciones</b><span>Tercer nivel cuando una práctica necesite pasos o apartados.</span></div>
-    </div>
-  </section>
-
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Prácticas</span></footer>
-</article>
-
-<nav class="lesson-nav" aria-label="Navegación del libro"><a href="../index.html">← Portada del libro</a><a href="../teoria/tema1/01-que-es-computador.html">Ir a Teoría →</a></nav>
+</div>
+</div>
+<section id="de-la-presión-del-aire-a-los-bits" class="lesson-section">
+<h2>1. De la presión del aire a los bits</h2>
+<p>Un micrófono es un <strong>transductor</strong>: convierte variaciones de presión sonora en una señal eléctrica analógica. Todavía no hay bytes. La conversión analógica/digital obtiene muestras, aproxima sus amplitudes y las codifica.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Etapa</th>
+<th style="text-align: left;">Pregunta que resuelve</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Muestreo</td>
+<td style="text-align: left;">¿En qué instantes medimos?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cuantificación</td>
+<td style="text-align: left;">¿Qué nivel representa cada amplitud?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Codificación</td>
+<td style="text-align: left;">¿Qué bits escribimos para ese nivel?</td>
+</tr>
+</tbody>
+</table>
+<p>Después puede aplicarse compresión. Al reproducir recorremos el camino inverso: decodificación, muestras PCM, conversor digital/analógico y filtro de reconstrucción. El altavoz transforma la señal eléctrica en variaciones de presión.</p>
+</section>
+<section id="muestreo-discretizar-el-tiempo" class="lesson-section">
+<h2>2. Muestreo: discretizar el tiempo</h2>
+<p>Tomamos una muestra cada período <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>s</mi></msub><annotation encoding="application/x-tex">T_s</annotation></semantics></math>. La frecuencia <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>s</mi></msub><annotation encoding="application/x-tex">f_s</annotation></semantics></math> indica cuántas muestras obtenemos por segundo <strong>en cada canal</strong>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>s</mi></msub><mo>=</mo><mfrac><mn>1</mn><msub><mi>T</mi><mi>s</mi></msub></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mi>s</mi><mo stretchy="false" form="prefix">[</mo><mi>k</mi><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mi>s</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><msub><mi>T</mi><mi>s</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_s=\frac1{T_s},\qquad s[k]=s(kT_s)</annotation></semantics></math></p>
+<p>Con 44.100 muestras/s, el intervalo es aproximadamente <strong>22,7 μs</strong>. Aumentar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>s</mi></msub><annotation encoding="application/x-tex">f_s</annotation></semantics></math> permite seguir variaciones más rápidas, pero produce más muestras.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/muestreo.svg" alt="Dos gráficas: señal continua con muestras y las mismas muestras aproximadas a ocho niveles de amplitud."></p>
+<figcaption>Una misma señal muestreada en instantes regulares y cuantificada en ocho niveles.</figcaption>
+</figure>
+</div>
+<p>Para una señal de banda base limitada a una frecuencia máxima <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>, el límite de Nyquist–Shannon es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>B</mi></mrow><annotation encoding="application/x-tex">2B</annotation></semantics></math>. Usamos <strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>s</mi></msub><mo>&gt;</mo><mn>2</mn><mi>B</mi></mrow><annotation encoding="application/x-tex">f_s&gt;2B</annotation></semantics></math></strong> para evitar casos límite y disponer de margen de filtrado. El filtro antialiasing elimina componentes demasiado rápidas <strong>antes</strong> de muestrear.</p>
+<p>Si no se respeta esa condición, diferentes señales pueden producir las mismas muestras: es el <strong>aliasing</strong>. Por ejemplo, senoidales de 9 Hz y 1 Hz coinciden en los instantes de un muestreo a 8 muestras/s. Aumentar los bits por muestra no resuelve ese problema temporal.</p>
+<div class="resource-note">
+<p><strong>Explora.</strong> En el <a href="../../assets/interactivos/nyquist-shannon.html">interactivo de Nyquist–Shannon</a>, la onda está fijada en 1 Hz. Compara los muestreos a 8, 3, 2 y 1,5 Hz. En el caso de 2 Hz, observa que todas las muestras son cero para la fase mostrada; con 1,5 Hz, una onda de 0,5 Hz también pasa por las mismas muestras.</p>
+</div>
+</section>
+<section id="cuantificación-discretizar-la-amplitud" class="lesson-section">
+<h2>3. Cuantificación: discretizar la amplitud</h2>
+<p>Cada muestra se aproxima a un nivel entre un conjunto finito. Con <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mi>s</mi></msub><annotation encoding="application/x-tex">n_s</annotation></semantics></math> bits disponemos de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><msub><mi>n</mi><mi>s</mi></msub></msup><annotation encoding="application/x-tex">2^{n_s}</annotation></semantics></math> niveles: 3 bits proporcionan 8; 8 bits, 256; 16 bits, 65.536.</p>
+<p>Para el mismo intervalo de amplitudes, más bits permiten pasos más finos y menor error de cuantificación. No garantizan por sí solos una grabación perfecta: también influyen el ruido, el micrófono y el muestreo.</p>
+<p>En <strong>PCM</strong> (<em>Pulse Code Modulation</em>), cada muestra se expresa mediante una palabra binaria. Si cuatro muestras cuantificadas son 3, 5, 3 y 1, con tres bits sus palabras son <code>011</code>, <code>101</code>, <code>011</code> y <code>001</code>.</p>
+</section>
+<section id="de-las-muestras-al-tamaño" class="lesson-section">
+<h2>4. De las muestras al tamaño</h2>
+<p>Cada segundo hay <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>s</mi></msub><annotation encoding="application/x-tex">f_s</annotation></semantics></math> muestras por canal, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mi>s</mi></msub><annotation encoding="application/x-tex">n_s</annotation></semantics></math> bits por muestra y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> canales. Por tanto:</p>
+<div class="rule-band">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><msub><mi>f</mi><mi>s</mi></msub><msub><mi>n</mi><mi>s</mi></msub><mi>c</mi><mspace width="1.0em"></mspace><mtext mathvariant="normal">bit/s</mtext><mo>,</mo><mspace width="2.0em"></mspace><mi>C</mi><mo>=</mo><mfrac><mrow><msub><mi>f</mi><mi>s</mi></msub><msub><mi>n</mi><mi>s</mi></msub><mi>c</mi><mspace width="0.167em"></mspace><mi>t</mi></mrow><mn>8</mn></mfrac><mspace width="1.0em"></mspace><mtext mathvariant="normal">bytes</mtext></mrow><annotation encoding="application/x-tex">R=f_s n_s c\quad\text{bit/s},\qquad C=\frac{f_s n_s c\,t}{8}\quad\text{bytes}</annotation></semantics></math> Datos PCM sin comprimir, sin cabecera. La duración <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math> se expresa en segundos.</p>
+</div>
+<p>Para audio CD estéreo: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>44</mn><mspace width="0.167em"></mspace><mn>100</mn><mo>×</mo><mn>16</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>1</mn><mspace width="0.167em"></mspace><mn>411</mn><mspace width="0.167em"></mspace><mn>200</mn></mrow><annotation encoding="application/x-tex">44\,100\times16\times2=1\,411\,200</annotation></semantics></math> bit/s. Un minuto requiere <strong>10.584.000 B = 10,584 MB ≈ 10,094 MiB</strong>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Configuración ilustrativa</th>
+<th style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>s</mi></msub><annotation encoding="application/x-tex">f_s</annotation></semantics></math></th>
+<th style="text-align: right;">Bits</th>
+<th style="text-align: right;">Canales</th>
+<th style="text-align: right;">Tasa</th>
+<th style="text-align: right;">1 minuto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Telefonía G.711</td>
+<td style="text-align: right;">8 kHz</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">64 kbit/s</td>
+<td style="text-align: right;">0,480 MB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ejemplo estéreo</td>
+<td style="text-align: right;">22,05 kHz</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">352,8 kbit/s</td>
+<td style="text-align: right;">2,646 MB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CD</td>
+<td style="text-align: right;">44,1 kHz</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1411,2 kbit/s</td>
+<td style="text-align: right;">10,584 MB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ejemplo a 48 kHz</td>
+<td style="text-align: right;">48 kHz</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1536 kbit/s</td>
+<td style="text-align: right;">11,520 MB</td>
+</tr>
+</tbody>
+</table>
+<p>Aquí kbit/s y MB son decimales. La fórmula PCM no calcula directamente el tamaño de un MP3. Para audio comprimido de tasa media <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>, usamos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>≈</mo><mi>R</mi><mi>t</mi><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">C\approx Rt/8</annotation></semantics></math>: a 128 kbit/s, un minuto ocupa aproximadamente <strong>0,960 MB</strong>, más la sobrecarga del archivo.</p>
+</section>
+<section id="qué-hace-un-códec" class="lesson-section">
+<h2>5. Qué hace un códec</h2>
+<p>Un <strong>códec</strong> codifica y decodifica la información. Las familias del material representan distintas cosas:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">PCM</td>
+<td style="text-align: left;">Codificar la amplitud de cada muestra.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DPCM</td>
+<td style="text-align: left;">Codificar diferencias respecto de una predicción; en el caso simple, la muestra anterior.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ADPCM</td>
+<td style="text-align: left;">Codificar el error de predicción adaptando parámetros, como el paso de cuantificación.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A-law y μ-law</td>
+<td style="text-align: left;">Compansión: más resolución relativa para amplitudes pequeñas.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FLAC</td>
+<td style="text-align: left;">Compresión sin pérdidas de las muestras de entrada.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MP3, AAC, Vorbis</td>
+<td style="text-align: left;">Compresión perceptual, habitualmente con pérdidas.</td>
+</tr>
+</tbody>
+</table>
+<p>WAV y AIFF suelen contener PCM. AU admite distintas codificaciones; AIFF-C también admite compresión. Ogg puede contener Vorbis y M4A suele contener AAC. La <strong>organización del archivo</strong> y la <strong>codificación del sonido</strong> son decisiones diferentes. Tampoco existe un porcentaje universal de compresión.</p>
+</section>
+<section id="streaming-recibir-y-reproducir-a-la-vez" class="lesson-section">
+<h2>6. Streaming: recibir y reproducir a la vez</h2>
+<p>En una descarga obtenemos el archivo; en <em>streaming</em> comenzamos a reproducir mientras llegan más datos. El <strong>búfer</strong> acumula audio pendiente para absorber las variaciones de la red.</p>
+<p>Si el búfer se vacía, la reproducción se interrumpe. Una reserva mayor tolera pausas más largas, a cambio de más espera inicial o retraso. La tasa útil media debe sostener el consumo y conviene disponer de margen; «necesitar el doble» no es una condición universal.</p>
+<p>Las muestras también deben reproducirse con la frecuencia indicada: cambiar el ritmo modifica la duración y, en una reproducción directa, el tono. Practica estas relaciones en <a href="../../teoria/tema2/ejercicios.html#sonido">los ejercicios de sonido</a>.</p>
+</section>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>Tema 2 · 2.3</p>
+</div>
+</div>
+<div class="lesson-nav">
+<p><a href="../../teoria/tema2/02-textos.html">← Anterior</a></p>
+<p><a href="../../teoria/tema2/04-imagenes.html">Siguiente →</a></p>
+</div>
 
 
 <div class="book-navigation" data-book-navigation="">
@@ -372,6 +527,7 @@ ul.task-list li input[type="checkbox"] {
   })();
   </script>
 </div>
+<script src="../../assets/tema2.js"></script>
 
 
 

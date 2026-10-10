@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prácticas – Fundamentos de Informática</title>
+<title>2.5 · ¿Cómo se guarda el movimiento? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,54 +26,188 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
 
 
-<link rel="stylesheet" href="../styles/book.css">
-<link rel="stylesheet" href="../styles/tema1.css">
-<link rel="stylesheet" href="../styles/exercises.css">
-<link rel="stylesheet" href="../styles/navigation.css">
-<link rel="stylesheet" href="../styles/markdown-refactor.css">
-<link rel="stylesheet" href="../styles/resources.css">
-<link rel="stylesheet" href="../styles/tema2.css">
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../../styles/markdown-refactor.css">
+<link rel="stylesheet" href="../../styles/resources.css">
+<link rel="stylesheet" href="../../styles/tema2.css">
 </head>
 
 <body>
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Prácticas</span></h1>
+<h1 class="title"><span class="chapter-title">2.5 · ¿Cómo se guarda el movimiento?</span></h1>
 
 </header>
 
 
-<article class="sheet practice-index" aria-label="Portada provisional de prácticas">
-  <header class="running-head"><span>Fundamentos de Informática</span><span>Parte II · Prácticas</span></header>
+<div class="sheet tema2-sheet">
+<div class="running-head">
+<p>Tema 2 · Representación de la información</p>
+<p>2.5</p>
+</div>
+<div class="opening">
+<div class="kicker">
+<p>LECCIÓN 2.5</p>
+</div>
+<h1 id="cómo-se-guarda-el-movimiento">¿Cómo se guarda el movimiento?</h1>
+<div class="deck">
+<p>Un vídeo añade tiempo a las imágenes. Su tamaño depende de cuántos fotogramas guardamos y de cuánto aprovechamos lo que tienen en común.</p>
+</div>
+<div class="short-rule">
 
-  <section class="opening">
-    <p class="kicker">PARTE II · PRÁCTICAS</p>
-    <h1>Prácticas</h1>
-    <p class="deck">Esta portada es provisional y existe únicamente para validar el sistema de navegación entre teoría y prácticas. Su organización pedagógica se decidirá más adelante.</p>
-    <div class="short-rule" aria-hidden="true"></div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>Estructura visual preparada</h2>
-    <p>El menú puede organizar las prácticas por temas y, dentro de cada tema, por prácticas y secciones internas sin cambiar el lenguaje visual del libro.</p>
-    <div class="practice-structure" aria-label="Estructura provisional de navegación de prácticas">
-      <div><b>Temas</b><span>Primer nivel de agrupación, paralelo a la teoría.</span></div>
-      <div><b>Prácticas</b><span>Segundo nivel dentro de cada tema.</span></div>
-      <div><b>Secciones</b><span>Tercer nivel cuando una práctica necesite pasos o apartados.</span></div>
-    </div>
-  </section>
-
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Prácticas</span></footer>
-</article>
-
-<nav class="lesson-nav" aria-label="Navegación del libro"><a href="../index.html">← Portada del libro</a><a href="../teoria/tema1/01-que-es-computador.html">Ir a Teoría →</a></nav>
+</div>
+</div>
+<section id="una-secuencia-de-imágenes" class="lesson-section">
+<h2>1. Una secuencia de imágenes</h2>
+<p>El movimiento continuo se registra en instantes discretos. Los <strong>fotogramas por segundo</strong> (<em>fps</em>) indican cuántas imágenes se presentan cada segundo. No son los píxeles de cada imagen ni los bits de color de cada píxel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/muybridge-secuencia.png" alt="Cuatro fotografías sucesivas de un caballo al galope con distintas posiciones de las patas."></p>
+<figcaption>Fases de un caballo en movimiento, de Eadweard Muybridge (1878), reproducidas en el material docente. Obra en dominio público.</figcaption>
+</figure>
+</div>
+<p>La sucesión permite percibir movimiento. La fluidez y el parpadeo dependen también de la escena y de las condiciones de presentación; no existe un único número de fps que describa todas las situaciones.</p>
+</section>
+<section id="cuánto-ocuparía-sin-comprimir" class="lesson-section">
+<h2>2. Cuánto ocuparía sin comprimir</h2>
+<p>Cada segundo contiene <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> fotogramas. Cada uno tiene <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>×</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">W\times H</annotation></semantics></math> píxeles y cada píxel necesita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> bits:</p>
+<div class="rule-band">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>f</mi><mi>W</mi><mi>H</mi><mi>p</mi><mspace width="1.0em"></mspace><mtext mathvariant="normal">bit/s</mtext><mo>,</mo><mspace width="2.0em"></mspace><mi>C</mi><mo>=</mo><mfrac><mrow><mi>f</mi><mi>W</mi><mi>H</mi><mi>p</mi><mspace width="0.167em"></mspace><mi>t</mi></mrow><mn>8</mn></mfrac><mspace width="1.0em"></mspace><mtext mathvariant="normal">bytes</mtext></mrow><annotation encoding="application/x-tex">R=fWHp\quad\text{bit/s},\qquad C=\frac{fWHp\,t}{8}\quad\text{bytes}</annotation></semantics></math> Vídeo sin comprimir; sin audio, cabeceras ni metadatos.</p>
+</div>
+<p>Un vídeo de 640 × 480 píxeles, 24 bits/píxel y 25 fps requiere <strong>184.320.000 bit/s</strong>. En un minuto son <strong>1.382.400.000 B ≈ 1,38 GB</strong>. El volumen explica por qué la compresión es fundamental.</p>
+<p>Si el archivo contiene audio, se añade su tamaño. Para un flujo comprimido de tasa media conocida puede estimarse <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>≈</mo><mi>R</mi><mi>t</mi><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">C\approx Rt/8</annotation></semantics></math>, sin sustituir <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math> por la tasa del vídeo sin comprimir.</p>
+</section>
+<section id="reutilizar-lo-que-comparten-los-fotogramas" class="lesson-section">
+<h2>3. Reutilizar lo que comparten los fotogramas</h2>
+<p>Entre dos imágenes cercanas puede cambiar poco: en el ejemplo de las diapositivas, se mueve un brazo mientras el cuerpo permanece parecido. Un códec puede predecir una imagen a partir de referencias y codificar la información necesaria para reconstruirla.</p>
+<p>Un <strong>GOP</strong> (<em>Group of Pictures</em>, grupo de imágenes) organiza fotogramas y dependencias. En el modelo didáctico:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Referencias para reconstruirlo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">I, intra</td>
+<td style="text-align: left;">Se codifica sin depender de otras imágenes.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P, predictivo</td>
+<td style="text-align: left;">Utiliza una referencia anterior en el ejemplo.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B, bidireccional</td>
+<td style="text-align: left;">Utiliza referencias anterior y posterior en el ejemplo.</td>
+</tr>
+</tbody>
+</table>
+<p>«Guardar solo lo que cambia» es una intuición, no una descripción completa. Los códecs almacenan predicciones, vectores de movimiento, residuos, modos de codificación y, cuando procede, bloques intra. <strong>Un fotograma B real no tiene por qué ocupar cero bytes.</strong></p>
+</section>
+<section id="ver-y-decodificar-no-siempre-siguen-el-mismo-orden" class="lesson-section">
+<h2>4. Ver y decodificar no siempre siguen el mismo orden</h2>
+<p>Si B2 depende de I1 y de P3, P3 tiene que estar disponible antes de reconstruir B2, aunque el espectador vea B2 primero.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/gop.svg" alt="Flechas de I1 hacia P3 y B2, y de P3 hacia B2. Visualización I1, B2, P3; decodificación I1, P3, B2."></p>
+<figcaption>Dependencias de un grupo de tres imágenes: I1 permite obtener P3; ambas referencias permiten obtener B2.</figcaption>
+</figure>
+</div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Orden</th>
+<th style="text-align: left;">Secuencia del ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Visualización</td>
+<td style="text-align: left;">I1, B2, P3, I4, B5, P6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Decodificación posible</td>
+<td style="text-align: left;">I1, P3, B2, I4, P6, B5</td>
+</tr>
+</tbody>
+</table>
+<p>Si una referencia se daña, las imágenes dependientes pueden heredar errores. El efecto puede persistir hasta disponer de referencias válidas o mecanismos de recuperación. Por eso perder datos de distintas imágenes no tiene siempre el mismo impacto.</p>
+</section>
+<section id="un-archivo-varias-pistas" class="lesson-section">
+<h2>5. Un archivo, varias pistas</h2>
+<p>El <strong>contenedor</strong> organiza y sincroniza las pistas. El <strong>códec</strong> define cómo se codifica y reconstruye cada señal.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Elemento</th>
+<th style="text-align: left;">Ejemplos</th>
+<th style="text-align: left;">Función</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Contenedor</td>
+<td style="text-align: left;">MP4, Matroska, WebM</td>
+<td style="text-align: left;">Reunir pistas, tiempos y metadatos.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Códec de vídeo</td>
+<td style="text-align: left;">H.264, HEVC, VP9</td>
+<td style="text-align: left;">Codificar la secuencia de imágenes.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Códec de audio</td>
+<td style="text-align: left;">AAC, MP3</td>
+<td style="text-align: left;">Codificar el sonido.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Otras pistas</td>
+<td style="text-align: left;">Subtítulos, capítulos</td>
+<td style="text-align: left;">Añadir información sincronizada.</td>
+</tr>
+</tbody>
+</table>
+<p>Para reproducir un archivo deben comprenderse el contenedor y las codificaciones de sus pistas. La extensión <code>.mp4</code> no determina por sí sola todos los códecs del interior.</p>
+</section>
+<section id="cómo-abordar-los-ejercicios-del-tema" class="lesson-section">
+<h2>6. Cómo abordar los ejercicios del tema</h2>
+<p>Los ejercicios usan un <strong>modelo simplificado I–P–B</strong>: I cuesta determinados bytes por píxel, P otros y B no aporta datos. Conservamos esa hipótesis para contar, aunque no describe un códec real completo.</p>
+<ol type="1">
+<li>Calcula los bytes de un grupo.</li>
+<li>Divide los bytes totales entre los bytes por grupo.</li>
+<li>Multiplica por tres para obtener los fotogramas; B también cuenta.</li>
+<li>Divide entre los segundos si te piden fps.</li>
+</ol>
+<p>Un tamaño total redondeado puede dar un número intermedio fraccionario de grupos: expresa una estimación, no la existencia de fracciones de fotograma. Encontrarás ambos problemas originales en <a href="../../teoria/tema2/ejercicios.html#video">los ejercicios de vídeo</a>.</p>
+</section>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>Tema 2 · 2.5</p>
+</div>
+</div>
+<div class="lesson-nav">
+<p><a href="../../teoria/tema2/04-imagenes.html">← Anterior</a></p>
+<p><a href="../../teoria/tema2/06-enteros.html">Siguiente →</a></p>
+</div>
 
 
 <div class="book-navigation" data-book-navigation="">
@@ -372,6 +506,7 @@ ul.task-list li input[type="checkbox"] {
   })();
   </script>
 </div>
+<script src="../../assets/tema2.js"></script>
 
 
 

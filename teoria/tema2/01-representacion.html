@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prácticas – Fundamentos de Informática</title>
+<title>2.1 · ¿Qué significan estos bits? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,54 +26,167 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
 
 
-<link rel="stylesheet" href="../styles/book.css">
-<link rel="stylesheet" href="../styles/tema1.css">
-<link rel="stylesheet" href="../styles/exercises.css">
-<link rel="stylesheet" href="../styles/navigation.css">
-<link rel="stylesheet" href="../styles/markdown-refactor.css">
-<link rel="stylesheet" href="../styles/resources.css">
-<link rel="stylesheet" href="../styles/tema2.css">
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../../styles/markdown-refactor.css">
+<link rel="stylesheet" href="../../styles/resources.css">
+<link rel="stylesheet" href="../../styles/tema2.css">
 </head>
 
 <body>
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Prácticas</span></h1>
+<h1 class="title"><span class="chapter-title">2.1 · ¿Qué significan estos bits?</span></h1>
 
 </header>
 
 
-<article class="sheet practice-index" aria-label="Portada provisional de prácticas">
-  <header class="running-head"><span>Fundamentos de Informática</span><span>Parte II · Prácticas</span></header>
+<div class="sheet tema2-sheet">
+<div class="running-head">
+<p>Tema 2 · Representación de la información</p>
+<p>2.1</p>
+</div>
+<div class="opening">
+<div class="kicker">
+<p>LECCIÓN 2.1</p>
+</div>
+<h1 id="qué-significan-estos-bits">¿Qué significan estos bits?</h1>
+<div class="deck">
+<p>Una secuencia de ceros y unos necesita una convención. Esa convención también permite detectar errores o representar los datos con menos espacio.</p>
+</div>
+<div class="short-rule">
 
-  <section class="opening">
-    <p class="kicker">PARTE II · PRÁCTICAS</p>
-    <h1>Prácticas</h1>
-    <p class="deck">Esta portada es provisional y existe únicamente para validar el sistema de navegación entre teoría y prácticas. Su organización pedagógica se decidirá más adelante.</p>
-    <div class="short-rule" aria-hidden="true"></div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>Estructura visual preparada</h2>
-    <p>El menú puede organizar las prácticas por temas y, dentro de cada tema, por prácticas y secciones internas sin cambiar el lenguaje visual del libro.</p>
-    <div class="practice-structure" aria-label="Estructura provisional de navegación de prácticas">
-      <div><b>Temas</b><span>Primer nivel de agrupación, paralelo a la teoría.</span></div>
-      <div><b>Prácticas</b><span>Segundo nivel dentro de cada tema.</span></div>
-      <div><b>Secciones</b><span>Tercer nivel cuando una práctica necesite pasos o apartados.</span></div>
-    </div>
-  </section>
-
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Prácticas</span></footer>
-</article>
-
-<nav class="lesson-nav" aria-label="Navegación del libro"><a href="../index.html">← Portada del libro</a><a href="../teoria/tema1/01-que-es-computador.html">Ir a Teoría →</a></nav>
+</div>
+</div>
+<section id="los-bits-no-llevan-su-significado-escrito" class="lesson-section">
+<h2>1. Los bits no llevan su significado escrito</h2>
+<p>El patrón <strong>01000001</strong> vale 65 si lo leemos como entero sin signo. En ASCII representa la letra <strong>A</strong>. En otro contexto podría formar parte de un color, una muestra de sonido o una instrucción.</p>
+<div class="rule-band">
+<p><strong>Patrón + código + contexto = interpretación.</strong></p>
+</div>
+<p>No basta con conocer los bits. Debemos saber cómo agruparlos, qué convención aplicar y, en ocasiones, parámetros como el número de canales de audio o las dimensiones de una imagen.</p>
+</section>
+<section id="cuántos-patrones-hacen-falta" class="lesson-section">
+<h2>2. ¿Cuántos patrones hacen falta?</h2>
+<p>Para distinguir cinco objetos mediante códigos de longitud fija, dos bits no bastan: solo proporcionan cuatro patrones. Tres bits proporcionan ocho; podemos asignar cinco y dejar tres libres.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>≥</mo><mi>m</mi><mspace width="2.0em"></mspace><msub><mi>n</mi><mi mathvariant="normal">min</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">⌈</mo><msub><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>m</mi><mo stretchy="false" form="postfix">⌉</mo></mrow><annotation encoding="application/x-tex">2^n\ge m \qquad n_{\min}=\lceil\log_2 m\rceil</annotation></semantics></math></p>
+<p>La fórmula cuenta posibilidades, no el significado que les asignamos. Por ejemplo, tres bits pueden identificar ocho colores de una paleta o representar los enteros del 0 al 7.</p>
+</section>
+<section id="redundancia-añadir-información-de-control" class="lesson-section">
+<h2>3. Redundancia: añadir información de control</h2>
+<p>Al transmitir o almacenar datos pueden cambiar bits. Añadir <strong>redundancia</strong> permite comprobar relaciones entre ellos. Si a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> bits de datos añadimos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> de control, almacenamos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">n+k</annotation></semantics></math> bits.</p>
+<p>Una analogía es la letra de un DNI: se calcula a partir del número. En el ejemplo <strong>12345678</strong>, el resto de dividir entre 23 es 14 y la tabla de correspondencias asigna Z. Recalcularla detecta ciertas incoherencias; no permite corregir cualquier error ni demuestra una identidad.</p>
+<p>En <strong>paridad par</strong>, añadimos un bit para que el total de unos sea par:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Estado</th>
+<th style="text-align: left;">Datos</th>
+<th style="text-align: left;">Paridad</th>
+<th style="text-align: right;">Unos totales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Enviado</td>
+<td style="text-align: left;">1011</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Recibido con un cambio</td>
+<td style="text-align: left;">1001</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+<p>La comprobación descubre el error, pero no indica qué bit cambió. Cualquier número impar de cambios altera la paridad; un número par puede pasar inadvertido. También se puede acordar paridad impar.</p>
+<p><strong>Corregir exige más información.</strong> Un código de repetición triple escribe 0 como <code>000</code> y 1 como <code>111</code>. Si recibimos <code>101</code>, elegimos 1 por mayoría. Funciona si cambia como máximo un bit del grupo; dos cambios pueden llevar a una decisión incorrecta. Otros códigos, como Hamming, permiten corregir bajo condiciones concretas con menos redundancia. Checksum y CRC se utilizan para detectar errores.</p>
+</section>
+<section id="compresión-representar-con-menos-espacio" class="lesson-section">
+<h2>4. Compresión: representar con menos espacio</h2>
+<p>Comprimir cambia la representación para ahorrar almacenamiento y transmisión. Al descomprimir podemos exigir recuperar exactamente los datos o aceptar una aproximación.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sin pérdidas</th>
+<th style="text-align: left;">Con pérdidas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Recupera exactamente los datos de entrada.</td>
+<td style="text-align: left;">Descarta información y recupera una aproximación.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Texto, programas, datos que deben preservarse.</td>
+<td style="text-align: left;">Imagen, sonido y vídeo cuando la pérdida es aceptable.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ZIP, PNG, FLAC.</td>
+<td style="text-align: left;">JPEG habitual, MP3, AAC.</td>
+</tr>
+</tbody>
+</table>
+<p>Guardar como PNG una fotografía ya degradada no recupera lo perdido. «Sin pérdidas» se refiere a conservar los datos que recibe el codificador.</p>
+<p>Un ejemplo sencillo de compresión sin pérdidas es <strong>RLE</strong>: una sucesión de valores repetidos puede describirse mediante el valor y su número de repeticiones. Los métodos de la familia Lempel–Ziv aprovechan secuencias recurrentes mediante diccionarios. Su eficacia depende del contenido; no todos los archivos se reducen.</p>
+</section>
+<section id="factor-tamaño-restante-y-ahorro" class="lesson-section">
+<h2>5. Factor, tamaño restante y ahorro</h2>
+<p>Si un archivo pasa de <strong>14 MB a 5 MB</strong>, ahorramos 9 MB. Hay tres medidas distintas:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Medida</th>
+<th style="text-align: left;">Cálculo</th>
+<th style="text-align: left;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Factor de compresión</td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>a</mi></msub><mi>/</mi><msub><mi>C</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">C_a/C_d</annotation></semantics></math></td>
+<td style="text-align: left;">2,8 : 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Porcentaje que permanece</td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><msub><mi>C</mi><mi>d</mi></msub><mi>/</mi><msub><mi>C</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">100C_d/C_a</annotation></semantics></math></td>
+<td style="text-align: left;">35,7 %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porcentaje ahorrado</td>
+<td style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>C</mi><mi>d</mi></msub><mi>/</mi><msub><mi>C</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">100(1-C_d/C_a)</annotation></semantics></math></td>
+<td style="text-align: left;">64,3 %</td>
+</tr>
+</tbody>
+</table>
+<p>En las diapositivas, «porcentaje de compresión» designa el <strong>porcentaje que permanece</strong>. Comprueba siempre la definición usada en el enunciado. El factor 2,8 significa que el original ocupa 2,8 veces el tamaño final.</p>
+<div class="bridge-question">
+<p>Comencemos por un caso concreto: ¿qué bytes debemos guardar para escribir «Hoy» o «ñ»?</p>
+</div>
+</section>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>Tema 2 · 2.1</p>
+</div>
+</div>
+<div class="lesson-nav">
+<p><a href="../../teoria/tema2/00-sistemas-numeracion.html">← Anterior</a></p>
+<p><a href="../../teoria/tema2/02-textos.html">Siguiente →</a></p>
+</div>
 
 
 <div class="book-navigation" data-book-navigation="">
@@ -372,6 +485,7 @@ ul.task-list li input[type="checkbox"] {
   })();
   </script>
 </div>
+<script src="../../assets/tema2.js"></script>
 
 
 

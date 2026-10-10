@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prácticas – Fundamentos de Informática</title>
+<title>2.4 · ¿Cómo se representa una imagen? – Fundamentos de Informática</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,54 +26,266 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
 
 
-<link rel="stylesheet" href="../styles/book.css">
-<link rel="stylesheet" href="../styles/tema1.css">
-<link rel="stylesheet" href="../styles/exercises.css">
-<link rel="stylesheet" href="../styles/navigation.css">
-<link rel="stylesheet" href="../styles/markdown-refactor.css">
-<link rel="stylesheet" href="../styles/resources.css">
-<link rel="stylesheet" href="../styles/tema2.css">
+<link rel="stylesheet" href="../../styles/book.css">
+<link rel="stylesheet" href="../../styles/tema1.css">
+<link rel="stylesheet" href="../../styles/exercises.css">
+<link rel="stylesheet" href="../../styles/navigation.css">
+<link rel="stylesheet" href="../../styles/markdown-refactor.css">
+<link rel="stylesheet" href="../../styles/resources.css">
+<link rel="stylesheet" href="../../styles/tema2.css">
 </head>
 
 <body>
 
 
 <header id="title-block-header">
-<h1 class="title"><span class="chapter-title">Prácticas</span></h1>
+<h1 class="title"><span class="chapter-title">2.4 · ¿Cómo se representa una imagen?</span></h1>
 
 </header>
 
 
-<article class="sheet practice-index" aria-label="Portada provisional de prácticas">
-  <header class="running-head"><span>Fundamentos de Informática</span><span>Parte II · Prácticas</span></header>
+<div class="sheet tema2-sheet">
+<div class="running-head">
+<p>Tema 2 · Representación de la información</p>
+<p>2.4</p>
+</div>
+<div class="opening">
+<div class="kicker">
+<p>LECCIÓN 2.4</p>
+</div>
+<h1 id="cómo-se-representa-una-imagen">¿Cómo se representa una imagen?</h1>
+<div class="deck">
+<p>Una fotografía, un plano y un icono no necesitan la misma representación. La percepción visual ayuda a decidir qué guardar y qué podemos simplificar.</p>
+</div>
+<div class="short-rule">
 
-  <section class="opening">
-    <p class="kicker">PARTE II · PRÁCTICAS</p>
-    <h1>Prácticas</h1>
-    <p class="deck">Esta portada es provisional y existe únicamente para validar el sistema de navegación entre teoría y prácticas. Su organización pedagógica se decidirá más adelante.</p>
-    <div class="short-rule" aria-hidden="true"></div>
-  </section>
-
-  <section class="lesson-section">
-    <h2>Estructura visual preparada</h2>
-    <p>El menú puede organizar las prácticas por temas y, dentro de cada tema, por prácticas y secciones internas sin cambiar el lenguaje visual del libro.</p>
-    <div class="practice-structure" aria-label="Estructura provisional de navegación de prácticas">
-      <div><b>Temas</b><span>Primer nivel de agrupación, paralelo a la teoría.</span></div>
-      <div><b>Prácticas</b><span>Segundo nivel dentro de cada tema.</span></div>
-      <div><b>Secciones</b><span>Tercer nivel cuando una práctica necesite pasos o apartados.</span></div>
-    </div>
-  </section>
-
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Prácticas</span></footer>
-</article>
-
-<nav class="lesson-nav" aria-label="Navegación del libro"><a href="../index.html">← Portada del libro</a><a href="../teoria/tema1/01-que-es-computador.html">Ir a Teoría →</a></nav>
+</div>
+</div>
+<section id="percibir-el-conjunto-y-distinguir-el-detalle" class="lesson-section">
+<h2>1. Percibir el conjunto y distinguir el detalle</h2>
+<p>La visión tiene una <strong>resolución espacial limitada</strong>. Al acercarnos a un cuadro distinguimos pinceladas; desde lejos las integramos en una escena. Los detalles siguen ahí, pero no siempre los resolvemos por separado.</p>
+<div class="figure-pair">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/monet-conjunto.png" alt="El cuadro Las amapolas de Monet, con figuras en un campo de flores."></p>
+<figcaption>Claude Monet, <em>Las amapolas</em> (1873): visión de conjunto.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/monet-detalle.png" alt="Detalle ampliado de una figura del cuadro, donde se aprecian las pinceladas."></p>
+<figcaption>Detalle del mismo cuadro: las pinceladas se hacen visibles.</figcaption>
+</figure>
+</div>
+</div>
+<p>También integramos información <strong>en el tiempo</strong>: una sucesión de imágenes fijas puede producir movimiento aparente. Intervienen la respuesta visual y el procesamiento cerebral; no se explica todo por la persistencia retiniana. Esta idea conectará con el vídeo.</p>
+</section>
+<section id="el-color-luz-percepción-y-modelos" class="lesson-section">
+<h2>2. El color: luz, percepción y modelos</h2>
+<p>La luz visible abarca aproximadamente 380–780 nm. Tres tipos de conos responden a bandas <strong>solapadas</strong> de longitudes de onda. La percepción depende de la luz, los objetos, el observador y las condiciones; los conos no son tres detectores exclusivos de rojo, verde y azul.</p>
+<p>La colorimetría describe los colores mediante valores triestímulo. <strong>CIE XYZ</strong> sirve como referencia independiente del dispositivo. El diagrama de cromaticidad CIE <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math> separa la información cromática de la luminancia. Los primarios de un dispositivo delimitan una <strong>gama</strong>: no cualquier combinación de sus tres luces reproduce todos los colores visibles.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/cie-cromaticidad.png" alt="Diagrama CIE de cromaticidad con un triángulo RGB que ocupa solo una parte de los colores representados." width="330"></p>
+<figcaption>El triángulo representa una gama RGB dentro del diagrama de cromaticidad del material docente.</figcaption>
+</figure>
+</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Modelo</th>
+<th style="text-align: left;">Qué describe</th>
+<th style="text-align: left;">Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">RGB</td>
+<td style="text-align: left;">Intensidades de luz roja, verde y azul; mezcla aditiva.</td>
+<td style="text-align: left;">Pantallas y proyectores.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CMYK</td>
+<td style="text-align: left;">Tintas cian, magenta, amarilla y negra; mezcla sustractiva.</td>
+<td style="text-align: left;">Impresión.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y′CbCr</td>
+<td style="text-align: left;">Luma y dos componentes de diferencia de color.</td>
+<td style="text-align: left;">JPEG y vídeo.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HSL</td>
+<td style="text-align: left;">Matiz, saturación y claridad.</td>
+<td style="text-align: left;">Selección y edición de colores.</td>
+</tr>
+</tbody>
+</table>
+<p>En RGB, las tres luces a intensidad máxima producen blanco; en impresión, las tintas absorben parte de la luz. La conversión entre modelos depende de los espacios de color y de los dispositivos. La claridad L de HSL no es luminancia física.</p>
+</section>
+<section id="píxeles-o-descripciones-geométricas" class="lesson-section">
+<h2>3. Píxeles o descripciones geométricas</h2>
+<p>Un <strong>mapa de bits</strong> es una retícula. Cada píxel contiene un gris, un color o un índice de paleta. Una representación <strong>vectorial</strong> guarda objetos: líneas, curvas, polígonos y texto, con sus posiciones y atributos.</p>
+<div class="figure-pair">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/cisne.png" alt="Cisne blanco sobre el agua."></p>
+<figcaption>Fotografía del cisne utilizada en las diapositivas.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/cisne-pixeles.png" alt="Ampliación de la cabeza del cisne con la retícula de píxeles visible."></p>
+<figcaption>Detalle ampliado: se distinguen los píxeles de la fotografía.</figcaption>
+</figure>
+</div>
+</div>
+<p>Al ampliar un mapa de bits no recuperamos detalles que no fueron capturados. Interpolar suaviza o estima valores intermedios. Un dibujo vectorial puede recalcular sus curvas a otra escala y conservar bordes nítidos.</p>
+<p>Los mapas de bits son adecuados para fotografías y texturas; los vectores, para esquemas, logotipos y planos. <strong>SVG</strong> describe geometría; <strong>PDF</strong> puede mezclar vectores, texto e imágenes. Vectorial no significa siempre menor tamaño: depende de la complejidad.</p>
+</section>
+<section id="resolución-y-profundidad-de-color" class="lesson-section">
+<h2>4. Resolución y profundidad de color</h2>
+<p>La resolución espacial de una imagen se expresa aquí como <strong>anchura × altura en píxeles</strong>. La profundidad indica cuántos bits se dedican a cada píxel. Son parámetros distintos.</p>
+<div class="rule-band">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mfrac><mrow><mi>W</mi><mi>H</mi><mi>p</mi></mrow><mn>8</mn></mfrac><mspace width="1.0em"></mspace><mtext mathvariant="normal">bytes de datos sin comprimir</mtext></mrow><annotation encoding="application/x-tex">C=\frac{W H p}{8}\quad\text{bytes de datos sin comprimir}</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>: anchura; <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>: altura; <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>: bits por píxel. Se excluyen cabeceras, paletas y relleno.</p>
+</div>
+<p>Con RGB de ocho bits por componente, cada píxel usa <strong>24 bits = 3 bytes</strong> y admite <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mn>24</mn></msup><annotation encoding="application/x-tex">2^{24}</annotation></semantics></math> combinaciones. El naranja del material es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>255</mn><mo>,</mo><mn>128</mn><mo>,</mo><mn>48</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(255,128,48)</annotation></semantics></math>, escrito como <code>FF 80 30</code> en orden R, G, B. El orden físico de canales de un archivo concreto puede ser distinto.</p>
+<p>Una imagen de 10 × 15 píxeles ocupa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mo>×</mo><mn>15</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>450</mn></mrow><annotation encoding="application/x-tex">10\times15\times3=450</annotation></semantics></math> B de datos RGB. Una imagen de 256 × 256 en grises de ocho bits ocupa <strong>65.536 B = 64 KiB</strong>. El tamaño real del archivo depende también de su formato.</p>
+</section>
+<section id="elegir-un-formato" class="lesson-section">
+<h2>5. Elegir un formato</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Formato</th>
+<th style="text-align: left;">Características del material</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BMP</td>
+<td style="text-align: left;">Representación matricial sencilla; el ejemplo es RGB sin comprimir. Existen variantes y puede haber relleno por filas.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TIFF</td>
+<td style="text-align: left;">Flexible: distintas profundidades, RGB, CMYK o grises; puede usar compresión sin pérdidas o incorporar JPEG.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PNG</td>
+<td style="text-align: left;">Compresión sin pérdidas; admite grises, RGB, paleta y transparencia. Útil para texto, capturas y bordes nítidos.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JPEG habitual</td>
+<td style="text-align: left;">Compresión con pérdidas orientada a fotografías; calidad y tamaño dependen de los ajustes.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GIF</td>
+<td style="text-align: left;">Colores indexados en paletas de hasta 256 entradas; compresión LZW, transparencia de índice y animación.</td>
+</tr>
+</tbody>
+</table>
+<p>La extensión no basta para determinar todas las propiedades. Un TIFF no garantiza ausencia de pérdidas; un PNG no restaura colores que se eliminaron antes de guardarlo.</p>
+</section>
+<section id="jpeg-separar-detalle-de-brillo-y-de-color" class="lesson-section">
+<h2>6. JPEG: separar detalle de brillo y de color</h2>
+<p>En muchas imágenes distinguimos mejor los detalles finos de brillo que los de color. <strong>Y′CbCr</strong> separa luma Y′ —relacionada con el brillo— y diferencias cromáticas Cb y Cr. Y′ no es exactamente luminancia física.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/componentes-ycbcr.png" alt="Una fotografía descompuesta en rojo, verde y azul y, alternativamente, en luma Y prima, Cb y Cr."></p>
+<figcaption>Separación RGB y Y′CbCr del recurso original de las diapositivas.</figcaption>
+</figure>
+</div>
+<p>Podemos reducir la resolución de Cb y Cr manteniendo la de Y′. Es <strong>submuestreo de crominancia</strong> y sí elimina información: en bordes coloreados finos la pérdida puede verse.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../assets/figures/tema2/submuestreo.svg" alt="En 4:4:4 hay ocho muestras por componente; en 4:2:2 hay ocho de luma y cuatro de cada crominancia; en 4:2:0 hay ocho de luma y dos de cada crominancia."></p>
+<figcaption>Número de muestras de cada componente en un bloque de cuatro por dos píxeles.</figcaption>
+</figure>
+</div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Esquema</th>
+<th style="text-align: right;">Y′</th>
+<th style="text-align: right;">Cb</th>
+<th style="text-align: right;">Cr</th>
+<th style="text-align: right;">Total de valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">4:4:4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4:2:2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4:2:0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">12</td>
+</tr>
+</tbody>
+</table>
+<p>Son <strong>valores de componentes</strong>, no bytes automáticamente: para obtener bits hay que multiplicar por su profundidad. La denominación 4:2:0 no significa que una componente cromática desaparezca.</p>
+<p>En el JPEG habitual, el recorrido continúa:</p>
+<ol type="1">
+<li><strong>Separar componentes</strong>, con submuestreo cromático opcional.</li>
+<li><strong>Transformar bloques de 8 × 8</strong> mediante DCT: describir sus variaciones espaciales mediante coeficientes.</li>
+<li><strong>Cuantificar</strong> esos coeficientes: aproximarlos, introduciendo pérdidas.</li>
+<li><strong>Codificar</strong> los resultados aprovechando su estructura y redundancia.</li>
+</ol>
+<p>No hay que atribuir todas las pérdidas a la última etapa: el submuestreo y la cuantificación ya han descartado información. La DCT, por sí sola, cambia la representación; no es el paso que decide qué detalle eliminar.</p>
+<div class="resource-note">
+<p><strong>Explora.</strong> Abre <a href="../../assets/interactivos/jpeg-paso-a-paso.html">JPEG paso a paso</a>. Compara la separación de componentes, el submuestreo y la cuantificación. Busca qué cambios afectan al color y cuáles introducen bloques o pérdida de detalle.</p>
+</div>
+</section>
+<section id="paletas-guardar-un-índice-por-píxel" class="lesson-section">
+<h2>7. Paletas: guardar un índice por píxel</h2>
+<p>En una imagen indexada, cada píxel apunta a una entrada de una <strong>paleta RGB</strong>. Para 256 colores basta un índice de ocho bits. La paleta ocupa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>256</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>768</mn></mrow><annotation encoding="application/x-tex">256\times3=768</annotation></semantics></math> B y se guarda una vez, no por cada píxel.</p>
+<div class="rule-band">
+<p><strong>Color directo:</strong> R, G, B por píxel.<br>
+<strong>Color indexado:</strong> un índice por píxel + una tabla compartida.</p>
+</div>
+<p>La compresión LZW de GIF conserva los índices, pero reducir previamente una fotografía a 256 colores puede perder fidelidad. El <strong>tramado</strong> (<em>dithering</em>) combina píxeles de colores disponibles para simular visualmente tonos que faltan. GIF también puede guardar imágenes sucesivas con tiempos de presentación y un índice transparente.</p>
+</section>
+<section id="datos-teóricos-y-archivos-reales" class="lesson-section">
+<h2>8. Datos teóricos y archivos reales</h2>
+<p>El cisne de 1024 × 768 píxeles necesita <strong>2.359.296 B = 2,25 MiB</strong> de datos RGB de 24 bits. En el ejemplo histórico de las diapositivas, distintas opciones de JPEG producen archivos de aproximadamente 523, 81,33 y 43,16 KB; PNG RGB ronda 1,15 MB. Son mediciones con Photoshop 7 y sus ajustes, no proporciones universales ni tamaños deducibles solo de la extensión.</p>
+<p>Para comparar, fija primero la resolución y el modelo de color; después distingue <strong>datos sin comprimir</strong>, <strong>paleta y cabeceras</strong> y <strong>compresión aplicada</strong>. Los <a href="../../teoria/tema2/ejercicios.html#imagen">ejercicios de imagen</a> trabajan cada cantidad por separado.</p>
+</section>
+<div class="running-foot">
+<p>Fundamentos de Informática</p>
+<p>Tema 2 · 2.4</p>
+</div>
+</div>
+<div class="lesson-nav">
+<p><a href="../../teoria/tema2/03-sonidos.html">← Anterior</a></p>
+<p><a href="../../teoria/tema2/05-video.html">Siguiente →</a></p>
+</div>
 
 
 <div class="book-navigation" data-book-navigation="">
@@ -372,6 +584,7 @@ ul.task-list li input[type="checkbox"] {
   })();
   </script>
 </div>
+<script src="../../assets/tema2.js"></script>
 
 
 
