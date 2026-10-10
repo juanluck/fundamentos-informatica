@@ -1,0 +1,48 @@
+¿Qué determina el peso de una cifra en base b?,Su posición i: el peso es b elevado a i.
+¿Cuánto vale 1001010₂ como entero sin signo?,74: 64 + 8 + 2.
+¿En qué orden se leen los restos al convertir un entero a binario?,Del último resto al primero.
+¿Cómo se convierte la parte fraccionaria a binario?,Multiplicando sucesivamente por dos y recogiendo las partes enteras en el orden obtenido.
+¿Por qué una cifra hexadecimal equivale a cuatro bits?,Porque 16 = 2⁴: ambos ofrecen 16 combinaciones.
+¿Desplazar un bit a la izquierda siempre multiplica por dos?,Solo si se dispone de espacio suficiente y no se pierden bits.
+¿Qué necesitamos además de los bits para interpretar un dato?,"Su código, agrupación y contexto."
+¿Cuántos bits de longitud fija hacen falta para cinco objetos?,Tres: dos bits dan cuatro patrones y tres dan ocho.
+¿Qué exige la paridad par?,Un número par de unos en el conjunto de datos y bit de paridad.
+¿Un bit de paridad permite corregir cualquier error?,"No. Detecta un número impar de cambios, pero no localiza por sí solo el bit incorrecto."
+¿Qué significa compresión sin pérdidas?,Que se recuperan exactamente los datos que recibió el codificador.
+"Si un archivo pasa de 14 MB a 5 MB, ¿qué factor y ahorro tiene?","Factor 2,8:1; permanece el 35,7 % y se ahorra el 64,3 %."
+¿Cuántas posiciones tiene ASCII?,"128, representables con siete bits."
+¿Qué diferencia hay entre un punto de código y una codificación?,El punto de código identifica un carácter; la codificación fija cómo expresarlo en unidades o bytes.
+¿Qué punto de código tiene ñ y qué bytes usa en UTF-8?,U+00F1; en UTF-8 utiliza C3 B1.
+¿Cuántos bytes puede usar UTF-8 para un valor escalar?,De uno a cuatro.
+¿UTF-16 siempre usa dos bytes por carácter?,No. Los puntos de código fuera del BMP necesitan dos unidades de 16 bits: cuatro bytes.
+"¿Cuántos bytes ocupa Hoy en UTF-8, sin salto de línea?",Tres: 48 6F 79 en hexadecimal.
+¿Qué discretiza el muestreo y qué discretiza la cuantificación?,"El muestreo discretiza el tiempo; la cuantificación, la amplitud."
+¿Cuál es la relación entre frecuencia y período de muestreo?,fs = 1/Ts.
+¿Qué es el aliasing?,La ambigüedad por la que señales distintas pueden producir las mismas muestras con muestreo insuficiente.
+¿Cuántos niveles permiten 16 bits por muestra?,65.536 niveles.
+¿Cómo se calcula la tasa de PCM sin comprimir?,Frecuencia de muestreo × bits por muestra × número de canales.
+¿Para qué sirve el búfer de streaming?,Para absorber diferencias entre llegadas irregulares de datos y consumo regular durante la reproducción.
+¿Qué guarda un mapa de bits y qué guarda un vectorial?,"El mapa guarda píxeles; el vectorial, objetos geométricos y sus atributos."
+¿Cómo se calcula el tamaño RGB de 24 bits sin comprimir?,"Anchura × altura × 3 bytes, sin cabeceras ni relleno."
+¿Qué contiene una imagen indexada?,Un índice por píxel y una paleta compartida con los colores.
+¿Cuánto ocupa una paleta de 256 colores RGB de 24 bits?,768 bytes: 256 × 3.
+¿Qué conserva 4:2:0 en una región de 4 × 2 píxeles?,"Ocho valores Y′, dos Cb y dos Cr: doce valores de componentes."
+¿Dónde se pierde información en JPEG habitual?,"En la cuantificación y, cuando se utiliza, en el submuestreo de crominancia."
+¿Qué significa fps?,Fotogramas presentados por segundo.
+¿Cómo se calcula la tasa de vídeo sin comprimir?,Fps × píxeles por fotograma × bits por píxel.
+¿Qué es un GOP?,Un grupo que organiza fotogramas y sus dependencias para compresión temporal.
+¿Por qué el orden de decodificación puede diferir del de visualización?,Porque las referencias de un fotograma deben estar disponibles antes de reconstruirlo.
+¿Todos los fotogramas B ocupan cero bytes?,No. Es una hipótesis de los ejercicios; los fotogramas B reales pueden almacenar datos.
+¿Qué diferencia un contenedor de un códec?,El contenedor organiza y sincroniza pistas; el códec codifica y decodifica sus señales.
+¿Cuál es el rango sin signo con ocho bits?,De 0 a 255.
+"¿Cuántos ceros tienen signo y magnitud, CA1 y CA2?",Signo y magnitud y CA1 tienen dos patrones de cero; CA2 tiene uno.
+¿Cómo se obtiene un negativo representable en CA2?,"Con el ancho fijado, se invierten los bits de la magnitud y se suma uno."
+¿Cuál es el rango de CA2 con ocho bits?,De −128 a 127.
+¿Acarreo exterior y desbordamiento son equivalentes?,No. 127 + 1 desborda en CA2 de ocho bits sin acarreo; −1 + 1 tiene acarreo sin desbordamiento.
+¿Cómo se decodifica una representación con sesgo S?,Se interpreta el código como entero sin signo y se resta S.
+¿Cómo se reparten los bits de binary32?,"Un bit de signo, ocho de exponente y 23 de fracción."
+¿Cuál es el sesgo del exponente en binary32?,127: el exponente real es e − 127 para números normales.
+¿Se almacena el 1 inicial del significando normalizado?,No. Es implícito en números normales; se guardan los bits de la fracción.
+¿La regla del 1 implícito se aplica a subnormales?,No. En subnormales no se añade ese 1.
+"¿Puede representarse 0,1 exactamente con una fracción binaria finita?",No. Su expansión binaria es infinita y el formato debe aproximarla.
+¿Qué representa un exponente de todos unos y fracción no nula?,"Un NaN. Si la fracción es cero, representa infinito con el signo indicado."

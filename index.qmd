@@ -38,6 +38,27 @@ toc: false
     </div>
   </section>
 
-  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Tema 1</span></footer>
+  <section class="lesson-section">
+    <h2>Tema 2 · Representación de la información</h2>
+    <p>Una misma secuencia de bits puede representar texto, sonido, imágenes o números. La pregunta guía es: <strong>¿qué convención permite interpretarla y cuánto espacio necesita?</strong></p>
+    <div class="lesson-list" aria-label="Lecciones del Tema 2">
+      <a class="lesson-link" href="teoria/tema2/00-sistemas-numeracion.html"><span class="lesson-number">2.0</span><span class="lesson-title">¿Cómo contamos con dos cifras?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema2/01-representacion.html"><span class="lesson-number">2.1</span><span class="lesson-title">¿Qué significan estos bits?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema2/02-textos.html"><span class="lesson-number">2.2</span><span class="lesson-title">¿Cómo se guarda un texto?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema2/03-sonidos.html"><span class="lesson-number">2.3</span><span class="lesson-title">¿Cómo se digitaliza un sonido?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema2/04-imagenes.html"><span class="lesson-number">2.4</span><span class="lesson-title">¿Cómo se representa una imagen?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema2/05-video.html"><span class="lesson-number">2.5</span><span class="lesson-title">¿Cómo se guarda el movimiento?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema2/06-enteros.html"><span class="lesson-number">2.6</span><span class="lesson-title">¿Dónde se guarda el signo?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema2/07-reales.html"><span class="lesson-number">2.7</span><span class="lesson-title">¿Cómo se guardan los decimales?</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+      <a class="lesson-link" href="teoria/tema2/ejercicios.html"><span class="lesson-number">E</span><span class="lesson-title">Ejercicios</span><span class="lesson-arrow" aria-hidden="true">→</span></a>
+    </div>
+    <div class="theme-resources" aria-label="Recursos complementarios del Tema 2">
+      <span class="theme-resources-label">RECURSOS DEL TEMA</span>
+      <a href="teoria/tema2/tarjetas.html"><b>Tarjetas de repaso</b><small>48 preguntas y respuestas</small></a>
+      <a href="teoria/tema2/recursos.html"><b>Material complementario</b><small>diapositivas con notas · interactivos</small></a>
+    </div>
+  </section>
+
+  <footer class="running-foot"><span>Fundamentos de Informática</span><span>Temas 1 y 2</span></footer>
 </article>
 ```

@@ -1,0 +1,175 @@
+---
+title: "2.6 · ¿Dónde se guarda el signo?"
+sidebar: false
+page-navigation: false
+toc: false
+---
+
+::::::: {.sheet .tema2-sheet}
+
+:::::: {.running-head}
+Tema 2 · Representación de la información
+
+2.6
+::::::
+
+:::::: {.opening}
+::::: {.kicker}
+LECCIÓN 2.6
+:::::
+
+# ¿Dónde se guarda el signo?
+
+::::: {.deck}
+Ocho bits permiten 256 patrones. La convención elegida decide si representan de 0 a 255, números negativos o incluso cifras decimales separadas.
+:::::
+
+::::: {.short-rule}
+:::::
+::::::
+
+
+
+:::::: {.lesson-section}
+## 1. Guardar un número no es guardar su texto
+
+Como texto ASCII o UTF-8, **«255»** ocupa tres bytes: `32 35 35` en hexadecimal. Como entero sin signo de ocho bits, **255** ocupa un byte: `FF`. El contenido de un archivo de texto y el de una variable numérica son representaciones distintas.
+
+En **binario natural**, un entero de $n$ bits representa desde 0 hasta $2^n-1$. Con ocho bits, $28=16+8+4$ se escribe `00011100`. Para incluir negativos debemos acordar otra interpretación; el símbolo «−» no se añade como un carácter al entero de ancho fijo.
+::::::
+
+
+:::::: {.lesson-section}
+## 2. Signo y magnitud
+
+Reservamos el primer bit para el signo: 0 positivo y 1 negativo. Los otros $n-1$ bits contienen el valor absoluto.
+
+| Valor, con 8 bits | Signo | Magnitud | Patrón | Hex. |
+|:--|:--|:--|:--|:--|
+| +28 | 0 | 0011100 | 00011100 | 1C |
+| −28 | 1 | 0011100 | 10011100 | 9C |
+
+El rango es $-(2^{n-1}-1)$ a $2^{n-1}-1$: **−127 a 127** con ocho bits. Hay dos ceros, `00000000` y `10000000`. Tenemos 256 patrones pero solo 255 valores distintos.
+
+No sumes estos patrones como si fueran binario natural y esperes obtener siempre la suma con signo: el bit superior tiene otro papel.
+::::::
+
+
+:::::: {.lesson-section}
+## 3. Complemento a uno, CA1
+
+Los positivos se mantienen. Para obtener el negativo de un valor **invertimos todos sus bits**, con el ancho ya fijado: cada 0 se convierte en 1 y viceversa.
+
+| Paso | Patrón de ocho bits |
+|:--|:--|
+| +28 | `00011100` |
+| Invertir todos los bits | `11100011` |
+| −28 en CA1 | `11100011` = E3 |
+
+El rango sigue siendo **−127 a 127**. Hay dos ceros: `00000000` y `11111111`. Para leer un negativo invertimos sus bits, calculamos la magnitud y añadimos el signo menos. En CA1 **no sumamos uno** tras invertir.
+::::::
+
+
+:::::: {.lesson-section}
+## 4. Complemento a dos, CA2
+
+CA2 modifica la codificación negativa para tener un único cero y facilitar la aritmética. Para codificar un negativo representable, invertimos los bits de su magnitud y sumamos uno en el ancho elegido.
+
+| Paso | Patrón de ocho bits |
+|:--|:--|
+| +28 | `00011100` |
+| Invertir | `11100011` |
+| Sumar uno | `11100100` |
+| −28 en CA2 | `11100100` = E4 |
+
+El bit superior tiene **peso negativo**, no es simplemente un signo separado de la magnitud:
+
+$$N=-b_{n-1}2^{n-1}+\sum_{i=0}^{n-2}b_i2^i$$
+
+Una forma equivalente de decodificar: lee el patrón como entero sin signo $U$; si su bit superior es 1, calcula **$U-2^n$**. Así, E4 = 228 sin signo y $228-256=-28$ en CA2.
+
+::: {.rule-band}
+**CA2 con $n$ bits:** $-2^{n-1}\le N\le2^{n-1}-1$.\
+Con ocho bits: **−128 a 127**, con un único cero.
+:::
+
+El patrón `10000000` representa −128. Su opuesto matemático, +128, **no cabe** en ocho bits con signo. El procedimiento de invertir y sumar no hace que ese valor quepa.
+::::::
+
+
+:::::: {.lesson-section}
+## 5. Sumar y distinguir acarreo de desbordamiento
+
+En CA2 sumamos los patrones y conservamos los $n$ bits inferiores. El resultado representa la suma si esta está dentro del rango. Por ejemplo:
+
+$$7+(-18)=-11\qquad 00000111+11101110=11110101$$
+
+**Acarreo** es el bit que sale de la columna más alta. **Desbordamiento** significa que el resultado matemático no cabe en la representación elegida. No son lo mismo.
+
+| Operación, CA2 de 8 bits | Bits conservados | Acarreo exterior | ¿Desborda? |
+|:--|:--|:--|:--|
+| 127 + 1 | `10000000` | 0 | Sí: 128 no cabe. |
+| −1 + 1 | `00000000` | 1 | No: el resultado es 0. |
+
+Al sumar en CA2, hay desbordamiento si dos operandos del mismo signo producen bits que se interpretan con el signo contrario. Dos operandos de signos distintos no desbordan en una suma. La interpretación sin signo tiene otro rango y otro criterio.
+::::::
+
+
+:::::: {.lesson-section}
+## 6. Representación sesgada
+
+Desplazamos los valores mediante una constante $S$, el **sesgo**. El código se lee como entero sin signo:
+
+$$\text{código}=N+S,\qquad N=\text{código}-S$$
+
+Con ocho bits y $S=128$, +28 se codifica como 156 (`10011100`, 9C) y −28 como 100 (`01100100`, 64). El cero se codifica como 128 (`10000000`). El primer bit **no es un signo independiente**.
+
+El rango general es $-S$ a $2^n-1-S$. Con sesgo 128 coincide con el rango de CA2 de ocho bits, pero **sus patrones no coinciden**. Más adelante el exponente de binary32 utilizará sesgo 127.
+::::::
+
+
+:::::: {.lesson-section}
+## 7. BCD: codificar cada cifra decimal
+
+BCD (*Binary-Coded Decimal*) codifica cada cifra decimal por separado. En el BCD 8421 mostrado, cada cifra ocupa cuatro bits:
+
+$$729_{10}\longrightarrow\underbrace{0111}_{7}\;\underbrace{0010}_{2}\;\underbrace{1001}_{9}$$
+
+Los grupos de `1010` a `1111` no representan cifras decimales. No confundas BCD con convertir el número completo a binario: $729_{10}=1011011001_2$ en binario natural. En BCD hemos reservado doce bits para las tres cifras.
+::::::
+
+
+:::::: {.lesson-section}
+## 8. El mismo patrón, varios significados
+
+| Convención, ocho bits | Mínimo | Máximo | −28 | Cero |
+|:--|--:|--:|:--|:--|
+| Sin signo | 0 | 255 | No representable | 00 |
+| Signo y magnitud | −127 | 127 | 9C | 00 y 80 |
+| CA1 | −127 | 127 | E3 | 00 y FF |
+| CA2 | −128 | 127 | E4 | 00 |
+| Sesgo 128 | −128 | 127 | 64 | 80 |
+
+Los códigos de la tabla están en hexadecimal. El patrón `11111001` vale **249 sin signo** y **−7 en CA2**. La notación hexadecimal solo abrevia los bits; no decide su interpretación.
+
+En C, conviene conocer el tipo y su ancho. No deduzcas el tamaño de `int` a partir de que la máquina se anuncie como «de 64 bits». `sizeof` y `<limits.h>` permiten consultar la implementación; los tipos como `int8_t`, cuando están disponibles, expresan un ancho exacto. Tampoco extrapoles sin más la aritmética modular del papel al desbordamiento de enteros con signo en un programa C.
+
+::: {.bridge-question}
+¿Qué ocurre si queremos representar 53,25 o valores muy pequeños? Necesitamos separar precisión y escala.
+:::
+::::::
+
+
+:::::: {.running-foot}
+Fundamentos de Informática
+
+Tema 2 · 2.6
+::::::
+
+:::::::
+
+::: {.lesson-nav}
+[← Anterior](05-video.qmd)
+
+[Siguiente →](07-reales.qmd)
+:::

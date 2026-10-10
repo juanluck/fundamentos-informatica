@@ -1,0 +1,6 @@
+format:
+  html:
+    html-math-method: mathml
+include-after-body:
+  - text: |
+      <script src="../../assets/tema2.js"></script>
