@@ -21,13 +21,36 @@ TEMA 2 · MATERIAL COMPLEMENTARIO
 # Para volver al material
 
 ::::: {.deck}
-Las diapositivas con notas y los ejemplos interactivos acompañan el recorrido del libro.
+El resumen audiovisual, las diapositivas con notas y los ejemplos interactivos acompañan el recorrido del libro.
 :::::
 
 ::::: {.short-rule}
 :::::
 ::::::
 
+
+
+:::::: {.lesson-section}
+## Resumen audiovisual
+
+El vídeo ofrece una **visión global del tema en poco más de un minuto**. Ayuda a conectar las distintas formas de representar la información y sirve como complemento a las explicaciones y los ejercicios del libro.
+
+```{=html}
+<div class="video-resource">
+  <div class="video-frame">
+    <video controls preload="metadata" playsinline>
+      <source src="../../assets/media/tema2/todo-tu-ordenador-es-una-ilusion-binaria.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este vídeo.
+    </video>
+  </div>
+  <div class="video-caption">
+    <strong>Todo tu ordenador es una ilusión binaria</strong>
+    <span>1:21 · formato vertical · resumen audiovisual del Tema 2</span>
+    <a href="../../assets/media/tema2/todo-tu-ordenador-es-una-ilusion-binaria.mp4" target="_blank" rel="noopener">Abrir el vídeo en una pestaña nueva ↗</a>
+  </div>
+</div>
+```
+::::::
 
 
 :::::: {.lesson-section}
