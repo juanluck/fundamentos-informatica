@@ -55,7 +55,7 @@ toc: false
     <div class="theme-resources" aria-label="Recursos complementarios del Tema 2">
       <span class="theme-resources-label">RECURSOS DEL TEMA</span>
       <a href="teoria/tema2/tarjetas.html"><b>Tarjetas de repaso</b><small>48 preguntas y respuestas</small></a>
-      <a href="teoria/tema2/recursos.html"><b>Material complementario</b><small>diapositivas con notas · interactivos</small></a>
+      <a href="teoria/tema2/recursos.html"><b>Material complementario</b><small>vídeo · diapositivas con notas · interactivos</small></a>
     </div>
   </section>
 
