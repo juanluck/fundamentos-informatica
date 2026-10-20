@@ -7,6 +7,8 @@ project:
     - escape-linux/index.html
     - escape-linux/escape.css
     - escape-linux/cesar/**
+    - practicas/patata_adivina.html
+    - practicas/patata_adivina.m
 
 book:
   title: "Fundamentos de Informática"
