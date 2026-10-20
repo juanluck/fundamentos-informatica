@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Instrucciones para incorporar el juego Patata caliente a Adivina el número en GNU Octave o MATLAB.">
+  <title>Patata caliente · Fundamentos de Informática</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #192d3a; background: #f5f8fa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 22px 70px; }
+    .eyebrow { margin: 0 0 12px; font-size: .8rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; color: #527086; }
+    h1 { margin: 0 0 10px; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.12; letter-spacing: -.04em; }
+    .intro { margin: 0 0 24px; color: #3d5362; line-height: 1.6; font-size: 1.06rem; }
+    .download { display: inline-flex; align-items: center; min-height: 48px; padding: 12px 20px; border-radius: 10px; background: #145c7d; color: #fff; text-decoration: none; font-weight: 700; }
+    .download:hover, .download:focus-visible { background: #0f455f; }
+    .steps { margin-top: 36px; padding: 26px 28px; border: 1px solid #dce5ea; border-radius: 15px; background: white; }
+    h2 { margin: 0 0 18px; font-size: 1.4rem; }
+    h3 { font-size: 1.04rem; margin: 23px 0 9px; }
+    p { line-height: 1.55; }
+    .steps > p { margin-top: 0; }
+    pre { padding: 14px 16px; background: #152b3b; color: #f5fcff; border-radius: 9px; line-height: 1.6; overflow-x: auto; font-size: .93rem; }
+    code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
+    :not(pre) > code { padding: 2px 5px; background: #eaf0f4; border-radius: 4px; }
+    .hint { border-left: 4px solid #cc772e; padding: 10px 15px; background: #fff6e9; border-radius: 0 8px 8px 0; }
+    footer { margin-top: 28px; color: #556b7a; font-size: .9rem; }
+    footer a { color: #145c7d; }
+    @media (max-width: 480px) { main { padding-top: 28px; } .steps { padding: 20px 15px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Fundamentos de Informática · GNU Octave / MATLAB</p>
+    <h1>🎈 Patata caliente: ¡que no explote!</h1>
+    <p class="intro">Añade un globo con cuenta atrás a tu ejercicio <strong>«Adivina el número»</strong>. Tendrás entre <strong>50 y 70 segundos</strong> para acertar antes de que explote.</p>
+    <a class="download" href="patata_adivina.m" download="patata_adivina.m">↓ Descargar patata_adivina.m</a>
+
+    <section class="steps" aria-label="Instrucciones de uso">
+      <h2>Cómo utilizarlo</h2>
+      <p>Guarda <code>patata_adivina.m</code> en la <strong>misma carpeta</strong> que tu programa <code>adivinar.m</code>. No modifiques el archivo descargado.</p>
+
+      <h3>1. Al comenzar tu función</h3>
+      <pre><code>patata_adivina('iniciar');</code></pre>
+
+      <h3>2. Para pedir un número</h3>
+      <p>Sustituye cada <code>input(...)</code> por estas instrucciones:</p>
+      <pre><code>numIntroducido = patata_adivina('leer', 'Introduce un número: ');
+if isnan(numIntroducido)
+    return;
+end</code></pre>
+
+      <h3>3. Cuando el alumno acierte</h3>
+      <pre><code>patata_adivina('acierto');</code></pre>
+
+      <p class="hint"><strong>¡El reto!</strong> Sigue escribiendo tus respuestas en la consola. El globo se hincha mientras piensas. Si se agota el tiempo, ¡explota!</p>
+    </section>
+
+    <footer>¿Quieres probarlo en 10 segundos? Usa <code>patata_adivina('iniciar', 10);</code> en lugar de la instrucción del paso 1.</footer>
+  </main>
+</body>
+</html>
